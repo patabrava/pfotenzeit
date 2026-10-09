@@ -1,0 +1,300 @@
+{
+  "version": 1,
+  "generatedUTC": "2026-10-09T13:36:42.590Z",
+  "canvas": 128,
+  "colors": 15,
+  "status": "code-authored",
+  "source": "authored in src/ui/pixel/sprites.ts",
+  "license": "project-internal, code-authored pixel art",
+  "sprites": [
+    {
+      "name": "nala_arriving_awake",
+      "state": "awake",
+      "stage": "arriving",
+      "width": 128,
+      "height": 128,
+      "sprite": {
+        "width": 41,
+        "height": 35,
+        "origin": {
+          "x": 43,
+          "y": 63
+        }
+      },
+      "frames": [
+        {
+          "file": "nala_arriving_awake.png",
+          "bytes": 497
+        },
+        {
+          "file": "nala_arriving_awake_1.png",
+          "bytes": 499
+        }
+      ]
+    },
+    {
+      "name": "nala_arriving_hungry",
+      "state": "hungry",
+      "stage": "arriving",
+      "width": 128,
+      "height": 128,
+      "sprite": {
+        "width": 50,
+        "height": 32,
+        "origin": {
+          "x": 39,
+          "y": 66
+        }
+      },
+      "frames": [
+        {
+          "file": "nala_arriving_hungry.png",
+          "bytes": 516
+        }
+      ]
+    },
+    {
+      "name": "nala_arriving_tired",
+      "state": "tired",
+      "stage": "arriving",
+      "width": 128,
+      "height": 128,
+      "sprite": {
+        "width": 42,
+        "height": 37,
+        "origin": {
+          "x": 43,
+          "y": 61
+        }
+      },
+      "frames": [
+        {
+          "file": "nala_arriving_tired.png",
+          "bytes": 462
+        }
+      ]
+    },
+    {
+      "name": "nala_arriving_playful",
+      "state": "playful",
+      "stage": "arriving",
+      "width": 128,
+      "height": 128,
+      "sprite": {
+        "width": 52,
+        "height": 28,
+        "origin": {
+          "x": 38,
+          "y": 70
+        }
+      },
+      "frames": [
+        {
+          "file": "nala_arriving_playful.png",
+          "bytes": 514
+        },
+        {
+          "file": "nala_arriving_playful_1.png",
+          "bytes": 513
+        }
+      ]
+    },
+    {
+      "name": "nala_arriving_resting",
+      "state": "resting",
+      "stage": "arriving",
+      "width": 128,
+      "height": 128,
+      "sprite": {
+        "width": 46,
+        "height": 26,
+        "origin": {
+          "x": 41,
+          "y": 72
+        }
+      },
+      "frames": [
+        {
+          "file": "nala_arriving_resting.png",
+          "bytes": 468
+        }
+      ]
+    },
+    {
+      "name": "nala_arriving_exhausted",
+      "state": "exhausted",
+      "stage": "arriving",
+      "width": 128,
+      "height": 128,
+      "sprite": {
+        "width": 52,
+        "height": 19,
+        "origin": {
+          "x": 38,
+          "y": 79
+        }
+      },
+      "frames": [
+        {
+          "file": "nala_arriving_exhausted.png",
+          "bytes": 425
+        }
+      ]
+    },
+    {
+      "name": "nala_growing_awake",
+      "state": "awake",
+      "stage": "growing",
+      "width": 128,
+      "height": 128,
+      "sprite": {
+        "width": 47,
+        "height": 41,
+        "origin": {
+          "x": 40,
+          "y": 57
+        }
+      },
+      "frames": [
+        {
+          "file": "nala_growing_awake.png",
+          "bytes": 528
+        },
+        {
+          "file": "nala_growing_awake_1.png",
+          "bytes": 528
+        }
+      ]
+    },
+    {
+      "name": "nala_growing_hungry",
+      "state": "hungry",
+      "stage": "growing",
+      "width": 128,
+      "height": 128,
+      "sprite": {
+        "width": 56,
+        "height": 38,
+        "origin": {
+          "x": 36,
+          "y": 60
+        }
+      },
+      "frames": [
+        {
+          "file": "nala_growing_hungry.png",
+          "bytes": 539
+        }
+      ]
+    },
+    {
+      "name": "nala_growing_tired",
+      "state": "tired",
+      "stage": "growing",
+      "width": 128,
+      "height": 128,
+      "sprite": {
+        "width": 43,
+        "height": 42,
+        "origin": {
+          "x": 42,
+          "y": 56
+        }
+      },
+      "frames": [
+        {
+          "file": "nala_growing_tired.png",
+          "bytes": 476
+        }
+      ]
+    },
+    {
+      "name": "nala_growing_playful",
+      "state": "playful",
+      "stage": "growing",
+      "width": 128,
+      "height": 128,
+      "sprite": {
+        "width": 55,
+        "height": 33,
+        "origin": {
+          "x": 36,
+          "y": 65
+        }
+      },
+      "frames": [
+        {
+          "file": "nala_growing_playful.png",
+          "bytes": 521
+        },
+        {
+          "file": "nala_growing_playful_1.png",
+          "bytes": 519
+        }
+      ]
+    },
+    {
+      "name": "nala_growing_resting",
+      "state": "resting",
+      "stage": "growing",
+      "width": 128,
+      "height": 128,
+      "sprite": {
+        "width": 52,
+        "height": 28,
+        "origin": {
+          "x": 38,
+          "y": 70
+        }
+      },
+      "frames": [
+        {
+          "file": "nala_growing_resting.png",
+          "bytes": 490
+        }
+      ]
+    },
+    {
+      "name": "nala_growing_exhausted",
+      "state": "exhausted",
+      "stage": "growing",
+      "width": 128,
+      "height": 128,
+      "sprite": {
+        "width": 57,
+        "height": 19,
+        "origin": {
+          "x": 35,
+          "y": 79
+        }
+      },
+      "frames": [
+        {
+          "file": "nala_growing_exhausted.png",
+          "bytes": 426
+        }
+      ]
+    },
+    {
+      "name": "memorial",
+      "state": "memorial",
+      "stage": null,
+      "width": 128,
+      "height": 128,
+      "sprite": {
+        "width": 64,
+        "height": 64,
+        "origin": {
+          "x": 32,
+          "y": 32
+        }
+      },
+      "frames": [
+        {
+          "file": "memorial.png",
+          "bytes": 436
+        }
+      ]
+    }
+  ]
+}

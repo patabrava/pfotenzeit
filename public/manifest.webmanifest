@@ -1,0 +1,26 @@
+{
+  "name": "Pfotenzeit",
+  "short_name": "Pfotenzeit",
+  "description": "Ein ruhiges Hundeschulspiel für dein Smartphone.",
+  "lang": "de",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F4F0E8",
+  "theme_color": "#F4F0E8",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "./apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

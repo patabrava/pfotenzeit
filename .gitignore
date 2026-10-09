@@ -1,0 +1,11 @@
+node_modules/
+dist/
+dist-ssr/
+.DS_Store
+*.local
+pfotenzeit-handoff.zip
+playwright-report/
+test-results/
+blob-report/
+.vite/
+coverage/

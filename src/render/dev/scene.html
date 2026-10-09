@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#F4F0E8" />
+    <title>Pfotenzeit – Renderer dev scene</title>
+    <style>
+      html, body { margin: 0; height: 100%; background: #F4F0E8; }
+      #root { position: fixed; inset: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module">
+      import { mountDevScene } from '../devScene';
+      const params = new URLSearchParams(location.search);
+      const api = mountDevScene(document.getElementById('root'), { baseUrl: '/', controls: params.get('controls') !== '0' });
+      window.__pfotenzeitDev = api;
+    </script>
+  </body>
+</html>
