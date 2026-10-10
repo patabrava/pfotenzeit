@@ -1,0 +1,3 @@
+390x844 yard: spawn 21.9% (margin 11.1%, az 32°) drawCalls=21 | tap pick={"kind":"actor","actor":"handler","point":{"x":0.2,"z":2.2}} moved=true arrived=false framesWhileMoving=1 prompt=gate gate 10.9% (margin 20.8%, az 32°) | still held=false frames/s=3 | far 1.9% (margin 3.1%, az 32°) handlerIn=true dogIn=true → FAIL
+844x390 yard: spawn 21.9% (margin 11.1%, az 32°) drawCalls=23 | tap pick={"kind":"actor","actor":"handler","point":{"x":0.1972787847664288,"z":2.3836727085985725}} moved=true arrived=false framesWhileMoving=1 prompt=gate gate 16.2% (margin 36.8%, az 32°) | still held=false frames/s=3 | far 8.7% (margin 3.2%, az 32°) handlerIn=true dogIn=true → FAIL
+screenshots, results.json and yard.json in ./verification/renderer-yard

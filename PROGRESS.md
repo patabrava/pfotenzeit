@@ -137,3 +137,12 @@ Browser captures at 390×844 and 1440×900 show the native player model and visi
 ### Playable woman named Ines — 2026-10-10
 
 Supersedes D-045's male prototype choice at the user's request. Ines now uses the integrated female model as a separate player instance; German hints name her. Build/typecheck, two vendor walk/hold/gesture tests, and four yard renderer tests pass. Mobile and desktop browser checks pass with Ines's name/female model, keyboard movement, stride, framing, separate NPCs and still-hold; zero page errors. Evidence: `verification/ines-yard/`. Native test quaternion comparisons normalize the imported float quaternions before measuring angular drift. Impeccable detector reports no findings.
+
+
+## Public repository and VPS deployment — 2026-10-10
+
+Created public GitHub repository https://github.com/patabrava/pfotenzeit and pushed the existing baseline plus implementation/art/verification and deployment commits to main. Deployed an isolated Nginx container at https://pfotenzeit.187.124.16.6.sslip.io/ using the existing VPS Traefik HTTPS proxy and a valid Let's Encrypt certificate. Compose limits the container to 128 MiB and 0.5 CPU; no backend or server database was introduced.
+
+Validation run for this deployment: 300 tests in 29 files passed, production typecheck/build passed, all eight model asset checks passed, and 18 Playwright tests across mobile-360, mobile-390 and desktop passed. The VPS Docker build also passed. The live app returned HTTP 200 in Chrome at 390×844 with no page errors; health, service worker, Vite manifest, asset manifest and puppy GLB endpoints returned 200. Chrome displayed the yard and navigation. The container health check passed.
+
+Deployment files: `Dockerfile`, `.dockerignore`, `deploy/compose.yaml`, `deploy/nginx.conf` and `deploy/README.md`. Server path: `/opt/pfotenzeit`; deployed runtime image: `pfotenzeit:0d0c7ae`. The server contains the build inputs rather than a full Git checkout; for updates, upload those inputs or clone the public repository and follow the deployment README. Physical-phone performance and professional art/training review remain as previously documented.

@@ -39,7 +39,7 @@ const manifestIndex = args.indexOf('--manifest');
 const manifestParam = manifestIndex >= 0 ? `&manifest=${encodeURIComponent(args[manifestIndex + 1])}` : '';
 mkdirSync(outDir, { recursive: true });
 
-const VIEWPORTS = [
+const VIEWPORTS = args.includes('--yard-only') ? [] : [
   [360, 640],
   [390, 844],
   [430, 932],
@@ -228,11 +228,38 @@ for (const [width, height] of [[390, 844], [844, 390]]) {
 
   // Tap inside the gate zone: pick → zone → the handler walks there, the dog follows, the camera follows both.
   const before = await handlerPos();
-  // A full-height player makes the distant gate fall outside the initial follow
-  // frame. Walk onto visible ground first, then tap the gate as the camera follows.
-  const approach = await page.evaluate(() => window.__pfotenzeitYard.screenPoint({ x: 0.2, z: 1.9 }));
-  await page.mouse.click(approach.x, approach.y);
-  await sleep(1000);
+  // Full-height actors can occlude a ground tap or put the gate outside the
+  // initial follow frame. Approach it through visible, unoccluded ground taps.
+  for (let hop = 0; hop < 6; hop++) {
+    const approach = await page.evaluate(() => {
+      const api = window.__pfotenzeitYard;
+      const goal = { x: 0.2, z: 2.6 };
+      const screen = api.screenPoint(goal);
+      const hit = api.renderer.pick(screen.x, screen.y);
+      if (hit?.kind === 'ground' || hit?.kind === 'zone') return null;
+      const h = api.sim.state.handler;
+      let best = null;
+      let score = Math.hypot(h.x - goal.x, h.z - goal.z) - 0.1;
+      for (let x = -1; x <= 1.4; x += 0.2) for (let z = 1.4; z <= 2.6; z += 0.2) {
+        const point = { x, z };
+        const distance = Math.hypot(x - goal.x, z - goal.z);
+        if (distance >= score) continue;
+        const s = api.screenPoint(point);
+        const pick = api.renderer.pick(s.x, s.y);
+        if (pick?.kind !== 'ground' && pick?.kind !== 'zone') continue;
+        score = distance;
+        best = { screen: s, point };
+      }
+      return best;
+    });
+    if (!approach) break;
+    await page.mouse.click(approach.screen.x, approach.screen.y);
+    await page.waitForFunction((p) => {
+      const h = window.__pfotenzeitYard.sim.state.handler;
+      return Math.hypot(h.x - p.x, h.z - p.z) < 0.05;
+    }, approach.point, { timeout: 15000 });
+    await sleep(400);
+  }
   const target = await page.evaluate(() => window.__pfotenzeitYard.screenPoint({ x: 0.2, z: 2.6 }));
   const pick = await page.evaluate((t) => window.__pfotenzeitYard.renderer.pick(t.x, t.y), target);
   await page.mouse.click(target.x, target.y);

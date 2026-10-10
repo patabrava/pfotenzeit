@@ -3,6 +3,9 @@
 Mobile-first dog-school prototype (German game text). Plain Three.js + TypeScript + Vite, DOM UI, IndexedDB saves, no backend.
 Design package: `docs/pfotenzeit/` (start at `00_START_HERE_CLAUDE.md`). Decisions: `docs/DECISIONS.md`. Progress and evidence: `PROGRESS.md`. Asset provenance: `docs/ASSET_REPORT.md`.
 
+Live app: https://pfotenzeit.187.124.16.6.sslip.io/ — hosted on the VPS with HTTPS.
+Public repository: https://github.com/patabrava/pfotenzeit. Deployment configuration and update instructions: `deploy/README.md`.
+
 ## Run
 
 Requires Node ≥ 22.12 (developed with Node 26, npm 11). Google Chrome is used for the browser smoke.

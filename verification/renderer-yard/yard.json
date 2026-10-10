@@ -1,0 +1,156 @@
+[
+  {
+    "viewport": "390x844",
+    "errors": [],
+    "spawn": {
+      "framing": {
+        "view": "yard",
+        "heightShare": 0.21907322161779355,
+        "widthShare": 0.17367925535060402,
+        "minMargin": 0.11085281969870148,
+        "centreY": -0.5592211389848035,
+        "centreX": 0.00031941428598024346,
+        "azimuthDeg": 32,
+        "noseOffsetDeg": 58.565051177078
+      },
+      "handlerInFrame": true,
+      "metrics": {
+        "drawCalls": 21,
+        "triangles": 166847,
+        "fpsEstimate": 7,
+        "dpr": 2,
+        "textureBytesEstimate": 27918992,
+        "assetTiers": {
+          "human_mira": "glb",
+          "human_alex": "glb",
+          "dog_nala": "glb",
+          "dog_bruno": "glb",
+          "environment.school": "glb",
+          "props.care": "glb",
+          "props.upgrades": "glb"
+        }
+      }
+    },
+    "tap": {
+      "pick": {
+        "kind": "actor",
+        "actor": "handler",
+        "point": {
+          "x": 0.2,
+          "z": 2.2
+        }
+      },
+      "moved": true,
+      "arrived": false,
+      "framesWhileMoving": 1,
+      "framing": {
+        "view": "yard",
+        "heightShare": 0.10912598633531785,
+        "widthShare": 0.15626744634701575,
+        "minMargin": 0.20811260299968437,
+        "centreY": 0.0768459714599344,
+        "centreX": 0.42750734765361553,
+        "azimuthDeg": 32,
+        "noseOffsetDeg": 179.76437105379821
+      },
+      "handlerInFrame": true,
+      "prompt": "gate"
+    },
+    "still": {
+      "held": false,
+      "framesPerSecond": 3
+    },
+    "far": {
+      "framing": {
+        "view": "yard",
+        "heightShare": 0.018669898078469364,
+        "widthShare": 0.07299601613079598,
+        "minMargin": 0.03142097794680543,
+        "centreY": -0.013484492630668135,
+        "centreX": 0.8641620279755932,
+        "azimuthDeg": 32,
+        "noseOffsetDeg": 24.648600966351758
+      },
+      "handlerInFrame": true,
+      "dogInFrame": true
+    },
+    "ok": false
+  },
+  {
+    "viewport": "844x390",
+    "errors": [],
+    "spawn": {
+      "framing": {
+        "view": "yard",
+        "heightShare": 0.21907447525287396,
+        "widthShare": 0.03708454696825872,
+        "minMargin": 0.11085281969870148,
+        "centreY": -0.5592198853497231,
+        "centreX": 0.00006814172320775483,
+        "azimuthDeg": 32,
+        "noseOffsetDeg": 58.565051177078
+      },
+      "handlerInFrame": true,
+      "metrics": {
+        "drawCalls": 23,
+        "triangles": 174339,
+        "fpsEstimate": 3,
+        "dpr": 2,
+        "textureBytesEstimate": 27918992,
+        "assetTiers": {
+          "human_mira": "glb",
+          "human_alex": "glb",
+          "dog_nala": "glb",
+          "dog_bruno": "glb",
+          "environment.school": "glb",
+          "props.care": "glb",
+          "props.upgrades": "glb"
+        }
+      }
+    },
+    "tap": {
+      "pick": {
+        "kind": "actor",
+        "actor": "handler",
+        "point": {
+          "x": 0.1972787847664288,
+          "z": 2.3836727085985725
+        }
+      },
+      "moved": true,
+      "arrived": false,
+      "framesWhileMoving": 1,
+      "framing": {
+        "view": "yard",
+        "heightShare": 0.1623299744919657,
+        "widthShare": 0.05369172769748601,
+        "minMargin": 0.36843387484070145,
+        "centreY": 0.10080227582663133,
+        "centreX": 0.1179059122734899,
+        "azimuthDeg": 32,
+        "noseOffsetDeg": 42.66827151025528
+      },
+      "handlerInFrame": true,
+      "prompt": "gate"
+    },
+    "still": {
+      "held": false,
+      "framesPerSecond": 3
+    },
+    "far": {
+      "framing": {
+        "view": "yard",
+        "heightShare": 0.08727121949491876,
+        "widthShare": 0.07260461939681345,
+        "minMargin": 0.03229296516416219,
+        "centreY": -0.06334711621438036,
+        "centreX": 0.8628094502748622,
+        "azimuthDeg": 32,
+        "noseOffsetDeg": 24.35994109851845
+      },
+      "handlerInFrame": true,
+      "dogInFrame": true
+    },
+    "ok": false
+  }
+]
