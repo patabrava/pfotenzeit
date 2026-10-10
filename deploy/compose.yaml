@@ -1,0 +1,22 @@
+name: pfotenzeit
+services:
+  web:
+    image: pfotenzeit:${RELEASE:-latest}
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    mem_limit: 128m
+    cpus: 0.5
+    labels:
+      traefik.enable: "true"
+      traefik.http.routers.pfotenzeit.rule: "Host(`${PFOTENZEIT_DOMAIN:-pfotenzeit.187.124.16.6.sslip.io}`)"
+      traefik.http.routers.pfotenzeit.entrypoints: websecure
+      traefik.http.routers.pfotenzeit.tls: "true"
+      traefik.http.routers.pfotenzeit.tls.certresolver: letsencrypt
+      traefik.http.services.pfotenzeit.loadbalancer.server.port: "80"
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"
