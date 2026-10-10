@@ -1,0 +1,45 @@
+
+> pfotenzeit@0.1.0 test:e2e
+> playwright test --workers=1
+
+
+Running 30 tests using 1 worker
+
+(node:38419) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [mobile-390] › tests/e2e/mobile-movement.spec.ts:12:3 › touch arrows move and stop at 360×640 (7.8s)
+  ✓   2 [mobile-390] › tests/e2e/mobile-movement.spec.ts:12:3 › touch arrows move and stop at 390×844 (6.4s)
+  ✓   3 [mobile-390] › tests/e2e/mobile-movement.spec.ts:12:3 › touch arrows move and stop at 430×932 (7.8s)
+  ✓   4 [mobile-390] › tests/e2e/mobile-movement.spec.ts:12:3 › touch arrows move and stop at 844×390 (9.0s)
+  ✓   5 [mobile-390] › tests/e2e/smoke.spec.ts:38:1 › standard start, profile, care, L01 to care closure, reflection, mark, reload (34.7s)
+  ✓   6 [mobile-390] › tests/e2e/smoke.spec.ts:135:1 › challenge onboarding creates a separate run and standard stays untouched (9.6s)
+  ✓   7 [mobile-390] › tests/e2e/smoke.spec.ts:153:1 › WebGL unavailable still leaves profile and lesson texts usable (15.2s)
+  ✓   8 [mobile-390] › tests/e2e/smoke.spec.ts:185:1 › second tab is told the game is open elsewhere (5.9s)
+  ✓   9 [mobile-390] › tests/e2e/smoke.spec.ts:197:1 › installed worker serves the integrated dog model and its CC BY puppy provenance (5.0s)
+  ✓  10 [mobile-390] › tests/e2e/smoke.spec.ts:230:1 › installed worker serves both integrated CC0 human replacements (4.2s)
+(node:39488) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  11 [mobile-360] › tests/e2e/mobile-movement.spec.ts:12:3 › touch arrows move and stop at 360×640 (12.5s)
+  ✓  12 [mobile-360] › tests/e2e/mobile-movement.spec.ts:12:3 › touch arrows move and stop at 390×844 (6.7s)
+  ✓  13 [mobile-360] › tests/e2e/mobile-movement.spec.ts:12:3 › touch arrows move and stop at 430×932 (7.8s)
+  ✓  14 [mobile-360] › tests/e2e/mobile-movement.spec.ts:12:3 › touch arrows move and stop at 844×390 (8.1s)
+  ✓  15 [mobile-360] › tests/e2e/smoke.spec.ts:38:1 › standard start, profile, care, L01 to care closure, reflection, mark, reload (27.9s)
+  ✓  16 [mobile-360] › tests/e2e/smoke.spec.ts:135:1 › challenge onboarding creates a separate run and standard stays untouched (2.8s)
+  ✓  17 [mobile-360] › tests/e2e/smoke.spec.ts:153:1 › WebGL unavailable still leaves profile and lesson texts usable (8.4s)
+  ✓  18 [mobile-360] › tests/e2e/smoke.spec.ts:185:1 › second tab is told the game is open elsewhere (1.9s)
+  ✓  19 [mobile-360] › tests/e2e/smoke.spec.ts:197:1 › installed worker serves the integrated dog model and its CC BY puppy provenance (1.9s)
+  ✓  20 [mobile-360] › tests/e2e/smoke.spec.ts:230:1 › installed worker serves both integrated CC0 human replacements (1.9s)
+(node:39975) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  21 [desktop] › tests/e2e/mobile-movement.spec.ts:12:3 › touch arrows move and stop at 360×640 (4.3s)
+  ✓  22 [desktop] › tests/e2e/mobile-movement.spec.ts:12:3 › touch arrows move and stop at 390×844 (4.1s)
+  ✓  23 [desktop] › tests/e2e/mobile-movement.spec.ts:12:3 › touch arrows move and stop at 430×932 (3.8s)
+  ✓  24 [desktop] › tests/e2e/mobile-movement.spec.ts:12:3 › touch arrows move and stop at 844×390 (3.5s)
+  ✓  25 [desktop] › tests/e2e/smoke.spec.ts:38:1 › standard start, profile, care, L01 to care closure, reflection, mark, reload (21.3s)
+  ✓  26 [desktop] › tests/e2e/smoke.spec.ts:135:1 › challenge onboarding creates a separate run and standard stays untouched (2.9s)
+  ✓  27 [desktop] › tests/e2e/smoke.spec.ts:153:1 › WebGL unavailable still leaves profile and lesson texts usable (10.1s)
+  ✓  28 [desktop] › tests/e2e/smoke.spec.ts:185:1 › second tab is told the game is open elsewhere (1.2s)
+  ✓  29 [desktop] › tests/e2e/smoke.spec.ts:197:1 › installed worker serves the integrated dog model and its CC BY puppy provenance (2.0s)
+  ✓  30 [desktop] › tests/e2e/smoke.spec.ts:230:1 › installed worker serves both integrated CC0 human replacements (2.2s)
+
+  30 passed (4.2m)

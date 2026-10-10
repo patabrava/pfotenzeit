@@ -1,0 +1,176 @@
+[
+  {
+    "name": "all-animation-cases-arriving",
+    "count": 40,
+    "pass": true,
+    "errors": []
+  },
+  {
+    "name": "all-animation-cases-growing",
+    "count": 40,
+    "pass": true,
+    "errors": []
+  },
+  {
+    "name": "390-recall-none",
+    "pass": true,
+    "response": "comes",
+    "repeated": "comes"
+  },
+  {
+    "name": "390-recall-toy",
+    "pass": true,
+    "response": "comes",
+    "repeated": "turns_away"
+  },
+  {
+    "name": "390-recall-other_dog",
+    "pass": true,
+    "response": "comes",
+    "repeated": "turns_away"
+  },
+  {
+    "name": "390-find_spot-none",
+    "pass": true,
+    "response": "settled",
+    "repeated": "settled"
+  },
+  {
+    "name": "390-find_spot-toy",
+    "pass": true,
+    "response": "settled",
+    "repeated": "still_tense"
+  },
+  {
+    "name": "390-find_spot-other_dog",
+    "pass": true,
+    "response": "settled",
+    "repeated": "still_tense"
+  },
+  {
+    "name": "390-look_at-none",
+    "pass": true,
+    "response": "glance",
+    "repeated": "glance"
+  },
+  {
+    "name": "390-look_at-toy",
+    "pass": true,
+    "response": "glance",
+    "repeated": "glance"
+  },
+  {
+    "name": "390-look_at-other_dog",
+    "pass": true,
+    "response": "glance",
+    "repeated": "glance"
+  },
+  {
+    "name": "360-recall-none",
+    "pass": true,
+    "response": "comes",
+    "repeated": "comes"
+  },
+  {
+    "name": "360-recall-toy",
+    "pass": true,
+    "response": "comes",
+    "repeated": "turns_away"
+  },
+  {
+    "name": "360-recall-other_dog",
+    "pass": true,
+    "response": "comes",
+    "repeated": "turns_away"
+  },
+  {
+    "name": "360-find_spot-none",
+    "pass": true,
+    "response": "settled",
+    "repeated": "settled"
+  },
+  {
+    "name": "360-find_spot-toy",
+    "pass": true,
+    "response": "settled",
+    "repeated": "still_tense"
+  },
+  {
+    "name": "360-find_spot-other_dog",
+    "pass": true,
+    "response": "settled",
+    "repeated": "still_tense"
+  },
+  {
+    "name": "360-look_at-none",
+    "pass": true,
+    "response": "glance",
+    "repeated": "glance"
+  },
+  {
+    "name": "360-look_at-toy",
+    "pass": true,
+    "response": "glance",
+    "repeated": "glance"
+  },
+  {
+    "name": "360-look_at-other_dog",
+    "pass": true,
+    "response": "glance",
+    "repeated": "glance"
+  },
+  {
+    "name": "1440-recall-none",
+    "pass": true,
+    "response": "comes",
+    "repeated": "comes"
+  },
+  {
+    "name": "1440-recall-toy",
+    "pass": true,
+    "response": "comes",
+    "repeated": "turns_away"
+  },
+  {
+    "name": "1440-recall-other_dog",
+    "pass": true,
+    "response": "comes",
+    "repeated": "turns_away"
+  },
+  {
+    "name": "1440-find_spot-none",
+    "pass": true,
+    "response": "settled",
+    "repeated": "settled"
+  },
+  {
+    "name": "1440-find_spot-toy",
+    "pass": true,
+    "response": "settled",
+    "repeated": "still_tense"
+  },
+  {
+    "name": "1440-find_spot-other_dog",
+    "pass": true,
+    "response": "settled",
+    "repeated": "still_tense"
+  },
+  {
+    "name": "1440-look_at-none",
+    "pass": true,
+    "response": "glance",
+    "repeated": "glance"
+  },
+  {
+    "name": "1440-look_at-toy",
+    "pass": true,
+    "response": "glance",
+    "repeated": "glance"
+  },
+  {
+    "name": "1440-look_at-other_dog",
+    "pass": true,
+    "response": "glance",
+    "repeated": "glance"
+  }
+]

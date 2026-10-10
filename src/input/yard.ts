@@ -4,6 +4,8 @@
  * - Tap (pointer down + up within slop, ≤ 600 ms, no scroll) → renderer.pick(clientX, clientY) → callbacks.
  *   A drag over the strip is not a move. Pointer events are used for the gesture; no click synthesis
  *   is needed because the strip is not a button (assistive tech reaches every action through the HUD).
+ * - Direction buttons use pointer capture to move while held, including two-finger diagonals.
+ *   Release, cancellation, blur, hidden document, or disabling the pad clears held input.
  * - WASD / arrows → moveDir with a unit vector while held (key repeat ignored); release → moveDir of the
  *   remaining keys or stop. Escape → stop. Enter / Space → activate the prompt button, but only when
  *   focus is not already on an interactive element (then the element handles the key itself).
@@ -27,6 +29,7 @@ export interface YardInputHandlers {
 }
 
 export interface YardInputHandle {
+  reset(): void;
   destroy(): void;
 }
 
@@ -55,14 +58,20 @@ function isInteractive(target: EventTarget | null): boolean {
   return target.closest('button, a[href], input, select, textarea, [role="button"], [role="switch"], [role="tab"], [tabindex]:not([tabindex="-1"])') !== null;
 }
 
-export function bindYardInput(strip: HTMLElement, handlers: YardInputHandlers): YardInputHandle {
+export function bindYardInput(strip: HTMLElement, handlers: YardInputHandlers, controls?: HTMLElement): YardInputHandle {
   let pointer: { id: number; x: number; y: number; t: number; moved: boolean } | null = null;
   const held = new Set<string>();
+  const touches = new Map<number, string>();
+  const controlKeys = new Map<string, string>();
 
   function sendDirection(): void {
     let dx = 0;
     let dz = 0;
-    for (const key of held) {
+    const directions = new Set([...held, ...touches.values(), ...controlKeys.values()]);
+    for (const button of controls?.querySelectorAll<HTMLElement>('[data-direction]') ?? []) {
+      button.classList.toggle('is-pressed', directions.has(button.dataset.direction!));
+    }
+    for (const key of directions) {
       const vector = KEY_VECTORS[key];
       if (vector) {
         dx += vector.dx;
@@ -75,6 +84,36 @@ export function bindYardInput(strip: HTMLElement, handlers: YardInputHandlers): 
     }
     const length = Math.hypot(dx, dz) || 1;
     handlers.onMoveDir(dx / length, dz / length);
+  }
+
+  function onControlDown(event: PointerEvent): void {
+    if (!handlers.isEnabled() || hasActiveTrap() || event.button !== 0) return;
+    const button = (event.target as Element).closest<HTMLButtonElement>('[data-direction]');
+    const key = button?.dataset.direction;
+    if (!button || !key || !(key in KEY_VECTORS)) return;
+    event.preventDefault();
+    event.stopPropagation();
+    button.setPointerCapture(event.pointerId);
+    touches.set(event.pointerId, key);
+    sendDirection();
+  }
+  function onControlUp(event: PointerEvent): void {
+    if (!touches.has(event.pointerId)) return;
+    event.stopPropagation();
+    touches.delete(event.pointerId);
+    sendDirection();
+  }
+  function reset(): void {
+    pointer = null;
+    const moving = held.size > 0 || touches.size > 0 || controlKeys.size > 0;
+    held.clear();
+    touches.clear();
+    controlKeys.clear();
+    for (const button of controls?.querySelectorAll('.is-pressed') ?? []) button.classList.remove('is-pressed');
+    if (moving) handlers.onStop();
+  }
+  function onVisibility(): void {
+    if (document.hidden) reset();
   }
 
   function onPointerDown(event: PointerEvent): void {
@@ -101,6 +140,15 @@ export function bindYardInput(strip: HTMLElement, handlers: YardInputHandlers): 
     if (!handlers.isEnabled() || hasActiveTrap() || isTypingTarget(event.target)) return;
     if (event.altKey || event.ctrlKey || event.metaKey) return;
     const key = event.key.length === 1 ? event.key.toLowerCase() : event.key.toLowerCase();
+    const control = event.target instanceof Element ? event.target.closest<HTMLElement>('[data-direction]') : null;
+    if ((key === 'enter' || key === ' ') && control && controls?.contains(control)) {
+      event.preventDefault();
+      if (!event.repeat) {
+        controlKeys.set(key, control.dataset.direction!);
+        sendDirection();
+      }
+      return;
+    }
     if (key in KEY_VECTORS) {
       event.preventDefault();
       if (event.repeat || held.has(key)) return;
@@ -109,7 +157,7 @@ export function bindYardInput(strip: HTMLElement, handlers: YardInputHandlers): 
       return;
     }
     if (key === 'escape') {
-      if (held.size > 0) held.clear();
+      reset();
       handlers.onStop();
       return;
     }
@@ -120,16 +168,23 @@ export function bindYardInput(strip: HTMLElement, handlers: YardInputHandlers): 
   }
   function onKeyUp(event: KeyboardEvent): void {
     const key = event.key.toLowerCase();
+    if (controlKeys.delete(key)) {
+      sendDirection();
+      return;
+    }
     if (!held.has(key)) return;
     held.delete(key);
     sendDirection();
   }
   function onBlur(): void {
-    if (held.size === 0) return;
-    held.clear();
-    handlers.onStop();
+    reset();
   }
 
+  controls?.addEventListener('pointerdown', onControlDown);
+  controls?.addEventListener('pointerup', onControlUp);
+  controls?.addEventListener('pointercancel', onControlUp);
+  controls?.addEventListener('lostpointercapture', onControlUp);
+  document.addEventListener('visibilitychange', onVisibility);
   strip.addEventListener('pointerdown', onPointerDown);
   strip.addEventListener('pointermove', onPointerMove);
   strip.addEventListener('pointerup', onPointerUp);
@@ -139,7 +194,14 @@ export function bindYardInput(strip: HTMLElement, handlers: YardInputHandlers): 
   window.addEventListener('blur', onBlur);
 
   return {
+    reset,
     destroy() {
+      reset();
+      controls?.removeEventListener('pointerdown', onControlDown);
+      controls?.removeEventListener('pointerup', onControlUp);
+      controls?.removeEventListener('pointercancel', onControlUp);
+      controls?.removeEventListener('lostpointercapture', onControlUp);
+      document.removeEventListener('visibilitychange', onVisibility);
       strip.removeEventListener('pointerdown', onPointerDown);
       strip.removeEventListener('pointermove', onPointerMove);
       strip.removeEventListener('pointerup', onPointerUp);

@@ -8,11 +8,13 @@
  *
  *   node src/render/dev/verify-browser.mjs            # screenshots → $TMPDIR/pfotenzeit-browser
  *   node src/render/dev/verify-browser.mjs --out dir  # custom output directory
+ *   node src/render/dev/verify-browser.mjs --yard-only --out dir  # targeted yard rerun
  *   node src/render/dev/verify-browser.mjs --manifest candidates   # staged textured candidates (D-036)
  *   node src/render/dev/verify-browser.mjs --review a=<spec> b=<spec> --out <dir>   # hero review (WP-M)
  *   The default run also does the D-041 yard pass (scene.html?yard=1 at 390×844 and 844×390): screenshots at
  *   spawn, after a tap-to-move to the gate and far apart; asserts share ≥ 12 % at spawn, the tap moves the
- *   handler and frames stop ~4 s after the stop. Written to yard.json next to results.json.
+ *   handler, arrives inside the gate zone, and frames stop after still-hold and its final queued frame.
+ *   Written to yard.json next to results.json.
  *     one contact sheet per camera × light (review_<cam>_<light>.png, turntable frames at 0/90/180/270 for
  *     closeup_portrait) plus review.json with triangles, draw calls, texture bytes, share, margin per subject.
  *
@@ -48,7 +50,7 @@ const VIEWPORTS = args.includes('--yard-only') ? [] : [
 ];
 const VIEWS = ['school', 'lesson', 'closeup'];
 
-const server = await createServer({ root, server: { port: 0, host: '127.0.0.1', watch: null }, logLevel: 'error' });
+const server = await createServer({ root, server: { port: 0, host: '127.0.0.1', watch: null, hmr: false }, logLevel: 'error' });
 await server.listen();
 const base = server.resolvedUrls?.local[0] ?? `http://127.0.0.1:${server.config.server.port}/`;
 const url = `${base}src/render/dev/scene.html?controls=0${manifestParam}`;
@@ -121,7 +123,7 @@ for (const [width, height] of VIEWPORTS) {
     if (m.type() === 'error') errors.push(m.text());
   });
   await page.goto(url);
-  await page.waitForFunction(() => window.__pfotenzeitDev && window.__pfotenzeitDev.renderer.getStatus() === 'ready', null, { timeout: 30000 });
+  await page.waitForFunction(() => window.__pfotenzeitDev && window.__pfotenzeitDev.renderer.getStatus() === 'ready', null, { timeout: 60000 });
   await sleep(400);
   const entry = { viewport: `${width}x${height}`, views: {}, errors };
   for (const view of VIEWS) {
@@ -166,17 +168,30 @@ for (const [width, height] of VIEWPORTS) {
     api.renderer.invalidate();
     await wait(1200);
     const inactiveAfter = api.frames();
+    const waitForFrame = async (before) => {
+      const end = performance.now() + 15000;
+      while (api.frames() <= before && performance.now() < end) await wait(200);
+    };
     api.renderer.setActive(true);
-    await wait(300);
+    await waitForFrame(inactiveAfter);
     const resumed = api.frames();
     api.set({ hold: true });
     await wait(800);
     const observationBefore = api.frames();
-    await wait(1000);
+    await waitForFrame(observationBefore);
     const observationAfter = api.frames();
     api.renderer.setReducedMotion(true);
     api.set({ hold: true });
-    await wait(800);
+    // Drain pose/camera transitions and pending frames before measuring held idle.
+    const settleEnd = performance.now() + 20000;
+    let previous = api.frames();
+    let quiet = 0;
+    while (quiet < 4 && performance.now() < settleEnd) {
+      await wait(500);
+      const current = api.frames();
+      quiet = current === previous ? quiet + 1 : 0;
+      previous = current;
+    }
     const holdBefore = api.frames();
     await wait(1000);
     const holdAfter = api.frames();
@@ -192,7 +207,7 @@ for (const [width, height] of VIEWPORTS) {
   // Lesson strip (D-032): the scene sized between header and dialog.
   const strip = await browser.newPage({ viewport: { width, height }, deviceScaleFactor: 2 });
   await strip.goto(stripUrl);
-  await strip.waitForFunction(() => window.__pfotenzeitDev && window.__pfotenzeitDev.renderer.getStatus() === 'ready', null, { timeout: 30000 });
+  await strip.waitForFunction(() => window.__pfotenzeitDev && window.__pfotenzeitDev.renderer.getStatus() === 'ready', null, { timeout: 60000 });
   await strip.evaluate(() => window.__pfotenzeitDev.set({ view: 'lesson' }));
   await sleep(900);
   await strip.screenshot({ path: join(outDir, `${width}x${height}_strip_lesson.png`) });
@@ -210,7 +225,7 @@ for (const [width, height] of [[390, 844], [844, 390]]) {
     if (m.type() === 'error') errors.push(m.text());
   });
   await page.goto(`${base}src/render/dev/scene.html?yard=1${manifestParam}`);
-  await page.waitForFunction(() => window.__pfotenzeitYard && window.__pfotenzeitYard.renderer.getStatus() === 'ready', null, { timeout: 30000 });
+  await page.waitForFunction(() => window.__pfotenzeitYard && window.__pfotenzeitYard.renderer.getStatus() === 'ready', null, { timeout: 60000 });
   await sleep(1200);
   const tag = `${width}x${height}`;
   const framing = () => page.evaluate(() => window.__pfotenzeitYard.renderer.debug.framingReport());
@@ -228,61 +243,63 @@ for (const [width, height] of [[390, 844], [844, 390]]) {
 
   // Tap inside the gate zone: pick → zone → the handler walks there, the dog follows, the camera follows both.
   const before = await handlerPos();
-  // Full-height actors can occlude a ground tap or put the gate outside the
-  // initial follow frame. Approach it through visible, unoccluded ground taps.
-  for (let hop = 0; hop < 6; hop++) {
-    const approach = await page.evaluate(() => {
+  // Find a visible ground point inside the gate disc, avoiding actor hit boxes.
+  // Approach through ground taps if the follow camera initially clips the gate.
+  let target = null;
+  for (let hop = 0; hop < 8; hop++) {
+    const choice = await page.evaluate(() => {
       const api = window.__pfotenzeitYard;
-      const goal = { x: 0.2, z: 2.6 };
-      const screen = api.screenPoint(goal);
-      const hit = api.renderer.pick(screen.x, screen.y);
-      if (hit?.kind === 'ground' || hit?.kind === 'zone') return null;
       const h = api.sim.state.handler;
-      let best = null;
-      let score = Math.hypot(h.x - goal.x, h.z - goal.z) - 0.1;
-      for (let x = -1; x <= 1.4; x += 0.2) for (let z = 1.4; z <= 2.6; z += 0.2) {
+      const candidates = [];
+      for (let x = -1.4; x <= 1.4; x += 0.2) for (let z = 1.4; z <= 3; z += 0.2) {
         const point = { x, z };
-        const distance = Math.hypot(x - goal.x, z - goal.z);
-        if (distance >= score) continue;
-        const s = api.screenPoint(point);
-        const pick = api.renderer.pick(s.x, s.y);
+        const screen = api.screenPoint(point);
+        const pick = api.renderer.pick(screen.x, screen.y);
         if (pick?.kind !== 'ground' && pick?.kind !== 'zone') continue;
-        score = distance;
-        best = { screen: s, point };
+        const gate = Math.hypot(x, z - 2.9) <= 0.72;
+        const distance = Math.hypot(h.x - x, h.z - z);
+        if (distance < 0.15) continue;
+        candidates.push({ point, screen, pick, gate, score: Math.hypot(x, z - 2.9) });
       }
-      return best;
+      candidates.sort((a, b) => Number(b.gate) - Number(a.gate) || a.score - b.score);
+      return candidates[0] ?? null;
     });
-    if (!approach) break;
-    await page.mouse.click(approach.screen.x, approach.screen.y);
+    if (!choice) throw new Error(`No unoccluded yard path to gate at ${tag}`);
+    if (choice.gate) { target = choice; break; }
+    await page.mouse.click(choice.screen.x, choice.screen.y);
     await page.waitForFunction((p) => {
       const h = window.__pfotenzeitYard.sim.state.handler;
-      return Math.hypot(h.x - p.x, h.z - p.z) < 0.05;
-    }, approach.point, { timeout: 15000 });
+      return Math.hypot(h.x - p.x, h.z - p.z) < 0.05 && h.speed === 0;
+    }, choice.point, { timeout: 30000 });
     await sleep(400);
   }
-  const target = await page.evaluate(() => window.__pfotenzeitYard.screenPoint({ x: 0.2, z: 2.6 }));
-  const pick = await page.evaluate((t) => window.__pfotenzeitYard.renderer.pick(t.x, t.y), target);
-  await page.mouse.click(target.x, target.y);
-  await sleep(500);
-  const moving = await handlerPos();
+  if (!target) throw new Error(`Gate remained occluded at ${tag}`);
+  const pick = target.pick;
   const framesMovingStart = await frames();
-  await sleep(500);
+  await page.mouse.click(target.screen.x, target.screen.y);
+  await page.waitForFunction((p) => {
+    const h = window.__pfotenzeitYard.sim.state.handler;
+    return Math.hypot(h.x - p.x, h.z - p.z) < 0.05 && h.speed === 0;
+  }, target.point, { timeout: 30000 });
+  const moving = await handlerPos();
   const framesMovingEnd = await frames();
-  await sleep(1500);
   await page.screenshot({ path: join(outDir, `${tag}_yard_gate.png`) });
   const after = await handlerPos();
   entry.tap = {
     pick,
     moved: Math.hypot(moving.x - before.x, moving.z - before.z) > 0.1,
-    arrived: Math.hypot(after.x - 0.2, after.z - 2.6) < 0.1,
+    arrived: Math.hypot(after.x - target.point.x, after.z - target.point.z) < 0.1,
     framesWhileMoving: framesMovingEnd - framesMovingStart,
     framing: await framing(),
     handlerInFrame: await inFrame(after.x, after.z),
     prompt: await page.evaluate(() => window.__pfotenzeitYard.renderer.debug.world()?.prompt?.zoneId ?? null),
   };
 
-  // Still: ~4 s after the stop the yard is held and no frames are requested.
-  await sleep(4500);
+  // Still: wait for simulated still-hold (SwiftShader can advance simulation slowly),
+  // then require a flat frame counter for one wall-clock second.
+  await page.waitForFunction(() => window.__pfotenzeitYard.renderer.debug.worldHeld(), null, { timeout: 45000 }).catch(() => {});
+  // Holding is set during a render; allow its queued final frame to drain.
+  await sleep(1500);
   const stillStart = await frames();
   await sleep(1000);
   const stillEnd = await frames();
@@ -305,8 +322,12 @@ for (const [width, height] of [[390, 844], [844, 390]]) {
     (entry.spawn.framing?.heightShare ?? 0) >= 0.12 &&
     entry.spawn.handlerInFrame &&
     entry.tap.moved &&
+    entry.tap.arrived &&
+    entry.tap.prompt === 'gate' &&
+    (entry.tap.pick?.kind === 'ground' || entry.tap.pick?.kind === 'zone') &&
     entry.tap.framesWhileMoving > 0 &&
     entry.tap.handlerInFrame &&
+    entry.still.held &&
     entry.still.framesPerSecond === 0 &&
     entry.far.handlerInFrame &&
     entry.far.dogInFrame;

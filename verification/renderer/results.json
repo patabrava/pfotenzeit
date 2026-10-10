@@ -5,7 +5,7 @@
       "school": {
         "drawCalls": 9,
         "triangles": 83362,
-        "fpsEstimate": 2,
+        "fpsEstimate": 1,
         "dpr": 2,
         "textureBytesEstimate": 16064840,
         "assetTiers": {
@@ -17,11 +17,11 @@
         },
         "framing": {
           "view": "school",
-          "heightShare": 0.12025307872992186,
-          "widthShare": 0.10460614849071902,
-          "minMargin": 0.24000000000000038,
-          "centreY": -0.3997469212700774,
-          "centreX": 0.32998419616575864,
+          "heightShare": 0.12051258460505407,
+          "widthShare": 0.1048151558505739,
+          "minMargin": 0.2400000000000001,
+          "centreY": -0.3994874153949457,
+          "centreX": 0.3299823234314351,
           "azimuthDeg": 32,
           "noseOffsetDeg": 12
         }
@@ -29,7 +29,7 @@
       "lesson": {
         "drawCalls": 8,
         "triangles": 83338,
-        "fpsEstimate": 8,
+        "fpsEstimate": 7,
         "dpr": 2,
         "textureBytesEstimate": 16064840,
         "assetTiers": {
@@ -41,19 +41,19 @@
         },
         "framing": {
           "view": "lesson",
-          "heightShare": 0.41507796683851894,
-          "widthShare": 0.8590233660247247,
-          "minMargin": 0.06999616540405595,
-          "centreY": -0.16000006583807821,
-          "centreX": -0.0009843031671633584,
-          "azimuthDeg": -24.759554623383245,
-          "noseOffsetDeg": 44.75955462338324
+          "heightShare": 0.4494914815866396,
+          "widthShare": 0.7663552311479076,
+          "minMargin": 0.08644711605005823,
+          "centreY": -0.1605085184133465,
+          "centreX": 0.06075053675197595,
+          "azimuthDeg": -17.68835167104796,
+          "noseOffsetDeg": 37.68835167104796
         }
       },
       "closeup": {
         "drawCalls": 8,
         "triangles": 83338,
-        "fpsEstimate": 8,
+        "fpsEstimate": 6,
         "dpr": 2,
         "textureBytesEstimate": 16064840,
         "assetTiers": {
@@ -65,30 +65,30 @@
         },
         "framing": {
           "view": "closeup",
-          "heightShare": 0.5997917511579804,
-          "widthShare": 0.732182507908373,
-          "minMargin": 0.10400824975917439,
-          "centreY": -0.0002082488420223627,
-          "centreX": 0.0598009925732782,
-          "azimuthDeg": -3.7521702130295083,
-          "noseOffsetDeg": 23.75217021302951
+          "heightShare": 0.59985918119899,
+          "widthShare": 0.7311432039426911,
+          "minMargin": 0.10425567919660667,
+          "centreY": -0.00014081880100752509,
+          "centreX": 0.06034543766409556,
+          "azimuthDeg": -3.742249093751413,
+          "noseOffsetDeg": 23.742249093751415
         }
       }
     },
     "errors": [],
     "timings": {
-      "decision": 2117,
+      "decision": 5354,
       "decisionReduced": 1,
-      "visitRewarded": 700,
-      "upgradeBought": 649,
-      "careMeal": 2972,
+      "visitRewarded": 1671,
+      "upgradeBought": 2503,
+      "careMeal": 5936,
       "careMealReduced": 0
     },
     "demand": {
-      "heldObservationFrames": 17,
-      "idleFramesPerHalfSecond": 7,
+      "heldObservationFrames": 1,
+      "idleFramesPerHalfSecond": 2,
       "inactiveFrames": 0,
-      "resumedFrames": 12,
+      "resumedFrames": 3,
       "heldFrames": 0
     },
     "demandOk": true,
@@ -96,7 +96,7 @@
       "metrics": {
         "drawCalls": 9,
         "triangles": 83362,
-        "fpsEstimate": 3,
+        "fpsEstimate": 1,
         "dpr": 2,
         "textureBytesEstimate": 16064840,
         "assetTiers": {
@@ -109,13 +109,13 @@
       },
       "framing": {
         "view": "lesson",
-        "heightShare": 0.4143223667884556,
-        "widthShare": 0.2407162479720671,
-        "minMargin": 0.1819472043430645,
-        "centreY": -0.2217832245254154,
-        "centreX": 0.0523659395212181,
-        "azimuthDeg": -24.262019227286462,
-        "noseOffsetDeg": 44.26201922728646
+        "heightShare": 0.4144354680558173,
+        "widthShare": 0.23827086915604356,
+        "minMargin": 0.18235900394081922,
+        "centreY": -0.2208465240625442,
+        "centreX": 0.05661943779456069,
+        "azimuthDeg": -24.00200694504565,
+        "noseOffsetDeg": 44.00200694504566
       },
       "size": "360x176"
     }
@@ -126,7 +126,7 @@
       "school": {
         "drawCalls": 9,
         "triangles": 83362,
-        "fpsEstimate": 3,
+        "fpsEstimate": 4,
         "dpr": 2,
         "textureBytesEstimate": 16064840,
         "assetTiers": {
@@ -138,11 +138,11 @@
         },
         "framing": {
           "view": "school",
-          "heightShare": 0.11713850492328456,
-          "widthShare": 0.12403979821671501,
+          "heightShare": 0.11704997017194205,
+          "widthShare": 0.12404284875718072,
           "minMargin": 0.24155400951370165,
-          "centreY": -0.3997534760493121,
-          "centreX": 0.3299812601415986,
+          "centreY": -0.3998420108006546,
+          "centreX": 0.3299782096011329,
           "azimuthDeg": 32,
           "noseOffsetDeg": 12
         }
@@ -150,7 +150,7 @@
       "lesson": {
         "drawCalls": 8,
         "triangles": 83338,
-        "fpsEstimate": 21,
+        "fpsEstimate": 4,
         "dpr": 2,
         "textureBytesEstimate": 16064840,
         "assetTiers": {
@@ -162,19 +162,19 @@
         },
         "framing": {
           "view": "lesson",
-          "heightShare": 0.4495984777643516,
-          "widthShare": 0.7723226143218176,
-          "minMargin": 0.08675497336930643,
-          "centreY": -0.16040152223564538,
-          "centreX": 0.05416743893956949,
-          "azimuthDeg": -9.70264543689093,
-          "noseOffsetDeg": 29.702645436890926
+          "heightShare": 0.4493888185752323,
+          "widthShare": 0.7487563289565382,
+          "minMargin": 0.09100756785847114,
+          "centreY": -0.1606111814247678,
+          "centreX": 0.06922853532651957,
+          "azimuthDeg": -9.759554623383236,
+          "noseOffsetDeg": 29.759554623383234
         }
       },
       "closeup": {
         "drawCalls": 8,
         "triangles": 83338,
-        "fpsEstimate": 12,
+        "fpsEstimate": 3,
         "dpr": 2,
         "textureBytesEstimate": 16064840,
         "assetTiers": {
@@ -186,30 +186,30 @@
         },
         "framing": {
           "view": "closeup",
-          "heightShare": 0.5998592881445901,
-          "widthShare": 0.7869546013100539,
-          "minMargin": 0.09916181657285023,
-          "centreY": -0.00014071185540237563,
-          "centreX": 0.014721765544245702,
-          "azimuthDeg": 2.22815187373328,
-          "noseOffsetDeg": 17.77184812626672
+          "heightShare": 0.5705246304857365,
+          "widthShare": 0.9339318486019161,
+          "minMargin": -0.005872979720888072,
+          "centreY": 0.00020496172860606787,
+          "centreX": -0.07781411083985995,
+          "azimuthDeg": -4.233751025679418,
+          "noseOffsetDeg": 24.233751025679418
         }
       }
     },
     "errors": [],
     "timings": {
-      "decision": 1832,
+      "decision": 5027,
       "decisionReduced": 1,
-      "visitRewarded": 649,
-      "upgradeBought": 660,
-      "careMeal": 3038,
+      "visitRewarded": 787,
+      "upgradeBought": 703,
+      "careMeal": 3875,
       "careMealReduced": 0
     },
     "demand": {
-      "heldObservationFrames": 13,
-      "idleFramesPerHalfSecond": 6,
+      "heldObservationFrames": 2,
+      "idleFramesPerHalfSecond": 3,
       "inactiveFrames": 0,
-      "resumedFrames": 9,
+      "resumedFrames": 4,
       "heldFrames": 0
     },
     "demandOk": true,
@@ -230,13 +230,13 @@
       },
       "framing": {
         "view": "lesson",
-        "heightShare": 0.4144474039101007,
-        "widthShare": 0.2882353675115438,
-        "minMargin": 0.18276146635340212,
-        "centreY": -0.22002966338309504,
-        "centreX": 0.07195507257225135,
-        "azimuthDeg": -23.80934464015882,
-        "noseOffsetDeg": 43.80934464015883
+        "heightShare": 0.4145003888334464,
+        "widthShare": 0.29026454614194475,
+        "minMargin": 0.18268246281581557,
+        "centreY": -0.22013468553492246,
+        "centreX": 0.06949008902120904,
+        "azimuthDeg": -23.84162000219088,
+        "noseOffsetDeg": 43.84162000219088
       },
       "size": "390x232"
     }
@@ -247,30 +247,6 @@
       "school": {
         "drawCalls": 9,
         "triangles": 83362,
-        "fpsEstimate": 4,
-        "dpr": 2,
-        "textureBytesEstimate": 16064840,
-        "assetTiers": {
-          "human_mira": "glb",
-          "dog_nala": "glb",
-          "environment.school": "glb",
-          "props.care": "glb",
-          "props.upgrades": "glb"
-        },
-        "framing": {
-          "view": "school",
-          "heightShare": 0.11677284628915766,
-          "widthShare": 0.12404486585335857,
-          "minMargin": 0.2416440550586353,
-          "centreY": -0.3999390435935718,
-          "centreX": 0.3299761925049541,
-          "azimuthDeg": 32,
-          "noseOffsetDeg": 12
-        }
-      },
-      "lesson": {
-        "drawCalls": 8,
-        "triangles": 83338,
         "fpsEstimate": 2,
         "dpr": 2,
         "textureBytesEstimate": 16064840,
@@ -282,20 +258,44 @@
           "props.upgrades": "glb"
         },
         "framing": {
+          "view": "school",
+          "heightShare": 0.11684836244911034,
+          "widthShare": 0.1240433592076206,
+          "minMargin": 0.2416440550586353,
+          "centreY": -0.3998635274336191,
+          "centreX": 0.329977699150692,
+          "azimuthDeg": 32,
+          "noseOffsetDeg": 12
+        }
+      },
+      "lesson": {
+        "drawCalls": 8,
+        "triangles": 83338,
+        "fpsEstimate": 10,
+        "dpr": 2,
+        "textureBytesEstimate": 16064840,
+        "assetTiers": {
+          "human_mira": "glb",
+          "dog_nala": "glb",
+          "environment.school": "glb",
+          "props.care": "glb",
+          "props.upgrades": "glb"
+        },
+        "framing": {
           "view": "lesson",
-          "heightShare": 0.44974280779968145,
-          "widthShare": 0.7761227613108761,
-          "minMargin": 0.09486162466701675,
-          "centreY": -0.16025719220031462,
-          "centreX": 0.0341539893550904,
-          "azimuthDeg": -9.807662635331521,
-          "noseOffsetDeg": 29.807662635331518
+          "heightShare": 0.45000018930604924,
+          "widthShare": 0.8171101421952781,
+          "minMargin": 0.0906683595215822,
+          "centreY": -0.1599998106939576,
+          "centreX": -0.0015531387615574932,
+          "azimuthDeg": -9.77105140690736,
+          "noseOffsetDeg": 29.771051406907358
         }
       },
       "closeup": {
         "drawCalls": 8,
         "triangles": 83338,
-        "fpsEstimate": 3,
+        "fpsEstimate": 8,
         "dpr": 2,
         "textureBytesEstimate": 16064840,
         "assetTiers": {
@@ -307,27 +307,27 @@
         },
         "framing": {
           "view": "closeup",
-          "heightShare": 0.5999881396652684,
-          "widthShare": 0.7886614198638728,
-          "minMargin": 0.1019813017517569,
-          "centreY": -0.000011860334729218991,
-          "centreX": 0.007375976632613357,
-          "azimuthDeg": 2.202427793479398,
-          "noseOffsetDeg": 17.797572206520602
+          "heightShare": 0.5998884308972131,
+          "widthShare": 0.7893609097800254,
+          "minMargin": 0.1052775446339671,
+          "centreY": -0.00011156910279574994,
+          "centreX": 0.00008400095204041946,
+          "azimuthDeg": 2.1599357033196,
+          "noseOffsetDeg": 17.8400642966804
         }
       }
     },
     "errors": [],
     "timings": {
-      "decision": 5355,
+      "decision": 2148,
       "decisionReduced": 1,
-      "visitRewarded": 5109,
-      "upgradeBought": 6001,
-      "careMeal": 6002,
+      "visitRewarded": 773,
+      "upgradeBought": 751,
+      "careMeal": 3772,
       "careMealReduced": 0
     },
     "demand": {
-      "heldObservationFrames": 2,
+      "heldObservationFrames": 1,
       "idleFramesPerHalfSecond": 4,
       "inactiveFrames": 0,
       "resumedFrames": 3,
@@ -351,13 +351,13 @@
       },
       "framing": {
         "view": "lesson",
-        "heightShare": 0.41450472780659076,
-        "widthShare": 0.2909102042889697,
-        "minMargin": 0.18260286372396844,
-        "centreY": -0.22028954474547235,
-        "centreX": 0.06901782015733253,
-        "azimuthDeg": -23.877004061540966,
-        "noseOffsetDeg": 43.877004061540966
+        "heightShare": 0.41447755929719243,
+        "widthShare": 0.290230664675751,
+        "minMargin": 0.18252175039125557,
+        "centreY": -0.22047893992029646,
+        "centreX": 0.06948161419789727,
+        "azimuthDeg": -23.915891839268088,
+        "noseOffsetDeg": 43.915891839268085
       },
       "size": "430x256"
     }
@@ -368,7 +368,7 @@
       "school": {
         "drawCalls": 10,
         "triangles": 84338,
-        "fpsEstimate": 3,
+        "fpsEstimate": 4,
         "dpr": 2,
         "textureBytesEstimate": 16064840,
         "assetTiers": {
@@ -380,11 +380,11 @@
         },
         "framing": {
           "view": "school",
-          "heightShare": 0.16047806421491423,
-          "widthShare": 0.03631281816835656,
-          "minMargin": 0.21999999999999992,
-          "centreY": -0.39952193578508594,
-          "centreX": 0.17212410320814964,
+          "heightShare": 0.15959468196515295,
+          "widthShare": 0.036327237146533714,
+          "minMargin": 0.21999999999999986,
+          "centreY": -0.40040531803484736,
+          "centreX": 0.1721873465260393,
           "azimuthDeg": 32,
           "noseOffsetDeg": 12
         }
@@ -392,7 +392,7 @@
       "lesson": {
         "drawCalls": 9,
         "triangles": 83362,
-        "fpsEstimate": 11,
+        "fpsEstimate": 9,
         "dpr": 2,
         "textureBytesEstimate": 16064840,
         "assetTiers": {
@@ -404,19 +404,19 @@
         },
         "framing": {
           "view": "lesson",
-          "heightShare": 0.449869308695626,
-          "widthShare": 0.24270141891588004,
-          "minMargin": 0.19500000000000012,
-          "centreY": -0.16013069130437374,
-          "centreX": 0.0031160901570671806,
-          "azimuthDeg": -24.759486250033667,
-          "noseOffsetDeg": 44.75948625003366
+          "heightShare": 0.45010474440571846,
+          "widthShare": 0.2426164376862685,
+          "minMargin": 0.19500000000000034,
+          "centreY": -0.15989525559428083,
+          "centreX": -0.003817994967519764,
+          "azimuthDeg": -25.013837772618547,
+          "noseOffsetDeg": 45.013837772618544
         }
       },
       "closeup": {
         "drawCalls": 8,
         "triangles": 83338,
-        "fpsEstimate": 11,
+        "fpsEstimate": 8,
         "dpr": 2,
         "textureBytesEstimate": 16064840,
         "assetTiers": {
@@ -428,30 +428,30 @@
         },
         "framing": {
           "view": "closeup",
-          "heightShare": 0.5999035405832959,
-          "widthShare": 0.3114123943283956,
-          "minMargin": 0.19999999999999807,
-          "centreY": -0.00009645941670799463,
-          "centreX": 0.013655130681092531,
-          "azimuthDeg": -24.930292381180973,
-          "noseOffsetDeg": 44.930292381180976
+          "heightShare": 0.5998655377007438,
+          "widthShare": 0.31872585493660543,
+          "minMargin": 0.20000000000000107,
+          "centreY": -0.00013446229925412334,
+          "centreX": 0.004420208343209886,
+          "azimuthDeg": -24.97209642937277,
+          "noseOffsetDeg": 44.972096429372776
         }
       }
     },
     "errors": [],
     "timings": {
-      "decision": 1874,
-      "decisionReduced": 1,
-      "visitRewarded": 674,
-      "upgradeBought": 657,
-      "careMeal": 3170,
+      "decision": 2134,
+      "decisionReduced": 0,
+      "visitRewarded": 707,
+      "upgradeBought": 911,
+      "careMeal": 3534,
       "careMealReduced": 0
     },
     "demand": {
-      "heldObservationFrames": 3,
-      "idleFramesPerHalfSecond": 7,
+      "heldObservationFrames": 2,
+      "idleFramesPerHalfSecond": 3,
       "inactiveFrames": 0,
-      "resumedFrames": 4,
+      "resumedFrames": 3,
       "heldFrames": 0
     },
     "demandOk": true,
@@ -459,7 +459,7 @@
       "metrics": {
         "drawCalls": 10,
         "triangles": 84338,
-        "fpsEstimate": 7,
+        "fpsEstimate": 3,
         "dpr": 2,
         "textureBytesEstimate": 16064840,
         "assetTiers": {
@@ -472,13 +472,13 @@
       },
       "framing": {
         "view": "lesson",
-        "heightShare": 0.41451059359675935,
-        "widthShare": 0.0810706402016923,
-        "minMargin": 0.18268102160702754,
-        "centreY": -0.22012736318918555,
-        "centreX": 0.01926592285057315,
-        "azimuthDeg": -23.842232104317024,
-        "noseOffsetDeg": 43.84223210431703
+        "heightShare": 0.41449552670698064,
+        "widthShare": 0.08107177068490572,
+        "minMargin": 0.18252175039125557,
+        "centreY": -0.22046097251050822,
+        "centreX": 0.019139128797286544,
+        "azimuthDeg": -23.915891839268088,
+        "noseOffsetDeg": 43.915891839268085
       },
       "size": "844x140"
     }
@@ -501,11 +501,11 @@
         },
         "framing": {
           "view": "school",
-          "heightShare": 0.1605986915464849,
-          "widthShare": 0.049114103286044805,
-          "minMargin": 0.21999999999999903,
-          "centreY": -0.39940130845351707,
-          "centreX": 0.23280957431405175,
+          "heightShare": 0.16021625325950511,
+          "widthShare": 0.04903533801317933,
+          "minMargin": 0.2199999999999998,
+          "centreY": -0.39978374674049527,
+          "centreX": 0.23242931163855374,
           "azimuthDeg": 32,
           "noseOffsetDeg": 12
         }
@@ -525,19 +525,19 @@
         },
         "framing": {
           "view": "lesson",
-          "heightShare": 0.449373849043326,
-          "widthShare": 0.3110168259906958,
-          "minMargin": 0.19500000000000078,
-          "centreY": -0.16062615095667243,
-          "centreX": 0.0239045974144039,
-          "azimuthDeg": -24.702774829475352,
-          "noseOffsetDeg": 44.70277482947535
+          "heightShare": 0.44951382185298216,
+          "widthShare": 0.31218268585024045,
+          "minMargin": 0.1949999999999965,
+          "centreY": -0.16048617814702482,
+          "centreX": 0.020653589055783877,
+          "azimuthDeg": -24.759554623383245,
+          "noseOffsetDeg": 44.75955462338324
         }
       },
       "closeup": {
         "drawCalls": 8,
         "triangles": 83338,
-        "fpsEstimate": 2,
+        "fpsEstimate": 3,
         "dpr": 2,
         "textureBytesEstimate": 16064840,
         "assetTiers": {
@@ -549,30 +549,30 @@
         },
         "framing": {
           "view": "closeup",
-          "heightShare": 0.5998762786701273,
-          "widthShare": 0.4520635398067221,
-          "minMargin": 0.19999999999999984,
-          "centreY": -0.00012372132987309437,
-          "centreX": -0.033007704049187875,
-          "azimuthDeg": -25.241478710871082,
-          "noseOffsetDeg": 45.241478710871085
+          "heightShare": 0.5998635947719851,
+          "widthShare": 0.45388791620972846,
+          "minMargin": 0.19999999999999746,
+          "centreY": -0.00013640522801994237,
+          "centreX": -0.034018775336438684,
+          "azimuthDeg": -25.233751025679418,
+          "noseOffsetDeg": 45.233751025679425
         }
       }
     },
     "errors": [],
     "timings": {
-      "decision": 4282,
+      "decision": 4366,
       "decisionReduced": 1,
-      "visitRewarded": 1921,
-      "upgradeBought": 1648,
-      "careMeal": 6002,
+      "visitRewarded": 1437,
+      "upgradeBought": 2232,
+      "careMeal": 6001,
       "careMealReduced": 0
     },
     "demand": {
-      "heldObservationFrames": 4,
-      "idleFramesPerHalfSecond": 1,
+      "heldObservationFrames": 1,
+      "idleFramesPerHalfSecond": 2,
       "inactiveFrames": 0,
-      "resumedFrames": 4,
+      "resumedFrames": 2,
       "heldFrames": 0
     },
     "demandOk": true,
@@ -580,7 +580,7 @@
       "metrics": {
         "drawCalls": 10,
         "triangles": 84338,
-        "fpsEstimate": 5,
+        "fpsEstimate": 1,
         "dpr": 2,
         "textureBytesEstimate": 16064840,
         "assetTiers": {
@@ -593,13 +593,13 @@
       },
       "framing": {
         "view": "lesson",
-        "heightShare": 0.4143875564471038,
-        "widthShare": 0.08272523820622525,
-        "minMargin": 0.18260237308204358,
-        "centreY": -0.22040769738880908,
-        "centreX": 0.02144630263165581,
-        "azimuthDeg": -23.877226440566922,
-        "noseOffsetDeg": 43.87722644056692
+        "heightShare": 0.4142936719085929,
+        "widthShare": 0.0816933132064045,
+        "minMargin": 0.18252175039125557,
+        "centreY": -0.22066282730889597,
+        "centreX": 0.022422666765571968,
+        "azimuthDeg": -23.915891839268088,
+        "noseOffsetDeg": 43.915891839268085
       },
       "size": "1440x248"
     }

@@ -1,6 +1,6 @@
 # Pfotenzeit — verification handoff (run outside the Claude sandbox)
 
-Current continuation (2026-10-10): 300 DOM-inclusive unit tests, 18 production Playwright tests, 65 UI smoke checks, 23 renderer Node checks, typecheck/build/live assets, D-040 CLI validation and production offline smoke passed. Read the newest entry in PROGRESS.md and the final continuation report in docs/VERIFICATION_REPORT.md; older expected test counts below are historical. Physical-phone acceptance remains open.
+Current continuation (2026-10-10): 308 DOM-inclusive unit tests, 33 production Playwright tests, 65 UI smoke checks, 23 renderer Node checks, typecheck/build/live assets, D-040 CLI validation and production offline smoke passed. Read the newest entry in PROGRESS.md and the final continuation report in docs/VERIFICATION_REPORT.md; older expected test counts below are historical. Physical-phone acceptance remains open.
 
 Verification update on 2026-10-09: desktop automation has now been run and fixes applied; see `docs/VERIFICATION_REPORT.md` and `PROGRESS.md` for actual results. Real-phone acceptance remains open.
 
@@ -188,6 +188,6 @@ Manual pass in Chrome (dev server, 390×844 and 844×390, then desktop 1440×900
 7. Session length: play L02 fully including the recall round at normal walking pace and record the time (target 3–5 min).
 8. Phone (separate acceptance): tap-to-move precision on a 390 px screen, two-finger scroll not hijacked, FPS while walking (continuous frames), battery note.
 
-Yard pass expectations (`yard.json`, written blind, first run is yours): spawn dog share ≥ 0.12 with the handler in frame; the scripted tap moves the handler and frames keep coming while walking; `framesPerSecond` is 0 in the still window; handler and dog both inside in the far case. `arrived` is logged, not asserted (low rAF rate on SwiftShader may delay the 1.4 m walk). If the still check is not 0, keep `yard.json` and the gate screenshot for the renderer owner.
+Yard pass expectations (`yard.json`, written blind, first run is yours): spawn dog share ≥ 0.12 with the handler in frame; the scripted tap moves the handler and frames keep coming while walking; `framesPerSecond` is 0 in the still window; handler and dog both inside in the far case. `arrived` and the gate prompt are now asserted. The verifier approaches through visible ground taps that avoid full-height actors, waits for arrival/still-hold with bounded timeouts, and lets the final queued frame drain before measuring one second of idle rendering (SwiftShader can advance simulated time slowly). Use `--yard-only --out ./verification/renderer-yard` for a targeted rerun. If the still check is not 0, keep `yard.json` and the gate screenshot for the renderer owner.
 
 Record deviations in `PROGRESS.md` with the step number. `scripts/verify-acceptance.mjs` and `tests/e2e/smoke.spec.ts` already play L01_B/L03_B as exercises (teleport via `__pzWorld` or the far band, attempt, offered option); both are unrun in the sandbox.

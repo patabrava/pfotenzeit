@@ -290,7 +290,11 @@ export function computeFraming(request: FramingRequest, aspect: number): Framing
  */
 function yardFraming(request: FramingRequest, points: readonly Vector3[], aspect: number): Framing {
   const t = FRAMING_TARGETS.yard;
-  const elevation = (t.elevationDeg * Math.PI) / 180;
+  // Look over the foreground fence when a resting dog is near the front/right
+  // boundary. Keep the yard's viewing direction so movement controls stay consistent.
+  const edge = Math.max(request.ground.z, request.ground.x);
+  const lift = Math.max(0, Math.min(1, (edge - 1.4) / 0.8));
+  const elevation = ((t.elevationDeg + 20 * lift) * Math.PI) / 180;
   const azimuth = CAMERA_AZIMUTH;
   const { dir, up, right } = viewAxes(elevation, azimuth);
   const e = extentsOf(points, up, right);

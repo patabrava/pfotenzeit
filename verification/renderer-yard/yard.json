@@ -5,11 +5,11 @@
     "spawn": {
       "framing": {
         "view": "yard",
-        "heightShare": 0.21907322161779355,
-        "widthShare": 0.17367925535060402,
-        "minMargin": 0.11085281969870148,
-        "centreY": -0.5592211389848035,
-        "centreX": 0.00031941428598024346,
+        "heightShare": 0.23287798200747087,
+        "widthShare": 0.18086136364415265,
+        "minMargin": 0.10416697858538237,
+        "centreY": -0.5587880608217644,
+        "centreX": 0.0003314616381507318,
         "azimuthDeg": 32,
         "noseOffsetDeg": 58.565051177078
       },
@@ -17,6 +17,83 @@
       "metrics": {
         "drawCalls": 21,
         "triangles": 166847,
+        "fpsEstimate": 6,
+        "dpr": 2,
+        "textureBytesEstimate": 27918992,
+        "assetTiers": {
+          "human_mira": "glb",
+          "human_alex": "glb",
+          "dog_nala": "glb",
+          "dog_bruno": "glb",
+          "environment.school": "glb",
+          "props.care": "glb",
+          "props.upgrades": "glb"
+        }
+      }
+    },
+    "tap": {
+      "pick": {
+        "kind": "zone",
+        "zoneId": "gate",
+        "point": {
+          "x": 0,
+          "z": 2.8
+        }
+      },
+      "moved": true,
+      "arrived": true,
+      "framesWhileMoving": 6,
+      "framing": {
+        "view": "yard",
+        "heightShare": 0.10349274712610665,
+        "widthShare": 0.2628714253397417,
+        "minMargin": -0.005550128531994769,
+        "centreY": -0.0005906650133459743,
+        "centreX": 0.7482288317242478,
+        "azimuthDeg": 32,
+        "noseOffsetDeg": 17.561440684750345
+      },
+      "handlerInFrame": true,
+      "prompt": "gate"
+    },
+    "still": {
+      "held": true,
+      "framesPerSecond": 0
+    },
+    "far": {
+      "framing": {
+        "view": "yard",
+        "heightShare": 0.01660520040320558,
+        "widthShare": 0.07197107840833383,
+        "minMargin": 0.04038182900408854,
+        "centreY": 0.040127798557265566,
+        "centreX": 0.8472652635834891,
+        "azimuthDeg": 32,
+        "noseOffsetDeg": 47.97154955977247
+      },
+      "handlerInFrame": true,
+      "dogInFrame": true
+    },
+    "ok": true
+  },
+  {
+    "viewport": "844x390",
+    "errors": [],
+    "spawn": {
+      "framing": {
+        "view": "yard",
+        "heightShare": 0.2237390607624937,
+        "widthShare": 0.03710209009873208,
+        "minMargin": 0.12262443356666791,
+        "centreY": -0.5310120721041705,
+        "centreX": 0.002524032354245812,
+        "azimuthDeg": 32,
+        "noseOffsetDeg": 58.565051177078
+      },
+      "handlerInFrame": true,
+      "metrics": {
+        "drawCalls": 23,
+        "triangles": 174339,
         "fpsEstimate": 7,
         "dpr": 2,
         "textureBytesEstimate": 27918992,
@@ -33,124 +110,46 @@
     },
     "tap": {
       "pick": {
-        "kind": "actor",
-        "actor": "handler",
+        "kind": "ground",
         "point": {
-          "x": 0.2,
-          "z": 2.2
+          "x": -0.2,
+          "z": 2.6
         }
       },
       "moved": true,
-      "arrived": false,
-      "framesWhileMoving": 1,
+      "arrived": true,
+      "framesWhileMoving": 14,
       "framing": {
         "view": "yard",
-        "heightShare": 0.10912598633531785,
-        "widthShare": 0.15626744634701575,
-        "minMargin": 0.20811260299968437,
-        "centreY": 0.0768459714599344,
-        "centreX": 0.42750734765361553,
+        "heightShare": 0.16145672448530266,
+        "widthShare": 0.07464950041877128,
+        "minMargin": 0.36277945952689195,
+        "centreY": 0.06521619192362216,
+        "centreX": 0.1997915805274449,
         "azimuthDeg": 32,
-        "noseOffsetDeg": 179.76437105379821
+        "noseOffsetDeg": 46.0488317051684
       },
       "handlerInFrame": true,
       "prompt": "gate"
     },
     "still": {
-      "held": false,
-      "framesPerSecond": 3
+      "held": true,
+      "framesPerSecond": 0
     },
     "far": {
       "framing": {
         "view": "yard",
-        "heightShare": 0.018669898078469364,
-        "widthShare": 0.07299601613079598,
-        "minMargin": 0.03142097794680543,
-        "centreY": -0.013484492630668135,
-        "centreX": 0.8641620279755932,
+        "heightShare": 0.07806155561432113,
+        "widthShare": 0.07222756080041193,
+        "minMargin": 0.03693219279411908,
+        "centreY": 0.18864200989429528,
+        "centreX": 0.8539080536113499,
         "azimuthDeg": 32,
-        "noseOffsetDeg": 24.648600966351758
+        "noseOffsetDeg": 41.02502275123405
       },
       "handlerInFrame": true,
       "dogInFrame": true
     },
-    "ok": false
-  },
-  {
-    "viewport": "844x390",
-    "errors": [],
-    "spawn": {
-      "framing": {
-        "view": "yard",
-        "heightShare": 0.21907447525287396,
-        "widthShare": 0.03708454696825872,
-        "minMargin": 0.11085281969870148,
-        "centreY": -0.5592198853497231,
-        "centreX": 0.00006814172320775483,
-        "azimuthDeg": 32,
-        "noseOffsetDeg": 58.565051177078
-      },
-      "handlerInFrame": true,
-      "metrics": {
-        "drawCalls": 23,
-        "triangles": 174339,
-        "fpsEstimate": 3,
-        "dpr": 2,
-        "textureBytesEstimate": 27918992,
-        "assetTiers": {
-          "human_mira": "glb",
-          "human_alex": "glb",
-          "dog_nala": "glb",
-          "dog_bruno": "glb",
-          "environment.school": "glb",
-          "props.care": "glb",
-          "props.upgrades": "glb"
-        }
-      }
-    },
-    "tap": {
-      "pick": {
-        "kind": "actor",
-        "actor": "handler",
-        "point": {
-          "x": 0.1972787847664288,
-          "z": 2.3836727085985725
-        }
-      },
-      "moved": true,
-      "arrived": false,
-      "framesWhileMoving": 1,
-      "framing": {
-        "view": "yard",
-        "heightShare": 0.1623299744919657,
-        "widthShare": 0.05369172769748601,
-        "minMargin": 0.36843387484070145,
-        "centreY": 0.10080227582663133,
-        "centreX": 0.1179059122734899,
-        "azimuthDeg": 32,
-        "noseOffsetDeg": 42.66827151025528
-      },
-      "handlerInFrame": true,
-      "prompt": "gate"
-    },
-    "still": {
-      "held": false,
-      "framesPerSecond": 3
-    },
-    "far": {
-      "framing": {
-        "view": "yard",
-        "heightShare": 0.08727121949491876,
-        "widthShare": 0.07260461939681345,
-        "minMargin": 0.03229296516416219,
-        "centreY": -0.06334711621438036,
-        "centreX": 0.8628094502748622,
-        "azimuthDeg": 32,
-        "noseOffsetDeg": 24.35994109851845
-      },
-      "handlerInFrame": true,
-      "dogInFrame": true
-    },
-    "ok": false
+    "ok": true
   }
 ]

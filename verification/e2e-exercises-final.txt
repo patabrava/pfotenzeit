@@ -1,0 +1,14 @@
+
+Running 3 tests using 1 worker
+
+(node:42410) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [mobile-390] › tests/e2e/exercises.spec.ts:29:1 › all three lessons complete, including supported retries, exercise reactions and reloads (1.4m)
+(node:43192) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  2 [mobile-360] › tests/e2e/exercises.spec.ts:29:1 › all three lessons complete, including supported retries, exercise reactions and reloads (1.3m)
+(node:43793) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  3 [desktop] › tests/e2e/exercises.spec.ts:29:1 › all three lessons complete, including supported retries, exercise reactions and reloads (1.4m)
+
+  3 passed (4.2m)

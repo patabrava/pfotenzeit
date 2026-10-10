@@ -5,11 +5,11 @@
     "spawn": {
       "framing": {
         "view": "yard",
-        "heightShare": 0.21260452210657454,
-        "widthShare": 0.16854954621926627,
-        "minMargin": 0.12455019792781274,
-        "centreY": -0.5382950820378,
-        "centreX": 0.00949837271531899,
+        "heightShare": 0.21262119147346809,
+        "widthShare": 0.1685568118644304,
+        "minMargin": 0.12453660902221486,
+        "centreY": -0.5383055904821021,
+        "centreX": 0.009483981632302046,
         "azimuthDeg": 32,
         "noseOffsetDeg": 58.565051177078
       },
@@ -17,7 +17,7 @@
       "metrics": {
         "drawCalls": 21,
         "triangles": 166847,
-        "fpsEstimate": 3,
+        "fpsEstimate": 2,
         "dpr": 2,
         "textureBytesEstimate": 27918992,
         "assetTiers": {
@@ -32,22 +32,28 @@
       }
     },
     "tap": {
-      "pick": null,
-      "moved": false,
-      "arrived": false,
-      "framesWhileMoving": 4,
+      "pick": {
+        "kind": "ground",
+        "point": {
+          "x": 0.2,
+          "z": 2.4
+        }
+      },
+      "moved": true,
+      "arrived": true,
+      "framesWhileMoving": 11,
       "framing": {
         "view": "yard",
-        "heightShare": 0.2126326205019263,
-        "widthShare": 0.16855500476995855,
-        "minMargin": 0.12455019792781274,
-        "centreY": -0.5382669836424482,
-        "centreX": 0.00949291416462672,
+        "heightShare": 0.1536750153053003,
+        "widthShare": 0.21373061813327837,
+        "minMargin": 0.13643416771141376,
+        "centreY": 0.12683590631138802,
+        "centreX": 0.5134010464438941,
         "azimuthDeg": 32,
-        "noseOffsetDeg": 58.565051177078
+        "noseOffsetDeg": 37.08283577057355
       },
       "handlerInFrame": true,
-      "prompt": null
+      "prompt": "gate"
     },
     "still": {
       "held": true,
@@ -56,18 +62,18 @@
     "far": {
       "framing": {
         "view": "yard",
-        "heightShare": 0.01877496011431315,
-        "widthShare": 0.073665943406446,
-        "minMargin": 0.025309116874098425,
-        "centreY": -0.013602822244343346,
-        "centreX": 0.8757158228453572,
+        "heightShare": 0.018696785747259616,
+        "widthShare": 0.07283869628888118,
+        "minMargin": 0.029231719952457713,
+        "centreY": -0.013572380586238587,
+        "centreX": 0.8686978638062034,
         "azimuthDeg": 32,
-        "noseOffsetDeg": 167.9294670250693
+        "noseOffsetDeg": 23.805704866107384
       },
       "handlerInFrame": true,
       "dogInFrame": true
     },
-    "ok": false
+    "ok": true
   },
   {
     "viewport": "844x390",
@@ -75,11 +81,11 @@
     "spawn": {
       "framing": {
         "view": "yard",
-        "heightShare": 0.21165924991691804,
-        "widthShare": 0.0358293104924709,
+        "heightShare": 0.2116646721618427,
+        "widthShare": 0.0358295647005461,
         "minMargin": 0.12654906923544673,
-        "centreY": -0.5352426116121884,
-        "centreX": 0.0024377759024233857,
+        "centreY": -0.5352371893672638,
+        "centreX": 0.0024375216943481846,
         "azimuthDeg": 32,
         "noseOffsetDeg": 58.565051177078
       },
@@ -87,7 +93,7 @@
       "metrics": {
         "drawCalls": 23,
         "triangles": 174339,
-        "fpsEstimate": 6,
+        "fpsEstimate": 4,
         "dpr": 2,
         "textureBytesEstimate": 27918992,
         "assetTiers": {
@@ -102,22 +108,28 @@
       }
     },
     "tap": {
-      "pick": null,
-      "moved": false,
-      "arrived": false,
-      "framesWhileMoving": 5,
+      "pick": {
+        "kind": "ground",
+        "point": {
+          "x": -0.2,
+          "z": 2.8
+        }
+      },
+      "moved": true,
+      "arrived": true,
+      "framesWhileMoving": 16,
       "framing": {
         "view": "yard",
-        "heightShare": 0.21168077272537753,
-        "widthShare": 0.03583024514133435,
-        "minMargin": 0.12654906923544673,
-        "centreY": -0.535221088803729,
-        "centreX": 0.002436841253559939,
+        "heightShare": 0.1571088315222075,
+        "widthShare": 0.07023235876721237,
+        "minMargin": 0.3776137121101556,
+        "centreY": 0.028785394295102032,
+        "centreX": 0.1745402170124764,
         "azimuthDeg": 32,
-        "noseOffsetDeg": 58.565051177078
+        "noseOffsetDeg": 42.523766218854725
       },
       "handlerInFrame": true,
-      "prompt": null
+      "prompt": "gate"
     },
     "still": {
       "held": true,
@@ -126,17 +138,17 @@
     "far": {
       "framing": {
         "view": "yard",
-        "heightShare": 0.08021440037182437,
-        "widthShare": 0.06703695149712208,
-        "minMargin": 0.06721204324725244,
-        "centreY": -0.0581990776538659,
-        "centreX": 0.798538962008373,
+        "heightShare": 0.08690093170685069,
+        "widthShare": 0.07238863153032699,
+        "minMargin": 0.036183239524110955,
+        "centreY": -0.06307675125899213,
+        "centreX": 0.855244889421451,
         "azimuthDeg": 32,
-        "noseOffsetDeg": 167.9294670250693
+        "noseOffsetDeg": 39.53047067090199
       },
       "handlerInFrame": true,
       "dogInFrame": true
     },
-    "ok": false
+    "ok": true
   }
 ]

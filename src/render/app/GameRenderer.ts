@@ -437,12 +437,16 @@ export function createGameRenderer(options: GameRendererOptions): GameRendererHa
     // Front three-quarter on the handler's side (closeup / lesson); the school keeps its fixed side.
     const h = d.humans[0];
     let handler = h && humans.has(h.id) ? (humans.get(h.id) as HumanActorController).position() : null;
+    let azimuth: number | undefined;
     // View edge zones from the courtyard interior so rails/planters do not cover the teaching pose.
     if (d.view !== 'school' && Math.abs(ground.x) > 1.8) {
       handler = ground.clone().add(new Vector3(ground.x < 0 ? 2 : -2, 0, 1));
+      // A handler-side hint alone can still choose a view from outside the fence
+      // when the dog's body axis changes (standing vs lying). Pin the clear side.
+      azimuth = Math.atan2(ground.x < 0 ? 2 : -2, 1);
     }
     const facing = (dog.facing() * Math.PI) / 180;
-    return { view: d.view, points, ground, zone, facing, handler, yard: d.view === 'school' ? SCHOOL_CORE_POINTS : undefined };
+    return { view: d.view, points, ground, zone, facing, handler, azimuth, yard: d.view === 'school' ? SCHOOL_CORE_POINTS : undefined };
   };
 
   const frameCamera = (d: SceneDirective, instant: boolean): void => {

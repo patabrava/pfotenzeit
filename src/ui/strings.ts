@@ -20,6 +20,7 @@ export const tWorld = {
   toYard: de.world.toYard,
   staticNote: de.world.staticNote,
   walkHint: de.world.walkHint,
+  controls: de.world.controls,
   keysHint: de.world.keysHint,
   dogTitle: (name: string): string => de.world.dog.title(name),
   dogPet: de.world.dog.pet,

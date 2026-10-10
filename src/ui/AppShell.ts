@@ -21,7 +21,7 @@ import { createProfileView } from './ProfileView';
 import { createReflectionView } from './ReflectionView';
 import { openSchoolSheet } from './SchoolView';
 import { createSettingsView } from './SettingsView';
-import { t } from './strings';
+import { t, tWorld } from './strings';
 import { createWebglFallbackView } from './WebglFallbackView';
 import { isYardActive, runPrompt, zoneHasAction } from './yard';
 import type { DomainEffect } from '../simulation/types';
@@ -51,6 +51,13 @@ type ScreenKind = 'profile' | 'settings' | 'reflection' | 'memorial' | 'mode' | 
 
 export function createAppShell(getContext: () => UiContext): AppShell {
   const sceneContainer = el('div', { class: 'scene' });
+  const movementControls = el('div', { class: 'yard-controls', attrs: { role: 'group', 'aria-label': tWorld.controls.label, hidden: true } },
+    (['arrowup', 'arrowleft', 'arrowdown', 'arrowright'] as const).map((direction, index) =>
+      el('button', { class: 'yard-direction', attrs: { type: 'button', 'aria-label': tWorld.controls[direction] },
+        dataset: { direction }, text: ['↑', '←', '↓', '→'][index] }),
+    ),
+  );
+  sceneContainer.append(movementControls);
   const layerScene = el('div', { class: 'layer layer-scene' }, [sceneContainer]);
   const layerWorld = el('div', { class: 'layer layer-world' });
   const layerScreen = el('div', { class: 'layer layer-screen' });
@@ -102,6 +109,15 @@ export function createAppShell(getContext: () => UiContext): AppShell {
       sceneContainer.style.bottom = '';
     }
   }
+  function syncMovementControls(): void {
+    const enabled = canWalk(ensureCtx().store.get());
+    movementControls.hidden = !enabled;
+    if (!enabled) yardInput?.reset();
+    const dock = layerWorld.querySelector('.dock');
+    const scene = sceneContainer.getBoundingClientRect();
+    const bottom = worldKind === 'home' && dock ? Math.max(12, scene.bottom - dock.getBoundingClientRect().top + 12) : 12;
+    movementControls.style.bottom = `${bottom}px`;
+  }
   // D-035: tell the renderer where the header mark counter sits so the glint lands on it, not on the dog.
   // Coordinates are normalized to the renderer's canvas (the .scene strip). In the lesson the counter is
   // above the strip, so y is clamped to the strip's top edge directly beneath the counter.
@@ -131,12 +147,14 @@ export function createAppShell(getContext: () => UiContext): AppShell {
     typeof ResizeObserver === 'function'
       ? new ResizeObserver(() => {
           fitScene();
+          syncMovementControls();
           syncRewardAnchor();
         })
       : null;
   const refit = (): void => {
     fitScene();
     syncRewardAnchor();
+    syncMovementControls();
   };
   window.addEventListener('resize', refit);
   layerWorld.addEventListener('animationend', refit);
@@ -153,6 +171,7 @@ export function createAppShell(getContext: () => UiContext): AppShell {
     layerScreen.inert = modalOpen;
     layerBanner.inert = modalOpen;
     layerWorld.hidden = screenOpen;
+    syncMovementControls();
   }
 
   function onKeyDown(event: KeyboardEvent): void {
@@ -219,7 +238,7 @@ export function createAppShell(getContext: () => UiContext): AppShell {
         const primary = layerWorld.querySelector<HTMLButtonElement>('[data-key="attempt"]:not([aria-disabled="true"]), [data-key="next"]:not([aria-disabled="true"])');
         primary?.click();
       },
-    });
+    }, movementControls);
   }
 
   function setWorld(kind: WorldKind): void {
@@ -375,6 +394,7 @@ export function createAppShell(getContext: () => UiContext): AppShell {
         sceneLayoutObserver?.observe(node);
       }
       fitScene();
+      syncMovementControls();
       syncRewardAnchor();
       syncToast(snapshot);
     },

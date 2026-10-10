@@ -482,7 +482,8 @@ export const de = {
     toStatic: 'Klassische Ansicht',
     toYard: 'Im Hof unterwegs',
     staticNote: 'Ohne 3D-Hof wählst du die Stellen aus einer Liste. Alle Übungen bleiben spielbar.',
-    walkHint: 'Du spielst Ines, die Frau mit dem Ring. Tippe auf den Boden, um zu gehen. Nala folgt dir.',
+    controls: { label: 'Ines bewegen', arrowup: 'Nach vorne gehen', arrowleft: 'Nach links gehen', arrowdown: 'Nach hinten gehen', arrowright: 'Nach rechts gehen' },
+    walkHint: 'Halte die Pfeile gedrückt, um Ines zu bewegen, oder tippe auf den Boden. Nala folgt dir.',
     keysHint: 'W A S D oder Pfeiltasten bewegen Ines. Tippe Nala für Signale an. Enter führt die Aktion aus.',
     dog: {
       title: (name: string) => `${name}`,
