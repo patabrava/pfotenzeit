@@ -1,0 +1,140 @@
+{
+  "dog.nala.puppy": {
+    "url": "dog_nala_puppy.glb",
+    "status": "pending",
+    "productionIntegrated": false,
+    "material": "textured",
+    "textures": [
+      {
+        "slot": "normal",
+        "width": 1024,
+        "height": 1024,
+        "bytes": 440031,
+        "mime": "image/png"
+      }
+    ],
+    "textureSizes": [
+      1024
+    ],
+    "drawCalls": 1,
+    "rig": "project",
+    "rigInfo": {
+      "joints": 26,
+      "maxInfluences": 4,
+      "root": "root"
+    },
+    "clipMap": {
+      "idle_relaxed": "idle_relaxed",
+      "look_at_handler": "look_at_handler",
+      "sniff": "sniff",
+      "walk": "walk",
+      "sit": "sit",
+      "lie_down": "lie_down",
+      "rest_loop": "rest_loop",
+      "eat": "eat",
+      "play_bow": "play_bow",
+      "turn_away": "turn_away",
+      "tense_idle": "tense_idle",
+      "tired_idle": "tired_idle",
+      "recover": "recover"
+    },
+    "clips": [
+      "idle_relaxed",
+      "look_at_handler",
+      "sniff",
+      "walk",
+      "sit",
+      "lie_down",
+      "rest_loop",
+      "eat",
+      "play_bow",
+      "turn_away",
+      "tense_idle",
+      "tired_idle",
+      "recover"
+    ],
+    "sourceClips": [
+      "idle_relaxed",
+      "look_at_handler",
+      "sniff",
+      "walk",
+      "sit",
+      "lie_down",
+      "rest_loop",
+      "eat",
+      "play_bow",
+      "turn_away",
+      "tense_idle",
+      "tired_idle",
+      "recover"
+    ],
+    "bytes": 2032320,
+    "triangles": 17680,
+    "boundsMeters": [
+      0.1835,
+      0.391,
+      0.7296
+    ],
+    "measuredShoulderHeightM": 0.2897,
+    "source": "art/blender-reference-pass-2026-10-09/candidates/dog_nala_puppy.glb (Blender reference pass, code-authored candidate)",
+    "license": "project-internal, generated code; no third-party assets",
+    "version": 2,
+    "clipMeta": {
+      "idle_relaxed": {
+        "durationS": 4,
+        "loop": true
+      },
+      "look_at_handler": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "sniff": {
+        "durationS": 2.5,
+        "loop": true
+      },
+      "walk": {
+        "durationS": 1,
+        "loop": true
+      },
+      "sit": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "lie_down": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "rest_loop": {
+        "durationS": 5,
+        "loop": true
+      },
+      "eat": {
+        "durationS": 4,
+        "loop": false,
+        "events": {
+          "treat_received": 2
+        }
+      },
+      "play_bow": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "turn_away": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "tense_idle": {
+        "durationS": 2.5,
+        "loop": true
+      },
+      "tired_idle": {
+        "durationS": 3.5,
+        "loop": true
+      },
+      "recover": {
+        "durationS": 2,
+        "loop": false
+      }
+    }
+  }
+}

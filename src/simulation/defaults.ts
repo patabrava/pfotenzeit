@@ -2,7 +2,7 @@
  * Balance constants. Source: 02_SPIELSCHLEIFE, 04_PFLEGE_CHALLENGE, 15_DATEN_REGELN.
  * These are initial defaults; change only after a documented playtest (15 "Offene Balancepunkte").
  */
-import type { CareKind, LearningPointId, LessonContext, NeedValues, Settings, UpgradeId } from './types';
+import type { CareKind, LearningPointId, LessonContext, MomentKind, MomentResponse, NeedValues, Settings, UpgradeId } from './types';
 
 export const START_NEEDS: NeedValues = {
   satiety: 80,
@@ -119,3 +119,32 @@ export const DEFAULT_SETTINGS: Settings = {
 
 export const MS_PER_MINUTE = 60_000;
 export const MS_PER_HOUR = 3_600_000;
+
+// ---------------------------------------------------------------------------
+// Yard life (D-041)
+// ---------------------------------------------------------------------------
+
+/** Distance bands (metres): below nearMax = near, below midMax = mid, else far. */
+export const DISTANCE_BANDS = { nearMax: 1.2, midMax: 2.6 } as const;
+/** Attempts per exercise round before 'retry' behaves as 'advance'. */
+export const EXERCISE_MAX_ATTEMPTS = 3;
+/** Exercise rules thresholds (simulation/exercise.ts). */
+export const EXERCISE_RULES = {
+  /** Stress at or above this: the dog hesitates on recall / cannot settle. */
+  stressHesitate: 50,
+  /** Energy below this: the dog hesitates (tired). */
+  energyTired: 35,
+} as const;
+/** Small bounded effects of responding to a dog-initiated moment. Not care; no economy (D-041). */
+export const MOMENT_EFFECTS: Record<MomentKind, Partial<Record<MomentResponse, Partial<NeedValues>>>> = {
+  sniff_spot: { allow: { stress: -5, comfort: 5 }, call_gently: { arousal: 5 }, ignore: {} },
+  look_at_other_dog: { allow: { arousal: 5 }, call_gently: { stress: -5 }, ignore: {} },
+  settle_beside: { sit_with: { stress: -10, comfort: 10 }, ignore: {} },
+  offer_glance: { reward_glance: { comfort: 5, stress: -5 }, ignore: {} },
+};
+/** World time between moments (seconds) and how long a moment waits for a response before fading. */
+export const MOMENT_TIMING = { cooldownS: 45, firstAfterS: 20, holdS: 25 } as const;
+/** Movement speeds, m/s (yard ≈ 7 m: crossing takes ≈ 5 s). */
+export const YARD_SPEEDS = { handler: 1.5, dogFollow: 2.0, dogComing: 2.4, dogWander: 0.7 } as const;
+/** look_at: standing still this long with low distraction makes the dog offer a glance. */
+export const LOOK_AT_STILL_S = 4;

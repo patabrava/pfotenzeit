@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "manifestEntriesPreserved": true,
+  "hashes": {
+    "dog_nala_puppy.glb": "d3568423ef4e502518a1f199f13898b2067c9df7ac3cc2d850895b42c2b386f9",
+    "dog_nala_growing.glb": "a1c87a7347b3d2b691e50d0886170ca346e30bf74b12a8d9f3a4fbe0ee97e318",
+    "dog_bruno_puppy.glb": "7585cd45d890c4157b3ab49557ae93a86f94cf052a19018b9992c376075deae9"
+  }
+}

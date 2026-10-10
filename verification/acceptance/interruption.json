@@ -1,0 +1,16 @@
+{
+  "pass": true,
+  "elapsedSeconds": 120,
+  "backgroundState": {
+    "visibility": "visible",
+    "focus": true
+  },
+  "syntheticVisibilityEvents": true,
+  "standardNeedsUnchanged": true,
+  "landscape": {
+    "width": 844,
+    "height": 390
+  },
+  "audioOff": true,
+  "reducedMotionOn": true
+}

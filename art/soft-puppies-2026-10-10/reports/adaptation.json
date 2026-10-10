@@ -1,0 +1,731 @@
+{
+  "dog_nala_puppy": {
+    "url": "dog_nala_puppy.glb",
+    "status": "code-authored",
+    "productionIntegrated": false,
+    "material": "textured",
+    "textures": [
+      {
+        "slot": "baseColor",
+        "width": 1024,
+        "height": 1024,
+        "bytes": 392301,
+        "mime": "image/jpeg"
+      },
+      {
+        "slot": "normal",
+        "width": 256,
+        "height": 256,
+        "bytes": 97509,
+        "mime": "image/png"
+      }
+    ],
+    "textureSizes": [
+      [
+        1024,
+        1024
+      ],
+      [
+        256,
+        256
+      ]
+    ],
+    "bytes": 1778932,
+    "triangles": 14844,
+    "boundsMeters": [
+      0.14734849333763123,
+      0.3919999897480011,
+      0.5919557213783264
+    ],
+    "drawCalls": 1,
+    "rig": "vendor",
+    "rigInfo": {
+      "joints": 49,
+      "maxInfluences": 4,
+      "root": ""
+    },
+    "clips": [
+      "alert_focus",
+      "rest_side",
+      "stand_up",
+      "idle_relaxed",
+      "look_at_handler",
+      "sniff",
+      "walk",
+      "sit",
+      "lie_down",
+      "rest_loop",
+      "eat",
+      "play_bow",
+      "turn_away",
+      "tense_idle",
+      "tired_idle",
+      "recover"
+    ],
+    "sourceClips": [
+      "alert_focus",
+      "eat",
+      "idle_relaxed",
+      "lie_down",
+      "look_at_handler",
+      "play_bow",
+      "recover",
+      "rest_loop",
+      "rest_side",
+      "sit",
+      "sniff",
+      "stand_up",
+      "tense_idle",
+      "tired_idle",
+      "turn_away",
+      "walk"
+    ],
+    "clipMap": {
+      "alert_focus": "alert_focus",
+      "rest_side": "rest_side",
+      "stand_up": "stand_up",
+      "idle_relaxed": "idle_relaxed",
+      "look_at_handler": "look_at_handler",
+      "sniff": "sniff",
+      "walk": "walk",
+      "sit": "sit",
+      "lie_down": "lie_down",
+      "rest_loop": "rest_loop",
+      "eat": "eat",
+      "play_bow": "play_bow",
+      "turn_away": "turn_away",
+      "tense_idle": "tense_idle",
+      "tired_idle": "tired_idle",
+      "recover": "recover"
+    },
+    "clipMeta": {
+      "alert_focus": {
+        "durationS": 2,
+        "loop": true
+      },
+      "rest_side": {
+        "durationS": 5,
+        "loop": true
+      },
+      "stand_up": {
+        "durationS": 1.8,
+        "loop": false
+      },
+      "idle_relaxed": {
+        "durationS": 4,
+        "loop": true
+      },
+      "look_at_handler": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "sniff": {
+        "durationS": 2.5,
+        "loop": true
+      },
+      "walk": {
+        "durationS": 1,
+        "loop": true
+      },
+      "sit": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "lie_down": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "rest_loop": {
+        "durationS": 5,
+        "loop": true
+      },
+      "eat": {
+        "durationS": 4,
+        "loop": false,
+        "events": {
+          "treat_received": 2
+        }
+      },
+      "play_bow": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "turn_away": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "tense_idle": {
+        "durationS": 2.5,
+        "loop": true
+      },
+      "tired_idle": {
+        "durationS": 3.5,
+        "loop": true
+      },
+      "recover": {
+        "durationS": 2,
+        "loop": false
+      }
+    },
+    "source": "Dog Puppy by kenchoo; original 3d dog cute by Tech developers; adapted coat, scale, growing head proportions and 16 Blender IK-authored educational clips; scripts/build-soft-puppies.mjs",
+    "sourceUrl": "https://sketchfab.com/3d-models/dog-puppy-72331763040e4314b154f84348fe0957",
+    "license": "CC BY 4.0; kenchoo / Tech developers; https://creativecommons.org/licenses/by/4.0/",
+    "sourceSha256": "45bbe4ae0561c49f0dd1bc821305b577dd75b9c8cd8cc011dae6adc409990811",
+    "version": 2,
+    "validator": {
+      "numErrors": 0,
+      "numWarnings": 0,
+      "numInfos": 0,
+      "numHints": 0,
+      "messages": [],
+      "report": {
+        "uri": "dog_nala_puppy",
+        "mimeType": "model/gltf-binary",
+        "validatorVersion": "2.0.0-dev.3.10",
+        "validatedAt": "2026-10-10T14:26:04.701Z",
+        "issues": {
+          "numErrors": 0,
+          "numWarnings": 0,
+          "numInfos": 0,
+          "numHints": 0,
+          "messages": [],
+          "truncated": false
+        },
+        "info": {
+          "version": "2.0",
+          "generator": "glTF-Transform v4.5.1",
+          "resources": [
+            {
+              "pointer": "/buffers/0",
+              "mimeType": "application/gltf-buffer",
+              "storage": "glb",
+              "byteLength": 1388848
+            },
+            {
+              "pointer": "/images/0",
+              "mimeType": "image/png",
+              "storage": "buffer-view",
+              "image": {
+                "width": 256,
+                "height": 256,
+                "format": "rgba",
+                "primaries": "srgb",
+                "transfer": "srgb",
+                "bits": 8
+              }
+            },
+            {
+              "pointer": "/images/1",
+              "mimeType": "image/jpeg",
+              "storage": "buffer-view",
+              "image": {
+                "width": 1024,
+                "height": 1024,
+                "format": "rgb",
+                "bits": 8
+              }
+            }
+          ],
+          "animationCount": 16,
+          "materialCount": 1,
+          "hasMorphTargets": true,
+          "hasSkins": true,
+          "hasTextures": true,
+          "hasDefaultScene": true,
+          "drawCallCount": 1,
+          "totalVertexCount": 7839,
+          "totalTriangleCount": 14844,
+          "maxUVs": 1,
+          "maxInfluences": 4,
+          "maxAttributes": 6
+        }
+      }
+    }
+  },
+  "dog_nala_growing": {
+    "url": "dog_nala_growing.glb",
+    "status": "code-authored",
+    "productionIntegrated": false,
+    "material": "textured",
+    "textures": [
+      {
+        "slot": "baseColor",
+        "width": 1024,
+        "height": 1024,
+        "bytes": 392301,
+        "mime": "image/jpeg"
+      },
+      {
+        "slot": "normal",
+        "width": 256,
+        "height": 256,
+        "bytes": 97509,
+        "mime": "image/png"
+      }
+    ],
+    "textureSizes": [
+      [
+        1024,
+        1024
+      ],
+      [
+        256,
+        256
+      ]
+    ],
+    "bytes": 1780040,
+    "triangles": 14844,
+    "boundsMeters": [
+      0.17597594112157822,
+      0.49621012806892395,
+      0.7539407908916473
+    ],
+    "drawCalls": 1,
+    "rig": "vendor",
+    "rigInfo": {
+      "joints": 49,
+      "maxInfluences": 4,
+      "root": ""
+    },
+    "clips": [
+      "alert_focus",
+      "rest_side",
+      "stand_up",
+      "idle_relaxed",
+      "look_at_handler",
+      "sniff",
+      "walk",
+      "sit",
+      "lie_down",
+      "rest_loop",
+      "eat",
+      "play_bow",
+      "turn_away",
+      "tense_idle",
+      "tired_idle",
+      "recover"
+    ],
+    "sourceClips": [
+      "alert_focus",
+      "eat",
+      "idle_relaxed",
+      "lie_down",
+      "look_at_handler",
+      "play_bow",
+      "recover",
+      "rest_loop",
+      "rest_side",
+      "sit",
+      "sniff",
+      "stand_up",
+      "tense_idle",
+      "tired_idle",
+      "turn_away",
+      "walk"
+    ],
+    "clipMap": {
+      "alert_focus": "alert_focus",
+      "rest_side": "rest_side",
+      "stand_up": "stand_up",
+      "idle_relaxed": "idle_relaxed",
+      "look_at_handler": "look_at_handler",
+      "sniff": "sniff",
+      "walk": "walk",
+      "sit": "sit",
+      "lie_down": "lie_down",
+      "rest_loop": "rest_loop",
+      "eat": "eat",
+      "play_bow": "play_bow",
+      "turn_away": "turn_away",
+      "tense_idle": "tense_idle",
+      "tired_idle": "tired_idle",
+      "recover": "recover"
+    },
+    "clipMeta": {
+      "alert_focus": {
+        "durationS": 2,
+        "loop": true
+      },
+      "rest_side": {
+        "durationS": 5,
+        "loop": true
+      },
+      "stand_up": {
+        "durationS": 1.8,
+        "loop": false
+      },
+      "idle_relaxed": {
+        "durationS": 4,
+        "loop": true
+      },
+      "look_at_handler": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "sniff": {
+        "durationS": 2.5,
+        "loop": true
+      },
+      "walk": {
+        "durationS": 1,
+        "loop": true
+      },
+      "sit": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "lie_down": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "rest_loop": {
+        "durationS": 5,
+        "loop": true
+      },
+      "eat": {
+        "durationS": 4,
+        "loop": false,
+        "events": {
+          "treat_received": 2
+        }
+      },
+      "play_bow": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "turn_away": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "tense_idle": {
+        "durationS": 2.5,
+        "loop": true
+      },
+      "tired_idle": {
+        "durationS": 3.5,
+        "loop": true
+      },
+      "recover": {
+        "durationS": 2,
+        "loop": false
+      }
+    },
+    "source": "Dog Puppy by kenchoo; original 3d dog cute by Tech developers; adapted coat, scale, growing head proportions and 16 Blender IK-authored educational clips; scripts/build-soft-puppies.mjs",
+    "sourceUrl": "https://sketchfab.com/3d-models/dog-puppy-72331763040e4314b154f84348fe0957",
+    "license": "CC BY 4.0; kenchoo / Tech developers; https://creativecommons.org/licenses/by/4.0/",
+    "sourceSha256": "45bbe4ae0561c49f0dd1bc821305b577dd75b9c8cd8cc011dae6adc409990811",
+    "version": 2,
+    "validator": {
+      "numErrors": 0,
+      "numWarnings": 0,
+      "numInfos": 0,
+      "numHints": 0,
+      "messages": [],
+      "report": {
+        "uri": "dog_nala_growing",
+        "mimeType": "model/gltf-binary",
+        "validatorVersion": "2.0.0-dev.3.10",
+        "validatedAt": "2026-10-10T14:26:04.952Z",
+        "issues": {
+          "numErrors": 0,
+          "numWarnings": 0,
+          "numInfos": 0,
+          "numHints": 0,
+          "messages": [],
+          "truncated": false
+        },
+        "info": {
+          "version": "2.0",
+          "generator": "glTF-Transform v4.5.1",
+          "resources": [
+            {
+              "pointer": "/buffers/0",
+              "mimeType": "application/gltf-buffer",
+              "storage": "glb",
+              "byteLength": 1389760
+            },
+            {
+              "pointer": "/images/0",
+              "mimeType": "image/png",
+              "storage": "buffer-view",
+              "image": {
+                "width": 256,
+                "height": 256,
+                "format": "rgba",
+                "primaries": "srgb",
+                "transfer": "srgb",
+                "bits": 8
+              }
+            },
+            {
+              "pointer": "/images/1",
+              "mimeType": "image/jpeg",
+              "storage": "buffer-view",
+              "image": {
+                "width": 1024,
+                "height": 1024,
+                "format": "rgb",
+                "bits": 8
+              }
+            }
+          ],
+          "animationCount": 16,
+          "materialCount": 1,
+          "hasMorphTargets": true,
+          "hasSkins": true,
+          "hasTextures": true,
+          "hasDefaultScene": true,
+          "drawCallCount": 1,
+          "totalVertexCount": 7839,
+          "totalTriangleCount": 14844,
+          "maxUVs": 1,
+          "maxInfluences": 4,
+          "maxAttributes": 6
+        }
+      }
+    }
+  },
+  "dog_bruno_puppy": {
+    "url": "dog_bruno_puppy.glb",
+    "status": "code-authored",
+    "productionIntegrated": false,
+    "material": "textured",
+    "textures": [
+      {
+        "slot": "baseColor",
+        "width": 1024,
+        "height": 1024,
+        "bytes": 392301,
+        "mime": "image/jpeg"
+      },
+      {
+        "slot": "normal",
+        "width": 256,
+        "height": 256,
+        "bytes": 97509,
+        "mime": "image/png"
+      }
+    ],
+    "textureSizes": [
+      [
+        1024,
+        1024
+      ],
+      [
+        256,
+        256
+      ]
+    ],
+    "bytes": 1779220,
+    "triangles": 14844,
+    "boundsMeters": [
+      0.163135826587677,
+      0.4339999854564667,
+      0.6553795337677002
+    ],
+    "drawCalls": 1,
+    "rig": "vendor",
+    "rigInfo": {
+      "joints": 49,
+      "maxInfluences": 4,
+      "root": ""
+    },
+    "clips": [
+      "alert_focus",
+      "rest_side",
+      "stand_up",
+      "idle_relaxed",
+      "look_at_handler",
+      "sniff",
+      "walk",
+      "sit",
+      "lie_down",
+      "rest_loop",
+      "eat",
+      "play_bow",
+      "turn_away",
+      "tense_idle",
+      "tired_idle",
+      "recover"
+    ],
+    "sourceClips": [
+      "alert_focus",
+      "eat",
+      "idle_relaxed",
+      "lie_down",
+      "look_at_handler",
+      "play_bow",
+      "recover",
+      "rest_loop",
+      "rest_side",
+      "sit",
+      "sniff",
+      "stand_up",
+      "tense_idle",
+      "tired_idle",
+      "turn_away",
+      "walk"
+    ],
+    "clipMap": {
+      "alert_focus": "alert_focus",
+      "rest_side": "rest_side",
+      "stand_up": "stand_up",
+      "idle_relaxed": "idle_relaxed",
+      "look_at_handler": "look_at_handler",
+      "sniff": "sniff",
+      "walk": "walk",
+      "sit": "sit",
+      "lie_down": "lie_down",
+      "rest_loop": "rest_loop",
+      "eat": "eat",
+      "play_bow": "play_bow",
+      "turn_away": "turn_away",
+      "tense_idle": "tense_idle",
+      "tired_idle": "tired_idle",
+      "recover": "recover"
+    },
+    "clipMeta": {
+      "alert_focus": {
+        "durationS": 2,
+        "loop": true
+      },
+      "rest_side": {
+        "durationS": 5,
+        "loop": true
+      },
+      "stand_up": {
+        "durationS": 1.8,
+        "loop": false
+      },
+      "idle_relaxed": {
+        "durationS": 4,
+        "loop": true
+      },
+      "look_at_handler": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "sniff": {
+        "durationS": 2.5,
+        "loop": true
+      },
+      "walk": {
+        "durationS": 1,
+        "loop": true
+      },
+      "sit": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "lie_down": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "rest_loop": {
+        "durationS": 5,
+        "loop": true
+      },
+      "eat": {
+        "durationS": 4,
+        "loop": false,
+        "events": {
+          "treat_received": 2
+        }
+      },
+      "play_bow": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "turn_away": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "tense_idle": {
+        "durationS": 2.5,
+        "loop": true
+      },
+      "tired_idle": {
+        "durationS": 3.5,
+        "loop": true
+      },
+      "recover": {
+        "durationS": 2,
+        "loop": false
+      }
+    },
+    "source": "Dog Puppy by kenchoo; original 3d dog cute by Tech developers; adapted coat, scale, growing head proportions and 16 Blender IK-authored educational clips; scripts/build-soft-puppies.mjs",
+    "sourceUrl": "https://sketchfab.com/3d-models/dog-puppy-72331763040e4314b154f84348fe0957",
+    "license": "CC BY 4.0; kenchoo / Tech developers; https://creativecommons.org/licenses/by/4.0/",
+    "sourceSha256": "45bbe4ae0561c49f0dd1bc821305b577dd75b9c8cd8cc011dae6adc409990811",
+    "version": 2,
+    "validator": {
+      "numErrors": 0,
+      "numWarnings": 0,
+      "numInfos": 0,
+      "numHints": 0,
+      "messages": [],
+      "report": {
+        "uri": "dog_bruno_puppy",
+        "mimeType": "model/gltf-binary",
+        "validatorVersion": "2.0.0-dev.3.10",
+        "validatedAt": "2026-10-10T14:26:05.164Z",
+        "issues": {
+          "numErrors": 0,
+          "numWarnings": 0,
+          "numInfos": 0,
+          "numHints": 0,
+          "messages": [],
+          "truncated": false
+        },
+        "info": {
+          "version": "2.0",
+          "generator": "glTF-Transform v4.5.1",
+          "resources": [
+            {
+              "pointer": "/buffers/0",
+              "mimeType": "application/gltf-buffer",
+              "storage": "glb",
+              "byteLength": 1389152
+            },
+            {
+              "pointer": "/images/0",
+              "mimeType": "image/png",
+              "storage": "buffer-view",
+              "image": {
+                "width": 256,
+                "height": 256,
+                "format": "rgba",
+                "primaries": "srgb",
+                "transfer": "srgb",
+                "bits": 8
+              }
+            },
+            {
+              "pointer": "/images/1",
+              "mimeType": "image/jpeg",
+              "storage": "buffer-view",
+              "image": {
+                "width": 1024,
+                "height": 1024,
+                "format": "rgb",
+                "bits": 8
+              }
+            }
+          ],
+          "animationCount": 16,
+          "materialCount": 1,
+          "hasMorphTargets": true,
+          "hasSkins": true,
+          "hasTextures": true,
+          "hasDefaultScene": true,
+          "drawCallCount": 1,
+          "totalVertexCount": 7839,
+          "totalTriangleCount": 14844,
+          "maxUVs": 1,
+          "maxInfluences": 4,
+          "maxAttributes": 6
+        }
+      }
+    }
+  }
+}

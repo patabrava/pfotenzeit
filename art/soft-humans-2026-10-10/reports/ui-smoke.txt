@@ -1,0 +1,48 @@
+PASS home: reward anchor cleared (no counter visible)
+PASS home: dock actions reachable at 360×640
+PASS home: no mid-word breaks in dock buttons
+PASS keyboard: first Tab lands on a control — Profil von Nala öffnen
+PASS keyboard: focus trapped inside sheet
+PASS modal: world layer inert behind sheet
+PASS keyboard: Escape closes sheet
+PASS lesson: dock ≤ 28 % height (360)
+PASS lesson: options reachable (360)
+PASS lesson: react → feedback via presenter/ACK
+PASS profile: pixel canvas is an integer multiple of 128 device px
+PASS profile: care presented inline
+PASS school: insufficient marks → aria-disabled but focusable
+PASS school: mark counter present
+PASS 200 %: home actions reachable
+PASS 200 %: lesson options reachable
+PASS 200 %: lesson header still one line (≤ 2× 44 px)
+PASS fallback: lives inside the scene strip
+PASS fallback: pose line shown in lesson without renderer
+PASS 390: header ≤ 44 px — 40.0 px
+PASS 390: scene strip ≥ 50 % in observe — 61.6 %
+PASS 390: strip sits between header and card (D-032)
+PASS 390: card ≤ 28 % in observe — 20.9 %
+PASS 390: reward anchor points at the mark counter — 0.877:0.000
+PASS 390: expanded description keeps strip ≥ 50 % — 54.5 %
+PASS 390: description scrolls inside card
+PASS 390: decide has no inline text button (description via menu)
+PASS 390: scene strip ≥ 50 % in decide — 61.1 %
+PASS 390: dock ≤ 28 % in decide — 14.7 %
+PASS 390: option buttons 52–56 px — 52.0/52.0
+PASS 390: menu is a 48 px icon button at the dock's right edge
+PASS 390: options reachable
+PASS 390: react shows a one-line text, no spinner
+PASS 390: feedback has symbol + text and quoted Mira line
+PASS 390: feedback card ≤ 28 %
+PASS 390: reflection shows both closing buttons with equal weight
+PASS 390: reward summary as three rows
+PASS 390: no reward animation over the dog
+PASS 390: header gains visit mark and first learning mark — 0 → 2
+PASS 390: Weiter returns home
+PASS 390: reward shown once (no dialog after the rows)
+PASS reload@reflection: redirected home, reward dialog shown once
+PASS reload@reflection: pendingPresentation acknowledged
+PASS reload@reflection: next visit starts
+PASS 390 reduced motion: pose line present and strip ≥ 50 % — 54.5 %
+PASS no page errors
+
+46/46 checks passed. Screenshots: /var/folders/1w/_gqfxq7d30l24y3nqbb8fr5m0000gn/T/pz-smoke

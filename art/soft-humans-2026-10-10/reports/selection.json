@@ -1,0 +1,39 @@
+{
+  "source": "Grab3D",
+  "sourceAIassisted": true,
+  "license": "CC0 1.0",
+  "selected": {
+    "mira": {
+      "url": "https://grab3d.com/models/characters/woman/",
+      "downloadUrl": "https://grab3d.com/dl/woman-rigged/woman-rigged.glb",
+      "originalSha256": "a9f2bcf774e3e9d19416c99c68a6d73041b17808def97fddf72c50d71a8b2b8c",
+      "originalBytes": 13013836,
+      "liveSha256": "36044bbda205961a21c50c6e6b81df7ec85085a3a459b8fa96982118fd7ca907",
+      "liveBytes": 1081056,
+      "triangles": 10909,
+      "clips": [
+        "idle",
+        "greet",
+        "gesture_explain",
+        "offer_reward",
+        "kneel"
+      ]
+    },
+    "alex": {
+      "url": "https://grab3d.com/models/characters/man/",
+      "downloadUrl": "https://grab3d.com/dl/man-rigged/man-rigged.glb",
+      "originalSha256": "c41f2bfc62b03a8dd8fbae37d201d4c73bba3806678984c6895f59a7cbf22c4f",
+      "originalBytes": 13051272,
+      "liveSha256": "750a73762e53c6855b9765612b6d4092c8ee7a0d80f422055a4036e6126482e3",
+      "liveBytes": 1052080,
+      "triangles": 10987,
+      "clips": [
+        "idle",
+        "greet",
+        "gesture_explain",
+        "offer_reward",
+        "kneel"
+      ]
+    }
+  }
+}

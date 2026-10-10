@@ -19,6 +19,8 @@ import { createView } from './view';
 export function createProfileView(ctx: UiContext): View {
   const root = el('section', { class: 'screen screen--panel', attrs: { 'aria-labelledby': 'profile-title' }, dataset: { view: 'profile' } });
   const canvas = el('canvas', { class: 'pixel-canvas', attrs: { width: 128, height: 128, role: 'img' } });
+  // Sizing box: the canvas gets an exact CSS size of 128·scale/dpr so the drawer's integer scale lands on whole device pixels.
+  const pixelBox = el('div', { class: 'pixel-box' }, [canvas]);
   let pixel: PixelDogHandle | null = null;
   let showValues = false;
   const bars = new Map<string, HTMLElement>();
@@ -36,6 +38,25 @@ export function createProfileView(ctx: UiContext): View {
       bars.set(id, bar);
     }
     return bar;
+  }
+
+  function pickScale(css: number, dpr: number): number {
+    const max = Math.max(1, Math.floor(Math.floor(css * dpr) / 128));
+    for (let scale = max; scale >= 1; scale -= 1) {
+      const size = Math.round(((128 * scale) / dpr) * 64) / 64; // layout snaps CSS sizes to 1/64 px
+      if (Math.floor(Math.floor(size * dpr) / 128) === scale) return scale;
+    }
+    return max;
+  }
+
+  function sizePixel(): void {
+    const rect = pixelBox.getBoundingClientRect();
+    const css = Math.min(rect.width, rect.height);
+    if (css <= 0) return;
+    const dpr = window.devicePixelRatio || 1;
+    const size = (128 * pickScale(css, dpr)) / dpr;
+    canvas.style.width = `${size}px`;
+    canvas.style.height = `${size}px`;
   }
 
   function drawPixel(snapshot: StoreSnapshot): void {
@@ -83,7 +104,7 @@ export function createProfileView(ctx: UiContext): View {
         el('h1', { id: 'profile-title', text: t.profile.title }),
       ]);
 
-      const stage = el('div', { class: `pixel-stage${pixelState === 'memorial' ? ' pixel-stage--memorial' : ''}` }, [canvas]);
+      const stage = el('div', { class: `pixel-stage${pixelState === 'memorial' ? ' pixel-stage--memorial' : ''}` }, [pixelBox]);
       const nameBlock = el('div', { class: 'profile-name' }, [
         el('h2', { text: dog.name }),
         el('span', { class: 'text-secondary', text: `${t.profile.phase(dog.growthStage)} · ${t.profile.pixelState(pixelState)}` }),
@@ -191,10 +212,14 @@ export function createProfileView(ctx: UiContext): View {
       if (satiety) setNeedBarValue(satiety, needs.satiety, t.needs.hungerLine(needs.satiety), showValues, needs.satiety < low);
       if (energy) setNeedBarValue(energy, needs.energy, t.needs.energyLine(needs.energy), showValues, needs.energy < low);
       if (comfort) setNeedBarValue(comfort, needs.comfort, t.needs.comfortLine(needs.comfort), showValues, needs.comfort < low);
+      sizePixel();
       drawPixel(snapshot);
       if (!resizeObserver && typeof ResizeObserver !== 'undefined') {
-        resizeObserver = new ResizeObserver(() => drawPixel(ctx.store.get()));
-        resizeObserver.observe(canvas);
+        resizeObserver = new ResizeObserver(() => {
+          sizePixel();
+          drawPixel(ctx.store.get());
+        });
+        resizeObserver.observe(pixelBox);
       }
     },
     destroy() {

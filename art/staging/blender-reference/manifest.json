@@ -1,0 +1,579 @@
+{
+  "version": 2,
+  "staging": true,
+  "assets": {
+    "dog.nala.puppy": {
+      "url": "dog_nala_puppy.glb",
+      "status": "pending",
+      "productionIntegrated": false,
+      "material": "textured",
+      "textures": [
+        {
+          "slot": "normal",
+          "width": 1024,
+          "height": 1024,
+          "bytes": 440031,
+          "mime": "image/png"
+        }
+      ],
+      "textureSizes": [
+        1024
+      ],
+      "drawCalls": 1,
+      "rig": "project",
+      "rigInfo": {
+        "joints": 26,
+        "maxInfluences": 4,
+        "root": "root"
+      },
+      "clipMap": {
+        "idle_relaxed": "idle_relaxed",
+        "look_at_handler": "look_at_handler",
+        "sniff": "sniff",
+        "walk": "walk",
+        "sit": "sit",
+        "lie_down": "lie_down",
+        "rest_loop": "rest_loop",
+        "eat": "eat",
+        "play_bow": "play_bow",
+        "turn_away": "turn_away",
+        "tense_idle": "tense_idle",
+        "tired_idle": "tired_idle",
+        "recover": "recover"
+      },
+      "clips": [
+        "idle_relaxed",
+        "look_at_handler",
+        "sniff",
+        "walk",
+        "sit",
+        "lie_down",
+        "rest_loop",
+        "eat",
+        "play_bow",
+        "turn_away",
+        "tense_idle",
+        "tired_idle",
+        "recover"
+      ],
+      "sourceClips": [
+        "idle_relaxed",
+        "look_at_handler",
+        "sniff",
+        "walk",
+        "sit",
+        "lie_down",
+        "rest_loop",
+        "eat",
+        "play_bow",
+        "turn_away",
+        "tense_idle",
+        "tired_idle",
+        "recover"
+      ],
+      "bytes": 2032320,
+      "triangles": 17680,
+      "boundsMeters": [
+        0.1835,
+        0.391,
+        0.7296
+      ],
+      "measuredShoulderHeightM": 0.2897,
+      "source": "art/blender-reference-pass-2026-10-09/candidates/dog_nala_puppy.glb (Blender reference pass, code-authored candidate)",
+      "license": "project-internal, generated code; no third-party assets",
+      "version": 2,
+      "clipMeta": {
+        "idle_relaxed": {
+          "durationS": 4,
+          "loop": true
+        },
+        "look_at_handler": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "sniff": {
+          "durationS": 2.5,
+          "loop": true
+        },
+        "walk": {
+          "durationS": 1,
+          "loop": true
+        },
+        "sit": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "lie_down": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "rest_loop": {
+          "durationS": 5,
+          "loop": true
+        },
+        "eat": {
+          "durationS": 4,
+          "loop": false,
+          "events": {
+            "treat_received": 2
+          }
+        },
+        "play_bow": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "turn_away": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "tense_idle": {
+          "durationS": 2.5,
+          "loop": true
+        },
+        "tired_idle": {
+          "durationS": 3.5,
+          "loop": true
+        },
+        "recover": {
+          "durationS": 2,
+          "loop": false
+        }
+      }
+    },
+    "dog.nala.growing": {
+      "url": "dog_nala_growing.glb",
+      "status": "pending",
+      "productionIntegrated": false,
+      "material": "textured",
+      "textures": [
+        {
+          "slot": "normal",
+          "width": 1024,
+          "height": 1024,
+          "bytes": 465581,
+          "mime": "image/png"
+        }
+      ],
+      "textureSizes": [
+        1024
+      ],
+      "drawCalls": 1,
+      "rig": "project",
+      "rigInfo": {
+        "joints": 26,
+        "maxInfluences": 4,
+        "root": "root"
+      },
+      "clipMap": {
+        "idle_relaxed": "idle_relaxed",
+        "look_at_handler": "look_at_handler",
+        "sniff": "sniff",
+        "walk": "walk",
+        "sit": "sit",
+        "lie_down": "lie_down",
+        "rest_loop": "rest_loop",
+        "eat": "eat",
+        "play_bow": "play_bow",
+        "turn_away": "turn_away",
+        "tense_idle": "tense_idle",
+        "tired_idle": "tired_idle",
+        "recover": "recover"
+      },
+      "clips": [
+        "idle_relaxed",
+        "look_at_handler",
+        "sniff",
+        "walk",
+        "sit",
+        "lie_down",
+        "rest_loop",
+        "eat",
+        "play_bow",
+        "turn_away",
+        "tense_idle",
+        "tired_idle",
+        "recover"
+      ],
+      "sourceClips": [
+        "idle_relaxed",
+        "look_at_handler",
+        "sniff",
+        "walk",
+        "sit",
+        "lie_down",
+        "rest_loop",
+        "eat",
+        "play_bow",
+        "turn_away",
+        "tense_idle",
+        "tired_idle",
+        "recover"
+      ],
+      "bytes": 2030884,
+      "triangles": 17680,
+      "boundsMeters": [
+        0.179,
+        0.4794,
+        0.8512
+      ],
+      "measuredShoulderHeightM": 0.3799,
+      "source": "art/blender-reference-pass-2026-10-09/candidates/dog_nala_growing.glb (Blender reference pass, code-authored candidate)",
+      "license": "project-internal, generated code; no third-party assets",
+      "version": 2,
+      "clipMeta": {
+        "idle_relaxed": {
+          "durationS": 4,
+          "loop": true
+        },
+        "look_at_handler": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "sniff": {
+          "durationS": 2.5,
+          "loop": true
+        },
+        "walk": {
+          "durationS": 1,
+          "loop": true
+        },
+        "sit": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "lie_down": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "rest_loop": {
+          "durationS": 5,
+          "loop": true
+        },
+        "eat": {
+          "durationS": 4,
+          "loop": false,
+          "events": {
+            "treat_received": 2
+          }
+        },
+        "play_bow": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "turn_away": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "tense_idle": {
+          "durationS": 2.5,
+          "loop": true
+        },
+        "tired_idle": {
+          "durationS": 3.5,
+          "loop": true
+        },
+        "recover": {
+          "durationS": 2,
+          "loop": false
+        }
+      }
+    },
+    "dog.bruno.puppy": {
+      "url": "dog_bruno_puppy.glb",
+      "status": "pending",
+      "productionIntegrated": false,
+      "material": "textured",
+      "textures": [
+        {
+          "slot": "normal",
+          "width": 1024,
+          "height": 1024,
+          "bytes": 453685,
+          "mime": "image/png"
+        }
+      ],
+      "textureSizes": [
+        1024
+      ],
+      "drawCalls": 1,
+      "rig": "project",
+      "rigInfo": {
+        "joints": 26,
+        "maxInfluences": 4,
+        "root": "root"
+      },
+      "clipMap": {
+        "idle_relaxed": "idle_relaxed",
+        "look_at_handler": "look_at_handler",
+        "sniff": "sniff",
+        "walk": "walk",
+        "sit": "sit",
+        "lie_down": "lie_down",
+        "rest_loop": "rest_loop",
+        "eat": "eat",
+        "play_bow": "play_bow",
+        "turn_away": "turn_away",
+        "tense_idle": "tense_idle",
+        "tired_idle": "tired_idle",
+        "recover": "recover"
+      },
+      "clips": [
+        "idle_relaxed",
+        "look_at_handler",
+        "sniff",
+        "walk",
+        "sit",
+        "lie_down",
+        "rest_loop",
+        "eat",
+        "play_bow",
+        "turn_away",
+        "tense_idle",
+        "tired_idle",
+        "recover"
+      ],
+      "sourceClips": [
+        "idle_relaxed",
+        "look_at_handler",
+        "sniff",
+        "walk",
+        "sit",
+        "lie_down",
+        "rest_loop",
+        "eat",
+        "play_bow",
+        "turn_away",
+        "tense_idle",
+        "tired_idle",
+        "recover"
+      ],
+      "bytes": 2034532,
+      "triangles": 17680,
+      "boundsMeters": [
+        0.2105,
+        0.4152,
+        0.7565
+      ],
+      "measuredShoulderHeightM": 0.3225,
+      "source": "art/blender-reference-pass-2026-10-09/candidates/dog_bruno_puppy.glb (Blender reference pass, code-authored candidate)",
+      "license": "project-internal, generated code; no third-party assets",
+      "version": 2,
+      "clipMeta": {
+        "idle_relaxed": {
+          "durationS": 4,
+          "loop": true
+        },
+        "look_at_handler": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "sniff": {
+          "durationS": 2.5,
+          "loop": true
+        },
+        "walk": {
+          "durationS": 1,
+          "loop": true
+        },
+        "sit": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "lie_down": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "rest_loop": {
+          "durationS": 5,
+          "loop": true
+        },
+        "eat": {
+          "durationS": 4,
+          "loop": false,
+          "events": {
+            "treat_received": 2
+          }
+        },
+        "play_bow": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "turn_away": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "tense_idle": {
+          "durationS": 2.5,
+          "loop": true
+        },
+        "tired_idle": {
+          "durationS": 3.5,
+          "loop": true
+        },
+        "recover": {
+          "durationS": 2,
+          "loop": false
+        }
+      }
+    },
+    "human.mira": {
+      "url": "human_mira.glb",
+      "status": "pending",
+      "productionIntegrated": false,
+      "material": "textured",
+      "textures": [
+        {
+          "slot": "normal",
+          "width": 512,
+          "height": 512,
+          "bytes": 134904,
+          "mime": "image/png"
+        }
+      ],
+      "textureSizes": [
+        512
+      ],
+      "drawCalls": 1,
+      "rig": "project",
+      "rigInfo": {
+        "joints": 20,
+        "maxInfluences": 4,
+        "root": "root"
+      },
+      "clipMap": {
+        "idle": "idle",
+        "greet": "greet",
+        "gesture_explain": "gesture_explain",
+        "offer_reward": "offer_reward",
+        "kneel": "kneel"
+      },
+      "clips": [
+        "idle",
+        "greet",
+        "gesture_explain",
+        "offer_reward",
+        "kneel"
+      ],
+      "sourceClips": [
+        "idle",
+        "greet",
+        "gesture_explain",
+        "offer_reward",
+        "kneel"
+      ],
+      "bytes": 1646428,
+      "triangles": 15499,
+      "boundsMeters": [
+        0.5527,
+        1.6971,
+        0.261
+      ],
+      "measuredHeightM": 1.701,
+      "source": "art/blender-reference-pass-2026-10-09/candidates/human_mira.glb (Blender reference pass, code-authored candidate)",
+      "license": "project-internal, generated code; no third-party assets",
+      "version": 2,
+      "clipMeta": {
+        "idle": {
+          "durationS": 4,
+          "loop": true
+        },
+        "greet": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "gesture_explain": {
+          "durationS": 2,
+          "loop": false
+        },
+        "offer_reward": {
+          "durationS": 2,
+          "loop": false
+        },
+        "kneel": {
+          "durationS": 1.5,
+          "loop": false
+        }
+      }
+    },
+    "human.alex": {
+      "url": "human_alex.glb",
+      "status": "pending",
+      "productionIntegrated": false,
+      "material": "textured",
+      "textures": [
+        {
+          "slot": "normal",
+          "width": 512,
+          "height": 512,
+          "bytes": 138260,
+          "mime": "image/png"
+        }
+      ],
+      "textureSizes": [
+        512
+      ],
+      "drawCalls": 1,
+      "rig": "project",
+      "rigInfo": {
+        "joints": 20,
+        "maxInfluences": 4,
+        "root": "root"
+      },
+      "clipMap": {
+        "idle": "idle",
+        "greet": "greet",
+        "gesture_explain": "gesture_explain",
+        "offer_reward": "offer_reward",
+        "kneel": "kneel"
+      },
+      "clips": [
+        "idle",
+        "greet",
+        "gesture_explain",
+        "offer_reward",
+        "kneel"
+      ],
+      "sourceClips": [
+        "idle",
+        "greet",
+        "gesture_explain",
+        "offer_reward",
+        "kneel"
+      ],
+      "bytes": 1509584,
+      "triangles": 15500,
+      "boundsMeters": [
+        0.57,
+        1.7523,
+        0.2457
+      ],
+      "measuredHeightM": 1.7563,
+      "source": "art/blender-reference-pass-2026-10-09/candidates/human_alex.glb (Blender reference pass, code-authored candidate)",
+      "license": "project-internal, generated code; no third-party assets",
+      "version": 2,
+      "clipMeta": {
+        "idle": {
+          "durationS": 4,
+          "loop": true
+        },
+        "greet": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "gesture_explain": {
+          "durationS": 2,
+          "loop": false
+        },
+        "offer_reward": {
+          "durationS": 2,
+          "loop": false
+        },
+        "kneel": {
+          "durationS": 1.5,
+          "loop": false
+        }
+      }
+    }
+  },
+  "generatedUTC": "2026-10-09T19:28:46.419Z"
+}

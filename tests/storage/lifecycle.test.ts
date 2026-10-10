@@ -172,6 +172,11 @@ describe('lifecycle – active clock', () => {
     expect(store.get().app.pauseReasons).not.toContain('hidden');
     expect(store.get().app.returnSummary).toMatch(/Nala/);
     expect(lifecycle.isActive()).toBe(true);
+    const summary = store.get().app.returnSummary;
+    doc.emit('visibilitychange');
+    await vi.advanceTimersByTimeAsync(0);
+    expect(types(store.dispatched)).toEqual(['TICK_ACTIVE', 'CLOSE_APP', 'APPLY_OFFLINE']);
+    expect(store.get().app.returnSummary).toBe(summary);
 
     // One more second of activity produces at most a 1 s delta, never the 2 h.
     await elapse(providers, 1000);

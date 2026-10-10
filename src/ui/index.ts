@@ -11,6 +11,8 @@ import type { RendererHandle, RendererStatus } from '../render/types';
 import { getSceneDirective } from '../simulation/selectors';
 import type { Store, StoreSnapshot } from '../state/store';
 import { createAppShell } from './AppShell';
+import { openDogSheet } from './DogSheet';
+import { openPracticeSheet } from './PracticeView';
 import type { UiContext, UiDeps } from './context';
 import { goBack, navigate } from './navigation';
 import { createPlaceholderPixelDog, loadPixelDogFactory, type PixelDogFactory } from './pixelBridge';
@@ -39,7 +41,8 @@ export function mountUi(store: Store, deps: UiDeps, host: HTMLElement | null = d
   let toastCounter = 0;
   let destroyed = false;
 
-  const presenter = createPresenter({ store, audio, getRenderer: () => renderer });
+  const world = deps.world ?? null;
+  const presenter = createPresenter({ store, audio, getRenderer: () => renderer, getWorld: () => world });
 
   const shell = createAppShell(() => ctx);
 
@@ -52,6 +55,7 @@ export function mountUi(store: Store, deps: UiDeps, host: HTMLElement | null = d
     presenter,
     modalHost: shell.modalHost,
     getRenderer: () => renderer,
+    world,
     getPixelFactory: () => pixelFactory,
     navigate: (route: Route) => navigate(store, route),
     goBack: () => goBack(store),
@@ -63,6 +67,8 @@ export function mountUi(store: Store, deps: UiDeps, host: HTMLElement | null = d
     openCareSheet: () => openCareSheet(ctx),
     openLessonPicker: () => openLessonPicker(ctx),
     openSchoolSheet: () => navigate(store, 'school'),
+    openDogSheet: () => openDogSheet(ctx),
+    openPracticeSheet: () => openPracticeSheet(ctx),
     async exportSave() {
       try {
         if (deps.exportData) await deps.exportData();
@@ -74,6 +80,7 @@ export function mountUi(store: Store, deps: UiDeps, host: HTMLElement | null = d
         ctx.toast(t.settings.exportFailed);
       }
     },
+    rewardShown: new Set<string>(),
     hasImportPicker: () => typeof deps.importData === 'function',
     async importSave(file) {
       try {
@@ -122,7 +129,8 @@ export function mountUi(store: Store, deps: UiDeps, host: HTMLElement | null = d
   function syncRenderer(snapshot: StoreSnapshot): void {
     if (!renderer) return;
     const { app, save } = snapshot;
-    const directive = getSceneDirective(save, store.content, { route: app.route });
+    // D-041: the controller supplies the yard directive while the yard is active; otherwise the staged scene.
+    const directive = world?.directive() ?? getSceneDirective(save, store.content, { route: app.route, yardMode: app.yardMode });
     const key = JSON.stringify(directive);
     if (key !== lastDirectiveKey) {
       lastDirectiveKey = key;
@@ -132,7 +140,7 @@ export function mountUi(store: Store, deps: UiDeps, host: HTMLElement | null = d
         console.warn('[ui] renderer.apply failed', error);
       }
     }
-    const active = (app.route === 'home' || app.route === 'lesson') && app.pauseReasons.length === 0 && app.ownership !== 'other';
+    const active = (app.route === 'home' || app.route === 'lesson' || app.route === 'practice') && app.pauseReasons.length === 0 && app.ownership !== 'other';
     if (active !== lastActive) {
       lastActive = active;
       renderer.setActive(active);
@@ -160,6 +168,7 @@ export function mountUi(store: Store, deps: UiDeps, host: HTMLElement | null = d
       statusUnsubscribe = handle.onStatus((status: RendererStatus) => store.patchApp({ rendererStatus: status }));
       const status = await handle.mount(shell.sceneContainer);
       if (destroyed) return;
+      for (const canvas of shell.sceneContainer.querySelectorAll('canvas:not(.pixel-canvas)')) canvas.setAttribute('aria-hidden', 'true');
       store.patchApp({ rendererStatus: status });
       syncRenderer(store.get());
     } catch (error) {
@@ -173,7 +182,9 @@ export function mountUi(store: Store, deps: UiDeps, host: HTMLElement | null = d
     const name = snapshot.save.dog.name;
     switch (effect.type) {
       case 'visitRewarded':
-        shell.showReward(effect, snapshot);
+        // The reflection view shows the reward rows itself (WP-J) and registers the visitId; every other path
+        // (care closure from the lesson menu, reload with a pending reward after the redirect) gets the dialog once.
+        if (!ctx.rewardShown.has(effect.visitId)) shell.showReward(effect, snapshot);
         break;
       case 'upgradeBought':
         ctx.toast(t.school.bought(store.content.upgrades[effect.upgradeId].label));
@@ -187,12 +198,24 @@ export function mountUi(store: Store, deps: UiDeps, host: HTMLElement | null = d
       case 'lost':
         navigate(store, 'memorial');
         break;
+      case 'moment': {
+        // D-041 §5: outcome sentence (content) after the response was shown.
+        const outcome = store.content.moments[effect.kind]?.outcome[effect.response];
+        if (outcome) ctx.toast(outcome);
+        break;
+      }
       default:
         break;
     }
   });
   const unsubscribePresenterChange = presenter.onChange(() => {
     if (!destroyed) shell.update(store.get());
+  });
+  // World structural changes (prompt, moment, view, hold …): re-apply the directive and refresh the HUD.
+  const unsubscribeWorld = world?.onChange(() => {
+    if (destroyed) return;
+    syncRenderer(store.get());
+    shell.update(store.get());
   });
 
   // --- store subscription
@@ -233,6 +256,7 @@ export function mountUi(store: Store, deps: UiDeps, host: HTMLElement | null = d
       unsubscribeStore();
       unsubscribeEffects();
       unsubscribePresenterChange();
+      unsubscribeWorld?.();
       statusUnsubscribe?.();
       motionQuery?.removeEventListener('change', onMotionChange);
       presenter.destroy();

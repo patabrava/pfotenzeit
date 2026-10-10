@@ -80,7 +80,8 @@ export type IconName =
   | 'calm'
   | 'check'
   | 'eye'
-  | 'leaf';
+  | 'leaf'
+  | 'mark';
 
 const ICON_PATHS: Record<IconName, string> = {
   gear: 'M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm9 4-1.9.6a7.4 7.4 0 0 1-.6 1.5l.9 1.8-1.4 1.4-1.8-.9a7.4 7.4 0 0 1-1.5.6L14 19h-2l-.6-1.9a7.4 7.4 0 0 1-1.5-.6l-1.8.9-1.4-1.4.9-1.8a7.4 7.4 0 0 1-.6-1.5L5 12v-2l1.9-.6a7.4 7.4 0 0 1 .6-1.5l-.9-1.8 1.4-1.4 1.8.9a7.4 7.4 0 0 1 1.5-.6L12 3h2l.6 1.9a7.4 7.4 0 0 1 1.5.6l1.8-.9 1.4 1.4-.9 1.8a7.4 7.4 0 0 1 .6 1.5L21 10v2Z',
@@ -102,9 +103,10 @@ const ICON_PATHS: Record<IconName, string> = {
   check: 'M5 12l5 5L20 7',
   eye: 'M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Zm10 3a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z',
   leaf: 'M5 19c0-8 5-13 14-14-1 9-6 14-14 14Zm0 0 8-8',
+  mark: 'M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.5 6.6 19.5l1.2-6L3.3 9.3l6.1-.7L12 3Z',
 };
 
-const FILLED: ReadonlySet<IconName> = new Set<IconName>(['gear', 'school', 'paw', 'play', 'toy']);
+const FILLED: ReadonlySet<IconName> = new Set<IconName>(['gear', 'school', 'paw', 'play', 'toy', 'mark']);
 
 export function icon(name: IconName, className = 'btn-icon'): HTMLSpanElement {
   const span = el('span', { class: className, attrs: { 'aria-hidden': 'true' } });
@@ -118,7 +120,7 @@ export function icon(name: IconName, className = 'btn-icon'): HTMLSpanElement {
 export interface ButtonProps {
   label: string;
   sub?: string;
-  variant?: 'primary' | 'secondary' | 'ghost' | 'option' | 'accent' | 'plain';
+  variant?: 'primary' | 'secondary' | 'ghost' | 'option' | 'accent' | 'plain' | 'text';
   large?: boolean;
   block?: boolean;
   icon?: IconName;
@@ -165,6 +167,48 @@ export function button(props: ButtonProps, onActivate: ActionHandler): HTMLButto
   }
   bindAction(node, onActivate, props.options);
   return node;
+}
+
+// ---------------------------------------------------------------- mark counter (F9: +1 glint at the header, never over the dog)
+
+const MARK_BUMP_MS = 300;
+
+/** Gold mark counter. `setMarkCounter` animates a +1 (300 ms) when the value increases. */
+export function markCounter(value: number, label: string): HTMLElement {
+  const node = el('span', { class: 'mark-counter', attrs: { role: 'status', 'aria-label': `${label}: ${value}` } }, [
+    el('span', { class: 'mark-counter-star', attrs: { 'aria-hidden': 'true' } }, [icon('mark', 'mark-icon')]),
+    el('span', { class: 'mark-counter-value', text: String(value), attrs: { 'aria-hidden': 'true' } }),
+  ]);
+  node.dataset.value = String(value);
+  return node;
+}
+
+export function setMarkCounter(node: HTMLElement, value: number, label: string): void {
+  const previous = Number(node.dataset.value ?? value);
+  node.dataset.value = String(value);
+  node.setAttribute('aria-label', `${label}: ${value}`);
+  const valueEl = node.querySelector<HTMLElement>('.mark-counter-value');
+  if (valueEl) valueEl.textContent = String(value);
+  if (value > previous) {
+    node.classList.remove('is-bump');
+    // Restart the animation even when a previous bump is still running.
+    void node.offsetWidth;
+    node.classList.add('is-bump');
+    window.setTimeout(() => node.classList.remove('is-bump'), MARK_BUMP_MS + 50);
+  }
+}
+
+/** Quoted line with speaker name (Mira's short lines). */
+export function quote(speaker: string, line: string): HTMLElement {
+  return el('p', { class: 'quote' }, [el('span', { class: 'quote-speaker', text: speaker }), el('span', { class: 'quote-text', text: `„${line}“` })]);
+}
+
+/** Helpful / other-direction marker: symbol + text, never colour alone. */
+export function decisionMark(helpful: boolean, label: string): HTMLElement {
+  return el('span', { class: `feedback-mark ${helpful ? 'feedback-mark--helpful' : 'feedback-mark--other'}` }, [
+    el('span', { class: 'feedback-mark-symbol', text: helpful ? '✓' : '↷', attrs: { 'aria-hidden': 'true' } }),
+    el('span', { text: label }),
+  ]);
 }
 
 // ---------------------------------------------------------------- switch & segmented

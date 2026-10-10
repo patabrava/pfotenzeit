@@ -2,7 +2,7 @@
  * Renderer contract. The renderer projects domain state; it never owns progression or health.
  * Implemented in src/render/app/GameRenderer.ts (WP-D). Consumed by ui/ and app/.
  */
-import type { DomainEffect, QualityTier, SceneDirective } from '../simulation/types';
+import type { DomainEffect, QualityTier, SceneDirective, WorldActorKey, WorldDirective, YardPoint } from '../simulation/types';
 
 export type RendererStatus = 'idle' | 'loading' | 'ready' | 'failed' | 'contextLost';
 
@@ -37,12 +37,24 @@ export interface RendererHandle {
   setQuality(tier: QualityTier): void;
   /** Request one frame (after resize, directive change, etc.). At most one rAF is pending. */
   invalidate(): void;
+  /**
+   * D-041 yard mode. Per-step update of actor positions/speeds while `apply()` carried view 'yard'.
+   * Cheap: no structural changes; keeps rendering continuous while any actor moves, then returns to demand mode.
+   */
+  updateWorld?(world: WorldDirective): void;
+  /** D-041: hit test in client pixels against the yard ground, actors and prompt zones. null when not in yard view. */
+  pick?(clientX: number, clientY: number): PickResult | null;
   getStatus(): RendererStatus;
   onStatus(listener: (status: RendererStatus) => void): () => void;
   /** Diagnostics for PROGRESS.md and the debug panel. */
   getMetrics(): RendererMetrics;
   dispose(): void;
 }
+
+export type PickResult =
+  | { kind: 'ground'; point: YardPoint }
+  | { kind: 'actor'; actor: WorldActorKey; point: YardPoint }
+  | { kind: 'zone'; zoneId: string; point: YardPoint };
 
 export interface RendererMetrics {
   drawCalls: number;
@@ -63,11 +75,39 @@ export interface AssetManifestEntry {
   bytes: number | null;
   triangles: number | null;
   clips: string[];
+  /** Legacy: max side per texture. Kept for existing consumers; `textures` is the D-036 form. */
   textureSizes: number[];
   boundsMeters: [number, number, number] | null;
   source: string;
   license: string;
   version?: number;
+  /** D-036 textured contract (D-038 field names). Absent means 'vertex'. */
+  material?: 'vertex' | 'textured';
+  textures?: AssetTextureInfo[];
+  /** Primitives × materials; absent means 1. */
+  drawCalls?: number;
+  /** Absent means 'project'. Vendor rigs need `clipMap`. */
+  rig?: 'project' | 'vendor';
+  rigInfo?: { joints: number; maxInfluences: number; root: string };
+  /** Semantic clip name → animation name in the file. Absent means identity. */
+  clipMap?: Record<string, string>;
+  /** Animation names actually present in the file. */
+  sourceClips?: string[];
+  missingClips?: string[];
+  productionIntegrated?: boolean;
+  clipMeta?: Record<string, { durationS?: number; loop?: boolean; events?: unknown; source?: string }>;
+  measuredShoulderHeightM?: number;
+  measuredHeightM?: number;
+}
+
+export type AssetTextureSlot = 'baseColor' | 'normal' | 'metallicRoughness' | 'occlusion' | 'emissive';
+
+export interface AssetTextureInfo {
+  slot: AssetTextureSlot;
+  width: number;
+  height: number;
+  bytes: number;
+  mime: 'image/png' | 'image/jpeg';
 }
 
 export interface AssetManifest {

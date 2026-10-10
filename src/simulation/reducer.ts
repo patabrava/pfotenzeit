@@ -9,8 +9,9 @@
  */
 import type { ContentCatalog } from '../content/types';
 import { applyActiveTime, applyCareKind, applyOffline, CARE_POSES, pickNeeds, resolveLoss } from './careClock';
-import { CARE_EFFECTS, DOG_NAME_MAX_LENGTH } from './defaults';
-import { advanceRound, closureAcceptance, createVisit, selectOption } from './lessons';
+import { CARE_EFFECTS, DOG_NAME_MAX_LENGTH, MOMENT_EFFECTS } from './defaults';
+import { momentPose } from './exercise';
+import { advanceRound, attemptExercise, closureAcceptance, createVisit, selectOption } from './lessons';
 import { buyUpgrade, confirmGrowth, rewardVisit } from './progression';
 import { getReadiness, isTrainingLocked } from './selectors';
 import {
@@ -22,7 +23,7 @@ import {
   recordTransaction,
   type StepResult,
 } from './transactions';
-import type { DomainAction, DomainEffect, ReduceResult, Save, Settings } from './types';
+import type { DomainAction, DomainEffect, NeedValues, ReduceResult, Save, Settings } from './types';
 
 export function reduce(save: Save, action: DomainAction, content: ContentCatalog): ReduceResult {
   if (!isValidTransactionId(action.transactionId) || !Number.isFinite(action.nowUTC)) {
@@ -85,17 +86,40 @@ function apply(save: Save, action: DomainAction, content: ContentCatalog): StepR
       return rewardVisit(save, action.closure, action.nowUTC, content);
     }
 
+    case 'EXERCISE_ATTEMPT': {
+      if (!save.currentVisit) return fail('no_visit');
+      if (save.dog.status === 'lost') return fail('dog_lost');
+      return attemptExercise(save, action.attemptId, action.context, content);
+    }
+
+    case 'RESPOND_MOMENT': {
+      if (save.dog.status === 'lost') return fail('dog_lost');
+      if (save.currentVisit && (save.currentVisit.phase === 'react' || save.currentVisit.phase === 'exercise')) return fail('wrong_phase');
+      const byKind = Object.prototype.hasOwnProperty.call(MOMENT_EFFECTS, action.kind) ? MOMENT_EFFECTS[action.kind] : undefined;
+      const delta = byKind && Object.prototype.hasOwnProperty.call(byKind, action.response) ? byKind[action.response] : undefined;
+      if (!delta) return fail('invalid');
+      const before = pickNeeds(save.dog);
+      const dog = { ...save.dog };
+      for (const key of Object.keys(delta) as (keyof NeedValues)[]) {
+        const change = delta[key];
+        if (change !== undefined) dog[key] = Math.max(0, Math.min(100, dog[key] + change));
+      }
+      return ok({ ...save, dog }, [
+        { type: 'moment', kind: action.kind, response: action.response, before, after: pickNeeds(dog), pose: momentPose(action.kind, action.response) },
+      ]);
+    }
+
     case 'ABANDON_VISIT': {
       if (!save.currentVisit) return fail('no_visit');
       const pending = save.pendingPresentation;
-      const dropPending = pending !== null && pending.effects.some((effect) => effect.type === 'decision');
+      const dropPending = pending !== null && pending.effects.some((effect) => effect.type === 'decision' || effect.type === 'exercise');
       return ok({ ...save, currentVisit: null, pendingPresentation: dropPending ? null : pending });
     }
 
     case 'CARE': {
       if (save.dog.status === 'lost') return fail('dog_lost');
       if (!Object.prototype.hasOwnProperty.call(CARE_EFFECTS, action.kind)) return fail('invalid');
-      if (save.currentVisit?.phase === 'react') return fail('wrong_phase');
+      if (save.currentVisit?.phase === 'react' || save.currentVisit?.phase === 'exercise') return fail('wrong_phase');
       const before = pickNeeds(save.dog);
       const dog = applyCareKind(save.dog, action.kind);
       return ok({ ...save, dog }, [
@@ -146,12 +170,12 @@ function apply(save: Save, action: DomainAction, content: ContentCatalog): StepR
       const pending = save.pendingPresentation;
       if (pending && pending.transactionId !== action.presentedTransactionId) return fail('invalid');
       const visit = save.currentVisit;
-      const leavesReact = visit !== null && visit.phase === 'react';
-      return ok({
-        ...save,
-        pendingPresentation: null,
-        currentVisit: leavesReact ? { ...visit, phase: 'feedback' } : visit,
-      });
+      const nextVisit =
+        visit === null ? null
+          : visit.phase === 'react' ? { ...visit, phase: 'feedback' as const }
+            : visit.phase === 'exercise' ? { ...visit, phase: 'decide' as const } // D-041
+              : visit;
+      return ok({ ...save, pendingPresentation: null, currentVisit: nextVisit });
     }
 
     case 'UPDATE_SETTINGS':

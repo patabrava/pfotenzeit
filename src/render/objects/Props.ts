@@ -22,8 +22,9 @@ export const PROP_HOME: Record<CarePropId, Vector3> = {
   bowl: new Vector3(-1.1, 0, -2.3),
   water: new Vector3(1.8, 0.06, 0.7),
   blanket: new Vector3(STAGE_POSITIONS.rest.x + 0.05, 0.1, STAGE_POSITIONS.rest.z + 0.05),
-  ball: new Vector3(0.9, 0, -0.9),
-  toy_rolling: new Vector3(YARD.width / 2 - 0.7, 0, -2.4),
+  // Keep it in front of the lesson focus dog so the head and eye rig can visibly track it.
+  ball: new Vector3(0.45, 0, .7),
+  toy_rolling: new Vector3(.65, 0, .7),
   leaf: new Vector3(1.6, 0.9, -2.9),
 };
 
@@ -139,11 +140,19 @@ export function createProps(): PropsSet {
       }
     },
     animateEdge(t, loud, hold) {
-      if (!loud || hold) return false;
+      if (hold) return false;
       let moved = false;
+      const ball = holders.ball;
+      if (ball.visible) {
+        const home = PROP_HOME.ball;
+        ball.position.copy(home);
+        ball.position.x += .16 * Math.sin(t * 1.4);
+        ball.rotation.z = -(ball.position.x - home.x) / .06;
+        moved = true;
+      }
       const toy = holders.toy_rolling;
-      if (toy.visible) {
-        const span = 1.6;
+      if (toy.visible && loud) {
+        const span = .24;
         const u = (Math.sin(t * 0.55) + 1) / 2;
         const home = PROP_HOME.toy_rolling;
         toy.position.set(home.x, home.y, home.z - span / 2 + u * span);
@@ -151,7 +160,7 @@ export function createProps(): PropsSet {
         moved = true;
       }
       const leaf = holders.leaf;
-      if (leaf.visible) {
+      if (leaf.visible && loud) {
         const cycle = 7;
         const k = (t % cycle) / cycle;
         const home = PROP_HOME.leaf;

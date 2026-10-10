@@ -32,6 +32,11 @@ import {
   type VisitDecision,
   type VisitState,
   type VitalityBand,
+  type DistanceBand,
+  type DistractionLevel,
+  type ExerciseAttempt,
+  type ExerciseKind,
+  type ExerciseResponse,
 } from './types';
 
 export function createNewSave(mode: Mode, providers: Providers, nowUTC: number): Save {
@@ -135,7 +140,11 @@ const DOG_STATUSES: readonly DogStatus[] = ['alive', 'lost'];
 const LESSON_IDS: readonly LessonId[] = ['L01', 'L02', 'L03'];
 const UPGRADE_IDS: readonly UpgradeId[] = ['rest_place', 'sniff_corner'];
 const CARE_KINDS: readonly CareKind[] = ['meal', 'rest', 'play', 'calm'];
-const PHASES: readonly LessonPhase[] = ['prepare', 'observe', 'decide', 'react', 'feedback', 'reflect', 'completed'];
+const PHASES: readonly LessonPhase[] = ['prepare', 'observe', 'exercise', 'decide', 'react', 'feedback', 'reflect', 'completed'];
+const EXERCISE_KINDS: readonly ExerciseKind[] = ['recall', 'find_spot', 'look_at'];
+const EXERCISE_RESPONSES: readonly ExerciseResponse[] = ['comes', 'hesitates', 'distracted', 'turns_away', 'settled', 'still_tense', 'glance'];
+const BANDS: readonly DistanceBand[] = ['near', 'mid', 'far'];
+const DISTRACTIONS: readonly DistractionLevel[] = ['none', 'toy', 'other_dog'];
 const CLOSURES: readonly VisitClosure[] = ['completed', 'careClosure'];
 const DIFFICULTIES: readonly LessonContext['difficulty'][] = ['easy', 'normal'];
 const REDUCED_MOTION: readonly ReducedMotionOverride[] = ['system', 'on', 'off'];
@@ -307,6 +316,29 @@ function readVisit(value: unknown, path: string, errors: string[]): VisitState |
     context: readContext(source.context, `${path}.context`, errors),
     lastOptionId: readNullableString(source.lastOptionId, `${path}.lastOptionId`, errors),
     insertedRetryUsed: readBoolean(source.insertedRetryUsed, `${path}.insertedRetryUsed`, errors),
+    // D-041: saves written before yard life have no attempts; default to none (schema version unchanged).
+    attempts: source.attempts === undefined
+      ? []
+      : readArray(source.attempts, `${path}.attempts`, errors, (entry, itemPath) => readAttempt(entry, itemPath, errors)),
+  };
+}
+
+function readAttempt(value: unknown, path: string, errors: string[]): ExerciseAttempt {
+  const source = readObject(value, path, errors) ?? {};
+  const context = readObject(source.context, `${path}.context`, errors) ?? {};
+  return {
+    roundId: readString(source.roundId, `${path}.roundId`, errors),
+    attemptId: readString(source.attemptId, `${path}.attemptId`, errors),
+    kind: readEnum(source.kind, EXERCISE_KINDS, `${path}.kind`, errors),
+    response: readEnum(source.response, EXERCISE_RESPONSES, `${path}.response`, errors),
+    context: {
+      handlerBand: readEnum(context.handlerBand, BANDS, `${path}.context.handlerBand`, errors),
+      otherDogBand: readEnum(context.otherDogBand, BANDS, `${path}.context.otherDogBand`, errors),
+      distractionBand: readEnum(context.distractionBand, BANDS, `${path}.context.distractionBand`, errors),
+      distraction: readEnum(context.distraction, DISTRACTIONS, `${path}.context.distraction`, errors),
+      dogZone: readNullableString(context.dogZone, `${path}.context.dogZone`, errors),
+      handlerMoving: readBoolean(context.handlerMoving, `${path}.context.handlerMoving`, errors),
+    },
   };
 }
 

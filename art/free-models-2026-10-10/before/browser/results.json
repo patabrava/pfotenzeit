@@ -1,0 +1,602 @@
+[
+  {
+    "viewport": "360x640",
+    "views": {
+      "school": {
+        "drawCalls": 9,
+        "triangles": 64632,
+        "fpsEstimate": 15,
+        "dpr": 2,
+        "textureBytesEstimate": 4210688,
+        "assetTiers": {
+          "human_mira": "glb",
+          "dog_nala": "glb",
+          "environment.school": "glb",
+          "props.care": "glb",
+          "props.upgrades": "glb"
+        },
+        "framing": {
+          "view": "school",
+          "heightShare": 0.11875827779889356,
+          "widthShare": 0.09249873179923492,
+          "minMargin": 0.24028810813988255,
+          "centreY": -0.4006655059213413,
+          "centreX": 0.33077873859105483,
+          "azimuthDeg": 31.999999999999996,
+          "noseOffsetDeg": 11.999999999999995
+        }
+      },
+      "lesson": {
+        "drawCalls": 8,
+        "triangles": 64608,
+        "fpsEstimate": 33,
+        "dpr": 2,
+        "textureBytesEstimate": 4210688,
+        "assetTiers": {
+          "human_mira": "glb",
+          "dog_nala": "glb",
+          "environment.school": "glb",
+          "props.care": "glb",
+          "props.upgrades": "glb"
+        },
+        "framing": {
+          "view": "lesson",
+          "heightShare": 0.41867788160954983,
+          "widthShare": 0.9083590138297118,
+          "minMargin": 0.01218778772579815,
+          "centreY": -0.18105704885575252,
+          "centreX": -0.06726541071869185,
+          "azimuthDeg": -25.653111336592076,
+          "noseOffsetDeg": 45.65311133659208
+        }
+      },
+      "closeup": {
+        "drawCalls": 8,
+        "triangles": 64608,
+        "fpsEstimate": 30,
+        "dpr": 2,
+        "textureBytesEstimate": 4210688,
+        "assetTiers": {
+          "human_mira": "glb",
+          "dog_nala": "glb",
+          "environment.school": "glb",
+          "props.care": "glb",
+          "props.upgrades": "glb"
+        },
+        "framing": {
+          "view": "closeup",
+          "heightShare": 0.5772155800553189,
+          "widthShare": 0.7206750110288274,
+          "minMargin": 0.06178063510451215,
+          "centreY": 0.020894472480247173,
+          "centreX": 0.1557637187621484,
+          "azimuthDeg": -9.167876107909033,
+          "noseOffsetDeg": 29.167876107909038
+        }
+      }
+    },
+    "errors": [],
+    "timings": {
+      "decision": 1753,
+      "decisionReduced": 0,
+      "visitRewarded": 487,
+      "upgradeBought": 515,
+      "careMeal": 2961,
+      "careMealReduced": 0
+    },
+    "demand": {
+      "idleFramesPerHalfSecond": 15,
+      "inactiveFrames": 0,
+      "resumedFrames": 14,
+      "heldFrames": 0
+    },
+    "demandOk": true,
+    "strip": {
+      "metrics": {
+        "drawCalls": 9,
+        "triangles": 64632,
+        "fpsEstimate": 5,
+        "dpr": 2,
+        "textureBytesEstimate": 4210688,
+        "assetTiers": {
+          "human_mira": "glb",
+          "dog_nala": "glb",
+          "environment.school": "glb",
+          "props.care": "glb",
+          "props.upgrades": "glb"
+        }
+      },
+      "framing": {
+        "view": "lesson",
+        "heightShare": 0.4361690297539743,
+        "widthShare": 0.25776134235414927,
+        "minMargin": 0.19491041395175146,
+        "centreY": -0.1740101423425228,
+        "centreX": -0.01066795769916229,
+        "azimuthDeg": -24.783100090286993,
+        "noseOffsetDeg": 44.783100090286986
+      },
+      "size": "360x176"
+    }
+  },
+  {
+    "viewport": "390x844",
+    "views": {
+      "school": {
+        "drawCalls": 9,
+        "triangles": 64632,
+        "fpsEstimate": 18,
+        "dpr": 2,
+        "textureBytesEstimate": 4210688,
+        "assetTiers": {
+          "human_mira": "glb",
+          "dog_nala": "glb",
+          "environment.school": "glb",
+          "props.care": "glb",
+          "props.upgrades": "glb"
+        },
+        "framing": {
+          "view": "school",
+          "heightShare": 0.11821545964431787,
+          "widthShare": 0.11668485572893467,
+          "minMargin": 0.24028879514456103,
+          "centreY": -0.40120695006656004,
+          "centreX": 0.33533024872787276,
+          "azimuthDeg": 32.00000000000001,
+          "noseOffsetDeg": 12.000000000000007
+        }
+      },
+      "lesson": {
+        "drawCalls": 8,
+        "triangles": 64608,
+        "fpsEstimate": 26,
+        "dpr": 2,
+        "textureBytesEstimate": 4210688,
+        "assetTiers": {
+          "human_mira": "glb",
+          "dog_nala": "glb",
+          "environment.school": "glb",
+          "props.care": "glb",
+          "props.upgrades": "glb"
+        },
+        "framing": {
+          "view": "lesson",
+          "heightShare": 0.41831371991855126,
+          "widthShare": 0.9655812122004712,
+          "minMargin": -0.04289489383586287,
+          "centreY": -0.18503234902873278,
+          "centreX": -0.12020857547125452,
+          "azimuthDeg": -19.102289845665187,
+          "noseOffsetDeg": 39.10228984566518
+        }
+      },
+      "closeup": {
+        "drawCalls": 8,
+        "triangles": 64608,
+        "fpsEstimate": 25,
+        "dpr": 2,
+        "textureBytesEstimate": 4210688,
+        "assetTiers": {
+          "human_mira": "glb",
+          "dog_nala": "glb",
+          "environment.school": "glb",
+          "props.care": "glb",
+          "props.upgrades": "glb"
+        },
+        "framing": {
+          "view": "closeup",
+          "heightShare": 0.565893968118405,
+          "widthShare": 0.7214319289186218,
+          "minMargin": 0.0665541717318422,
+          "centreY": 0.01784717607316716,
+          "centreX": 0.14545972761769377,
+          "azimuthDeg": -3.0055944470641207,
+          "noseOffsetDeg": 23.005594447064123
+        }
+      }
+    },
+    "errors": [],
+    "timings": {
+      "decision": 1753,
+      "decisionReduced": 0,
+      "visitRewarded": 538,
+      "upgradeBought": 535,
+      "careMeal": 2938,
+      "careMealReduced": 0
+    },
+    "demand": {
+      "idleFramesPerHalfSecond": 12,
+      "inactiveFrames": 0,
+      "resumedFrames": 11,
+      "heldFrames": 0
+    },
+    "demandOk": true,
+    "strip": {
+      "metrics": {
+        "drawCalls": 9,
+        "triangles": 64632,
+        "fpsEstimate": 6,
+        "dpr": 2,
+        "textureBytesEstimate": 4210688,
+        "assetTiers": {
+          "human_mira": "glb",
+          "dog_nala": "glb",
+          "environment.school": "glb",
+          "props.care": "glb",
+          "props.upgrades": "glb"
+        }
+      },
+      "framing": {
+        "view": "lesson",
+        "heightShare": 0.42970175067306515,
+        "widthShare": 0.3160513238473477,
+        "minMargin": 0.1942779326875253,
+        "centreY": -0.18174238395188425,
+        "centreX": -0.020457224789696887,
+        "azimuthDeg": -25.07987435524572,
+        "noseOffsetDeg": 45.07987435524573
+      },
+      "size": "390x232"
+    }
+  },
+  {
+    "viewport": "430x932",
+    "views": {
+      "school": {
+        "drawCalls": 9,
+        "triangles": 64632,
+        "fpsEstimate": 13,
+        "dpr": 2,
+        "textureBytesEstimate": 4210688,
+        "assetTiers": {
+          "human_mira": "glb",
+          "dog_nala": "glb",
+          "environment.school": "glb",
+          "props.care": "glb",
+          "props.upgrades": "glb"
+        },
+        "framing": {
+          "view": "school",
+          "heightShare": 0.11814660977061467,
+          "widthShare": 0.11731882277622947,
+          "minMargin": 0.2402894548984033,
+          "centreY": -0.40127448043257874,
+          "centreX": 0.33586129759775185,
+          "azimuthDeg": 32.00000000000001,
+          "noseOffsetDeg": 12.000000000000007
+        }
+      },
+      "lesson": {
+        "drawCalls": 8,
+        "triangles": 64608,
+        "fpsEstimate": 22,
+        "dpr": 2,
+        "textureBytesEstimate": 4210688,
+        "assetTiers": {
+          "human_mira": "glb",
+          "dog_nala": "glb",
+          "environment.school": "glb",
+          "props.care": "glb",
+          "props.upgrades": "glb"
+        },
+        "framing": {
+          "view": "lesson",
+          "heightShare": 0.41831343543431093,
+          "widthShare": 0.9681245107619144,
+          "minMargin": -0.04546000050312682,
+          "centreY": -0.1853759288260845,
+          "centreX": -0.12279549024433922,
+          "azimuthDeg": -19.131172130872482,
+          "noseOffsetDeg": 39.131172130872486
+        }
+      },
+      "closeup": {
+        "drawCalls": 8,
+        "triangles": 64608,
+        "fpsEstimate": 20,
+        "dpr": 2,
+        "textureBytesEstimate": 4210688,
+        "assetTiers": {
+          "human_mira": "glb",
+          "dog_nala": "glb",
+          "environment.school": "glb",
+          "props.care": "glb",
+          "props.upgrades": "glb"
+        },
+        "framing": {
+          "view": "closeup",
+          "heightShare": 0.6111573452743598,
+          "widthShare": 0.7314927765753196,
+          "minMargin": 0.0888992947213959,
+          "centreY": 0.014445959026498811,
+          "centreX": 0.0907086339818885,
+          "azimuthDeg": 3.0029150976864947,
+          "noseOffsetDeg": 16.997084902313507
+        }
+      }
+    },
+    "errors": [],
+    "timings": {
+      "decision": 1753,
+      "decisionReduced": 0,
+      "visitRewarded": 537,
+      "upgradeBought": 588,
+      "careMeal": 2969,
+      "careMealReduced": 0
+    },
+    "demand": {
+      "idleFramesPerHalfSecond": 8,
+      "inactiveFrames": 0,
+      "resumedFrames": 8,
+      "heldFrames": 0
+    },
+    "demandOk": true,
+    "strip": {
+      "metrics": {
+        "drawCalls": 9,
+        "triangles": 64632,
+        "fpsEstimate": 30,
+        "dpr": 2,
+        "textureBytesEstimate": 4210688,
+        "assetTiers": {
+          "human_mira": "glb",
+          "dog_nala": "glb",
+          "environment.school": "glb",
+          "props.care": "glb",
+          "props.upgrades": "glb"
+        }
+      },
+      "framing": {
+        "view": "lesson",
+        "heightShare": 0.5122529584420533,
+        "widthShare": 0.3607976553865389,
+        "minMargin": 0.18140443570860681,
+        "centreY": -0.12493817014073305,
+        "centreX": -0.02642479743554743,
+        "azimuthDeg": -24.982859132041657,
+        "noseOffsetDeg": 44.98285913204166
+      },
+      "size": "430x256"
+    }
+  },
+  {
+    "viewport": "844x390",
+    "views": {
+      "school": {
+        "drawCalls": 10,
+        "triangles": 65608,
+        "fpsEstimate": 24,
+        "dpr": 2,
+        "textureBytesEstimate": 4210688,
+        "assetTiers": {
+          "human_mira": "glb",
+          "dog_nala": "glb",
+          "environment.school": "glb",
+          "props.care": "glb",
+          "props.upgrades": "glb"
+        },
+        "framing": {
+          "view": "school",
+          "heightShare": 0.15774942402267234,
+          "widthShare": 0.032879672868208275,
+          "minMargin": 0.22038756479363808,
+          "centreY": -0.4014754463900515,
+          "centreX": 0.1264342068982896,
+          "azimuthDeg": 31.999999999999996,
+          "noseOffsetDeg": 11.999999999999995
+        }
+      },
+      "lesson": {
+        "drawCalls": 9,
+        "triangles": 64632,
+        "fpsEstimate": 23,
+        "dpr": 2,
+        "textureBytesEstimate": 4210688,
+        "assetTiers": {
+          "human_mira": "glb",
+          "dog_nala": "glb",
+          "environment.school": "glb",
+          "props.care": "glb",
+          "props.upgrades": "glb"
+        },
+        "framing": {
+          "view": "lesson",
+          "heightShare": 0.42691143841012813,
+          "widthShare": 0.24439041656698413,
+          "minMargin": 0.1927606021329632,
+          "centreY": -0.18756735732394547,
+          "centreX": -0.023498168525216953,
+          "azimuthDeg": -26.03004158813561,
+          "noseOffsetDeg": 46.03004158813562
+        }
+      },
+      "closeup": {
+        "drawCalls": 9,
+        "triangles": 64632,
+        "fpsEstimate": 21,
+        "dpr": 2,
+        "textureBytesEstimate": 4210688,
+        "assetTiers": {
+          "human_mira": "glb",
+          "dog_nala": "glb",
+          "environment.school": "glb",
+          "props.care": "glb",
+          "props.upgrades": "glb"
+        },
+        "framing": {
+          "view": "closeup",
+          "heightShare": 0.6294196191175885,
+          "widthShare": 0.3109552471362853,
+          "minMargin": 0.16774106011764617,
+          "centreY": 0.03509826064711924,
+          "centreX": 0.040757858294449195,
+          "azimuthDeg": -24.085160948416718,
+          "noseOffsetDeg": 44.08516094841672
+        }
+      }
+    },
+    "errors": [],
+    "timings": {
+      "decision": 1752,
+      "decisionReduced": 0,
+      "visitRewarded": 534,
+      "upgradeBought": 560,
+      "careMeal": 2977,
+      "careMealReduced": 0
+    },
+    "demand": {
+      "idleFramesPerHalfSecond": 9,
+      "inactiveFrames": 0,
+      "resumedFrames": 10,
+      "heldFrames": 0
+    },
+    "demandOk": true,
+    "strip": {
+      "metrics": {
+        "drawCalls": 10,
+        "triangles": 65608,
+        "fpsEstimate": 5,
+        "dpr": 2,
+        "textureBytesEstimate": 4210688,
+        "assetTiers": {
+          "human_mira": "glb",
+          "dog_nala": "glb",
+          "environment.school": "glb",
+          "props.care": "glb",
+          "props.upgrades": "glb"
+        }
+      },
+      "framing": {
+        "view": "lesson",
+        "heightShare": 0.42976798109582803,
+        "widthShare": 0.08810282652423586,
+        "minMargin": 0.19430098758375147,
+        "centreY": -0.18163004373666902,
+        "centreX": -0.005683237256620774,
+        "azimuthDeg": -25.080222728867096,
+        "noseOffsetDeg": 45.0802227288671
+      },
+      "size": "844x140"
+    }
+  },
+  {
+    "viewport": "1440x900",
+    "views": {
+      "school": {
+        "drawCalls": 10,
+        "triangles": 65608,
+        "fpsEstimate": 6,
+        "dpr": 2,
+        "textureBytesEstimate": 4210688,
+        "assetTiers": {
+          "human_mira": "glb",
+          "dog_nala": "glb",
+          "environment.school": "glb",
+          "props.care": "glb",
+          "props.upgrades": "glb"
+        },
+        "framing": {
+          "view": "school",
+          "heightShare": 0.15798684627531595,
+          "widthShare": 0.04332618498605152,
+          "minMargin": 0.22040700852612605,
+          "centreY": -0.40119913667243196,
+          "centreX": 0.1694610868301782,
+          "azimuthDeg": 31.999999999999996,
+          "noseOffsetDeg": 11.999999999999995
+        }
+      },
+      "lesson": {
+        "drawCalls": 9,
+        "triangles": 64632,
+        "fpsEstimate": 5,
+        "dpr": 2,
+        "textureBytesEstimate": 4210688,
+        "assetTiers": {
+          "human_mira": "glb",
+          "dog_nala": "glb",
+          "environment.school": "glb",
+          "props.care": "glb",
+          "props.upgrades": "glb"
+        },
+        "framing": {
+          "view": "lesson",
+          "heightShare": 0.4418383675029496,
+          "widthShare": 0.3194278629331086,
+          "minMargin": 0.19349184565456357,
+          "centreY": -0.1711779411879233,
+          "centreX": -0.015707283352310697,
+          "azimuthDeg": -25.80878514739632,
+          "noseOffsetDeg": 45.80878514739633
+        }
+      },
+      "closeup": {
+        "drawCalls": 8,
+        "triangles": 64608,
+        "fpsEstimate": 7,
+        "dpr": 2,
+        "textureBytesEstimate": 4210688,
+        "assetTiers": {
+          "human_mira": "glb",
+          "dog_nala": "glb",
+          "environment.school": "glb",
+          "props.care": "glb",
+          "props.upgrades": "glb"
+        },
+        "framing": {
+          "view": "closeup",
+          "heightShare": 0.6081296488467893,
+          "widthShare": 0.43259322401903066,
+          "minMargin": 0.1900017588837533,
+          "centreY": 0.01186683338570399,
+          "centreX": 0.018785699220003615,
+          "azimuthDeg": -24.952926952358858,
+          "noseOffsetDeg": 44.95292695235886
+        }
+      }
+    },
+    "errors": [],
+    "timings": {
+      "decision": 1753,
+      "decisionReduced": 0,
+      "visitRewarded": 962,
+      "upgradeBought": 1125,
+      "careMeal": 6002,
+      "careMealReduced": 0
+    },
+    "demand": {
+      "idleFramesPerHalfSecond": 2,
+      "inactiveFrames": 0,
+      "resumedFrames": 5,
+      "heldFrames": 0
+    },
+    "demandOk": true,
+    "strip": {
+      "metrics": {
+        "drawCalls": 10,
+        "triangles": 65608,
+        "fpsEstimate": 7,
+        "dpr": 2,
+        "textureBytesEstimate": 4210688,
+        "assetTiers": {
+          "human_mira": "glb",
+          "dog_nala": "glb",
+          "environment.school": "glb",
+          "props.care": "glb",
+          "props.upgrades": "glb"
+        }
+      },
+      "framing": {
+        "view": "lesson",
+        "heightShare": 0.4385067382692045,
+        "widthShare": 0.09022145545574856,
+        "minMargin": 0.19509736064215177,
+        "centreY": -0.17129854044649195,
+        "centreX": -0.003148845221506949,
+        "azimuthDeg": -24.783100090286993,
+        "noseOffsetDeg": 44.783100090286986
+      },
+      "size": "1440x248"
+    }
+  }
+]

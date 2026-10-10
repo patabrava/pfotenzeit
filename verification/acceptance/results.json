@@ -1,0 +1,85 @@
+[
+  {
+    "name": "lessons-retry-care-growth-reloads",
+    "pass": true,
+    "details": {
+      "supported": 2,
+      "inserted": 1,
+      "restDelta": 30,
+      "marks": 0,
+      "stage": "growing",
+      "completed": [
+        "L01",
+        "L02",
+        "L03"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "name": "care-once-and-export-import",
+    "pass": true,
+    "details": {
+      "satietyAfterReload": 75,
+      "tamperedImportRejected": true,
+      "exportFile": "pfotenzeit-export-2026-10-10.json"
+    },
+    "errors": []
+  },
+  {
+    "name": "challenge-bands-loss-offline-isolation",
+    "pass": true,
+    "details": {
+      "yellow": 45,
+      "critical": 5,
+      "activeLoss": true,
+      "offlineCaps": {
+        "satiety": 16,
+        "comfort": 8
+      },
+      "offlineNoKill": true,
+      "standardUnchanged": true
+    },
+    "errors": []
+  },
+  {
+    "name": "context-loss-restore-and-all-models",
+    "pass": true,
+    "details": {
+      "contextRestore": true,
+      "metrics": {
+        "drawCalls": 13,
+        "triangles": 135024,
+        "fpsEstimate": 3,
+        "dpr": 1,
+        "textureBytesEstimate": 27918992,
+        "assetTiers": {
+          "human_mira": "glb",
+          "dog_nala": "glb",
+          "environment.school": "glb",
+          "human_alex": "glb",
+          "dog_bruno": "glb",
+          "props.care": "glb",
+          "props.upgrades": "glb"
+        }
+      }
+    },
+    "errors": []
+  },
+  {
+    "name": "missing-model-fallback",
+    "pass": true,
+    "details": {
+      "drawCalls": 7,
+      "triangles": 26400,
+      "fpsEstimate": 1,
+      "dpr": 1,
+      "textureBytesEstimate": 4210688,
+      "assetTiers": {
+        "human_mira": "procedural",
+        "dog_nala": "procedural"
+      }
+    },
+    "errors": []
+  }
+]

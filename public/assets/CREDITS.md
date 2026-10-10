@@ -1,0 +1,26 @@
+# Model credits
+
+The three dog GLBs adapt Quaternius ShibaInu and Husky from the [Ultimate Animated Animal Pack](https://quaternius.com/packs/ultimateanimatedanimals.html), released under CC0 1.0 Universal. Original license: `licenses/Quaternius-CC0.txt`. Project adaptations include coat colors, meter scale, Nala growth proportions and Blender-authored educational animations. Other scene models remain project-generated. No purchase required.
+
+
+## Current textured puppies (2026-10-10)
+
+Dog Puppy by kenchoo (https://sketchfab.com/kenchoo)
+Source: https://sketchfab.com/3d-models/dog-puppy-72331763040e4314b154f84348fe0957
+Underlying model: “3d dog cute” by Tech developers, https://skfb.ly/6WMyH
+License: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+
+License and attribution observed on the official Sketchfab model page and download dialog on 2026-10-10. The downloaded archive does not contain a separate license file.
+Original GLB SHA-256: 45bbe4ae0561c49f0dd1bc821305b577dd75b9c8cd8cc011dae6adc409990811
+
+Pfotenzeit modifications: smooth PBR materials; optimized normal map; gold and chocolate coat variants; normalized size/ground; growing head proportions; Blender paw IK and 12 authored training animations. Original idle motion retained and normalized. No endorsement by the source authors is implied.
+
+The Quaternius dogs above are retained in the project as historical sources / rollback, and are superseded in the three live dog slots.
+
+## Integrated human models: Mira and Alex (2026-10-10)
+
+- Sources: [Casual Woman](https://grab3d.com/models/characters/woman/) and [Casual Man](https://grab3d.com/models/characters/man/) by Grab3D.
+- License: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). Source license retained in `public/assets/licenses/Grab3D-CC0-1.0.txt` and `art/soft-humans-2026-10-10/original/`.
+- Author disclosure: AI-assisted Meshy base mesh/textures, cleaned in Blender by Grab3D. Retain this disclosure if a distribution platform requires it.
+- Adaptation: weld seam duplicates, mobile LOD, smooth normals with sharp creases, 1024px color / 256px normal textures, unit-scale grounded native skeleton, four editable IK targets, five authored training gestures. Replaces previous procedural Mira/Alex. Sources and native rigs remain editable in `art/soft-humans-2026-10-10/`.

@@ -1,0 +1,27 @@
+
+> pfotenzeit@0.1.0 test:e2e
+> playwright test
+
+
+Running 12 tests using 3 workers
+
+(node:85612) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:85611) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:85610) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [desktop] › tests/e2e/smoke.spec.ts:35:1 › standard start, profile, care, L01 to care closure, reflection, mark, reload (17.1s)
+  ✓   3 [mobile-390] › tests/e2e/smoke.spec.ts:35:1 › standard start, profile, care, L01 to care closure, reflection, mark, reload (17.5s)
+  ✓   2 [mobile-360] › tests/e2e/smoke.spec.ts:35:1 › standard start, profile, care, L01 to care closure, reflection, mark, reload (17.5s)
+  ✓   4 [desktop] › tests/e2e/smoke.spec.ts:109:1 › challenge onboarding creates a separate run and standard stays untouched (1.2s)
+  ✓   6 [mobile-360] › tests/e2e/smoke.spec.ts:109:1 › challenge onboarding creates a separate run and standard stays untouched (1.2s)
+  ✓   5 [mobile-390] › tests/e2e/smoke.spec.ts:109:1 › challenge onboarding creates a separate run and standard stays untouched (1.2s)
+  ✓   7 [desktop] › tests/e2e/smoke.spec.ts:127:1 › WebGL unavailable still leaves profile and lesson texts usable (1.3s)
+  ✓  10 [desktop] › tests/e2e/smoke.spec.ts:152:1 › second tab is told the game is open elsewhere (314ms)
+  ✓   8 [mobile-360] › tests/e2e/smoke.spec.ts:127:1 › WebGL unavailable still leaves profile and lesson texts usable (1.4s)
+  ✓   9 [mobile-390] › tests/e2e/smoke.spec.ts:127:1 › WebGL unavailable still leaves profile and lesson texts usable (1.5s)
+  ✓  11 [mobile-360] › tests/e2e/smoke.spec.ts:152:1 › second tab is told the game is open elsewhere (331ms)
+  ✓  12 [mobile-390] › tests/e2e/smoke.spec.ts:152:1 › second tab is told the game is open elsewhere (389ms)
+
+  12 passed (22.2s)

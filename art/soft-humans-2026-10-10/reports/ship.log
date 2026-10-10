@@ -1,0 +1,9 @@
+staging mode: /Users/patabrava/Documents/AI/github/Camilo/Ines/art/soft-humans-2026-10-10/candidates/manifest.json
+asset               status        mat/rig                bytes    tris clips  validator   result
+human.mira          code-authored textured/vendor      1081056   10909     5  0E/0W/0I    ok  (textures 2, decoded ≈ 5.65 MB; baseColor sRGB flagging is the loader's job (by slot); 1 draw call(s); clipMap: 0 renamed; vendor rig Armature: 58 joints; meshes char1; materials Material_1; height 1.700 m)
+human.alex          code-authored textured/vendor      1052080   10987     5  0E/0W/0I    ok  (textures 2, decoded ≈ 5.65 MB; baseColor sRGB flagging is the loader's job (by slot); 1 draw call(s); clipMap: 0 renamed; vendor rig Armature: 58 joints; meshes char1; materials Material_1; height 1.760 m)
+
+total model bytes: 2,133,136 (budget 8,388,608, reported only in staging mode)
+
+all staging checks passed
+{"human.mira":{"bytes":1081056,"triangles":10909,"bounds":[0.9065287113189697,1.7000000476837158,0.36825162172317505]},"human.alex":{"bytes":1052080,"triangles":10987,"bounds":[1.1276723146438599,1.7599999904632568,0.3484606146812439]}}

@@ -12,9 +12,17 @@
  */
 const sw = self as unknown as ServiceWorkerGlobalScope;
 
-const CACHE_PREFIX = 'pfotenzeit-shell-';
+// Asset-only releases must change the worker bytes as well as the cache name.
+declare const __PZ_ASSET_VERSION__: string;
+const CACHE_PREFIX = `pfotenzeit-shell-${__PZ_ASSET_VERSION__}-`;
 const CORE_ASSET_MAX_BYTES = 3 * 1024 * 1024;
-const SHELL_FILES = ['./', './index.html', './manifest.webmanifest', './icon.svg', './apple-touch-icon.png', './offline.html'];
+const SHELL_FILES = [
+  './', './index.html', './manifest.webmanifest', './icon.svg', './apple-touch-icon.png', './offline.html',
+  './assets/fonts/AtkinsonHyperlegible-Regular.woff2',
+  './assets/fonts/AtkinsonHyperlegible-Bold.woff2',
+  './assets/fonts/AtkinsonHyperlegible-Italic.woff2',
+  './assets/fonts/AtkinsonHyperlegible-BoldItalic.woff2',
+];
 
 interface ViteManifestEntry {
   file: string;
@@ -154,7 +162,10 @@ sw.addEventListener('fetch', (event) => {
   event.respondWith(
     (async () => {
       const cache = await shellCache();
-      const cached = await cache?.match(request);
+      // The shell is public, same-origin, static content. Dev/preview servers
+      // send Vary: Origin, while module requests carry an Origin header that
+      // cache.add() did not send. That header must not hide a precached asset.
+      const cached = await cache?.match(request, { ignoreVary: true });
       if (cached) return cached;
       const response = await fetch(request);
       // Runtime-cache same-origin app assets (hashed build output, models, pixel, audio); never docs.

@@ -1,0 +1,81 @@
+{
+  "human.alex": {
+    "url": "human_alex.glb",
+    "status": "pending",
+    "productionIntegrated": false,
+    "material": "textured",
+    "textures": [
+      {
+        "slot": "normal",
+        "width": 512,
+        "height": 512,
+        "bytes": 138260,
+        "mime": "image/png"
+      }
+    ],
+    "textureSizes": [
+      512
+    ],
+    "drawCalls": 1,
+    "rig": "project",
+    "rigInfo": {
+      "joints": 20,
+      "maxInfluences": 4,
+      "root": "root"
+    },
+    "clipMap": {
+      "idle": "idle",
+      "greet": "greet",
+      "gesture_explain": "gesture_explain",
+      "offer_reward": "offer_reward",
+      "kneel": "kneel"
+    },
+    "clips": [
+      "idle",
+      "greet",
+      "gesture_explain",
+      "offer_reward",
+      "kneel"
+    ],
+    "sourceClips": [
+      "idle",
+      "greet",
+      "gesture_explain",
+      "offer_reward",
+      "kneel"
+    ],
+    "bytes": 1509584,
+    "triangles": 15500,
+    "boundsMeters": [
+      0.57,
+      1.7523,
+      0.2457
+    ],
+    "measuredHeightM": 1.7563,
+    "source": "art/blender-reference-pass-2026-10-09/candidates/human_alex.glb (Blender reference pass, code-authored candidate)",
+    "license": "project-internal, generated code; no third-party assets",
+    "version": 2,
+    "clipMeta": {
+      "idle": {
+        "durationS": 4,
+        "loop": true
+      },
+      "greet": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "gesture_explain": {
+        "durationS": 2,
+        "loop": false
+      },
+      "offer_reward": {
+        "durationS": 2,
+        "loop": false
+      },
+      "kneel": {
+        "durationS": 1.5,
+        "loop": false
+      }
+    }
+  }
+}

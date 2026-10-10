@@ -1,0 +1,281 @@
+{
+  "version": 1,
+  "generatedUTC": "2026-10-09T17:04:04.018Z",
+  "productionIntegrated": false,
+  "assets": {
+    "dog_nala_puppy": {
+      "tangentFallbacks": 2,
+      "key": "dog.nala.puppy",
+      "bytes": 2032320,
+      "baselineBytes": 487132,
+      "triangles": 17680,
+      "baselineTriangles": 9684,
+      "vertices": 18141,
+      "materials": 1,
+      "primitives": 1,
+      "bones": 26,
+      "maxInfluences": 4,
+      "boundsMeters": [
+        0.18345080316066742,
+        0.39098468353040516,
+        0.7295679450035095
+      ],
+      "boundsMin": [
+        -0.09172540158033371,
+        0.00024852226488292217,
+        -0.3965679407119751
+      ],
+      "boundsMax": [
+        0.09172540158033371,
+        0.3912332057952881,
+        0.3330000042915344
+      ],
+      "clips": [
+        "idle_relaxed",
+        "look_at_handler",
+        "sniff",
+        "walk",
+        "sit",
+        "lie_down",
+        "rest_loop",
+        "eat",
+        "play_bow",
+        "turn_away",
+        "tense_idle",
+        "tired_idle",
+        "recover"
+      ],
+      "source": "source/characters_refined.blend; scripts/author_reference.py; scripts/bake_surface.py; baseline rig and animation data preserved",
+      "status": "blender-reference-refined-candidate",
+      "textures": [
+        {
+          "name": "dog_nala_puppy_surface_normal",
+          "bytes": 440031,
+          "mime": "image/png"
+        }
+      ],
+      "validator": {
+        "errors": 0,
+        "warnings": 0,
+        "infos": 0,
+        "messages": []
+      }
+    },
+    "dog_nala_growing": {
+      "tangentFallbacks": 0,
+      "key": "dog.nala.growing",
+      "bytes": 2030884,
+      "baselineBytes": 486924,
+      "triangles": 17680,
+      "baselineTriangles": 9684,
+      "vertices": 17769,
+      "materials": 1,
+      "primitives": 1,
+      "bones": 26,
+      "maxInfluences": 4,
+      "boundsMeters": [
+        0.1789994165301323,
+        0.4793585149163846,
+        0.8511928021907806
+      ],
+      "boundsMin": [
+        -0.0895775854587555,
+        0.00037149511626921594,
+        -0.47834280133247375
+      ],
+      "boundsMax": [
+        0.0894218310713768,
+        0.4797300100326538,
+        0.3728500008583069
+      ],
+      "clips": [
+        "idle_relaxed",
+        "look_at_handler",
+        "sniff",
+        "walk",
+        "sit",
+        "lie_down",
+        "rest_loop",
+        "eat",
+        "play_bow",
+        "turn_away",
+        "tense_idle",
+        "tired_idle",
+        "recover"
+      ],
+      "source": "source/characters_refined.blend; scripts/author_reference.py; scripts/bake_surface.py; baseline rig and animation data preserved",
+      "status": "blender-reference-refined-candidate",
+      "textures": [
+        {
+          "name": "dog_nala_growing_surface_normal",
+          "bytes": 465581,
+          "mime": "image/png"
+        }
+      ],
+      "validator": {
+        "errors": 0,
+        "warnings": 0,
+        "infos": 0,
+        "messages": []
+      }
+    },
+    "dog_bruno_puppy": {
+      "tangentFallbacks": 0,
+      "key": "dog.bruno.puppy",
+      "bytes": 2034532,
+      "baselineBytes": 487280,
+      "triangles": 17680,
+      "baselineTriangles": 9684,
+      "vertices": 17980,
+      "materials": 1,
+      "primitives": 1,
+      "bones": 26,
+      "maxInfluences": 4,
+      "boundsMeters": [
+        0.21045614778995514,
+        0.4152437440061476,
+        0.7564795017242432
+      ],
+      "boundsMin": [
+        -0.10522807389497757,
+        0.0001987227296922356,
+        -0.42128679156303406
+      ],
+      "boundsMax": [
+        0.10522807389497757,
+        0.41544246673583984,
+        0.3351927101612091
+      ],
+      "clips": [
+        "idle_relaxed",
+        "look_at_handler",
+        "sniff",
+        "walk",
+        "sit",
+        "lie_down",
+        "rest_loop",
+        "eat",
+        "play_bow",
+        "turn_away",
+        "tense_idle",
+        "tired_idle",
+        "recover"
+      ],
+      "source": "source/characters_refined.blend; scripts/author_reference.py; scripts/bake_surface.py; baseline rig and animation data preserved",
+      "status": "blender-reference-refined-candidate",
+      "textures": [
+        {
+          "name": "dog_bruno_puppy_surface_normal",
+          "bytes": 453685,
+          "mime": "image/png"
+        }
+      ],
+      "validator": {
+        "errors": 0,
+        "warnings": 0,
+        "infos": 0,
+        "messages": []
+      }
+    },
+    "human_mira": {
+      "tangentFallbacks": 0,
+      "key": "human.mira",
+      "bytes": 1646428,
+      "baselineBytes": 257236,
+      "triangles": 15499,
+      "baselineTriangles": 6704,
+      "vertices": 19027,
+      "materials": 1,
+      "primitives": 1,
+      "bones": 20,
+      "maxInfluences": 4,
+      "boundsMeters": [
+        0.5527473092079163,
+        1.697066793218255,
+        0.26095882058143616
+      ],
+      "boundsMin": [
+        -0.27637365460395813,
+        0.003983130678534508,
+        -0.10595881938934326
+      ],
+      "boundsMax": [
+        0.27637365460395813,
+        1.7010499238967896,
+        0.1550000011920929
+      ],
+      "clips": [
+        "idle",
+        "greet",
+        "gesture_explain",
+        "offer_reward",
+        "kneel"
+      ],
+      "source": "source/characters_refined.blend; scripts/author_reference.py; scripts/bake_surface.py; baseline rig and animation data preserved",
+      "status": "blender-reference-refined-candidate",
+      "textures": [
+        {
+          "name": "human_mira_surface_normal",
+          "bytes": 134904,
+          "mime": "image/png"
+        }
+      ],
+      "validator": {
+        "errors": 0,
+        "warnings": 0,
+        "infos": 0,
+        "messages": []
+      }
+    },
+    "human_alex": {
+      "tangentFallbacks": 0,
+      "key": "human.alex",
+      "bytes": 1509584,
+      "baselineBytes": 246536,
+      "triangles": 15500,
+      "baselineTriangles": 6352,
+      "vertices": 17079,
+      "materials": 1,
+      "primitives": 1,
+      "bones": 20,
+      "maxInfluences": 4,
+      "boundsMeters": [
+        0.5699999928474426,
+        1.7522622286342084,
+        0.24565055221319199
+      ],
+      "boundsMin": [
+        -0.2849999964237213,
+        0.003988868091255426,
+        -0.09065055102109909
+      ],
+      "boundsMax": [
+        0.2849999964237213,
+        1.7562510967254639,
+        0.1550000011920929
+      ],
+      "clips": [
+        "idle",
+        "greet",
+        "gesture_explain",
+        "offer_reward",
+        "kneel"
+      ],
+      "source": "source/characters_refined.blend; scripts/author_reference.py; scripts/bake_surface.py; baseline rig and animation data preserved",
+      "status": "blender-reference-refined-candidate",
+      "textures": [
+        {
+          "name": "human_alex_surface_normal",
+          "bytes": 138260,
+          "mime": "image/png"
+        }
+      ],
+      "validator": {
+        "errors": 0,
+        "warnings": 0,
+        "infos": 0,
+        "messages": []
+      }
+    }
+  }
+}

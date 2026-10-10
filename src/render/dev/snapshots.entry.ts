@@ -7,7 +7,9 @@
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { Vector3 } from 'three';
-import { POSE_IDS, type GestureId, type SceneDirective } from '../../simulation/types';
+import { POSE_IDS, type GestureId, type SceneDirective, type WorldDirective } from '../../simulation/types';
+import { yardDirective } from './yardDev';
+import { createYardSim } from './yardSim';
 import { createGameRenderer, type GameRendererHandle } from '../app/GameRenderer';
 import { BACKGROUND_HEX } from '../materials/palette';
 import { defaultDirective } from '../devScene';
@@ -25,10 +27,9 @@ function makeRenderer(): GameRendererHandle {
 }
 
 function settle(handle: GameRendererHandle, seconds = 0): void {
-  const actors = [...handle.debug.dogs(), ...handle.debug.humans()];
-  for (const a of actors) a.update(0);
+  for (const a of [...handle.debug.dogs(), ...handle.debug.humans()]) a.update(0);
   const steps = Math.round(seconds * 60);
-  for (let i = 0; i < steps; i++) for (const a of actors) a.update(1 / 60);
+  for (let i = 0; i < steps; i++) handle.debug.step(1 / 60);
   handle.debug.camera.update(10);
 }
 
@@ -44,7 +45,7 @@ function save(name: string, w: number, h: number, rgb: Uint8Array): void {
 function poseSheet(id: 'dog_nala' | 'dog_bruno', growth: 'arriving' | 'growing', facing: number, name: string): void {
   const tile = 240;
   const cols = 5;
-  const rows = 3;
+  const rows = Math.ceil(POSE_IDS.length / cols);
   const sheet = new Uint8Array(tile * cols * tile * rows * 3).fill(255);
   POSE_IDS.forEach((pose, i) => {
     const handle = makeRenderer();
@@ -87,7 +88,7 @@ function gestureSheet(): void {
       handle.apply({ ...defaultDirective(), view: 'closeup', dogs: [], props: [], focusDogId: null, humans: [{ id, gesture, position: 'center', facing: 25 }] });
       settle(handle, 0.3);
       const human = handle.debug.humans()[0];
-      if (human) handle.debug.camera.frame({ view: 'closeup', subject: human.position(), subjectExtent: 1.5, zone: null }, true);
+      if (human) handle.debug.camera.frame({ view: 'closeup', points: human.measure(), ground: human.position(), zone: null, facing: (human.facing() * Math.PI) / 180, handler: null }, true);
       const rgb = shot(handle, tileW, tileH);
       blit(sheet, tileW * gestures.length, rgb, tileW, tileH, i * tileW, row * tileH);
       handle.dispose();
@@ -191,6 +192,36 @@ function zoneSheet(): void {
   handle.dispose();
 }
 
+/** D-041 yard: near (spawn), walking toward the gate with the toy out, far apart; portrait and landscape. */
+function yardSheet(): void {
+  const tiles: Array<{ w: number; h: number; world: WorldDirective; seconds: number }> = [];
+  const near = createYardSim();
+  tiles.push({ w: 390, h: 844, world: near.directive(), seconds: 0.5 });
+  const walking = createYardSim({ distraction: 'toy' });
+  walking.moveTo({ x: 0.2, z: 2.8 });
+  let w: WorldDirective = walking.directive();
+  for (let i = 0; i < 40; i++) w = walking.step(1 / 60);
+  tiles.push({ w: 390, h: 844, world: w, seconds: 0 });
+  const far = createYardSim({ handler: { x: -2.4, z: 2.2, facing: 150, speed: 0, target: null }, dog: { x: 2.3, z: -1.7, facing: 90, speed: 0, pose: 'sniff' }, momentSpot: { x: 2.3, z: -1.7 } });
+  tiles.push({ w: 844, h: 390, world: far.directive(), seconds: 0.5 });
+  const sheetW = 390 + 390 + 844 + 40;
+  const sheetH = 844;
+  const sheet = new Uint8Array(sheetW * sheetH * 3).fill(200);
+  let x = 0;
+  for (const tile of tiles) {
+    const handle = makeRenderer();
+    handle.debug.camera.setViewport(tile.w, tile.h);
+    handle.apply(yardDirective(tile.world));
+    settle(handle, tile.seconds);
+    handle.updateWorld(tile.world);
+    settle(handle, 0.4);
+    blit(sheet, sheetW, shot(handle, tile.w, tile.h), tile.w, tile.h, x, 0);
+    x += tile.w + 20;
+    handle.dispose();
+  }
+  save('yard.png', sheetW, sheetH, sheet);
+}
+
 poseSheet('dog_nala', 'arriving', 35, 'poses_nala_arriving.png');
 poseSheet('dog_nala', 'growing', 35, 'poses_nala_growing.png');
 poseSheet('dog_bruno', 'arriving', 35, 'poses_bruno.png');
@@ -200,3 +231,4 @@ framingSheet('lesson');
 framingSheet('school');
 framingSheet('closeup');
 zoneSheet();
+yardSheet();

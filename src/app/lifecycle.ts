@@ -219,6 +219,13 @@ export function createLifecycle(store: Store, deps: LifecycleDeps = {}): Lifecyc
   }
 
   async function onVisible(): Promise<void> {
+    // Browsers can emit repeated visible events; only a matching hidden period
+    // applies offline time and replaces the return banner.
+    if (hiddenAtUTC === null) {
+      setReason('hidden', false);
+      evaluate();
+      return;
+    }
     const hiddenMs = hiddenAtUTC === null ? 0 : Math.max(0, providers.nowUTC() - hiddenAtUTC);
     hiddenAtUTC = null;
     closed = false;

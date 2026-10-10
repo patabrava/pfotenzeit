@@ -13,6 +13,7 @@ export interface ViewSpec {
   /** Called after each render with the fresh root. */
   afterRender?(snapshot: StoreSnapshot): void;
   destroy?(): void;
+  holdsRoute?(): boolean;
 }
 
 export function createView(spec: ViewSpec): View {
@@ -32,5 +33,6 @@ export function createView(spec: ViewSpec): View {
       spec.destroy?.();
       spec.root.remove();
     },
+    holdsRoute: spec.holdsRoute ? () => spec.holdsRoute!() : undefined,
   };
 }

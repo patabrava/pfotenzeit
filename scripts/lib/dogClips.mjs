@@ -9,6 +9,9 @@
 import { Pose, keyed, ease, osc } from './pose.mjs';
 
 export const DOG_CLIP_META = {
+  alert_focus: { durationS: 2, loop: true },
+  rest_side: { durationS: 5, loop: true },
+  stand_up: { durationS: 1.8, loop: false },
   idle_relaxed: { durationS: 4, loop: true },
   look_at_handler: { durationS: 1.5, loop: false },
   sniff: { durationS: 2.5, loop: true },

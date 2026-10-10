@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "manifestEntriesPreserved": true,
+  "hashes": {
+    "dog_nala_puppy.glb": "986438ccda12a6b0ace6c136c1939da4e72350e94ee9b7d60af17c456e23a304",
+    "dog_nala_growing.glb": "d3c9024bd7aa667344b3d9b897a0980ae5cbe358d0941898b3ae1bc1b0e56aa3",
+    "dog_bruno_puppy.glb": "314964d85ee7f431055db997775c27185f634a90c9523552cd62a808d101a0b3",
+    "human_mira.glb": "36044bbda205961a21c50c6e6b81df7ec85085a3a459b8fa96982118fd7ca907",
+    "human_alex.glb": "750a73762e53c6855b9765612b6d4092c8ee7a0d80f422055a4036e6126482e3"
+  }
+}

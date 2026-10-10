@@ -1,0 +1,42 @@
+{
+  "dog_nala_puppy": {
+    "map": "/Users/patabrava/Documents/AI/github/Camilo/Ines/art/blender-reference-pass-2026-10-09/textures/dog_nala_puppy_normal.png",
+    "resolution": [
+      1024,
+      1024
+    ],
+    "bytes": 440031
+  },
+  "dog_nala_growing": {
+    "map": "/Users/patabrava/Documents/AI/github/Camilo/Ines/art/blender-reference-pass-2026-10-09/textures/dog_nala_growing_normal.png",
+    "resolution": [
+      1024,
+      1024
+    ],
+    "bytes": 465581
+  },
+  "dog_bruno_puppy": {
+    "map": "/Users/patabrava/Documents/AI/github/Camilo/Ines/art/blender-reference-pass-2026-10-09/textures/dog_bruno_puppy_normal.png",
+    "resolution": [
+      1024,
+      1024
+    ],
+    "bytes": 453685
+  },
+  "human_mira": {
+    "map": "/Users/patabrava/Documents/AI/github/Camilo/Ines/art/blender-reference-pass-2026-10-09/textures/human_mira_normal.png",
+    "resolution": [
+      512,
+      512
+    ],
+    "bytes": 134904
+  },
+  "human_alex": {
+    "map": "/Users/patabrava/Documents/AI/github/Camilo/Ines/art/blender-reference-pass-2026-10-09/textures/human_alex_normal.png",
+    "resolution": [
+      512,
+      512
+    ],
+    "bytes": 138260
+  }
+}

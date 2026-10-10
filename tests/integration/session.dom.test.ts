@@ -10,7 +10,12 @@ import { content } from '../../src/content';
 import { de } from '../../src/content/de';
 import { createTestProviders } from '../../src/simulation/fixtures';
 import { createMemoryRepository } from '../../src/storage/memoryRepository';
+import { isWithinSheetCloseGuard } from '../../src/input/actions';
 import type { OwnershipState, TabOwnership } from '../../src/storage/types';
+
+// This suite verifies DOM/store/persistence behavior without a GPU or HTTP server.
+// Real GLB loading and WebGL fallback have separate browser verification.
+vi.mock('../../src/render/app/GameRenderer', () => ({ createGameRenderer: undefined, GameRenderer: undefined }));
 
 function ownerOwnership(): TabOwnership {
   return {
@@ -54,6 +59,7 @@ async function click(root: HTMLElement, label: string): Promise<void> {
   const button = await vi.waitFor(
     () => {
       const found = findButton(root, label);
+      if (isWithinSheetCloseGuard()) throw new Error('waiting for sheet click-through guard');
       if (!found) {
         const labels = visibleButtons(root).map((b) => (b.textContent ?? '').trim()).join(' | ');
         throw new Error(`button "${label}" not found; visible: ${labels}`);
@@ -80,7 +86,7 @@ async function waitForText(root: HTMLElement, text: string): Promise<void> {
 
 const helpfulLabel = (lessonId: 'L01' | 'L02' | 'L03', roundIndex: number): string => {
   const round = content.lessons[lessonId].rounds[roundIndex]!;
-  return round.options.find((o) => o.helpful)!.label;
+  return round.options.find((o) => o.helpful && o.next !== 'retry')!.label;
 };
 
 describe('full standard session through the DOM', () => {
@@ -113,7 +119,7 @@ describe('full standard session through the DOM', () => {
     const l01Title = content.lessons.L01.title;
     await waitForText(root, l01Title);
     const startButton = await vi.waitFor(() => {
-      const candidates = visibleButtons(root).filter((b) => (b.textContent ?? '').includes(l01Title) || (b.textContent ?? '').includes('L01'));
+      const candidates = visibleButtons(root).filter((b) => b.dataset.key === 'lesson-L01');
       const found = candidates[0];
       if (!found) throw new Error('no L01 button');
       return found;
@@ -141,8 +147,11 @@ describe('full standard session through the DOM', () => {
     expect(store.get().save.dog.energy).toBe(energyBefore - 4);
     expect(store.get().save.currentVisit?.index).toBe(1);
 
-    await click(root, de.lesson.next);
-    await click(root, helpfulLabel('L01', 1)); // Mehr Abstand (counts for learning)
+    // WebGL unavailable: the playable round must remain usable through distance bands.
+    await click(root, content.lessons.L01.rounds[1]!.exercise!.fallbackBands.far);
+    await click(root, content.lessons.L01.rounds[1]!.exercise!.readyLabel);
+    await vi.waitFor(() => expect(store.get().save.currentVisit?.phase).toBe('decide'));
+    await click(root, helpfulLabel('L01', 1));
     await vi.waitFor(() => expect(store.get().save.currentVisit?.phase).toBe('feedback'), { timeout: 5000 });
     await click(root, de.lesson.next);
     await vi.waitFor(() => expect(store.get().save.currentVisit?.index).toBe(2));
@@ -154,6 +163,7 @@ describe('full standard session through the DOM', () => {
     // REFLECTION → Fertig für heute
     await click(root, de.reflection.doneToday);
     await vi.waitFor(() => expect(store.get().save.currentVisit).toBeNull());
+    await vi.waitFor(() => expect(store.get().save.pendingPresentation).toBeNull());
 
     const after = store.get().save;
     expect(after.completedLessonIds).toEqual(['L01']);
@@ -164,6 +174,9 @@ describe('full standard session through the DOM', () => {
     expect(after.school.marks).toBe(2); // 1 visit mark + 1 learning mark
     expect(after.rewardedVisitIds).toHaveLength(1);
     expect(after.pendingPresentation).toBeNull();
+    await vi.waitFor(() => expect(root.querySelectorAll('.reward-row')).toHaveLength(3));
+    expect(store.get().app.route).toBe('reflection');
+    await click(root, de.app.continue);
     await vi.waitFor(() => expect(store.get().app.route).toBe('home'));
 
     // Persisted?
@@ -181,7 +194,7 @@ describe('full standard session through the DOM', () => {
     expect(reloaded.completedLessonIds).toEqual(['L01']);
     expect(reloaded.dog.satiety).toBe(after.dog.satiety); // standard: no offline loss
     await waitForText(root, de.home.toLesson);
-  });
+  }, 15000);
 
   it('reload in the middle of a reaction re-presents once and does not duplicate the decision', async () => {
     const repo = createMemoryRepository();
@@ -191,7 +204,7 @@ describe('full standard session through the DOM', () => {
     await click(root, de.home.toLesson);
     await waitForText(root, content.lessons.L02.title);
     const l02 = await vi.waitFor(() => {
-      const found = visibleButtons(root).find((b) => (b.textContent ?? '').includes(content.lessons.L02.title));
+      const found = visibleButtons(root).find((b) => b.dataset.key === 'lesson-L02');
       if (!found) throw new Error('no L02 button');
       return found;
     });

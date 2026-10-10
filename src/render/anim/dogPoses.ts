@@ -68,6 +68,7 @@ function groundDrop(p: DogProportions): number {
 
 export const idleRelaxed: DogPoseFn = (w, t, ctx) => {
   stand(w, ctx);
+  tail(w, -35, 2, 2, ctx.hold ? 0 : 8 * Math.sin(TAU * t / 2));
   breathing(w, t, ctx, 0.016, 3.4);
 };
 
@@ -257,17 +258,7 @@ export const tiredIdle: DogPoseFn = (w, t, ctx) => {
   w.mirror('forearm_l', 'forearm_r', 6);
   w.mirror('shin_l', 'shin_r', 6);
   breathing(w, t, ctx, 0.018, 4.4);
-  if (!ctx.hold) {
-    // Eventually lies down to rest.
-    const k = smooth(7, 10.5, t);
-    if (k > 0) {
-      const main = w.frame;
-      w.frame = ctx.scratch;
-      restLoop(w, t, ctx);
-      w.frame = main;
-      lerpFrames(main, main, ctx.scratch, k);
-    }
-  }
+
 };
 
 export const recover: DogPoseFn = (w, t, ctx) => {
@@ -285,6 +276,35 @@ export const recover: DogPoseFn = (w, t, ctx) => {
   w.addRot('head', 0, 0, shake);
 };
 
+/** Alert orientation differs from backward-weighted stress: forward ears and a raised fast tail. */
+export const alertFocus: DogPoseFn = (w, t, ctx) => {
+  stand(w, ctx);
+  w.pos('pelvis', 0, -.004, .014);
+  w.rot('neck', -18 + ctx.lookPitch * .4, clamp(ctx.lookYaw, -70, 70) * .4);
+  w.rot('head', 4 + ctx.lookPitch * .6, clamp(ctx.lookYaw, -70, 70) * .6);
+  earsRest(w, ctx, -16, -6);
+  tail(w, 48, 12, 6, ctx.hold ? 0 : 22 * Math.sin(TAU * t * 2));
+  breathing(w, t, ctx, .01, 1.8);
+};
+
+export const restSide: DogPoseFn = (w, t, ctx) => {
+  lying(w, ctx);
+  w.rot('pelvis', 0, 0, 72);
+  w.rot('neck', 20);
+  w.rot('head', 20);
+  earsRest(w, ctx, 4, 8);
+  breathing(w, t, ctx, .02, 4.6);
+};
+
+export const standUp: DogPoseFn = (w, t, ctx) => {
+  restLoop(w, t, ctx);
+  const main = w.frame;
+  w.frame = ctx.scratch;
+  tiredIdle(w, t, ctx);
+  w.frame = main;
+  lerpFrames(main, main, ctx.scratch, smooth(0, 1.8, t));
+};
+
 export const DOG_POSES: Record<PoseId, DogPoseFn> = {
   idle_relaxed: idleRelaxed,
   look_at_handler: lookAtHandler,
@@ -299,6 +319,9 @@ export const DOG_POSES: Record<PoseId, DogPoseFn> = {
   tense_idle: tenseIdle,
   tired_idle: tiredIdle,
   recover,
+  alert_focus: alertFocus,
+  rest_side: restSide,
+  stand_up: standUp,
 };
 
 /** 08 clip contract: loops keep animating; one-shots settle and hold their last keyframe. */
@@ -310,6 +333,12 @@ export const DOG_ONE_SHOT_SECONDS: Partial<Record<PoseId, number>> = {
   play_bow: 1.6,
   turn_away: 1.6,
   recover: 2.2,
+  stand_up: 1.8,
+};
+
+/** Clip events (08: external clip metadata), seconds from clip start. */
+export const DOG_CLIP_EVENTS: Partial<Record<PoseId, Record<string, number>>> = {
+  eat: { treat_received: 2.0 },
 };
 
 /** Walk cycle length in metres (two steps), tied to leg length so paws do not slide. */

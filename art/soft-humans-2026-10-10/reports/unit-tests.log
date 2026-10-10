@@ -1,0 +1,16 @@
+
+> pfotenzeit@0.1.0 test
+> vitest run --maxWorkers=1 --no-file-parallelism
+
+
+ RUN  v5.0.3 /Users/patabrava/Documents/AI/github/Camilo/Ines
+
+
+ Test Files  21 passed (21)
+      Tests  225 passed (225)
+   Start at  16:30:25
+   Duration  11.51s (tests 58%, transform 17%, environment 13%, import 11%, worker 2%)
+
+    Isolate  21 workers spawned · ~260ms startup each (spawn + environment, per file)
+             at least ~5.20s faster with isolate: false — reuses workers across files instead of one per file
+

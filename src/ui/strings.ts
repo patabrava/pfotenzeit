@@ -4,9 +4,74 @@
  * live here until they are absorbed into src/content/de.ts.
  */
 import { de } from '../content/de';
-import type { CareKind, GrowthStage, Mode, VitalityBand } from '../simulation/types';
+import type { CareKind, DistractionLevel, GestureId, GrowthStage, Mode, PoseId, VitalityBand } from '../simulation/types';
+import type { ZoneId } from '../world/types';
 
 export { de };
+
+// ---------------------------------------------------------------------------
+// D-041 (WP-R): yard, exercise and practice strings, all from de.world / de.exercise / de.practice.
+// ---------------------------------------------------------------------------
+export const tWorld = {
+  prompt: (zone: ZoneId): string => de.world.prompts[zone],
+  sheetTitle: de.world.sheetTitle,
+  zonesTitle: de.world.zonesTitle,
+  toStatic: de.world.toStatic,
+  toYard: de.world.toYard,
+  staticNote: de.world.staticNote,
+  walkHint: de.world.walkHint,
+  keysHint: de.world.keysHint,
+  dogTitle: (name: string): string => de.world.dog.title(name),
+  dogPet: de.world.dog.pet,
+  dogPlay: de.world.dog.play,
+  dogSit: de.world.dog.sit,
+  dogClose: de.world.dog.close,
+  greeting: (name: string): string => de.world.dog.greeting(name),
+  sitDone: (name: string): string => de.world.dog.sitDone(name),
+  alexBruno: (brunoState: string): string => de.world.alexBruno(brunoState),
+  brunoState: (state: 'tense' | 'relaxed'): string => de.world.brunoStates[state],
+  miraChoice: de.world.miraChoice,
+  arrived: (zoneLabel: string): string => de.world.arrived(zoneLabel),
+} as const;
+
+export const tExercise = {
+  ready: de.exercise.ready,
+  attemptOf: (n: number, max: number): string => de.exercise.attemptOf(n, max),
+  watching: de.exercise.watching,
+  endExercise: de.exercise.endExercise,
+  bandTitle: de.exercise.bandTitle,
+  moveHint: de.exercise.moveHint,
+  noMoreAttempts: de.exercise.noMoreAttempts,
+} as const;
+
+export const tPractice = {
+  title: de.practice.title,
+  choose: de.practice.choose,
+  distraction: de.practice.distraction,
+  distractionLabel: (level: DistractionLevel): string => de.practice.distractions[level],
+  start: de.practice.start,
+  again: de.practice.again,
+  done: de.practice.done,
+  hintTitle: de.practice.hintTitle,
+  success: de.practice.success,
+  notYet: de.practice.notYet,
+  locked: (lessonTitle: string): string => de.practice.locked(lessonTitle),
+  intro: de.practice.intro,
+  leave: de.practice.leave,
+} as const;
+
+/** German pose / gesture descriptions from WP-K (de.poses, de.gestures): several body signals, no verdict. */
+export function poseDescription(pose: PoseId): string {
+  return de.poses[pose];
+}
+
+export function poseLine(name: string, pose: PoseId): string {
+  return de.scene.poseLine(name, pose);
+}
+
+export function gestureLine(name: string, gesture: GestureId): string {
+  return de.scene.gestureLine(name, gesture);
+}
 
 export const t = {
   app: {
@@ -22,25 +87,14 @@ export const t = {
   },
   home: {
     waiting: (name: string) => de.readiness.ready(name),
-    needsCare: (name: string, kind: CareKind) => {
-      switch (kind) {
-        case 'meal':
-          return de.readiness.needsFood(name);
-        case 'rest':
-          return de.readiness.needsCare(name);
-        case 'calm':
-          return de.readiness.needsCalm(name);
-        case 'play':
-          return de.readiness.needsSettle(name);
-      }
-    },
+    needsCare: (name: string, kind: CareKind) => de.readiness.byCare(name, kind),
     trainingLocked: de.challenge.trainingLocked,
     challengePaused: de.challenge.pausedBanner,
-    visitInProgress: (title: string) => `Besuch läuft: ${title}`,
+    visitInProgress: (title: string) => de.home.visitInProgress(title),
     toLesson: de.home.toLesson,
-    continueLesson: 'Übung fortsetzen',
+    continueLesson: de.home.continueLesson,
     care: de.home.toCare,
-    grow: 'Wachsen',
+    grow: de.home.grow,
     school: de.home.school,
     settings: de.app.settings,
     profile: (name: string) => de.home.profileButtonLabel(name),
@@ -50,15 +104,15 @@ export const t = {
     lessonPickerHint: de.lesson.prepareHint,
     learned: de.profile.learned,
     practising: de.profile.inProgress,
-    completedBefore: 'Schon besucht',
-    repeat: 'Wiederholen',
+    completedBefore: de.lesson.completedBefore,
+    repeat: de.lesson.repeat,
     start: de.lesson.start,
     growthTitle: de.growth.available,
     growthText: (name: string) => de.growth.prompt(name),
     growthConfirm: de.growth.confirm,
     growthLater: de.growth.later,
     growthFiction: de.growth.fiction,
-    rewardTitle: 'Besuch abgeschlossen',
+    rewardTitle: de.reflection.rewardTitle,
     rewardMark: de.reflection.markEarned,
     rewardMemory: de.reflection.bondLine,
     rewardLearned: (label: string) => de.reflection.learnedNow(label),
@@ -71,18 +125,18 @@ export const t = {
     label: (band: VitalityBand) => de.challenge.bandLabel[band],
     symbol: (band: VitalityBand) => de.challenge.bandSymbol[band],
     text: (band: VitalityBand) => de.challenge.bands[band],
-    vitalityLine: (band: VitalityBand) => `${de.needs.vitality}: ${de.challenge.bandLabel[band]}`,
+    vitalityLine: (band: VitalityBand) => de.challenge.vitalityLine(band),
     criticalFree: de.challenge.criticalFree,
   },
   care: {
     title: de.care.title,
     label: (kind: CareKind) => de.care.actions[kind],
     hint: (kind: CareKind) => de.care.hints[kind],
-    recommended: 'Empfohlen',
+    recommended: de.care.recommended,
     presenting: (name: string, kind: CareKind) => de.care.presenting[kind](name),
     done: de.care.done,
     waterNote: de.care.waterAlways,
-    lockedDuringReaction: 'Gleich. Schau zuerst, wie der Hund reagiert.',
+    lockedDuringReaction: de.care.lockedDuringReaction,
   },
   needs: {
     hunger: de.needs.satiety,
@@ -93,7 +147,7 @@ export const t = {
     comfortLine: (v: number) => de.needs.comfortLine(v),
     stressHint: de.needs.stressHint,
     arousalHint: de.needs.arousalHint,
-    valueOf: (value: number) => `${Math.round(value)} von 100`,
+    valueOf: (value: number) => de.needs.valueOf(value),
   },
   profile: {
     title: de.profile.title,
@@ -129,13 +183,17 @@ export const t = {
     learningPoint: de.lesson.learningPoint,
     noTimer: de.lesson.noTimer,
     careEffectNote: de.lesson.careEffectNote,
-    endCareTitle: 'Heute beenden?',
-    endCareText: 'Ihr beendet den Besuch als Fürsorgeentscheidung. Das zählt wie ein regulärer Besuch.',
+    endCareTitle: de.lesson.endCareTitle,
+    endCareText: de.lesson.endCareText,
     endAbandonTitle: de.lesson.leaveLesson,
     endAbandonText: de.lesson.leaveConfirm,
-    endCareConfirm: 'Als Fürsorge beenden',
+    endCareConfirm: de.lesson.endCareConfirm,
     endAbandonConfirm: de.lesson.leaveLesson,
     textViewNote: de.errors.webgl,
+    menu: de.app.menu,
+    helpfulMark: de.lesson.helpful,
+    otherDirectionMark: de.lesson.notHelpful,
+    poseLineLabel: de.lesson.observe,
   },
   reflection: {
     title: de.reflection.title,
@@ -147,17 +205,30 @@ export const t = {
     stillPracticing: (label: string) => de.reflection.stillPracticing(label),
     learnedBefore: (label: string) => de.reflection.learnedBefore(label),
     sourceNote: de.lesson.sourceNote,
+    rewardTitle: de.reflection.rewardRowsTitle,
+    rowMark: de.reflection.rowMark,
+    rowMemory: de.reflection.rowMemory,
+    rowLearned: de.reflection.rowLearning,
+    rowMarkGranted: de.reflection.markEarned,
+    rowMarkNone: de.reflection.rowMarkNone,
+    rowMemoryGranted: de.reflection.bondLine,
+    rowMemoryNone: de.reflection.noBondLine,
+    rowLearnedGranted: (label: string) => de.reflection.learnedNow(label),
+    rowLearnedBefore: (label: string) => de.reflection.learnedBefore(label),
+    rowLearnedNone: (label: string) => de.reflection.stillPracticing(label),
+    continue: de.app.continue,
   },
   school: {
     title: de.school.title,
     marks: (count: number) => de.school.marksCount(count),
-    cost: (cost: number) => `Kosten: ${de.school.cost(cost)}`,
+    cost: (cost: number) => de.school.costLine(cost),
     build: de.school.buy,
     owned: de.school.owned,
-    missing: (missing: number) => `${de.school.notEnough(missing)} ${de.school.howToEarn}`,
+    missing: (missing: number) => de.school.missingLine(missing),
     bought: (label: string) => de.school.bought(label),
     note: de.school.noPaywall,
-    preview: 'Vorschau',
+    preview: de.school.preview,
+    marksLabel: de.school.marks,
   },
   settings: {
     title: de.settings.title,
@@ -174,13 +245,13 @@ export const t = {
     rename: de.settings.renameDog,
     renameLabel: de.profile.renamePlaceholder,
     renameHint: de.profile.renameHint,
-    renameSave: 'Speichern',
-    renamed: (name: string) => `Dein Hund heißt jetzt ${name}.`,
+    renameSave: de.settings.renameSave,
+    renamed: (name: string) => de.settings.renamed(name),
     renameInvalid: de.profile.renameInvalid,
     mode: de.settings.mode,
     modeHint: de.settings.modeHint,
     modeCurrent: (mode: Mode) => de.app.modeLabel(mode),
-    data: 'Daten',
+    data: de.settings.data,
     export: de.settings.exportSave,
     import: de.settings.importSave,
     importHint: de.settings.importHint,
@@ -188,17 +259,17 @@ export const t = {
     exportFailed: de.errors.generic,
     importFailed: de.settings.importInvalid,
     importDone: de.settings.importDone,
-    version: (version: string) => `Version ${version}`,
+    version: (version: string) => de.settings.version(version),
     about: de.settings.about,
     aboutText: de.settings.aboutText,
     debug: de.settings.diagnostics,
-    on: 'An',
-    off: 'Aus',
+    on: de.settings.on,
+    off: de.settings.off,
   },
   mode: {
     title: de.settings.mode,
-    current: (mode: Mode) => `Aktiv: ${de.app.modeLabel(mode)}.`,
-    standardText: 'Entspannt: Dein Welpe braucht Pflege, aber nichts kann ihm passieren. Keine Strafen, auch nicht nach langer Abwesenheit.',
+    current: (mode: Mode) => de.settings.modeCurrent(mode),
+    standardText: de.settings.standardText,
     onboarding: de.challenge.onboarding,
     disclaimer: de.challenge.disclaimer,
     offlineSafe: de.challenge.offlineSafe,
@@ -210,11 +281,11 @@ export const t = {
     resumeChallenge: de.settings.resumeChallenge,
     pausedNote: de.challenge.pausedBanner,
     archive: de.settings.archiveChallenge,
-    archiveTitle: `${de.settings.archiveChallenge}?`,
+    archiveTitle: de.settings.archiveTitle,
     archiveText: de.settings.archiveConfirm,
     archiveConfirm: de.settings.archiveChallenge,
-    archives: 'Frühere Challenge-Läufe',
-    archiveEntry: (name: string, visits: number) => `${name} · ${de.memorial.visits(visits)}`,
+    archives: de.settings.archives,
+    archiveEntry: (name: string, visits: number) => de.settings.archiveEntry(name, visits),
     separateSaves: de.settings.modeHint,
   },
   memorial: {
@@ -222,7 +293,7 @@ export const t = {
     text: de.memorial.text,
     remember: (name: string) => de.memorial.remember(name),
     viewMemories: de.memorial.viewMemory,
-    hideMemories: 'Erinnerung ausblenden',
+    hideMemories: de.memorial.hideMemory,
     newRun: de.memorial.newChallenge,
     toStandard: de.memorial.toStandard,
     milestones: de.memorial.milestones,
@@ -249,19 +320,19 @@ export const t = {
     offline: de.errors.offline,
     paused: de.app.paused,
     updateAvailable: de.errors.updateAvailable,
-    updateApply: 'Jetzt aktualisieren',
+    updateApply: de.errors.updateApply,
   },
   toasts: {
     growthDone: (name: string) => de.growth.done(name),
     lessonNeedsCare: de.readiness.careFirst,
     lessonLocked: de.challenge.trainingLocked,
     challengePaused: de.challenge.pausedBanner,
-    visitInProgress: 'Ein Besuch läuft bereits.',
-    settingsSaved: 'Gespeichert.',
+    visitInProgress: de.toasts.visitInProgress,
+    settingsSaved: de.toasts.settingsSaved,
     actionRejected: de.errors.generic,
     paused: de.challenge.pausedBanner,
-    resumed: 'Challenge fortgesetzt.',
-    modeSwitched: (mode: Mode) => `${de.app.modeLabel(mode)} aktiv.`,
+    resumed: de.toasts.challengeResumed,
+    modeSwitched: (mode: Mode) => de.toasts.modeSwitched(mode),
   },
   dates: {
     short: (utc: number) =>

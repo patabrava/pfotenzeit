@@ -6,7 +6,7 @@
 import type { Store } from '../state/store';
 import type { AppState, Route } from './appState';
 
-export const ROUTES: readonly Route[] = ['home', 'profile', 'lesson', 'school', 'settings', 'reflection', 'memorial', 'mode'];
+export const ROUTES: readonly Route[] = ['home', 'profile', 'lesson', 'school', 'settings', 'reflection', 'memorial', 'mode', 'practice'];
 
 export function isRoute(value: unknown): value is Route {
   return typeof value === 'string' && (ROUTES as readonly string[]).includes(value);

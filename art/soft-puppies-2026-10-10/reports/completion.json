@@ -1,0 +1,41 @@
+{
+  "completed": true,
+  "sourceArchiveSha256": "c73145a4dea7b442ff92108a4e18161e9a6d2271424992ec988ce3717ddada82",
+  "liveSha256": {
+    "dog.nala.puppy": "fc8b5a898a3e03ac9a1d487e83641c8b36424785db7aaae68b1db4b202dad1bc",
+    "dog.nala.growing": "ff4f085e19cd0b22e22a67680f0a7ae3fffb2dd80ad39ca4c41cfe67312177ff",
+    "dog.bruno.puppy": "8249079df6c03420ecf322af39d041728c22a5b38f56e75ce3a81742069a3c76"
+  },
+  "typecheck": true,
+  "build": true,
+  "vitest": {
+    "files": 18,
+    "passed": 208
+  },
+  "playwright": {
+    "projects": 3,
+    "passed": 15,
+    "coversAccessibleCredits": true,
+    "coversWorkerServedAssetHash": true
+  },
+  "assets": {
+    "files": 8,
+    "totalBytes": 5744136,
+    "validatorErrors": 0,
+    "validatorWarnings": 0,
+    "validatorInfo": 0
+  },
+  "animatedPoseSamples": 195,
+  "uiChecks": 46,
+  "regenerationPreservesLiveModels": true,
+  "webgl": {
+    "viewports": 5,
+    "demandRenderingPassed": true,
+    "pageErrors": 0,
+    "closeupMarginsPassed": true,
+    "evidence": "renderer-isolated/results.json",
+    "concurrentRunFailedHeldFrameCount": 1
+  },
+  "phonePerformanceMeasured": false,
+  "backendExists": false
+}

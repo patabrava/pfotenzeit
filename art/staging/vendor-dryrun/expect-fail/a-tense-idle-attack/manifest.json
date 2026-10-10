@@ -1,0 +1,159 @@
+{
+  "version": 2,
+  "staging": true,
+  "expectFail": "tense_idle mapped to Attack01 must fail (stress semantics never map to attack/death clips)",
+  "assets": {
+    "dog.nala.puppy": {
+      "url": "../../staged/vendor_puppy.glb",
+      "status": "pending",
+      "productionIntegrated": false,
+      "material": "textured",
+      "textures": [
+        {
+          "slot": "normal",
+          "width": 1024,
+          "height": 1024,
+          "bytes": 440031,
+          "mime": "image/png"
+        }
+      ],
+      "textureSizes": [
+        1024
+      ],
+      "drawCalls": 1,
+      "rig": "vendor",
+      "rigInfo": {
+        "joints": 26,
+        "maxInfluences": 4,
+        "root": "Armature_Root"
+      },
+      "clipMap": {
+        "idle_relaxed": "Idle_Loop",
+        "look_at_handler": "LookLeft",
+        "sniff": "Sniff01",
+        "walk": "Walk_FWD",
+        "sit": "Sit_Down",
+        "lie_down": "LieDown",
+        "rest_loop": "Sleep_Loop",
+        "eat": "Eat01",
+        "play_bow": "PlayBow",
+        "turn_away": "TurnAway",
+        "tense_idle": "Attack01",
+        "tired_idle": "Tired_Idle",
+        "recover": "GetUp"
+      },
+      "clips": [
+        "idle_relaxed",
+        "look_at_handler",
+        "sniff",
+        "walk",
+        "sit",
+        "lie_down",
+        "rest_loop",
+        "eat",
+        "play_bow",
+        "turn_away",
+        "tense_idle",
+        "tired_idle",
+        "recover"
+      ],
+      "sourceClips": [
+        "Idle_Loop",
+        "LookLeft",
+        "Sniff01",
+        "Walk_FWD",
+        "Sit_Down",
+        "LieDown",
+        "Sleep_Loop",
+        "Eat01",
+        "PlayBow",
+        "TurnAway",
+        "Alert_Idle",
+        "Tired_Idle",
+        "GetUp",
+        "Attack01",
+        "Walk_RootMotion"
+      ],
+      "bytes": 2037600,
+      "triangles": 17680,
+      "boundsMeters": [
+        0.1835,
+        0.391,
+        0.7296
+      ],
+      "source": "vendor ingest of art/staging/vendor-dryrun/input/vendor_puppy.glb (glTF-Transform v4.5.1)",
+      "license": "UNVERIFIED — record the purchased license and written browser-delivery permission before shipping",
+      "version": 2,
+      "clipMeta": {
+        "idle_relaxed": {
+          "durationS": 4,
+          "loop": true,
+          "source": "Idle_Loop"
+        },
+        "look_at_handler": {
+          "durationS": 1.5,
+          "loop": false,
+          "source": "LookLeft"
+        },
+        "sniff": {
+          "durationS": 2.5,
+          "loop": true,
+          "source": "Sniff01"
+        },
+        "walk": {
+          "durationS": 1,
+          "loop": true,
+          "source": "Walk_FWD"
+        },
+        "sit": {
+          "durationS": 1.5,
+          "loop": false,
+          "source": "Sit_Down"
+        },
+        "lie_down": {
+          "durationS": 1.5,
+          "loop": false,
+          "source": "LieDown"
+        },
+        "rest_loop": {
+          "durationS": 5,
+          "loop": true,
+          "source": "Sleep_Loop"
+        },
+        "eat": {
+          "durationS": 4,
+          "loop": false,
+          "events": {
+            "treat_received": 2
+          },
+          "source": "Eat01"
+        },
+        "play_bow": {
+          "durationS": 1.5,
+          "loop": false,
+          "source": "PlayBow"
+        },
+        "turn_away": {
+          "durationS": 1.5,
+          "loop": false,
+          "source": "TurnAway"
+        },
+        "tense_idle": {
+          "durationS": 2.5,
+          "loop": true,
+          "source": "Attack01"
+        },
+        "tired_idle": {
+          "durationS": 3.5,
+          "loop": true,
+          "source": "Tired_Idle"
+        },
+        "recover": {
+          "durationS": 2,
+          "loop": false,
+          "source": "GetUp"
+        }
+      }
+    }
+  }
+}

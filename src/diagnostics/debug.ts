@@ -379,7 +379,7 @@ export function mountDebugPanel(store: Store, deps: DebugPanelDeps): DebugPanel 
   // --- Metrics -------------------------------------------------------------------
   async function refresh(): Promise<void> {
     const { save, app, meta } = store.get();
-    const rendererHandle = deps.getRenderer ? await Promise.race([deps.getRenderer(), Promise.resolve(null)]) : null;
+    const rendererHandle = deps.getRenderer ? await deps.getRenderer() : null;
     const estimate = await storageEstimate();
     const metrics = {
       appVersion: deps.appVersion ?? null,

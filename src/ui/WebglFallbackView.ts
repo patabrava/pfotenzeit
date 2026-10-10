@@ -1,25 +1,32 @@
 /**
- * Scene-layer fallback: while the renderer loads, when WebGL is unavailable (text lesson view;
- * profile fully usable) or when the context is lost. Lives inside the scene container's layer.
+ * Scene-strip fallback (lives inside the scene container, so it follows the D-032 strip measurement):
+ * loading text, WebGL unavailable (pixel dog + the same one-line pose description the lesson uses),
+ * or context lost (text + reload). Profile and lesson stay fully usable as text.
  */
 import { getPixelState } from '../simulation/selectors';
-import { button, el, secondary, text } from './components';
+import { button, el, icon, secondary, text } from './components';
 import type { UiContext, View } from './context';
+import { getFocusPose } from './LessonView';
 import type { PixelDogHandle } from './pixelBridge';
-import { t } from './strings';
+import { poseLine, t } from './strings';
 import { createView } from './view';
 
 export function createWebglFallbackView(ctx: UiContext): View {
   const root = el('div', { class: 'scene-fallback', dataset: { view: 'sceneFallback' } });
-  const canvas = el('canvas', { class: 'pixel-canvas', attrs: { width: 128, height: 128, 'aria-hidden': 'true' } });
-  canvas.style.width = 'min(50vw, 192px)';
-  canvas.style.height = 'min(50vw, 192px)';
+  const canvas = el('canvas', { class: 'pixel-canvas scene-fallback-pixel', attrs: { width: 128, height: 128, 'aria-hidden': 'true' } });
   let pixel: PixelDogHandle | null = null;
 
   const view = createView({
     root,
     derive(snapshot) {
-      return { status: snapshot.app.rendererStatus, pixel: getPixelState(snapshot.save), stage: snapshot.save.dog.growthStage, route: snapshot.app.route };
+      const focus = getFocusPose(snapshot, ctx);
+      return {
+        status: snapshot.app.rendererStatus,
+        pixel: snapshot.app.route === 'lesson' ? null : getPixelState(snapshot.save),
+        stage: snapshot.save.dog.growthStage,
+        route: snapshot.app.route,
+        pose: focus ? `${focus.name}:${focus.pose}` : null,
+      };
     },
     render(snapshot) {
       const status = snapshot.app.rendererStatus;
@@ -36,7 +43,16 @@ export function createWebglFallbackView(ctx: UiContext): View {
           ]),
         ];
       }
-      return [el('div', { class: 'stack' }, [canvas, text(t.webgl.failed), secondary(t.profile.pixelNote)])];
+      const focus = getFocusPose(snapshot, ctx);
+      const inLesson = snapshot.app.route === 'lesson';
+      return [
+        el('div', { class: 'stack stack--tight scene-fallback-body' }, [
+          canvas,
+          focus ? el('p', { class: 'pose-line pose-line--scene' }, [icon('eye', 'pose-line-icon'), el('span', { text: poseLine(focus.name, focus.pose) })]) : null,
+          inLesson ? null : text(t.webgl.failed),
+          inLesson ? null : secondary(t.profile.pixelNote),
+        ]),
+      ];
     },
     afterRender(snapshot) {
       if (snapshot.app.rendererStatus !== 'failed') return;

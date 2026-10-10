@@ -1,0 +1,154 @@
+[
+  {
+    "viewport": "390x844",
+    "errors": [],
+    "spawn": {
+      "framing": {
+        "view": "yard",
+        "heightShare": 0.16935770441852915,
+        "widthShare": 0.1342585548645189,
+        "minMargin": 0.3899531264944848,
+        "centreY": -0.05073604259250122,
+        "centreX": 0.05189397268471518,
+        "azimuthDeg": 32,
+        "noseOffsetDeg": 167.9294670250693
+      },
+      "handlerInFrame": true,
+      "metrics": {
+        "drawCalls": 22,
+        "triangles": 145062,
+        "fpsEstimate": 2,
+        "dpr": 2,
+        "textureBytesEstimate": 27918992,
+        "assetTiers": {
+          "human_mira": "glb",
+          "human_alex": "glb",
+          "dog_nala": "glb",
+          "dog_bruno": "glb",
+          "environment.school": "glb",
+          "props.care": "glb",
+          "props.upgrades": "glb"
+        }
+      }
+    },
+    "tap": {
+      "pick": {
+        "kind": "ground",
+        "point": {
+          "x": 0.2,
+          "z": 2.6
+        }
+      },
+      "moved": true,
+      "arrived": true,
+      "framesWhileMoving": 11,
+      "framing": {
+        "view": "yard",
+        "heightShare": 0.1494659166074916,
+        "widthShare": 0.22572849690885455,
+        "minMargin": 0.09213245379291418,
+        "centreY": 0.3130347178743736,
+        "centreX": 0.5900065955053171,
+        "azimuthDeg": 32,
+        "noseOffsetDeg": 25.044921516575666
+      },
+      "handlerInFrame": true,
+      "prompt": "gate"
+    },
+    "still": {
+      "held": false,
+      "framesPerSecond": 18
+    },
+    "far": {
+      "framing": {
+        "view": "yard",
+        "heightShare": 0.019372449789552475,
+        "widthShare": 0.07547093953299588,
+        "minMargin": 0.015428411822163202,
+        "centreY": 0.04605970094193415,
+        "centreX": 0.8936722368226777,
+        "azimuthDeg": 32,
+        "noseOffsetDeg": 82.31454566994475
+      },
+      "handlerInFrame": true,
+      "dogInFrame": true
+    },
+    "ok": false
+  },
+  {
+    "viewport": "844x390",
+    "errors": [],
+    "spawn": {
+      "framing": {
+        "view": "yard",
+        "heightShare": 0.15395515170684307,
+        "widthShare": 0.02606039781987773,
+        "minMargin": 0.4018665193728287,
+        "centreY": -0.04231180954749958,
+        "centreX": 0.024869463878128915,
+        "azimuthDeg": 32,
+        "noseOffsetDeg": 167.9294670250693
+      },
+      "handlerInFrame": true,
+      "metrics": {
+        "drawCalls": 24,
+        "triangles": 152554,
+        "fpsEstimate": 4,
+        "dpr": 2,
+        "textureBytesEstimate": 27918992,
+        "assetTiers": {
+          "human_mira": "glb",
+          "human_alex": "glb",
+          "dog_nala": "glb",
+          "dog_bruno": "glb",
+          "environment.school": "glb",
+          "props.care": "glb",
+          "props.upgrades": "glb"
+        }
+      }
+    },
+    "tap": {
+      "pick": {
+        "kind": "ground",
+        "point": {
+          "x": 0.2,
+          "z": 2.6
+        }
+      },
+      "moved": true,
+      "arrived": true,
+      "framesWhileMoving": 8,
+      "framing": {
+        "view": "yard",
+        "heightShare": 0.15092288535019133,
+        "widthShare": 0.04769381644571076,
+        "minMargin": 0.2709632725118069,
+        "centreY": 0.30715056962619486,
+        "centreX": 0.12398826232852396,
+        "azimuthDeg": 32,
+        "noseOffsetDeg": 25.11591328478794
+      },
+      "handlerInFrame": true,
+      "prompt": "gate"
+    },
+    "still": {
+      "held": false,
+      "framesPerSecond": 9
+    },
+    "far": {
+      "framing": {
+        "view": "yard",
+        "heightShare": 0.08564649149433294,
+        "widthShare": 0.07125293944105482,
+        "minMargin": 0.04931081047044367,
+        "centreY": 0.17488406706593473,
+        "centreX": 0.8301254396180578,
+        "azimuthDeg": 32,
+        "noseOffsetDeg": 82.31454566994475
+      },
+      "handlerInFrame": true,
+      "dogInFrame": true
+    },
+    "ok": false
+  }
+]

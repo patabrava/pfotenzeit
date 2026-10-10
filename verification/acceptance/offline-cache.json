@@ -1,0 +1,34 @@
+[
+  {
+    "name": "pfotenzeit-shell-74da3eb48e62fef8-q7g71g",
+    "urls": [
+      "http://127.0.0.1:4173/",
+      "http://127.0.0.1:4173/index.html",
+      "http://127.0.0.1:4173/manifest.webmanifest",
+      "http://127.0.0.1:4173/icon.svg",
+      "http://127.0.0.1:4173/apple-touch-icon.png",
+      "http://127.0.0.1:4173/offline.html",
+      "http://127.0.0.1:4173/assets/fonts/AtkinsonHyperlegible-Regular.woff2",
+      "http://127.0.0.1:4173/assets/fonts/AtkinsonHyperlegible-Bold.woff2",
+      "http://127.0.0.1:4173/assets/fonts/AtkinsonHyperlegible-Italic.woff2",
+      "http://127.0.0.1:4173/assets/fonts/AtkinsonHyperlegible-BoldItalic.woff2",
+      "http://127.0.0.1:4173/assets/three-BzQYoRx0.js",
+      "http://127.0.0.1:4173/assets/main-hW-E3vbz.js",
+      "http://127.0.0.1:4173/assets/main-CtmvFcBC.css",
+      "http://127.0.0.1:4173/assets/GameRenderer-Bv6aVyK-.js",
+      "http://127.0.0.1:4173/sw.js",
+      "http://127.0.0.1:4173/assets/ui-BmbsY6Gi.js",
+      "http://127.0.0.1:4173/assets/ui-c30yaOIM.css",
+      "http://127.0.0.1:4173/assets/pixel-CB5jEt_z.js",
+      "http://127.0.0.1:4173/assets/manifest.json",
+      "http://127.0.0.1:4173/assets/models/dog_nala_puppy.glb",
+      "http://127.0.0.1:4173/assets/models/dog_nala_growing.glb",
+      "http://127.0.0.1:4173/assets/models/dog_bruno_puppy.glb",
+      "http://127.0.0.1:4173/assets/models/human_mira.glb",
+      "http://127.0.0.1:4173/assets/models/human_alex.glb",
+      "http://127.0.0.1:4173/assets/models/school_courtyard.glb",
+      "http://127.0.0.1:4173/assets/models/care_props.glb",
+      "http://127.0.0.1:4173/assets/models/school_upgrades.glb"
+    ]
+  }
+]

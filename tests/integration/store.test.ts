@@ -6,6 +6,7 @@ import { describe, expect, it } from 'vitest';
 import { content } from '../../src/content';
 import { createTestProviders } from '../../src/simulation/fixtures';
 import { createNewMeta, createNewSave } from '../../src/simulation/save';
+import { getCurrentOptions } from '../../src/simulation/selectors';
 import type { ReduceResult, Save } from '../../src/simulation/types';
 import { createStore, type Store } from '../../src/state/store';
 import { createMemoryRepository } from '../../src/storage/memoryRepository';
@@ -36,9 +37,19 @@ async function ack(store: Store): Promise<void> {
 async function playRound(store: Store, lessonId: 'L01' | 'L02' | 'L03', roundIndex: number, pickHelpful = true): Promise<void> {
   const visit = store.get().save.currentVisit!;
   expect(visit.phase).toBe('observe');
-  expectApplied(await store.act('NEXT_ROUND', {}), 'observe→decide');
   const round = content.lessons[lessonId].rounds[roundIndex]!;
-  const option = round.options.find((o) => o.helpful === pickHelpful)!;
+  if (round.exercise) {
+    // D-041: exercise rounds reach decide through an attempt whose context makes the dog succeed.
+    const context = { handlerBand: 'far', otherDogBand: 'far', distractionBand: 'far', distraction: round.exercise.distraction, dogZone: null, handlerMoving: false } as const;
+    expectApplied(await store.act('EXERCISE_ATTEMPT', { attemptId: store.providers.id('attempt'), context }), 'attempt');
+    expect(store.get().save.currentVisit?.phase).toBe('exercise');
+    await ack(store);
+    expect(store.get().save.currentVisit?.phase).toBe('decide');
+  } else {
+    expectApplied(await store.act('NEXT_ROUND', {}), 'observe→decide');
+  }
+  const offered = getCurrentOptions(store.get().save, content);
+  const option = offered.find((o) => o.helpful === pickHelpful && o.next !== 'retry') ?? offered.find((o) => o.helpful === pickHelpful)!;
   expectApplied(await store.act('SELECT_OPTION', { optionId: option.id }), `select ${option.id}`);
   // A careClosure option moves straight to reflect (D-018); everything else reacts first.
   expect(['react', 'reflect']).toContain(store.get().save.currentVisit?.phase);

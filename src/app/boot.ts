@@ -35,6 +35,7 @@ import { createLifecycle, type Lifecycle } from './lifecycle';
 import { createBrowserProviders } from './providers';
 import { createRouter, type Router } from './routes';
 import { registerServiceWorker, type ServiceWorkerHandle } from './serviceWorker';
+import { createWorldController, type WorldController } from './world';
 
 export const APP_VERSION: string = pkg.version;
 
@@ -60,6 +61,8 @@ export interface UiDeps {
   back(): boolean;
   /** Apply a waiting service-worker update (UI shows "Update verfügbar" when `updateReady`). */
   applyUpdate(): void;
+  /** D-041 world controller (yard walking, dog behaviour); absent only in the recovery flow. */
+  world?: WorldController;
 }
 
 export interface UiHandle {
@@ -218,6 +221,7 @@ export async function boot(options: BootOptions = {}): Promise<BootHandle> {
 
   // Renderer factory (created once, status mirrored into app state once the store exists).
   let rendererPromise: Promise<RendererHandle | null> | null = null;
+  let rendererHandle: RendererHandle | null = null;
   let storeRef: Store | null = null;
   const getRenderer = (): Promise<RendererHandle | null> => {
     if (rendererPromise) return rendererPromise;
@@ -255,6 +259,7 @@ export async function boot(options: BootOptions = {}): Promise<BootHandle> {
       cleanups.push(handle.onStatus(sync));
       sync(handle.getStatus());
       mark(BOOT_MARKS.renderer);
+      rendererHandle = handle;
       return handle;
     })();
     return rendererPromise;
@@ -339,6 +344,8 @@ export async function boot(options: BootOptions = {}): Promise<BootHandle> {
   const lifecycle = createLifecycle(store, { ownership });
   const router = createRouter(store);
   let serviceWorker: ServiceWorkerHandle | null = null;
+  // D-041: the world controller steps the yard while it is visible; it dispatches nothing itself.
+  const world = createWorldController({ store, content, renderer: () => rendererHandle, seed: save.visitCount + 1 });
 
   const deps: UiDeps = {
     getRenderer,
@@ -351,6 +358,7 @@ export async function boot(options: BootOptions = {}): Promise<BootHandle> {
     importData: () => importFromFile(repository, providers, lifecycle),
     back: () => router.back(),
     applyUpdate: () => serviceWorker?.applyUpdate(),
+    world,
   };
 
   const uiModule = await loadUiModule();
@@ -366,10 +374,20 @@ export async function boot(options: BootOptions = {}): Promise<BootHandle> {
     renderPlaceholder(root, store, deps, null);
   }
 
-  // 7. Lifecycle, marks, busy state.
+  // 7. Lifecycle, world loop, marks, busy state.
   router.start();
   lifecycle.start();
-  cleanups.push(() => lifecycle.stop(), () => router.stop());
+  world.start();
+  cleanups.push(() => lifecycle.stop(), () => router.stop(), () => world.stop());
+  // Steering handle for the e2e smoke and manual checks (all builds, like the store handle): it reads
+  // and steers the world only and dispatches nothing to the store.
+  if (typeof window !== 'undefined') {
+    const win = window as Window & { __pzWorld?: WorldController };
+    win.__pzWorld = world;
+    cleanups.push(() => {
+      if (win.__pzWorld === world) delete win.__pzWorld;
+    });
+  }
   mark(BOOT_MARKS.ui);
   setBusy(root, false);
 

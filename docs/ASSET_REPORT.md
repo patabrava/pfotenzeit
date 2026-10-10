@@ -13,6 +13,8 @@ Commands (run from the project root, `export npm_config_cache="$TMPDIR/npm-cache
 npm run assets:build                                  # regenerate GLBs + public/assets/manifest.json
 npm run assets:check                                  # re-read GLBs, validator, rig/clip/bounds checks
 node scripts/build-models.mjs --preview [dir]         # additionally writes PNG contact sheets (dev aid)
+node scripts/ingest-vendor.mjs <in.glb> --key <key> --out art/staging/<dir>   # vendor/Blender GLB → staging (D-036)
+node scripts/validate-assets.mjs --staging art/staging/<dir>                  # check the staged files
 ```
 
 The build is deterministic (byte-identical output per run; only `generatedUTC` in the manifest changes).
@@ -41,15 +43,15 @@ The build is deterministic (byte-identical output per run; only `generatedUTC` i
 | key | file | bytes | triangles | material | clips | bounds (m, w×h×d) | validator |
 |---|---|---:|---:|---|---:|---|---|
 | dog.nala.puppy | dog_nala_puppy.glb | 487,132 | 9,684 | mat_nala_fur | 13 | 0.194 × 0.398 × 0.729 | 0E/0W/0I |
-| dog.nala.growing | dog_nala_growing.glb | 486,924 | 9,684 | mat_nala_fur | 13 | 0.198 × 0.486 × 0.846 | 0E/0W/0I |
+| dog.nala.growing | dog_nala_growing.glb | 486,876 | 9,684 | mat_nala_fur | 13 | 0.198 × 0.486 × 0.846 | 0E/0W/0I |
 | dog.bruno.puppy | dog_bruno_puppy.glb | 487,280 | 9,684 | mat_bruno_fur | 13 | 0.225 × 0.424 × 0.756 | 0E/0W/0I |
 | human.mira | human_mira.glb | 257,236 | 6,704 | mat_mira_body | 5 | 0.532 × 1.716 × 0.300 | 0E/0W/0I |
 | human.alex | human_alex.glb | 246,536 | 6,352 | mat_alex_body | 5 | 0.552 × 1.776 × 0.300 | 0E/0W/0I |
-| environment.school | school_courtyard.glb | 129,384 | 4,116 | mat_school | 0 | 7.0 × 2.30 × 7.0 | 0E/0W/0I |
-| props.care | care_props.glb | 81,196 | 3,752 | mat_props | 0 | 0.64 × 0.089 × 0.48 (all props at origin) | 0E/0W/0I |
-| props.upgrades | school_upgrades.glb | 103,944 | 4,704 | mat_upgrades | 0 | 1.54 × 1.16 × 1.24 | 0E/0W/0I |
+| environment.school | school_courtyard.glb | 385,444 | 15,416 | mat_school | 0 | 7.09 × 3.42 × 7.31 (7 × 7 m ground; roof overhang and tree canopy reach past it) | 0E/0W/0I |
+| props.care | care_props.glb | 128,412 | 6,096 | mat_props | 0 | 0.64 × 0.092 × 0.48 (all props at origin) | 0E/0W/0I |
+| props.upgrades | school_upgrades.glb | 194,260 | 9,160 | mat_upgrades | 0 | 6.72 × 1.57 × 2.59 (nodes carry their stage translation) | 0E/0W/0I |
 
-Total 2,279,632 bytes (2.2 MB) against the 8 MB initial-load budget; each dog ≤ 3 MB, each human ≤ 2 MB.
+Total 2,673,176 bytes (2.5 MB, `assets:check` 2026-10-09 after courtyard/props v2) against the 8 MB initial-load budget; each dog ≤ 3 MB, each human ≤ 2 MB.
 
 ### Dogs (A01, A02, A03, A06)
 
@@ -58,6 +60,15 @@ order: `root, pelvis, spine_01, spine_02, neck, head, jaw, ear_l_01, ear_l_02, e
 tail_02, tail_03, leg_fl_upper, leg_fl_lower, paw_fl, leg_fr_upper, leg_fr_lower, paw_fr, leg_bl_upper,
 leg_bl_lower, paw_bl, leg_br_upper, leg_br_lower, paw_br`. Hierarchy: root→pelvis→spine_01→spine_02→neck→
 head→jaw, head→ears, pelvis→tail chain, spine_02→front legs, pelvis→back legs.
+
+D-033 (six face bones `eye_l, eye_r, eyelid_upper_l/r, eyelid_lower_l/r` after `jaw`, 32 joints) is
+**optional** since D-036: the validator accepts the 26-bone list as is and checks the six face bones only
+when a dog file carries the 32-bone list. The live dogs stay at 26 bones. The WP-G "Nala v2" start (a
+blended SDF body) was parked when the art direction changed to a sourced hero model: `scripts/lib/sdf.mjs`
+(smooth-min primitives, surface nets, Laplacian smoothing, re-projection, gradient normals), the
+`{ auto: [...] }` surface skin kernel in `scripts/lib/skinning.mjs` and the `eyeRatio/eyeX/eyeY/eyeZ`
+fields in `scripts/lib/dogProportions.mjs` are in the tree but unused by the build; `dogGeometry.mjs`,
+`dogClips.mjs` and `skeleton.mjs` are unchanged, so `npm run assets:build` still reproduces the live GLBs.
 
 Measured shoulder (withers) heights: Nala puppy **0.281 m** (target 0.28), Nala growing **0.361 m**
 (0.36), Bruno **0.311 m** (0.31). Measured as the highest vertex dominated by `spine_02`/front upper-leg
@@ -113,23 +124,55 @@ low; feet solved to ground contact).
 
 ### Environment and props (A04, A08)
 
-`school_courtyard.glb`: one mesh `school_courtyard`, one material, 4,116 triangles. 7 × 7 m chalk-sand
-slab (vertex-colour variation), sage lawn patch front-left, wooden fence posts (1 m spacing) with two rails
-and a 2 m entrance gap at the front, shelter back-left (−2.3, −2.3) with four posts, sloped roof, low back
-wall and a bench, water-bowl zone marker (ring + tinted disc) at (−1.2, 0.3), rest platform at (2.3, 0.5),
-two empty planter boxes at (2.0/2.8, −2.5) as the sniff-corner base, two sage shrubs, three stones.
+Courtyard v2 and props v2 (WP-I, CREATIVE_PLAN F6, D-036: humans unchanged). All three files stay at one
+material / one draw call each; everything is vertex-coloured, with contact darkening baked into the ground
+colours.
 
-`care_props.glb`: separate nodes named `bowl` (ceramic bowl with kibble), `water` (bowl with water
-disc), `blanket`, `ball`, `toy_rolling`, `leaf` — exactly the ids the renderer resolves with
-`getObjectByName` (src/render/app/GameRenderer.ts); the meshes inside keep the prefixed names `prop_bowl`
-… `prop_leaf`. Each sits at the origin with the pivot at the base (min y = 0; the rolling toy's ridges dip
-5 mm). 3,752 triangles total.
+**Layout** (`scripts/lib/environment.mjs`, `STAGE`): the yard now follows the renderer's stage positions
+(src/render/objects/SchoolScene.ts, Props.ts) instead of its own: camera on +Z, origin at the centre,
+training circle at (0, 0.2) r 1.9 (stages center/left/right), shelter back-centre-left x −1.5…0.75,
+z −3.3…−1.8 with the food-bowl home (−1.1, −2.3) at its open left end, rest deck centre (−2.5, −1.5)
+1.5 × 1.4 m, top 0.095 m (stage rest (−2.3, −1.5) stands on its right half, the blanket prop home is
+at y 0.1), raised stone water slab at (1.8, 0.7) r 0.46, 0.06 m high (water prop home y 0.06), sniff
+corner (2.3, −1.7) with planters at (2.8, −2.4) 1.2 × 0.5 and (3.05, −1.5) 0.5 × 1.1, gate gap at the
+front x −2.55…−0.85 with a leaning gate panel. The deck's east edge (−1.75) clears the shelter's
+front-left post by 0.2 m.
 
-`school_upgrades.glb`: nodes `rest_place` (mesh `upgrade_rest_place`: blanket + cushion + shade on two
-posts, 1.24 × 1.16 × 0.99 m) and `sniff_corner` (mesh `upgrade_sniff_corner`: two planters with lavender
-tufts + nubbed sniff mat). 4,704 triangles total.
-Both are centred on their own origin; the runtime places them at the courtyard's rest platform / planter
-positions.
+`school_courtyard.glb`: one mesh `school_courtyard`, 15,416 triangles (budget 20k), 385,444 B.
+Ground: 7 × 7 m plane, 64 × 64 segments, height field (fbm ≤ 3 cm, lawn +1.4 cm, worn path −4 mm), two
+sand tones with fbm plus fine noise, a slightly cooler tint inside the training circle and a subtle worn
+ring, a worn path gate → circle → shelter / deck, two feathered lawn patches (superellipse masks at
+(−2.7, 0.9) and (2.55, 2.45)), a stone patch under the food-bowl home, and baked occlusion (up to 34 %
+darkening) under the shelter, deck, planters, water slab, fence posts, stones, shrubs, tree, pot and bench
+legs. Fence: posts every 0.85 m with slightly varied heights and caps, two rails, gate gap with a leaning
+gate panel. Shelter: four posts (2.3 m back, 2.05 m front), nine back-wall slats and five left-wall slats
+on battens, a bench along the back wall, two beams, five rafters, sloped roof slab with overhang and a
+ridge board. Rest deck: frame, nine slats, four feet, a low rail on the fence side and a folded decorative
+blanket in the back corner (separate from the `blanket` prop). Planters with soil and rim. Plants: four
+layered-lobe shrubs, a small tree behind the deck (trunk, branch, five canopy lobes), a potted plant at
+the front, three stones with flat bottoms.
+
+`care_props.glb`: separate nodes named `bowl`, `water`, `blanket`, `ball`, `toy_rolling`, `leaf`
+— exactly the ids the renderer resolves with `getObjectByName` (src/render/app/GameRenderer.ts); the
+meshes inside keep the prefixed names `prop_bowl` … `prop_leaf`. Each sits at the origin with the pivot
+at the base (min y = 0; the rolling toy's ridges dip 5 mm). 6,096 triangles total (budget 8k), 128,412 B.
+v2: lathe bowls (36 segments) with a rolled rim, dark foot and darker interior, 16 kibble ellipsoids /
+a water disc with a lighter centre; blanket with fold deformation, darker stitched border and a flap;
+ball with two tilted seams in colour; rolling toy with four ridges, an end cap and a dark treat opening
+with lip; leaf with curl and midrib deformation, veins and a stem.
+
+`school_upgrades.glb`: nodes `rest_place` (mesh `upgrade_rest_place`) and `sniff_corner` (mesh
+`upgrade_sniff_corner`), 9,160 triangles total (budget 10k), 194,260 B. **The nodes now carry their
+stage translation** (`rest_place` at (−2.3, 0, −1.5), `sniff_corner` at (2.3, 0, −1.7)) because the
+renderer's `setExternalUpgrade` adds the node as-is; geometry inside is authored relative to that point.
+`rest_place`: four posts with feet and top bars around the deck, a sagging shade cloth (top and underside),
+a cushion with piping and a lantern on the deck. `sniff_corner`: lavender tufts in planter A, two shrubs
+in planter B, a snuffle mat with 7 × 5 nubs at (1.95, −1.3) and a low lavender hedge along the back fence
+(x 1.0…2.05). File bounds are therefore 6.72 × 1.57 × 2.59 m.
+
+Contact sheets (`node scripts/build-models.mjs --preview <dir>`): `environment_school_{threequarter,
+front,shelter,restdeck}.png`, `props_care_{bowl,water,blanket,ball,toy,leaf}.png`,
+`props_upgrades_{rest,sniff}.png` (static meshes are rendered with node translations applied).
 
 ## What `npm run assets:check` verifies
 
@@ -142,6 +185,37 @@ looks up (`bowl` … `leaf`, `rest_place`, `sniff_corner`), skin weights sum to 
 vertex, dog shoulder heights within ±10 % (0.28/0.36/0.31), human heights within ±3 % (1.70/1.76),
 winding/normal agreement ≥ 98 %, triangle budgets (dogs ≤ 18k, courtyard ≤ 20k, props ≤ 8k, upgrades ≤
 10k), dog ≤ 3 MB, human ≤ 2 MB, total ≤ 8 MB. Exits non-zero on any failure.
+
+Since WP-G2 (D-036) the same script also understands the textured contract without weakening the above:
+`material: 'textured'` entries are checked for texture slots/sizes (≤ 1024² characters, ≤ 2048²
+environment, PNG/JPEG only, decoded estimate ≤ 6 MB per character, `TEXCOORD_0` present, tangents
+warned), draw calls (≤ 3 character / ≤ 12 environment, must equal `drawCalls`), an extension allow list
+(decoder extensions fail; vertex assets must have none), `rig: 'vendor'` skeletons (≤ 4 influences,
+weights, root scale 1, no negative scales, grounded ±1 cm, nose toward +Z, size vs. expectation) and
+`clipMap` resolution (every semantic resolves, `walk` without root translation, no attack/death clip
+behind stress/fatigue semantics). The 32-bone D-033 dog list is accepted next to the 26-bone list.
+`node scripts/validate-assets.mjs --staging <dir>` checks a staging manifest written by
+`scripts/ingest-vendor.mjs`, including pending entries. Details: `docs/VENDOR_INGEST.md`.
+
+## Vendor ingest pipeline (WP-G2, D-036)
+
+`scripts/ingest-vendor.mjs` normalizes an authored GLB into `art/staging/<dir>/` (inventory, prune,
+dedup, PNG textures box-filtered to a power-of-two cap with `node:zlib` only, optional quantize,
+gltf-validator, draft manifest entry with `status: pending` / `productionIntegrated: false`) and never
+writes into `public/`. Helpers: `scripts/lib/textures.mjs` (PNG decode/encode/downscale, slot
+inventory, decoded estimate) and `scripts/lib/assetContract.mjs` (budgets, semantic clip lists,
+D-033 list, extension policy, clip-map resolution, draw-call/scale/forward checks).
+
+Proof run on the five Blender reference-pass candidates (`art/blender-reference-pass-2026-10-09/
+candidates/*.glb`, each one PNG normal map, project rigs) into `art/staging/blender-reference/`,
+`--max-texture 1024`: no byte changed (nothing to prune, textures within cap); dogs 2,032,320 /
+2,030,884 / 2,034,532 B at 17,680 triangles, 1024² normal map ≈ 5.32 MB decoded each, shoulders
+0.290 / 0.380 / 0.323 m; humans 1,646,428 / 1,509,584 B at 15,499 / 15,500 triangles, 512² normal map
+≈ 1.33 MB decoded, heights 1.701 / 1.756 m; 1 draw call each, 0E/0W/0I, 13/13 and 5/5 semantics
+resolved, `--staging` check green. Total 9,253,748 B is above the 8 MB live budget (reported only in
+staging). The resize path was proven with `--max-texture 512` on Bruno in a temp directory
+(1024² → 512², 453,685 → 134,253 B texture, file 2,034,532 → 1,715,100 B, 0 errors). These candidates
+are not copied over the live GLBs; whether they ship as an interim hero is ines-c3's call.
 
 ## Known visual limitations (what a sculpted pass must improve)
 
@@ -165,8 +239,13 @@ winding/normal agreement ≥ 98 %, triangle budgets (dogs ≤ 18k, courtyard ≤
 - Humans: no fingers (mitten hands), no facial features except eye ovals, hair is a cap volume (Mira's
   curls are a smooth bun), clothes have no folds, feet are rounded blocks; the greet wave is a forearm
   roll, not a wrist wave.
-- Environment: no baked contact shadows, fence rails are plain boxes, no gate, the lawn edge is a hard
-  colour step, shrubs are spheres. The courtyard's bounds (7 × 7 m) are the only collision data.
+- Environment (v2): contact darkening is baked into the ground colour only, so props and actors placed
+  later get no extra shadow from the mesh; the slatted walls are boxes without grain; the shade cloth and
+  lawn edge are vertex-coloured on a 64 × 64 ground grid (≈ 11 cm cells), so fine detail softens at close
+  range; shrubs and the tree canopy are layered ellipsoid lobes; the roof overhang and tree canopy reach
+  ≈ 0.15 m past the 7 × 7 m ground slab (bounds 7.09 × 3.42 × 7.31). The courtyard's bounds are the
+  only collision data. `sniff_corner` plants look as if they float when previewed alone because the
+  planters belong to the courtyard mesh.
 - Everything was judged through an orthographic software preview (`--preview`), not on a phone; the real
   on-device check (A09) is still open.
 
@@ -177,9 +256,9 @@ winding/normal agreement ≥ 98 %, triangle budgets (dogs ≤ 18k, courtyard ≤
 | A01 Nala puppy GLB with neutral rig | code-authored, open for art | 26-bone 08 skeleton, 4 influences, identity markings; no UVs by design (vertex colours) |
 | A02 Nala 13 clips | code-authored, open for art | all 13 names present, durations per 08, loops close, event `treat_received@2.0` in manifest |
 | A03 Bruno GLB | code-authored, open for art | own proportion set (wider, shorter muzzle, folded ears), same clip contract |
-| A04 courtyard | code-authored, open for art | one draw call, 4.1k triangles, layout per 06 |
+| A04 courtyard | code-authored v2, open for art | one draw call, 15.4k triangles, layout matches the renderer's stage positions, baked contact darkening, shelter with walls and bench, gate, plants |
 | A05 Mira/Alex | code-authored, open for art | 20-bone rig, 5 gestures, heights 1.72/1.78 incl. hair |
 | A06 Nala growing | code-authored, open for art | separate proportions, regenerated clips, 0.361 m |
 | A07 pixel profile | not part of WP-F | see WP-B (`scripts/export-pixel.mjs`) |
-| A08 props/upgrades | code-authored, open for art | named nodes, pivots at the base |
+| A08 props/upgrades | code-authored v2, open for art | named nodes, pivots at the base, 6.1k / 9.2k triangles; upgrade nodes carry their stage translation |
 | A09 shipping (validator, bytes, clips, mobile view) | partly done | validator/bytes/clips verified by `assets:check`; mobile device view not done in this environment |

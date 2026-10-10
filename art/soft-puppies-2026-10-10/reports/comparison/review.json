@@ -1,0 +1,377 @@
+{
+  "a": "/art/soft-puppies-2026-10-10/before/dog_nala_puppy.glb",
+  "b": "dog.nala.puppy",
+  "pose": "idle_relaxed",
+  "sheets": [
+    {
+      "cam": "front",
+      "light": "neutral",
+      "file": "review_front_neutral.png",
+      "metrics": {
+        "a": {
+          "label": "dog_nala_puppy.glb",
+          "key": "dog.nala.puppy",
+          "tier": "glb",
+          "triangles": 1950,
+          "drawCalls": 2,
+          "actorDrawCalls": 1,
+          "textureBytes": 4210688,
+          "heightShare": 0.6996070788466753,
+          "minMargin": 0.1499999999999998,
+          "azimuthDeg": 0
+        },
+        "b": {
+          "label": "dog.nala.puppy",
+          "key": "dog.nala.puppy",
+          "tier": "glb",
+          "triangles": 14844,
+          "drawCalls": 2,
+          "actorDrawCalls": 1,
+          "textureBytes": 10137764,
+          "heightShare": 0.6999324064872694,
+          "minMargin": 0.15002027960855985,
+          "azimuthDeg": 0
+        },
+        "cam": "front",
+        "light": "neutral",
+        "pose": "idle_relaxed"
+      },
+      "errors": [],
+      "frames": []
+    },
+    {
+      "cam": "front",
+      "light": "courtyard",
+      "file": "review_front_courtyard.png",
+      "metrics": {
+        "a": {
+          "label": "dog_nala_puppy.glb",
+          "key": "dog.nala.puppy",
+          "tier": "glb",
+          "triangles": 1950,
+          "drawCalls": 2,
+          "actorDrawCalls": 1,
+          "textureBytes": 4210688,
+          "heightShare": 0.7,
+          "minMargin": 0.14999999999999963,
+          "azimuthDeg": 0
+        },
+        "b": {
+          "label": "dog.nala.puppy",
+          "key": "dog.nala.puppy",
+          "tier": "glb",
+          "triangles": 14844,
+          "drawCalls": 2,
+          "actorDrawCalls": 1,
+          "textureBytes": 10137764,
+          "heightShare": 0.7,
+          "minMargin": 0.14999999999999947,
+          "azimuthDeg": 0
+        },
+        "cam": "front",
+        "light": "courtyard",
+        "pose": "idle_relaxed"
+      },
+      "errors": [],
+      "frames": []
+    },
+    {
+      "cam": "side",
+      "light": "neutral",
+      "file": "review_side_neutral.png",
+      "metrics": {
+        "a": {
+          "label": "dog_nala_puppy.glb",
+          "key": "dog.nala.puppy",
+          "tier": "glb",
+          "triangles": 1950,
+          "drawCalls": 2,
+          "actorDrawCalls": 1,
+          "textureBytes": 4210688,
+          "heightShare": 0.5606119116563445,
+          "minMargin": 0.06999999999999773,
+          "azimuthDeg": 90
+        },
+        "b": {
+          "label": "dog.nala.puppy",
+          "key": "dog.nala.puppy",
+          "tier": "glb",
+          "triangles": 14844,
+          "drawCalls": 2,
+          "actorDrawCalls": 1,
+          "textureBytes": 10137764,
+          "heightShare": 0.58091189660247,
+          "minMargin": 0.06999999999999745,
+          "azimuthDeg": 90
+        },
+        "cam": "side",
+        "light": "neutral",
+        "pose": "idle_relaxed"
+      },
+      "errors": [],
+      "frames": []
+    },
+    {
+      "cam": "side",
+      "light": "courtyard",
+      "file": "review_side_courtyard.png",
+      "metrics": {
+        "a": {
+          "label": "dog_nala_puppy.glb",
+          "key": "dog.nala.puppy",
+          "tier": "glb",
+          "triangles": 1950,
+          "drawCalls": 2,
+          "actorDrawCalls": 1,
+          "textureBytes": 4210688,
+          "heightShare": 0.5566192365817358,
+          "minMargin": 0.06993176161743869,
+          "azimuthDeg": 90
+        },
+        "b": {
+          "label": "dog.nala.puppy",
+          "key": "dog.nala.puppy",
+          "tier": "glb",
+          "triangles": 14844,
+          "drawCalls": 2,
+          "actorDrawCalls": 1,
+          "textureBytes": 10137764,
+          "heightShare": 0.581356998285427,
+          "minMargin": 0.06978475471257134,
+          "azimuthDeg": 90
+        },
+        "cam": "side",
+        "light": "courtyard",
+        "pose": "idle_relaxed"
+      },
+      "errors": [],
+      "frames": []
+    },
+    {
+      "cam": "closeup_portrait",
+      "light": "neutral",
+      "file": "review_closeup_portrait_neutral.png",
+      "metrics": {
+        "a": {
+          "label": "dog_nala_puppy.glb",
+          "key": "dog.nala.puppy",
+          "tier": "glb",
+          "triangles": 1950,
+          "drawCalls": 2,
+          "actorDrawCalls": 1,
+          "textureBytes": 4210688,
+          "heightShare": 0.5998026726199527,
+          "minMargin": 0.051048549540544885,
+          "azimuthDeg": 30.981319381398077
+        },
+        "b": {
+          "label": "dog.nala.puppy",
+          "key": "dog.nala.puppy",
+          "tier": "glb",
+          "triangles": 14844,
+          "drawCalls": 2,
+          "actorDrawCalls": 1,
+          "textureBytes": 10137764,
+          "heightShare": 0.5730074403341382,
+          "minMargin": 0.06465811417416845,
+          "azimuthDeg": 23.656387720043174
+        },
+        "cam": "closeup_portrait",
+        "light": "neutral",
+        "pose": "idle_relaxed"
+      },
+      "errors": [],
+      "frames": [
+        "review_closeup_portrait_neutral_turn0.png",
+        "review_closeup_portrait_neutral_turn90.png",
+        "review_closeup_portrait_neutral_turn180.png",
+        "review_closeup_portrait_neutral_turn270.png"
+      ]
+    },
+    {
+      "cam": "closeup_portrait",
+      "light": "courtyard",
+      "file": "review_closeup_portrait_courtyard.png",
+      "metrics": {
+        "a": {
+          "label": "dog_nala_puppy.glb",
+          "key": "dog.nala.puppy",
+          "tier": "glb",
+          "triangles": 1950,
+          "drawCalls": 3,
+          "actorDrawCalls": 1,
+          "textureBytes": 4210688,
+          "heightShare": 0.5958724357643184,
+          "minMargin": 0.06671706033387809,
+          "azimuthDeg": 29.792625605987848
+        },
+        "b": {
+          "label": "dog.nala.puppy",
+          "key": "dog.nala.puppy",
+          "tier": "glb",
+          "triangles": 14844,
+          "drawCalls": 3,
+          "actorDrawCalls": 1,
+          "textureBytes": 10137764,
+          "heightShare": 0.5724941111273782,
+          "minMargin": 0.06106000324089744,
+          "azimuthDeg": 23.64113906232743
+        },
+        "cam": "closeup_portrait",
+        "light": "courtyard",
+        "pose": "idle_relaxed"
+      },
+      "errors": [],
+      "frames": [
+        "review_closeup_portrait_courtyard_turn0.png",
+        "review_closeup_portrait_courtyard_turn90.png",
+        "review_closeup_portrait_courtyard_turn180.png",
+        "review_closeup_portrait_courtyard_turn270.png"
+      ]
+    },
+    {
+      "cam": "lesson_strip",
+      "light": "neutral",
+      "file": "review_lesson_strip_neutral.png",
+      "metrics": {
+        "a": {
+          "label": "dog_nala_puppy.glb",
+          "key": "dog.nala.puppy",
+          "tier": "glb",
+          "triangles": 1950,
+          "drawCalls": 2,
+          "actorDrawCalls": 1,
+          "textureBytes": 4210688,
+          "heightShare": 0.4514043127532404,
+          "minMargin": 0.1949999999999984,
+          "azimuthDeg": 45.121248536134075
+        },
+        "b": {
+          "label": "dog.nala.puppy",
+          "key": "dog.nala.puppy",
+          "tier": "glb",
+          "triangles": 14844,
+          "drawCalls": 2,
+          "actorDrawCalls": 1,
+          "textureBytes": 10137764,
+          "heightShare": 0.45034383427702135,
+          "minMargin": 0.19465500035015276,
+          "azimuthDeg": 44.66562264292887
+        },
+        "cam": "lesson_strip",
+        "light": "neutral",
+        "pose": "idle_relaxed"
+      },
+      "errors": [],
+      "frames": []
+    },
+    {
+      "cam": "lesson_strip",
+      "light": "courtyard",
+      "file": "review_lesson_strip_courtyard.png",
+      "metrics": {
+        "a": {
+          "label": "dog_nala_puppy.glb",
+          "key": "dog.nala.puppy",
+          "tier": "glb",
+          "triangles": 1950,
+          "drawCalls": 3,
+          "actorDrawCalls": 1,
+          "textureBytes": 4210688,
+          "heightShare": 0.4517047034582101,
+          "minMargin": 0.1949999999999989,
+          "azimuthDeg": 45.880625055148116
+        },
+        "b": {
+          "label": "dog.nala.puppy",
+          "key": "dog.nala.puppy",
+          "tier": "glb",
+          "triangles": 14844,
+          "drawCalls": 3,
+          "actorDrawCalls": 1,
+          "textureBytes": 10137764,
+          "heightShare": 0.4500430279474572,
+          "minMargin": 0.1949559700829966,
+          "azimuthDeg": 44.649141875135065
+        },
+        "cam": "lesson_strip",
+        "light": "courtyard",
+        "pose": "idle_relaxed"
+      },
+      "errors": [],
+      "frames": []
+    },
+    {
+      "cam": "landscape",
+      "light": "neutral",
+      "file": "review_landscape_neutral.png",
+      "metrics": {
+        "a": {
+          "label": "dog_nala_puppy.glb",
+          "key": "dog.nala.puppy",
+          "tier": "glb",
+          "triangles": 1950,
+          "drawCalls": 2,
+          "actorDrawCalls": 1,
+          "textureBytes": 4210688,
+          "heightShare": 0.6021649811793622,
+          "minMargin": 0.19783501882063875,
+          "azimuthDeg": 45.53326114112555
+        },
+        "b": {
+          "label": "dog.nala.puppy",
+          "key": "dog.nala.puppy",
+          "tier": "glb",
+          "triangles": 14844,
+          "drawCalls": 2,
+          "actorDrawCalls": 1,
+          "textureBytes": 10137764,
+          "heightShare": 0.6025395809671903,
+          "minMargin": 0.19747414443119854,
+          "azimuthDeg": 44.45830825943225
+        },
+        "cam": "landscape",
+        "light": "neutral",
+        "pose": "idle_relaxed"
+      },
+      "errors": [],
+      "frames": []
+    },
+    {
+      "cam": "landscape",
+      "light": "courtyard",
+      "file": "review_landscape_courtyard.png",
+      "metrics": {
+        "a": {
+          "label": "dog_nala_puppy.glb",
+          "key": "dog.nala.puppy",
+          "tier": "glb",
+          "triangles": 1950,
+          "drawCalls": 3,
+          "actorDrawCalls": 1,
+          "textureBytes": 4210688,
+          "heightShare": 0.6016683857747795,
+          "minMargin": 0.19833161422521411,
+          "azimuthDeg": 45.00449885270617
+        },
+        "b": {
+          "label": "dog.nala.puppy",
+          "key": "dog.nala.puppy",
+          "tier": "glb",
+          "triangles": 14844,
+          "drawCalls": 3,
+          "actorDrawCalls": 1,
+          "textureBytes": 10137764,
+          "heightShare": 0.6012836209959299,
+          "minMargin": 0.19926362866863662,
+          "azimuthDeg": 44.15140201378477
+        },
+        "cam": "landscape",
+        "light": "courtyard",
+        "pose": "idle_relaxed"
+      },
+      "errors": [],
+      "frames": []
+    }
+  ]
+}

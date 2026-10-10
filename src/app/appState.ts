@@ -4,7 +4,8 @@
 import type { OwnershipState } from '../storage/types';
 import type { RendererStatus } from '../render/types';
 
-export type Route = 'home' | 'profile' | 'lesson' | 'school' | 'settings' | 'reflection' | 'memorial' | 'mode';
+/** 'practice' = free practice in the yard (D-041). */
+export type Route = 'home' | 'profile' | 'lesson' | 'school' | 'settings' | 'reflection' | 'memorial' | 'mode' | 'practice';
 export type ProfileTab = 'care' | 'memories' | 'learned';
 export type PauseReason = 'hidden' | 'blur' | 'otherTab' | 'storageError' | 'contextLost' | 'user' | 'update';
 
@@ -30,6 +31,10 @@ export interface AppState {
   online: boolean;
   /** Dev-only debug panel visibility. */
   debugOpen: boolean;
+  /** D-041: 'yard' = free movement on home/practice; 'static' = classic staged school (WebGL failed or user choice). */
+  yardMode: 'yard' | 'static';
+  /** D-041: the dog-tap sheet / moment sheet is open. */
+  dogSheetOpen: boolean;
 }
 
 export const INITIAL_APP_STATE: AppState = {
@@ -49,12 +54,14 @@ export const INITIAL_APP_STATE: AppState = {
   reducedMotion: false,
   online: true,
   debugOpen: false,
+  yardMode: 'yard',
+  dogSheetOpen: false,
 };
 
 /** Routes in which active care time accumulates (04 Zeitmodell). Profile counts only while presenting a care effect. */
 export function isActiveRoute(app: AppState): boolean {
   if (app.pauseReasons.length > 0) return false;
-  if (app.route === 'home' || app.route === 'lesson') return true;
+  if (app.route === 'home' || app.route === 'lesson' || app.route === 'practice') return true;
   if (app.route === 'profile' && app.presenting) return true;
   return false;
 }

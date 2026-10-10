@@ -42,6 +42,8 @@ export function isPresentableEffect(effect: DomainEffect): boolean {
     case 'upgradeBought':
     case 'growth':
     case 'lost':
+    case 'exercise':
+    case 'moment':
       return true;
     default:
       return false;

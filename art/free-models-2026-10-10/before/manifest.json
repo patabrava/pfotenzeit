@@ -1,0 +1,484 @@
+{
+  "version": 1,
+  "generatedUTC": "2026-10-09T19:21:56.739Z",
+  "assets": {
+    "dog.nala.puppy": {
+      "url": "assets/models/dog_nala_puppy.glb",
+      "status": "code-authored",
+      "bytes": 487132,
+      "triangles": 9684,
+      "clips": [
+        "idle_relaxed",
+        "look_at_handler",
+        "sniff",
+        "walk",
+        "sit",
+        "lie_down",
+        "rest_loop",
+        "eat",
+        "play_bow",
+        "turn_away",
+        "tense_idle",
+        "tired_idle",
+        "recover"
+      ],
+      "textureSizes": [],
+      "material": "vertex",
+      "drawCalls": 1,
+      "boundsMeters": [
+        0.1936,
+        0.3983,
+        0.7285
+      ],
+      "source": "scripts/build-models.mjs (procedural, from 07/08 brief and reference sheets)",
+      "license": "project-internal, generated code; no third-party assets",
+      "version": 1,
+      "clipMeta": {
+        "idle_relaxed": {
+          "durationS": 4,
+          "loop": true
+        },
+        "look_at_handler": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "sniff": {
+          "durationS": 2.5,
+          "loop": true
+        },
+        "walk": {
+          "durationS": 1,
+          "loop": true
+        },
+        "sit": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "lie_down": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "rest_loop": {
+          "durationS": 5,
+          "loop": true
+        },
+        "eat": {
+          "durationS": 4,
+          "loop": false,
+          "events": {
+            "treat_received": 2
+          }
+        },
+        "play_bow": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "turn_away": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "tense_idle": {
+          "durationS": 2.5,
+          "loop": true
+        },
+        "tired_idle": {
+          "durationS": 3.5,
+          "loop": true
+        },
+        "recover": {
+          "durationS": 2,
+          "loop": false
+        }
+      },
+      "measuredShoulderHeightM": 0.2811,
+      "rig": "project",
+      "rigInfo": {
+        "joints": 26,
+        "maxInfluences": 4,
+        "root": "root"
+      }
+    },
+    "dog.nala.growing": {
+      "url": "assets/models/dog_nala_growing.glb",
+      "status": "code-authored",
+      "bytes": 486876,
+      "triangles": 9684,
+      "clips": [
+        "idle_relaxed",
+        "look_at_handler",
+        "sniff",
+        "walk",
+        "sit",
+        "lie_down",
+        "rest_loop",
+        "eat",
+        "play_bow",
+        "turn_away",
+        "tense_idle",
+        "tired_idle",
+        "recover"
+      ],
+      "textureSizes": [],
+      "material": "vertex",
+      "drawCalls": 1,
+      "boundsMeters": [
+        0.1976,
+        0.4837,
+        0.8447
+      ],
+      "source": "scripts/build-models.mjs (procedural, from 07/08 brief and reference sheets)",
+      "license": "project-internal, generated code; no third-party assets",
+      "version": 1,
+      "clipMeta": {
+        "idle_relaxed": {
+          "durationS": 4,
+          "loop": true
+        },
+        "look_at_handler": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "sniff": {
+          "durationS": 2.5,
+          "loop": true
+        },
+        "walk": {
+          "durationS": 1,
+          "loop": true
+        },
+        "sit": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "lie_down": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "rest_loop": {
+          "durationS": 5,
+          "loop": true
+        },
+        "eat": {
+          "durationS": 4,
+          "loop": false,
+          "events": {
+            "treat_received": 2
+          }
+        },
+        "play_bow": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "turn_away": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "tense_idle": {
+          "durationS": 2.5,
+          "loop": true
+        },
+        "tired_idle": {
+          "durationS": 3.5,
+          "loop": true
+        },
+        "recover": {
+          "durationS": 2,
+          "loop": false
+        }
+      },
+      "measuredShoulderHeightM": 0.3608,
+      "rig": "project",
+      "rigInfo": {
+        "joints": 26,
+        "maxInfluences": 4,
+        "root": "root"
+      }
+    },
+    "dog.bruno.puppy": {
+      "url": "assets/models/dog_bruno_puppy.glb",
+      "status": "code-authored",
+      "bytes": 487280,
+      "triangles": 9684,
+      "clips": [
+        "idle_relaxed",
+        "look_at_handler",
+        "sniff",
+        "walk",
+        "sit",
+        "lie_down",
+        "rest_loop",
+        "eat",
+        "play_bow",
+        "turn_away",
+        "tense_idle",
+        "tired_idle",
+        "recover"
+      ],
+      "textureSizes": [],
+      "material": "vertex",
+      "drawCalls": 1,
+      "boundsMeters": [
+        0.225,
+        0.4243,
+        0.7563
+      ],
+      "source": "scripts/build-models.mjs (procedural, from 07/08 brief and reference sheets)",
+      "license": "project-internal, generated code; no third-party assets",
+      "version": 1,
+      "clipMeta": {
+        "idle_relaxed": {
+          "durationS": 4,
+          "loop": true
+        },
+        "look_at_handler": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "sniff": {
+          "durationS": 2.5,
+          "loop": true
+        },
+        "walk": {
+          "durationS": 1,
+          "loop": true
+        },
+        "sit": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "lie_down": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "rest_loop": {
+          "durationS": 5,
+          "loop": true
+        },
+        "eat": {
+          "durationS": 4,
+          "loop": false,
+          "events": {
+            "treat_received": 2
+          }
+        },
+        "play_bow": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "turn_away": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "tense_idle": {
+          "durationS": 2.5,
+          "loop": true
+        },
+        "tired_idle": {
+          "durationS": 3.5,
+          "loop": true
+        },
+        "recover": {
+          "durationS": 2,
+          "loop": false
+        }
+      },
+      "measuredShoulderHeightM": 0.3113,
+      "rig": "project",
+      "rigInfo": {
+        "joints": 26,
+        "maxInfluences": 4,
+        "root": "root"
+      }
+    },
+    "human.mira": {
+      "url": "assets/models/human_mira.glb",
+      "status": "code-authored",
+      "bytes": 257236,
+      "triangles": 6704,
+      "clips": [
+        "idle",
+        "greet",
+        "gesture_explain",
+        "offer_reward",
+        "kneel"
+      ],
+      "textureSizes": [],
+      "material": "vertex",
+      "drawCalls": 1,
+      "boundsMeters": [
+        0.532,
+        1.716,
+        0.3003
+      ],
+      "source": "scripts/build-models.mjs (procedural, from 07/08 brief and reference sheets)",
+      "license": "project-internal, generated code; no third-party assets",
+      "version": 1,
+      "clipMeta": {
+        "idle": {
+          "durationS": 4,
+          "loop": true
+        },
+        "greet": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "gesture_explain": {
+          "durationS": 2,
+          "loop": false
+        },
+        "offer_reward": {
+          "durationS": 2,
+          "loop": false
+        },
+        "kneel": {
+          "durationS": 1.5,
+          "loop": false
+        }
+      },
+      "measuredHeightM": 1.716,
+      "rig": "project",
+      "rigInfo": {
+        "joints": 20,
+        "maxInfluences": 4,
+        "root": "root"
+      }
+    },
+    "human.alex": {
+      "url": "assets/models/human_alex.glb",
+      "status": "code-authored",
+      "bytes": 246536,
+      "triangles": 6352,
+      "clips": [
+        "idle",
+        "greet",
+        "gesture_explain",
+        "offer_reward",
+        "kneel"
+      ],
+      "textureSizes": [],
+      "material": "vertex",
+      "drawCalls": 1,
+      "boundsMeters": [
+        0.552,
+        1.776,
+        0.3003
+      ],
+      "source": "scripts/build-models.mjs (procedural, from 07/08 brief and reference sheets)",
+      "license": "project-internal, generated code; no third-party assets",
+      "version": 1,
+      "clipMeta": {
+        "idle": {
+          "durationS": 4,
+          "loop": true
+        },
+        "greet": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "gesture_explain": {
+          "durationS": 2,
+          "loop": false
+        },
+        "offer_reward": {
+          "durationS": 2,
+          "loop": false
+        },
+        "kneel": {
+          "durationS": 1.5,
+          "loop": false
+        }
+      },
+      "measuredHeightM": 1.776,
+      "rig": "project",
+      "rigInfo": {
+        "joints": 20,
+        "maxInfluences": 4,
+        "root": "root"
+      }
+    },
+    "environment.school": {
+      "url": "assets/models/school_courtyard.glb",
+      "status": "code-authored",
+      "bytes": 385444,
+      "triangles": 15416,
+      "clips": [],
+      "textureSizes": [],
+      "material": "vertex",
+      "drawCalls": 1,
+      "boundsMeters": [
+        7.0937,
+        3.4186,
+        7.3101
+      ],
+      "source": "scripts/build-models.mjs (procedural, from 07/08 brief and reference sheets)",
+      "license": "project-internal, generated code; no third-party assets",
+      "version": 1,
+      "meshes": [
+        "school_courtyard"
+      ],
+      "nodes": [
+        "school_courtyard"
+      ]
+    },
+    "props.care": {
+      "url": "assets/models/care_props.glb",
+      "status": "code-authored",
+      "bytes": 128412,
+      "triangles": 6096,
+      "clips": [],
+      "textureSizes": [],
+      "material": "vertex",
+      "drawCalls": 6,
+      "boundsMeters": [
+        0.64,
+        0.0921,
+        0.4788
+      ],
+      "source": "scripts/build-models.mjs (procedural, from 07/08 brief and reference sheets)",
+      "license": "project-internal, generated code; no third-party assets",
+      "version": 1,
+      "meshes": [
+        "prop_bowl",
+        "prop_water",
+        "prop_blanket",
+        "prop_ball",
+        "prop_toy_rolling",
+        "prop_leaf"
+      ],
+      "nodes": [
+        "bowl",
+        "water",
+        "blanket",
+        "ball",
+        "toy_rolling",
+        "leaf"
+      ]
+    },
+    "props.upgrades": {
+      "url": "assets/models/school_upgrades.glb",
+      "status": "code-authored",
+      "bytes": 194260,
+      "triangles": 9160,
+      "clips": [],
+      "textureSizes": [],
+      "material": "vertex",
+      "drawCalls": 2,
+      "boundsMeters": [
+        6.72,
+        1.57,
+        2.5891
+      ],
+      "source": "scripts/build-models.mjs (procedural, from 07/08 brief and reference sheets)",
+      "license": "project-internal, generated code; no third-party assets",
+      "version": 1,
+      "meshes": [
+        "upgrade_rest_place",
+        "upgrade_sniff_corner"
+      ],
+      "nodes": [
+        "rest_place",
+        "sniff_corner"
+      ]
+    }
+  }
+}

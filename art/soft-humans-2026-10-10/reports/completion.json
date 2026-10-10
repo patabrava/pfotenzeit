@@ -1,0 +1,43 @@
+{
+  "implementedHumans": [
+    "human.mira",
+    "human.alex"
+  ],
+  "humanAssets": {
+    "human.mira": {
+      "bytes": 1081056,
+      "triangles": 10909,
+      "sha256": "36044bbda205961a21c50c6e6b81df7ec85085a3a459b8fa96982118fd7ca907",
+      "sourceSha256": "a9f2bcf774e3e9d19416c99c68a6d73041b17808def97fddf72c50d71a8b2b8c"
+    },
+    "human.alex": {
+      "bytes": 1052080,
+      "triangles": 10987,
+      "sha256": "750a73762e53c6855b9765612b6d4092c8ee7a0d80f422055a4036e6126482e3",
+      "sourceSha256": "c41f2bfc62b03a8dd8fbae37d201d4c73bba3806678984c6895f59a7cbf22c4f"
+    }
+  },
+  "checks": {
+    "unitTests": 225,
+    "unitFiles": 21,
+    "unitExecution": "serialized workers, unchanged assertions and timeouts",
+    "browserTests": 18,
+    "browserProjects": 3,
+    "uiChecks": 46,
+    "animatedHumanSamples": 50,
+    "modelFiles": 8,
+    "validatorErrors": 0,
+    "validatorWarnings": 0,
+    "integratedCharacterRegenerationHashesPreserved": 5,
+    "rendererViewports": 5,
+    "rendererDemandChecksPassed": true,
+    "rendererPageErrors": 0
+  },
+  "allModelBytes": 8179444,
+  "observationMotionPreserved": true,
+  "physicalPhonePerformanceMeasured": false,
+  "backendExists": false,
+  "dependenciesAdded": false,
+  "gitOperationsPerformed": false,
+  "paidAssetsPurchased": false
+}

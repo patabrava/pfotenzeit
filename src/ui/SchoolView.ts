@@ -5,20 +5,20 @@
  */
 import type { UpgradeId } from '../simulation/types';
 import type { StoreSnapshot } from '../state/store';
-import { button, createSheet, el, replaceChildren, secondary, text, type ModalHandle } from './components';
+import { button, createSheet, el, markCounter, replaceChildren, secondary, setMarkCounter, text, type ModalHandle } from './components';
 import type { UiContext } from './context';
 import { t } from './strings';
 
 export function openSchoolSheet(ctx: UiContext, onClose: () => void): ModalHandle {
   const body = el('div', { class: 'stack' });
+  const marksNode = markCounter(ctx.presenter.getDisplayMarks(ctx.store.get().save), t.school.marksLabel);
   const sheet = createSheet(ctx.modalHost, { title: t.school.title, onClose }, [body]);
 
   const render = (snapshot: StoreSnapshot): void => {
     const { save } = snapshot;
     const marks = ctx.presenter.getDisplayMarks(save);
-    const header = el('div', { class: 'row row--between' }, [
-      el('span', { class: 'badge badge--gold', text: t.school.marks(marks) }),
-    ]);
+    setMarkCounter(marksNode, marks, t.school.marksLabel);
+    const header = el('div', { class: 'row row--between' }, [marksNode, el('span', { class: 'text-secondary', text: t.school.marks(marks) })]);
     const cards = (Object.keys(ctx.content.upgrades) as UpgradeId[]).map((id) => {
       const upgrade = ctx.content.upgrades[id];
       const owned = save.school.upgrades.includes(id);

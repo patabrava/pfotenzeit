@@ -10,7 +10,7 @@
  *   npm run assets:build            build everything
  *   node scripts/build-models.mjs --preview [dir]   additionally render PNG contact sheets (dev aid)
  */
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { mkdirSync, writeFileSync, readFileSync, existsSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -43,6 +43,8 @@ if (previewDir) mkdirSync(previewDir, { recursive: true });
 
 const manifest = { version: 1, generatedUTC: new Date().toISOString(), assets: {} };
 const report = [];
+const priorAssets = existsSync(manifestPath) ? JSON.parse(readFileSync(manifestPath, 'utf8')).assets : {};
+
 
 function fmt(n) {
   return n.toLocaleString('en-US');
@@ -64,6 +66,8 @@ async function finish(doc, fileName, extra) {
     triangles: m.triangles,
     clips: m.animations.map((a) => a.name),
     textureSizes: [],
+    material: 'vertex',
+    drawCalls: back.getRoot().listMeshes().reduce((n, mesh) => n + mesh.listPrimitives().length, 0),
     boundsMeters: m.bounds.size.map((x) => Number(x.toFixed(4))),
     source: SOURCE,
     license: LICENSE,
@@ -83,6 +87,12 @@ async function finish(doc, fileName, extra) {
 }
 
 async function buildDogAsset(key, P, fileName, names) {
+  if (priorAssets[key]?.productionIntegrated && priorAssets[key]?.rig === 'vendor') {
+    if (!existsSync(join(modelsDir,fileName))) throw new Error(`Missing integrated asset ${fileName}; restore from the documented licensed source pipeline`);
+    manifest.assets[key] = priorAssets[key];
+    console.log(`${fileName}: preserving integrated licensed vendor model`);
+    return;
+  }
   const { skeleton, geometry, landmarks } = buildDog(P);
   const skin = computeSkin(geometry.positions, geometry.skinset, geometry.skinSets, skeleton);
   const clips = buildDogClips(P, skeleton, landmarks).map((c) => sampleClip(c, skeleton, 24));
@@ -93,12 +103,19 @@ async function buildDogAsset(key, P, fileName, names) {
   for (const [name, meta] of Object.entries(DOG_CLIP_META)) clipMeta[name] = { ...meta };
   const { entry, back } = await finish(doc, fileName, { clipMeta });
   entry.measuredShoulderHeightM = Number(measureShoulderHeight(back).toFixed(4));
-  entry.rig = { joints: skeleton.bones.length, maxInfluences: 4 };
+  entry.rig = 'project'; // D-038: string form per D-036 schema
+  entry.rigInfo = { joints: skeleton.bones.length, maxInfluences: 4, root: skeleton.bones[0]?.name ?? 'root' };
   manifest.assets[key] = entry;
   if (previewDir) await preview(`${P.id}`, geometry, skeleton, skin, buildDogClips(P, skeleton, landmarks), P.shoulderHeight * 2.6, P.shoulderHeight * 0.75);
 }
 
 async function buildHumanAsset(key, H, fileName, names) {
+  // User-approved vendor humans must survive the legacy procedural regeneration command.
+  if (priorAssets[key]?.productionIntegrated && priorAssets[key]?.rig === 'vendor') {
+    if (!existsSync(join(root, 'public', priorAssets[key].url))) throw new Error(`Integrated human missing: ${key}`);
+    manifest.assets[key] = priorAssets[key];
+    return;
+  }
   const { skeleton, geometry, landmarks } = buildHuman(H);
   const skin = computeSkin(geometry.positions, geometry.skinset, geometry.skinSets, skeleton);
   const clips = buildHumanClips(H, skeleton, landmarks).map((c) => sampleClip(c, skeleton, 24));
@@ -109,18 +126,56 @@ async function buildHumanAsset(key, H, fileName, names) {
   for (const [name, meta] of Object.entries(HUMAN_CLIP_META)) clipMeta[name] = { ...meta };
   const { entry, back } = await finish(doc, fileName, { clipMeta });
   entry.measuredHeightM = Number(measureDocument(back).bounds.max[1].toFixed(4));
-  entry.rig = { joints: skeleton.bones.length, maxInfluences: 4 };
+  entry.rig = 'project'; // D-038: string form per D-036 schema
+  entry.rigInfo = { joints: skeleton.bones.length, maxInfluences: 4, root: skeleton.bones[0]?.name ?? 'root' };
   manifest.assets[key] = entry;
   if (previewDir) await preview(`${H.id}`, geometry, skeleton, skin, buildHumanClips(H, skeleton, landmarks), H.height * 1.15, H.height / 2);
 }
 
-async function buildStaticAsset(key, fileName, materialName, meshes) {
+async function buildStaticAsset(key, fileName, materialName, meshes, previews = []) {
   const doc = buildStaticDocument({ materialName, meshes });
   const { entry } = await finish(doc, fileName, {
     meshes: meshes.map((m) => m.name),
     nodes: meshes.map((m) => m.nodeName ?? m.name),
   });
   manifest.assets[key] = entry;
+  if (previewDir) await previewStatic(key.replace('.', '_'), meshes, previews);
+}
+
+/**
+ * Dev aid for static files: one PNG per requested view. `views` entries: { name, yaw, pitch, size,
+ * center, width, height, only? } — `only` restricts the rendered nodes (e.g. one prop per cell).
+ * Node translations (upgrades) are applied so the sheet shows the stage placement.
+ */
+async function previewStatic(id, meshes, views) {
+  const { renderView, writePng } = await import('./lib/preview.mjs');
+  const combined = (names) => {
+    const sel = meshes.filter((m) => !names || names.includes(m.nodeName ?? m.name));
+    const positions = [];
+    const normals = [];
+    const colors = [];
+    const indices = [];
+    let offset = 0;
+    for (const m of sel) {
+      const g = m.geometry;
+      const t = m.translation ?? [0, 0, 0];
+      for (let i = 0; i < g.positions.length; i += 3) {
+        positions.push(g.positions[i] + t[0], g.positions[i + 1] + t[1], g.positions[i + 2] + t[2]);
+      }
+      for (const v of g.normals) normals.push(v);
+      for (const v of g.colors) colors.push(v);
+      for (const v of g.indices) indices.push(v + offset);
+      offset += g.positions.length / 3;
+    }
+    return { positions: Float32Array.from(positions), normals: Float32Array.from(normals), colors: Float32Array.from(colors), indices: Uint32Array.from(indices) };
+  };
+  for (const v of views) {
+    const g = combined(v.only ?? null);
+    const width = v.width ?? 720;
+    const height = v.height ?? 720;
+    const img = renderView(g, { yaw: v.yaw ?? 30, pitch: v.pitch ?? 35, size: v.size ?? 8, center: v.center ?? [0, 0, 0], width, height, ground: false });
+    writePng(join(previewDir, `${id}_${v.name}.png`), width, height, img);
+  }
 }
 
 /** Dev aid: contact sheets of the rest pose and of every clip (side + three-quarter views). */
@@ -153,9 +208,24 @@ await buildDogAsset('dog.nala.growing', NALA_GROWING, 'dog_nala_growing.glb', { 
 await buildDogAsset('dog.bruno.puppy', BRUNO_PUPPY, 'dog_bruno_puppy.glb', { mesh: 'dog_bruno_body', skin: 'rig_bruno', material: 'mat_bruno_fur' });
 await buildHumanAsset('human.mira', MIRA, 'human_mira.glb', { mesh: 'human_mira_body', skin: 'rig_mira', material: 'mat_mira_body' });
 await buildHumanAsset('human.alex', ALEX, 'human_alex.glb', { mesh: 'human_alex_body', skin: 'rig_alex', material: 'mat_alex_body' });
-await buildStaticAsset('environment.school', 'school_courtyard.glb', 'mat_school', [{ name: 'school_courtyard', geometry: buildCourtyard() }]);
-await buildStaticAsset('props.care', 'care_props.glb', 'mat_props', buildCareProps());
-await buildStaticAsset('props.upgrades', 'school_upgrades.glb', 'mat_upgrades', buildUpgrades());
+await buildStaticAsset('environment.school', 'school_courtyard.glb', 'mat_school', [{ name: 'school_courtyard', geometry: buildCourtyard() }], [
+  { name: 'threequarter', yaw: 30, pitch: 35, size: 8.2, center: [0, 0.6, 0], width: 900, height: 900 },
+  { name: 'front', yaw: 0, pitch: 35, size: 8.0, center: [0, 0.6, -0.2], width: 900, height: 700 },
+  { name: 'shelter', yaw: 25, pitch: 30, size: 4.2, center: [-0.9, 0.9, -2.2], width: 800, height: 700 },
+  { name: 'restdeck', yaw: -30, pitch: 35, size: 3.2, center: [-2.2, 0.3, -1.2], width: 700, height: 600 },
+]);
+await buildStaticAsset('props.care', 'care_props.glb', 'mat_props', buildCareProps(), [
+  { name: 'bowl', only: ['bowl'], yaw: 35, pitch: 30, size: 0.3, center: [0, 0.05, 0], width: 360, height: 360 },
+  { name: 'water', only: ['water'], yaw: 35, pitch: 45, size: 0.3, center: [0, 0.05, 0], width: 360, height: 360 },
+  { name: 'blanket', only: ['blanket'], yaw: 35, pitch: 35, size: 0.8, center: [0, 0.03, 0], width: 360, height: 360 },
+  { name: 'ball', only: ['ball'], yaw: 35, pitch: 25, size: 0.14, center: [0, 0.04, 0], width: 360, height: 360 },
+  { name: 'toy', only: ['toy_rolling'], yaw: 35, pitch: 25, size: 0.2, center: [0, 0.035, 0], width: 360, height: 360 },
+  { name: 'leaf', only: ['leaf'], yaw: 35, pitch: 45, size: 0.18, center: [0, 0.01, 0], width: 360, height: 360 },
+]);
+await buildStaticAsset('props.upgrades', 'school_upgrades.glb', 'mat_upgrades', buildUpgrades(), [
+  { name: 'rest', only: ['rest_place'], yaw: 30, pitch: 32, size: 2.8, center: [-2.3, 0.7, -1.5], width: 600, height: 600 },
+  { name: 'sniff', only: ['sniff_corner'], yaw: -30, pitch: 35, size: 2.8, center: [2.3, 0.4, -2.0], width: 600, height: 600 },
+]);
 
 writeFileSync(manifestPath, JSON.stringify(manifest, null, 2) + '\n');
 const total = report.reduce((s, r) => s + r.bytes, 0);

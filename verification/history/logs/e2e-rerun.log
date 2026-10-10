@@ -1,0 +1,287 @@
+
+> pfotenzeit@0.1.0 test:e2e
+> playwright test
+
+
+Running 12 tests using 3 workers
+
+(node:72108) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72109) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72107) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [mobile-360] › tests/e2e/smoke.spec.ts:34:1 › standard start, profile, care, L01 to care closure, reflection, mark, reload (16.2s)
+  ✓   3 [mobile-390] › tests/e2e/smoke.spec.ts:34:1 › standard start, profile, care, L01 to care closure, reflection, mark, reload (16.5s)
+  ✘   4 [mobile-360] › tests/e2e/smoke.spec.ts:77:1 › challenge onboarding creates a separate run and standard stays untouched (276ms)
+  ✘   5 [mobile-390] › tests/e2e/smoke.spec.ts:77:1 › challenge onboarding creates a separate run and standard stays untouched (179ms)
+(node:72349) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72350) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   2 [desktop] › tests/e2e/smoke.spec.ts:34:1 › standard start, profile, care, L01 to care closure, reflection, mark, reload (18.0s)
+  ✘   6 [mobile-360] › tests/e2e/smoke.spec.ts:90:1 › WebGL unavailable still leaves profile and lesson texts usable (472ms)
+  ✘   7 [mobile-390] › tests/e2e/smoke.spec.ts:90:1 › WebGL unavailable still leaves profile and lesson texts usable (455ms)
+(node:72375) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72383) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   9 [mobile-360] › tests/e2e/smoke.spec.ts:111:1 › second tab is told the game is open elsewhere (233ms)
+  ✘  10 [mobile-390] › tests/e2e/smoke.spec.ts:111:1 › second tab is told the game is open elsewhere (274ms)
+  ✘   8 [desktop] › tests/e2e/smoke.spec.ts:77:1 › challenge onboarding creates a separate run and standard stays untouched (252ms)
+(node:72422) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  11 [desktop] › tests/e2e/smoke.spec.ts:90:1 › WebGL unavailable still leaves profile and lesson texts usable (175ms)
+(node:72446) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  12 [desktop] › tests/e2e/smoke.spec.ts:111:1 › second tab is told the game is open elsewhere (191ms)
+
+
+  1) [mobile-390] › tests/e2e/smoke.spec.ts:77:1 › challenge onboarding creates a separate run and standard stays untouched 
+
+    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4173/
+    Call log:
+      - navigating to "http://127.0.0.1:4173/", waiting until "load"
+
+
+      16 |     if (msg.type() === 'error') errors.push(`console: ${msg.text()}`);
+      17 |   });
+    > 18 |   await page.goto('/');
+         |              ^
+      19 |   // Each Playwright test already receives an isolated browser context. Deleting
+      20 |   // IndexedDB after boot blocks behind the app's live database connection.
+      21 |   await expect(page.locator('#app')).toHaveAttribute('aria-busy', 'false', { timeout: 20_000 });
+        at freshApp (/Users/patabrava/Documents/AI/github/Camilo/Ines/tests/e2e/smoke.spec.ts:18:14)
+        at /Users/patabrava/Documents/AI/github/Camilo/Ines/tests/e2e/smoke.spec.ts:78:24
+
+    Error Context: test-results/smoke-challenge-onboarding-5724f-nd-standard-stays-untouched-mobile-390/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/smoke-challenge-onboarding-5724f-nd-standard-stays-untouched-mobile-390/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/smoke-challenge-onboarding-5724f-nd-standard-stays-untouched-mobile-390/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [mobile-390] › tests/e2e/smoke.spec.ts:90:1 › WebGL unavailable still leaves profile and lesson texts usable 
+
+    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4173/
+    Call log:
+      - navigating to "http://127.0.0.1:4173/", waiting until "load"
+
+
+      100 |   });
+      101 |   const page = await context.newPage();
+    > 102 |   await page.goto('/');
+          |              ^
+      103 |   await expect(page.locator('#app')).toHaveAttribute('aria-busy', 'false', { timeout: 20_000 });
+      104 |   await tap(page, de.home.toLesson);
+      105 |   await page.locator('[data-key="lesson-L01"]').click();
+        at /Users/patabrava/Documents/AI/github/Camilo/Ines/tests/e2e/smoke.spec.ts:102:14
+
+    Error Context: test-results/smoke-WebGL-unavailable-st-09e4d-ile-and-lesson-texts-usable-mobile-390/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/smoke-WebGL-unavailable-st-09e4d-ile-and-lesson-texts-usable-mobile-390/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/smoke-WebGL-unavailable-st-09e4d-ile-and-lesson-texts-usable-mobile-390/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [mobile-390] › tests/e2e/smoke.spec.ts:111:1 › second tab is told the game is open elsewhere ──
+
+    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4173/
+    Call log:
+      - navigating to "http://127.0.0.1:4173/", waiting until "load"
+
+
+      112 |   const context = await browser.newContext();
+      113 |   const first = await context.newPage();
+    > 114 |   await first.goto('/');
+          |               ^
+      115 |   await expect(first.locator('#app')).toHaveAttribute('aria-busy', 'false', { timeout: 20_000 });
+      116 |   const second = await context.newPage();
+      117 |   await second.goto('/');
+        at /Users/patabrava/Documents/AI/github/Camilo/Ines/tests/e2e/smoke.spec.ts:114:15
+
+    Error Context: test-results/smoke-second-tab-is-told-the-game-is-open-elsewhere-mobile-390/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/smoke-second-tab-is-told-the-game-is-open-elsewhere-mobile-390/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/smoke-second-tab-is-told-the-game-is-open-elsewhere-mobile-390/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [mobile-360] › tests/e2e/smoke.spec.ts:77:1 › challenge onboarding creates a separate run and standard stays untouched 
+
+    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4173/
+    Call log:
+      - navigating to "http://127.0.0.1:4173/", waiting until "load"
+
+
+      16 |     if (msg.type() === 'error') errors.push(`console: ${msg.text()}`);
+      17 |   });
+    > 18 |   await page.goto('/');
+         |              ^
+      19 |   // Each Playwright test already receives an isolated browser context. Deleting
+      20 |   // IndexedDB after boot blocks behind the app's live database connection.
+      21 |   await expect(page.locator('#app')).toHaveAttribute('aria-busy', 'false', { timeout: 20_000 });
+        at freshApp (/Users/patabrava/Documents/AI/github/Camilo/Ines/tests/e2e/smoke.spec.ts:18:14)
+        at /Users/patabrava/Documents/AI/github/Camilo/Ines/tests/e2e/smoke.spec.ts:78:24
+
+    Error Context: test-results/smoke-challenge-onboarding-5724f-nd-standard-stays-untouched-mobile-360/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/smoke-challenge-onboarding-5724f-nd-standard-stays-untouched-mobile-360/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/smoke-challenge-onboarding-5724f-nd-standard-stays-untouched-mobile-360/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [mobile-360] › tests/e2e/smoke.spec.ts:90:1 › WebGL unavailable still leaves profile and lesson texts usable 
+
+    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4173/
+    Call log:
+      - navigating to "http://127.0.0.1:4173/", waiting until "load"
+
+
+      100 |   });
+      101 |   const page = await context.newPage();
+    > 102 |   await page.goto('/');
+          |              ^
+      103 |   await expect(page.locator('#app')).toHaveAttribute('aria-busy', 'false', { timeout: 20_000 });
+      104 |   await tap(page, de.home.toLesson);
+      105 |   await page.locator('[data-key="lesson-L01"]').click();
+        at /Users/patabrava/Documents/AI/github/Camilo/Ines/tests/e2e/smoke.spec.ts:102:14
+
+    Error Context: test-results/smoke-WebGL-unavailable-st-09e4d-ile-and-lesson-texts-usable-mobile-360/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/smoke-WebGL-unavailable-st-09e4d-ile-and-lesson-texts-usable-mobile-360/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/smoke-WebGL-unavailable-st-09e4d-ile-and-lesson-texts-usable-mobile-360/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [mobile-360] › tests/e2e/smoke.spec.ts:111:1 › second tab is told the game is open elsewhere ──
+
+    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4173/
+    Call log:
+      - navigating to "http://127.0.0.1:4173/", waiting until "load"
+
+
+      112 |   const context = await browser.newContext();
+      113 |   const first = await context.newPage();
+    > 114 |   await first.goto('/');
+          |               ^
+      115 |   await expect(first.locator('#app')).toHaveAttribute('aria-busy', 'false', { timeout: 20_000 });
+      116 |   const second = await context.newPage();
+      117 |   await second.goto('/');
+        at /Users/patabrava/Documents/AI/github/Camilo/Ines/tests/e2e/smoke.spec.ts:114:15
+
+    Error Context: test-results/smoke-second-tab-is-told-the-game-is-open-elsewhere-mobile-360/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/smoke-second-tab-is-told-the-game-is-open-elsewhere-mobile-360/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/smoke-second-tab-is-told-the-game-is-open-elsewhere-mobile-360/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  7) [desktop] › tests/e2e/smoke.spec.ts:77:1 › challenge onboarding creates a separate run and standard stays untouched 
+
+    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4173/
+    Call log:
+      - navigating to "http://127.0.0.1:4173/", waiting until "load"
+
+
+      16 |     if (msg.type() === 'error') errors.push(`console: ${msg.text()}`);
+      17 |   });
+    > 18 |   await page.goto('/');
+         |              ^
+      19 |   // Each Playwright test already receives an isolated browser context. Deleting
+      20 |   // IndexedDB after boot blocks behind the app's live database connection.
+      21 |   await expect(page.locator('#app')).toHaveAttribute('aria-busy', 'false', { timeout: 20_000 });
+        at freshApp (/Users/patabrava/Documents/AI/github/Camilo/Ines/tests/e2e/smoke.spec.ts:18:14)
+        at /Users/patabrava/Documents/AI/github/Camilo/Ines/tests/e2e/smoke.spec.ts:78:24
+
+    Error Context: test-results/smoke-challenge-onboarding-5724f-nd-standard-stays-untouched-desktop/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/smoke-challenge-onboarding-5724f-nd-standard-stays-untouched-desktop/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/smoke-challenge-onboarding-5724f-nd-standard-stays-untouched-desktop/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8) [desktop] › tests/e2e/smoke.spec.ts:90:1 › WebGL unavailable still leaves profile and lesson texts usable 
+
+    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4173/
+    Call log:
+      - navigating to "http://127.0.0.1:4173/", waiting until "load"
+
+
+      100 |   });
+      101 |   const page = await context.newPage();
+    > 102 |   await page.goto('/');
+          |              ^
+      103 |   await expect(page.locator('#app')).toHaveAttribute('aria-busy', 'false', { timeout: 20_000 });
+      104 |   await tap(page, de.home.toLesson);
+      105 |   await page.locator('[data-key="lesson-L01"]').click();
+        at /Users/patabrava/Documents/AI/github/Camilo/Ines/tests/e2e/smoke.spec.ts:102:14
+
+    Error Context: test-results/smoke-WebGL-unavailable-st-09e4d-ile-and-lesson-texts-usable-desktop/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/smoke-WebGL-unavailable-st-09e4d-ile-and-lesson-texts-usable-desktop/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/smoke-WebGL-unavailable-st-09e4d-ile-and-lesson-texts-usable-desktop/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  9) [desktop] › tests/e2e/smoke.spec.ts:111:1 › second tab is told the game is open elsewhere ─────
+
+    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4173/
+    Call log:
+      - navigating to "http://127.0.0.1:4173/", waiting until "load"
+
+
+      112 |   const context = await browser.newContext();
+      113 |   const first = await context.newPage();
+    > 114 |   await first.goto('/');
+          |               ^
+      115 |   await expect(first.locator('#app')).toHaveAttribute('aria-busy', 'false', { timeout: 20_000 });
+      116 |   const second = await context.newPage();
+      117 |   await second.goto('/');
+        at /Users/patabrava/Documents/AI/github/Camilo/Ines/tests/e2e/smoke.spec.ts:114:15
+
+    Error Context: test-results/smoke-second-tab-is-told-the-game-is-open-elsewhere-desktop/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/smoke-second-tab-is-told-the-game-is-open-elsewhere-desktop/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/smoke-second-tab-is-told-the-game-is-open-elsewhere-desktop/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  9 failed
+    [mobile-390] › tests/e2e/smoke.spec.ts:77:1 › challenge onboarding creates a separate run and standard stays untouched 
+    [mobile-390] › tests/e2e/smoke.spec.ts:90:1 › WebGL unavailable still leaves profile and lesson texts usable 
+    [mobile-390] › tests/e2e/smoke.spec.ts:111:1 › second tab is told the game is open elsewhere ───
+    [mobile-360] › tests/e2e/smoke.spec.ts:77:1 › challenge onboarding creates a separate run and standard stays untouched 
+    [mobile-360] › tests/e2e/smoke.spec.ts:90:1 › WebGL unavailable still leaves profile and lesson texts usable 
+    [mobile-360] › tests/e2e/smoke.spec.ts:111:1 › second tab is told the game is open elsewhere ───
+    [desktop] › tests/e2e/smoke.spec.ts:77:1 › challenge onboarding creates a separate run and standard stays untouched 
+    [desktop] › tests/e2e/smoke.spec.ts:90:1 › WebGL unavailable still leaves profile and lesson texts usable 
+    [desktop] › tests/e2e/smoke.spec.ts:111:1 › second tab is told the game is open elsewhere ──────
+  3 passed (22.6s)

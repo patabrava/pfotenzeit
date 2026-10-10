@@ -1,0 +1,81 @@
+{
+  "human.mira": {
+    "url": "human_mira.glb",
+    "status": "pending",
+    "productionIntegrated": false,
+    "material": "textured",
+    "textures": [
+      {
+        "slot": "normal",
+        "width": 512,
+        "height": 512,
+        "bytes": 134904,
+        "mime": "image/png"
+      }
+    ],
+    "textureSizes": [
+      512
+    ],
+    "drawCalls": 1,
+    "rig": "project",
+    "rigInfo": {
+      "joints": 20,
+      "maxInfluences": 4,
+      "root": "root"
+    },
+    "clipMap": {
+      "idle": "idle",
+      "greet": "greet",
+      "gesture_explain": "gesture_explain",
+      "offer_reward": "offer_reward",
+      "kneel": "kneel"
+    },
+    "clips": [
+      "idle",
+      "greet",
+      "gesture_explain",
+      "offer_reward",
+      "kneel"
+    ],
+    "sourceClips": [
+      "idle",
+      "greet",
+      "gesture_explain",
+      "offer_reward",
+      "kneel"
+    ],
+    "bytes": 1646428,
+    "triangles": 15499,
+    "boundsMeters": [
+      0.5527,
+      1.6971,
+      0.261
+    ],
+    "measuredHeightM": 1.701,
+    "source": "art/blender-reference-pass-2026-10-09/candidates/human_mira.glb (Blender reference pass, code-authored candidate)",
+    "license": "project-internal, generated code; no third-party assets",
+    "version": 2,
+    "clipMeta": {
+      "idle": {
+        "durationS": 4,
+        "loop": true
+      },
+      "greet": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "gesture_explain": {
+        "durationS": 2,
+        "loop": false
+      },
+      "offer_reward": {
+        "durationS": 2,
+        "loop": false
+      },
+      "kneel": {
+        "durationS": 1.5,
+        "loop": false
+      }
+    }
+  }
+}

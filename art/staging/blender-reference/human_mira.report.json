@@ -1,0 +1,519 @@
+{
+  "tool": "scripts/ingest-vendor.mjs",
+  "generatedUTC": "2026-10-09T19:28:46.224Z",
+  "input": {
+    "path": "art/blender-reference-pass-2026-10-09/candidates/human_mira.glb",
+    "bytes": 1646428,
+    "generator": "glTF-Transform v4.5.1",
+    "extensions": {
+      "allowed": [],
+      "unsupported": [],
+      "unknown": [],
+      "required": []
+    }
+  },
+  "options": {
+    "key": "human.mira",
+    "kind": "human",
+    "name": "human_mira",
+    "maxTexture": 1024,
+    "quantize": false,
+    "clipmap": null
+  },
+  "before": {
+    "bytes": 1646428,
+    "triangles": 15499,
+    "vertices": 19027,
+    "drawCalls": 1,
+    "bounds": {
+      "min": [
+        -0.27637365460395813,
+        0.003983130678534508,
+        -0.10595881938934326
+      ],
+      "max": [
+        0.27637365460395813,
+        1.7010499238967896,
+        0.1550000011920929
+      ],
+      "size": [
+        0.5527473092079163,
+        1.697066793218255,
+        0.26095882058143616
+      ]
+    },
+    "meshes": [
+      {
+        "name": "human_mira_body",
+        "primitives": [
+          {
+            "semantics": [
+              "POSITION",
+              "NORMAL",
+              "COLOR_0",
+              "JOINTS_0",
+              "WEIGHTS_0",
+              "TANGENT",
+              "TEXCOORD_0"
+            ],
+            "mode": 4,
+            "vertices": 19027,
+            "triangles": 15499,
+            "material": "mat_mira_body",
+            "indexed": true,
+            "indexType": 5123
+          }
+        ]
+      }
+    ],
+    "materials": [
+      {
+        "name": "mat_mira_body",
+        "doubleSided": true,
+        "alphaMode": "OPAQUE",
+        "metallicFactor": 0,
+        "roughnessFactor": 0.7,
+        "textures": {
+          "normal": "human_mira_surface_normal"
+        }
+      }
+    ],
+    "textures": [
+      {
+        "slot": "normal",
+        "material": "mat_mira_body",
+        "name": "human_mira_surface_normal",
+        "mime": "image/png",
+        "width": 512,
+        "height": 512,
+        "bytes": 134904,
+        "decodedBytes": 1394606
+      }
+    ],
+    "decodedTextureBytes": 1394606,
+    "skins": [
+      {
+        "name": "rig_mira",
+        "joints": [
+          "root",
+          "hips",
+          "spine",
+          "chest",
+          "neck",
+          "head",
+          "shoulder_l",
+          "upper_arm_l",
+          "lower_arm_l",
+          "hand_l",
+          "shoulder_r",
+          "upper_arm_r",
+          "lower_arm_r",
+          "hand_r",
+          "upper_leg_l",
+          "lower_leg_l",
+          "foot_l",
+          "upper_leg_r",
+          "lower_leg_r",
+          "foot_r"
+        ],
+        "jointCount": 20,
+        "skeletonRoot": "root"
+      }
+    ],
+    "maxInfluences": 4,
+    "skinWeights": {
+      "vertices": 19027,
+      "unweighted": 0,
+      "maxDeviation": 4.470348358154297e-8
+    },
+    "skeletonRoot": "root",
+    "animations": [
+      {
+        "name": "idle",
+        "durationS": 4,
+        "channels": 11,
+        "closes": true,
+        "maxEndpointDiff": 0,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 11
+      },
+      {
+        "name": "greet",
+        "durationS": 1.5,
+        "channels": 10,
+        "closes": false,
+        "maxEndpointDiff": 0.8908890821039677,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 10
+      },
+      {
+        "name": "gesture_explain",
+        "durationS": 2,
+        "channels": 11,
+        "closes": false,
+        "maxEndpointDiff": 0.5051842704415321,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 11
+      },
+      {
+        "name": "offer_reward",
+        "durationS": 2,
+        "channels": 18,
+        "closes": false,
+        "maxEndpointDiff": 0.7547096014022827,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 17
+      },
+      {
+        "name": "kneel",
+        "durationS": 1.5,
+        "channels": 18,
+        "closes": false,
+        "maxEndpointDiff": 0.6946583986282349,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 17
+      }
+    ],
+    "nodes": 21,
+    "scaleProblems": []
+  },
+  "after": {
+    "bytes": 1646428,
+    "triangles": 15499,
+    "vertices": 19027,
+    "drawCalls": 1,
+    "bounds": {
+      "min": [
+        -0.27637365460395813,
+        0.003983130678534508,
+        -0.10595881938934326
+      ],
+      "max": [
+        0.27637365460395813,
+        1.7010499238967896,
+        0.1550000011920929
+      ],
+      "size": [
+        0.5527473092079163,
+        1.697066793218255,
+        0.26095882058143616
+      ]
+    },
+    "meshes": [
+      {
+        "name": "human_mira_body",
+        "primitives": [
+          {
+            "semantics": [
+              "POSITION",
+              "NORMAL",
+              "COLOR_0",
+              "JOINTS_0",
+              "WEIGHTS_0",
+              "TANGENT",
+              "TEXCOORD_0"
+            ],
+            "mode": 4,
+            "vertices": 19027,
+            "triangles": 15499,
+            "material": "mat_mira_body",
+            "indexed": true,
+            "indexType": 5123
+          }
+        ]
+      }
+    ],
+    "materials": [
+      {
+        "name": "mat_mira_body",
+        "doubleSided": true,
+        "alphaMode": "OPAQUE",
+        "metallicFactor": 0,
+        "roughnessFactor": 0.7,
+        "textures": {
+          "normal": "human_mira_surface_normal"
+        }
+      }
+    ],
+    "textures": [
+      {
+        "slot": "normal",
+        "material": "mat_mira_body",
+        "name": "human_mira_surface_normal",
+        "mime": "image/png",
+        "width": 512,
+        "height": 512,
+        "bytes": 134904,
+        "decodedBytes": 1394606
+      }
+    ],
+    "decodedTextureBytes": 1394606,
+    "skins": [
+      {
+        "name": "rig_mira",
+        "joints": [
+          "root",
+          "hips",
+          "spine",
+          "chest",
+          "neck",
+          "head",
+          "shoulder_l",
+          "upper_arm_l",
+          "lower_arm_l",
+          "hand_l",
+          "shoulder_r",
+          "upper_arm_r",
+          "lower_arm_r",
+          "hand_r",
+          "upper_leg_l",
+          "lower_leg_l",
+          "foot_l",
+          "upper_leg_r",
+          "lower_leg_r",
+          "foot_r"
+        ],
+        "jointCount": 20,
+        "skeletonRoot": "root"
+      }
+    ],
+    "maxInfluences": 4,
+    "skinWeights": {
+      "vertices": 19027,
+      "unweighted": 0,
+      "maxDeviation": 4.470348358154297e-8
+    },
+    "skeletonRoot": "root",
+    "animations": [
+      {
+        "name": "idle",
+        "durationS": 4,
+        "channels": 11,
+        "closes": true,
+        "maxEndpointDiff": 0,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 11
+      },
+      {
+        "name": "greet",
+        "durationS": 1.5,
+        "channels": 10,
+        "closes": false,
+        "maxEndpointDiff": 0.8908890821039677,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 10
+      },
+      {
+        "name": "gesture_explain",
+        "durationS": 2,
+        "channels": 11,
+        "closes": false,
+        "maxEndpointDiff": 0.5051842704415321,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 11
+      },
+      {
+        "name": "offer_reward",
+        "durationS": 2,
+        "channels": 18,
+        "closes": false,
+        "maxEndpointDiff": 0.7547096014022827,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 17
+      },
+      {
+        "name": "kneel",
+        "durationS": 1.5,
+        "channels": 18,
+        "closes": false,
+        "maxEndpointDiff": 0.6946583986282349,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 17
+      }
+    ],
+    "nodes": 21,
+    "scaleProblems": []
+  },
+  "textureChanges": [
+    {
+      "name": "human_mira_surface_normal",
+      "mime": "image/png",
+      "changed": false,
+      "from": [
+        512,
+        512
+      ],
+      "to": [
+        512,
+        512
+      ],
+      "bytesBefore": 134904,
+      "bytesAfter": 134904,
+      "note": ""
+    }
+  ],
+  "validator": {
+    "errors": 0,
+    "warnings": 0,
+    "infos": 0,
+    "messages": []
+  },
+  "clipMapping": {
+    "clipMap": {
+      "idle": "idle",
+      "greet": "greet",
+      "gesture_explain": "gesture_explain",
+      "offer_reward": "offer_reward",
+      "kneel": "kneel"
+    },
+    "autoMatched": [],
+    "missing": [],
+    "loopDoesNotClose": []
+  },
+  "rig": {
+    "kind": "project",
+    "joints": [
+      "root",
+      "hips",
+      "spine",
+      "chest",
+      "neck",
+      "head",
+      "shoulder_l",
+      "upper_arm_l",
+      "lower_arm_l",
+      "hand_l",
+      "shoulder_r",
+      "upper_arm_r",
+      "lower_arm_r",
+      "hand_r",
+      "upper_leg_l",
+      "lower_leg_l",
+      "foot_l",
+      "upper_leg_r",
+      "lower_leg_r",
+      "foot_r"
+    ],
+    "maxInfluences": 4,
+    "skeletonRoot": "root",
+    "unweightedVertices": 0
+  },
+  "measured": {
+    "shoulderHeightM": null,
+    "heightM": 1.701,
+    "minY": 0.004
+  },
+  "manifestEntry": {
+    "url": "human_mira.glb",
+    "status": "pending",
+    "productionIntegrated": false,
+    "material": "textured",
+    "textures": [
+      {
+        "slot": "normal",
+        "width": 512,
+        "height": 512,
+        "bytes": 134904,
+        "mime": "image/png"
+      }
+    ],
+    "textureSizes": [
+      512
+    ],
+    "drawCalls": 1,
+    "rig": "project",
+    "rigInfo": {
+      "joints": 20,
+      "maxInfluences": 4,
+      "root": "root"
+    },
+    "clipMap": {
+      "idle": "idle",
+      "greet": "greet",
+      "gesture_explain": "gesture_explain",
+      "offer_reward": "offer_reward",
+      "kneel": "kneel"
+    },
+    "clips": [
+      "idle",
+      "greet",
+      "gesture_explain",
+      "offer_reward",
+      "kneel"
+    ],
+    "sourceClips": [
+      "idle",
+      "greet",
+      "gesture_explain",
+      "offer_reward",
+      "kneel"
+    ],
+    "bytes": 1646428,
+    "triangles": 15499,
+    "boundsMeters": [
+      0.5527,
+      1.6971,
+      0.261
+    ],
+    "measuredHeightM": 1.701,
+    "source": "art/blender-reference-pass-2026-10-09/candidates/human_mira.glb (Blender reference pass, code-authored candidate)",
+    "license": "project-internal, generated code; no third-party assets",
+    "version": 2,
+    "clipMeta": {
+      "idle": {
+        "durationS": 4,
+        "loop": true
+      },
+      "greet": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "gesture_explain": {
+        "durationS": 2,
+        "loop": false
+      },
+      "offer_reward": {
+        "durationS": 2,
+        "loop": false
+      },
+      "kneel": {
+        "durationS": 1.5,
+        "loop": false
+      }
+    }
+  },
+  "nextSteps": [
+    "run: node scripts/validate-assets.mjs --staging art/staging/blender-reference",
+    "shipping into public/ is a reviewed step of the owning work package (never automatic)"
+  ]
+}

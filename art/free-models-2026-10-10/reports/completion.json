@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-10",
+  "integrated": true,
+  "source": "https://quaternius.com/packs/ultimateanimatedanimals.html",
+  "license": "CC0 1.0 Universal",
+  "typecheck": "pass",
+  "productionBuild": "pass",
+  "vitest": {
+    "files": 18,
+    "tests": 208,
+    "passed": 208
+  },
+  "playwright": {
+    "tests": 15,
+    "passed": 15,
+    "projects": [
+      "mobile-390",
+      "mobile-360",
+      "desktop"
+    ]
+  },
+  "uiHarness": {
+    "checks": 46,
+    "passed": 46
+  },
+  "assetValidation": {
+    "liveGlbs": 8,
+    "errors": 0,
+    "warnings": 0,
+    "totalBytes": 3072364
+  },
+  "candidateWebGL": {
+    "dogs": 3,
+    "poseTimeSamples": 195,
+    "drawCallsPerDog": 1
+  },
+  "integratedWebGL": {
+    "viewports": 5,
+    "passed": true,
+    "beforePortraitTriangles": 64608,
+    "afterPortraitTriangles": 49140,
+    "portraitDrawCalls": 8
+  },
+  "regenerationPreservedModelsAndEntries": true,
+  "blenderOpenedViaMCP": true,
+  "backend": "none in architecture",
+  "physicalPhoneVerified": false,
+  "finalArtApproved": false
+}

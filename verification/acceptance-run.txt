@@ -1,0 +1,5 @@
+PASS lessons-retry-care-growth-reloads {"supported":2,"inserted":1,"restDelta":30,"marks":0,"stage":"growing","completed":["L01","L02","L03"]}
+PASS care-once-and-export-import {"satietyAfterReload":75,"tamperedImportRejected":true,"exportFile":"pfotenzeit-export-2026-10-10.json"}
+PASS challenge-bands-loss-offline-isolation {"yellow":45,"critical":5,"activeLoss":true,"offlineCaps":{"satiety":16,"comfort":8},"offlineNoKill":true,"standardUnchanged":true}
+PASS context-loss-restore-and-all-models {"contextRestore":true,"metrics":{"drawCalls":13,"triangles":135024,"fpsEstimate":3,"dpr":1,"textureBytesEstimate":27918992,"assetTiers":{"human_mira":"glb","dog_nala":"glb","environment.school":"glb","human_alex":"glb","dog_bruno":"glb","props.care":"glb","props.upgrades":"glb"}}}
+PASS missing-model-fallback {"drawCalls":7,"triangles":26400,"fpsEstimate":1,"dpr":1,"textureBytesEstimate":4210688,"assetTiers":{"human_mira":"procedural","dog_nala":"procedural"}}

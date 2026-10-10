@@ -30,14 +30,33 @@ export const YARD = { width: 8, depth: 7 } as const;
 /** Fixed yard coordinates per StagePosition (x, z). */
 export const STAGE_POSITIONS: Record<StagePosition, Vector3> = {
   center: new Vector3(0, 0, 0.2),
+  behind: new Vector3(0, 0, -0.2),
+  retreat: new Vector3(-.6, 0, -.6),
+  handler_retreat: new Vector3(-1.5, 0, -1.5),
+  handler: new Vector3(-1.25, 0, .85),
   left: new Vector3(-1.25, 0, 0.35),
   right: new Vector3(1.25, 0, 0.35),
-  rest: new Vector3(-2.3, 0, -1.5),
-  sniff: new Vector3(2.3, 0, -1.7),
+  rest_exit: new Vector3(-1.95, 0, -.6),
+  rest_handler: new Vector3(-3, 0, -2.6),
+  rest: new Vector3(-2.7, .105, -.95),
+  sniff_retreat: new Vector3(1.85, 0, -1.55),
+  sniff: new Vector3(2.1, 0, -1.2),
   edge: new Vector3(2.95, 0, -2.6),
 };
 
 /** Where the camera looks for zone environments. */
+/**
+ * Core yard landmarks (06 "the school frames the core yard"): training circle edges, rest deck,
+ * sniff corner, shelter front posts and eave. The school camera keeps these in frame when the
+ * aspect allows while Nala keeps her minimum share (D-034).
+ */
+export const SCHOOL_CORE_POINTS: { required: readonly Vector3[]; optional: readonly Vector3[] } = {
+  /** D-039: circle centre, rest deck and the shelter's front-left post base in every viewport. */
+  required: [new Vector3(0, 0, 0.1), new Vector3(-2.3, 0, -1.5), new Vector3(-1.9, 0, -1.85)],
+  /** Circle edges, front of the circle, shelter front-right post and eave, sniff corner: shown when the share allows. */
+  optional: [new Vector3(-2.1, 0, 0.1), new Vector3(2.1, 0, 0.1), new Vector3(0, 0, 2.2), new Vector3(0.7, 0, -1.85), new Vector3(-0.6, 2.3, -1.65), new Vector3(2.3, 0, -1.7)],
+};
+
 export const ZONE_FOCUS: Record<'rest_place' | 'sniff_corner', Vector3> = {
   rest_place: STAGE_POSITIONS.rest,
   sniff_corner: STAGE_POSITIONS.sniff,

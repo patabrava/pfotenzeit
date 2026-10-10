@@ -1,0 +1,86 @@
+{
+  "format": "pfotenzeit-export",
+  "version": 1,
+  "exportedUTC": 1791645817417,
+  "appVersion": "0.1.0",
+  "meta": {
+    "schemaVersion": 1,
+    "activeMode": "standard",
+    "saveIds": {
+      "standard": "save_standard_d744eee0-eadb-4fc8-8539-a4b063b1a197",
+      "challenge": null
+    },
+    "archives": []
+  },
+  "saves": [
+    {
+      "schemaVersion": 1,
+      "saveId": "save_standard_d744eee0-eadb-4fc8-8539-a4b063b1a197",
+      "mode": "standard",
+      "revision": 12,
+      "createdUTC": 1791645786312,
+      "lastSeenUTC": 1791645816584,
+      "dog": {
+        "satiety": 75,
+        "energy": 80,
+        "comfort": 80,
+        "arousal": 20,
+        "stress": 20,
+        "vitality": 100,
+        "instanceId": "dog_35fee965-1d62-447d-99f6-a3f4d7cf6391",
+        "characterId": "dog_nala",
+        "name": "Nala",
+        "growthStage": "arriving",
+        "status": "alive",
+        "bondMemories": [],
+        "learnedPoints": []
+      },
+      "school": {
+        "marks": 0,
+        "upgrades": []
+      },
+      "currentVisit": null,
+      "rewardedVisitIds": [],
+      "rewardedLearningIds": [],
+      "appliedTransactionIds": [
+        "tx_6d25156b-9f33-4253-92ca-210048cdabfd",
+        "tx_1d19a178-030b-4b48-a5f9-a934195407cc",
+        "tx_8025352d-69d8-4e7b-a170-e6f799a87838",
+        "tx_b47752e7-d353-4b92-acec-e8e646bbab69",
+        "tx_7be9a880-5396-4c23-9a89-f0bbd687e143",
+        "tx_8cec74f4-beb5-48e0-8505-fe5137c015a7",
+        "tx_1f835271-4d2f-4c94-8f57-10651fa34003",
+        "tx_4f709652-a744-46ef-8f14-06a64377ccd8",
+        "tx_7b9da86d-14b8-43a8-8a37-7f140d5390c4",
+        "tx_79549a74-9419-4489-ac9f-9a03a0b638e1",
+        "tx_4a70dca4-d890-469b-8ecd-89603702b938"
+      ],
+      "completedLessonIds": [],
+      "helpfulVisitIds": [],
+      "careClosureVisitIds": [],
+      "helpfulScenariosByLearningPoint": {
+        "criterion_context": [],
+        "criterion_orientation": [],
+        "criterion_support": []
+      },
+      "firstHelpfulByLearningPoint": {
+        "criterion_context": null,
+        "criterion_orientation": null,
+        "criterion_support": null
+      },
+      "memories": [],
+      "growthConfirmed": false,
+      "challengePaused": false,
+      "careActiveMsRemainder": 22863,
+      "pendingPresentation": null,
+      "settings": {
+        "audioEnabled": false,
+        "reducedMotionOverride": "system",
+        "observationTextEnabled": true,
+        "qualityTier": "auto"
+      },
+      "visitCount": 0,
+      "lostAtUTC": null
+    }
+  ]
+}

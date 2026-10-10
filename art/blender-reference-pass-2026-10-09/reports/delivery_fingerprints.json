@@ -1,0 +1,46 @@
+{
+  "source/characters_refined.blend": {
+    "bytes": 6473013,
+    "sha256": "45585ed788f95d58c1e283d9c567ab2d2521eb257e0ba105e62c3bd430fae7f5"
+  },
+  "candidates/dog_bruno_puppy.glb": {
+    "bytes": 2034532,
+    "sha256": "e50d3a7401e15835f593e4503147de22599b20aec033363a37eed8531f2ad62c"
+  },
+  "candidates/human_mira.glb": {
+    "bytes": 1646428,
+    "sha256": "47b607d89fc403bda9362a58712bff1607c154ee7d5cbd2d32dd85d103c1af99"
+  },
+  "candidates/dog_nala_growing.glb": {
+    "bytes": 2030884,
+    "sha256": "b8e54f43e5e15a743b642e8d295b41226134d894d3b5c4597e610b4a137e9273"
+  },
+  "candidates/human_alex.glb": {
+    "bytes": 1509584,
+    "sha256": "8b29529cc84a1bd4545dc3d659eea33fb722cc4915f783937a7215b899f9a6a5"
+  },
+  "candidates/dog_nala_puppy.glb": {
+    "bytes": 2032320,
+    "sha256": "a8bb90a9db5d5a72cfba3118add34b12253546f95a81217da5f3c07f60169969"
+  },
+  "textures/dog_nala_growing_normal.png": {
+    "bytes": 465581,
+    "sha256": "adb51fd412e70de6c36f618fe7621c5b4d2ad29212ce2adc38a56e71ae0f8dd2"
+  },
+  "textures/dog_bruno_puppy_normal.png": {
+    "bytes": 453685,
+    "sha256": "e2c20f9d9791ca8d6f648cf1cc7f69a484a8943c3e1819e4616ad34317c33e9a"
+  },
+  "textures/dog_nala_puppy_normal.png": {
+    "bytes": 440031,
+    "sha256": "e52acee2a15ddf1417f77e2aa14737a0c53f35096ce95a41ca42e4bb0360339b"
+  },
+  "textures/human_alex_normal.png": {
+    "bytes": 138260,
+    "sha256": "ab6510823f53ae002de88ac9b7912193d6bb47772c30005e661db6bda7508682"
+  },
+  "textures/human_mira_normal.png": {
+    "bytes": 134904,
+    "sha256": "e58e7f0be209ec16d4e436513effb2b87a7751b799cc08e4162e9ec7c83c5e48"
+  }
+}

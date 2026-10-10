@@ -1,0 +1,28 @@
+{
+  "mira": {
+    "vertices": 5419,
+    "triangles": 10909,
+    "bones": 58,
+    "height": 1.7,
+    "clips": [
+      "idle",
+      "greet",
+      "gesture_explain",
+      "offer_reward",
+      "kneel"
+    ]
+  },
+  "alex": {
+    "vertices": 5514,
+    "triangles": 10987,
+    "bones": 58,
+    "height": 1.76,
+    "clips": [
+      "idle",
+      "greet",
+      "gesture_explain",
+      "offer_reward",
+      "kneel"
+    ]
+  }
+}

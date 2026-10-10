@@ -1,0 +1,18 @@
+
+> pfotenzeit@0.1.0 assets:check
+> node scripts/validate-assets.mjs
+
+note: manifest version 2
+asset               status        mat/rig                bytes    tris clips  validator   result
+dog.nala.puppy      code-authored textured/vendor      1778932   14844    16  0E/0W/0I    ok  (textures 2, decoded ≈ 5.65 MB; baseColor sRGB flagging is the loader's job (by slot); 1 draw call(s); clipMap: 0 renamed; vendor rig puppy: 49 joints; meshes Object_0; materials mat_nala_fur; shoulder ≈ 0.280 m from bounds (vendor rig))
+dog.nala.growing    code-authored textured/vendor      1780040   14844    16  0E/0W/0I    ok  (textures 2, decoded ≈ 5.65 MB; baseColor sRGB flagging is the loader's job (by slot); 1 draw call(s); clipMap: 0 renamed; vendor rig puppy: 49 joints; meshes Object_0; materials mat_nala_fur; shoulder ≈ 0.354 m from bounds (vendor rig))
+dog.bruno.puppy     code-authored textured/vendor      1779220   14844    16  0E/0W/0I    ok  (textures 2, decoded ≈ 5.65 MB; baseColor sRGB flagging is the loader's job (by slot); 1 draw call(s); clipMap: 0 renamed; vendor rig puppy: 49 joints; meshes Object_0; materials mat_bruno_fur; shoulder ≈ 0.310 m from bounds (vendor rig))
+human.mira          code-authored textured/vendor      1081056   10909     5  0E/0W/0I    ok  (textures 2, decoded ≈ 5.65 MB; baseColor sRGB flagging is the loader's job (by slot); 1 draw call(s); clipMap: 0 renamed; vendor rig Armature: 58 joints; meshes char1; materials Material_1; height 1.700 m)
+human.alex          code-authored textured/vendor      1052080   10987     5  0E/0W/0I    ok  (textures 2, decoded ≈ 5.65 MB; baseColor sRGB flagging is the loader's job (by slot); 1 draw call(s); clipMap: 0 renamed; vendor rig Armature: 58 joints; meshes char1; materials Material_1; height 1.760 m)
+environment.school  code-authored vertex/project        385444   15416     0  0E/0W/0I    ok
+props.care          code-authored vertex/project        128412    6096     0  0E/0W/0I    ok
+props.upgrades      code-authored vertex/project        194260    9160     0  0E/0W/0I    ok
+
+total model bytes: 8,179,444 (budget 8,388,608)
+
+all asset checks passed

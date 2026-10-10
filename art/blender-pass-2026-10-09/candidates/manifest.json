@@ -1,0 +1,241 @@
+{
+  "version": 1,
+  "generatedUTC": "2026-10-09T16:13:48.215Z",
+  "productionIntegrated": false,
+  "assets": {
+    "dog_nala_puppy": {
+      "key": "dog.nala.puppy",
+      "bytes": 630004,
+      "baselineBytes": 487132,
+      "triangles": 14696,
+      "baselineTriangles": 9684,
+      "vertices": 7548,
+      "materials": 1,
+      "primitives": 1,
+      "bones": 26,
+      "maxInfluences": 4,
+      "boundsMeters": [
+        0.1921478733420372,
+        0.39748468925245106,
+        0.7277420163154602
+      ],
+      "boundsMin": [
+        -0.09607479721307755,
+        0.00024852226488292217,
+        -0.3965679407119751
+      ],
+      "boundsMax": [
+        0.09607307612895966,
+        0.397733211517334,
+        0.3311740756034851
+      ],
+      "clips": [
+        "idle_relaxed",
+        "look_at_handler",
+        "sniff",
+        "walk",
+        "sit",
+        "lie_down",
+        "rest_loop",
+        "eat",
+        "play_bow",
+        "turn_away",
+        "tense_idle",
+        "tired_idle",
+        "recover"
+      ],
+      "source": "source/characters_refined.blend; scripts/refine_characters.py; baseline rig and animation data preserved",
+      "status": "blender-refined-candidate",
+      "validator": {
+        "errors": 0,
+        "warnings": 0,
+        "infos": 0,
+        "messages": []
+      }
+    },
+    "dog_nala_growing": {
+      "key": "dog.nala.growing",
+      "bytes": 629800,
+      "baselineBytes": 486924,
+      "triangles": 14696,
+      "baselineTriangles": 9684,
+      "vertices": 7548,
+      "materials": 1,
+      "primitives": 1,
+      "bones": 26,
+      "maxInfluences": 4,
+      "boundsMeters": [
+        0.19591350853443146,
+        0.4846341518277768,
+        0.84574294090271
+      ],
+      "boundsMin": [
+        -0.09795676171779633,
+        0.00037149511626921594,
+        -0.47834280133247375
+      ],
+      "boundsMax": [
+        0.09795674681663513,
+        0.485005646944046,
+        0.3674001395702362
+      ],
+      "clips": [
+        "idle_relaxed",
+        "look_at_handler",
+        "sniff",
+        "walk",
+        "sit",
+        "lie_down",
+        "rest_loop",
+        "eat",
+        "play_bow",
+        "turn_away",
+        "tense_idle",
+        "tired_idle",
+        "recover"
+      ],
+      "source": "source/characters_refined.blend; scripts/refine_characters.py; baseline rig and animation data preserved",
+      "status": "blender-refined-candidate",
+      "validator": {
+        "errors": 0,
+        "warnings": 0,
+        "infos": 0,
+        "messages": []
+      }
+    },
+    "dog_bruno_puppy": {
+      "key": "dog.bruno.puppy",
+      "bytes": 630152,
+      "baselineBytes": 487280,
+      "triangles": 14696,
+      "baselineTriangles": 9684,
+      "vertices": 7548,
+      "materials": 1,
+      "primitives": 1,
+      "bones": 26,
+      "maxInfluences": 4,
+      "boundsMeters": [
+        0.23884475231170654,
+        0.42414358173846267,
+        0.7553577125072479
+      ],
+      "boundsMin": [
+        -0.11942237615585327,
+        0.0001987227296922356,
+        -0.42128679156303406
+      ],
+      "boundsMax": [
+        0.11942237615585327,
+        0.4243423044681549,
+        0.33407092094421387
+      ],
+      "clips": [
+        "idle_relaxed",
+        "look_at_handler",
+        "sniff",
+        "walk",
+        "sit",
+        "lie_down",
+        "rest_loop",
+        "eat",
+        "play_bow",
+        "turn_away",
+        "tense_idle",
+        "tired_idle",
+        "recover"
+      ],
+      "source": "source/characters_refined.blend; scripts/refine_characters.py; baseline rig and animation data preserved",
+      "status": "blender-refined-candidate",
+      "validator": {
+        "errors": 0,
+        "warnings": 0,
+        "infos": 0,
+        "messages": []
+      }
+    },
+    "human_mira": {
+      "key": "human.mira",
+      "bytes": 521572,
+      "baselineBytes": 257236,
+      "triangles": 15480,
+      "baselineTriangles": 6704,
+      "vertices": 7930,
+      "materials": 1,
+      "primitives": 1,
+      "bones": 20,
+      "maxInfluences": 4,
+      "boundsMeters": [
+        0.5269542336463928,
+        1.7159999596774578,
+        0.3002968952059746
+      ],
+      "boundsMin": [
+        -0.26360854506492615,
+        1.2218952516462878e-9,
+        -0.12200000137090683
+      ],
+      "boundsMax": [
+        0.2633456885814667,
+        1.715999960899353,
+        0.17829689383506775
+      ],
+      "clips": [
+        "idle",
+        "greet",
+        "gesture_explain",
+        "offer_reward",
+        "kneel"
+      ],
+      "source": "source/characters_refined.blend; scripts/refine_characters.py; baseline rig and animation data preserved",
+      "status": "blender-refined-candidate",
+      "validator": {
+        "errors": 0,
+        "warnings": 0,
+        "infos": 0,
+        "messages": []
+      }
+    },
+    "human_alex": {
+      "key": "human.alex",
+      "bytes": 460788,
+      "baselineBytes": 246536,
+      "triangles": 13580,
+      "baselineTriangles": 6352,
+      "vertices": 6900,
+      "materials": 1,
+      "primitives": 1,
+      "bones": 20,
+      "maxInfluences": 4,
+      "boundsMeters": [
+        0.5507750511169434,
+        1.7787499415576458,
+        0.3002968952059746
+      ],
+      "boundsMin": [
+        -0.2754300832748413,
+        1.2218952516462878e-9,
+        -0.12200000137090683
+      ],
+      "boundsMax": [
+        0.27534496784210205,
+        1.778749942779541,
+        0.17829689383506775
+      ],
+      "clips": [
+        "idle",
+        "greet",
+        "gesture_explain",
+        "offer_reward",
+        "kneel"
+      ],
+      "source": "source/characters_refined.blend; scripts/refine_characters.py; baseline rig and animation data preserved",
+      "status": "blender-refined-candidate",
+      "validator": {
+        "errors": 0,
+        "warnings": 0,
+        "infos": 0,
+        "messages": []
+      }
+    }
+  }
+}

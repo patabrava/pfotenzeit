@@ -1,0 +1,396 @@
+
+> pfotenzeit@0.1.0 test:e2e
+> playwright test
+
+[WebServer] (node:70873) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:70908) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 12 tests using 3 workers
+
+(node:70929) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:70931) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:70930) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   3 [mobile-360] › tests/e2e/smoke.spec.ts:34:1 › standard start, profile, care, L01 to care closure, reflection, mark, reload (1.0m)
+  ✘   2 [mobile-390] › tests/e2e/smoke.spec.ts:34:1 › standard start, profile, care, L01 to care closure, reflection, mark, reload (1.0m)
+  ✘   1 [desktop] › tests/e2e/smoke.spec.ts:34:1 › standard start, profile, care, L01 to care closure, reflection, mark, reload (1.0m)
+(node:71496) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:71497) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:71498) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   4 [mobile-360] › tests/e2e/smoke.spec.ts:77:1 › challenge onboarding creates a separate run and standard stays untouched (11.9s)
+  ✘   5 [mobile-390] › tests/e2e/smoke.spec.ts:77:1 › challenge onboarding creates a separate run and standard stays untouched (11.8s)
+(node:71594) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:71595) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   6 [desktop] › tests/e2e/smoke.spec.ts:77:1 › challenge onboarding creates a separate run and standard stays untouched (12.0s)
+(node:71602) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   7 [mobile-390] › tests/e2e/smoke.spec.ts:90:1 › WebGL unavailable still leaves profile and lesson texts usable (1.7s)
+  ✓   8 [mobile-360] › tests/e2e/smoke.spec.ts:90:1 › WebGL unavailable still leaves profile and lesson texts usable (1.9s)
+  ✓   9 [desktop] › tests/e2e/smoke.spec.ts:90:1 › WebGL unavailable still leaves profile and lesson texts usable (1.7s)
+  ✓  12 [desktop] › tests/e2e/smoke.spec.ts:111:1 › second tab is told the game is open elsewhere (577ms)
+  ✘  10 [mobile-390] › tests/e2e/smoke.spec.ts:111:1 › second tab is told the game is open elsewhere (1.0m)
+  ✘  11 [mobile-360] › tests/e2e/smoke.spec.ts:111:1 › second tab is told the game is open elsewhere (1.0m)
+
+
+  1) [mobile-390] › tests/e2e/smoke.spec.ts:34:1 › standard start, profile, care, L01 to care closure, reflection, mark, reload 
+
+    Test timeout of 60000ms exceeded.
+
+    Error: locator.click: Test timeout of 60000ms exceeded.
+    Browser logs:
+
+    <launching> /Applications/Google Chrome.app/Contents/MacOS/Google Chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,NetworkTimeServiceQuerying,AimEnabled,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/var/folders/1w/_gqfxq7d30l24y3nqbb8fr5m0000gn/T/playwright_chromiumdev_profile-nSL2Cn --remote-debugging-pipe --no-startup-window
+    <launched> pid=70933
+    [pid=70933][err] Trying to load the allocator multiple times. This is *not* supported.
+    [pid=70933][err] [70944:9567289:1009/162855.767440:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=70933][err] [70944:9567383:1009/162855.768063:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=70933][err] [70944:9567289:1009/162855.770530:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=70933][err] [70944:9567383:1009/162855.770594:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=70933][err] [70944:9567289:1009/162855.770730:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=70933][err] [70944:9567383:1009/162855.770765:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=70933][err] [70944:9567289:1009/162855.770856:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=70933][err] [70944:9567383:1009/162855.770898:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=70933][err] [70944:9567289:1009/162855.770974:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=70933][err] [70944:9567383:1009/162855.771021:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=70933][err] [70981:9567932:1009/162856.784087:ERROR:sandbox/mac/system_services.cc:31] SetApplicationIsDaemon: Error Domain=NSOSStatusErrorDomain Code=-50 "paramErr: error in user parameter list" (-50)
+    [pid=70933][err] [70933:9567272:1009/162858.382292:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: PHONE_REGISTRATION_ERROR
+    [pid=70933][err] [70933:9567272:1009/162858.382465:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: PHONE_REGISTRATION_ERROR
+    [pid=70933][err] [70933:9567272:1009/162858.453198:ERROR:google_apis/gcm/engine/mcs_client.cc:702]   Error code: 401  Error message: Authentication Failed: wrong_secret
+    [pid=70933][err] [70933:9567272:1009/162858.453226:ERROR:google_apis/gcm/engine/mcs_client.cc:704] Failed to log in to GCM, resetting connection.
+    [pid=70933][err] [70933:9567272:1009/162919.287720:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+    [pid=70933] <gracefully close start>
+    Call log:
+      - waiting for getByRole('button', { name: 'Schule' }).first()
+        - locator resolved to <button type="button" data-key="school" class="btn btn--secondary">…</button>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <p class="text-secondary">Noch 1 Marke bis zum Ausbau. Jeder abgeschlossene…</p> from <div class="layer layer-modal">…</div> subtree intercepts pointer events
+        - retrying click action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <p class="text-secondary">Noch 1 Marke bis zum Ausbau. Jeder abgeschlossene…</p> from <div class="layer layer-modal">…</div> subtree intercepts pointer events
+        - retrying click action
+          - waiting 100ms
+        86 × waiting for element to be visible, enabled and stable
+           - element is visible, enabled and stable
+           - scrolling into view if needed
+           - done scrolling
+           - <p class="text-secondary">Noch 1 Marke bis zum Ausbau. Jeder abgeschlossene…</p> from <div class="layer layer-modal">…</div> subtree intercepts pointer events
+         - retrying click action
+           - waiting 500ms
+        - waiting for element to be visible, enabled and stable
+
+
+      29 |   // Preserve the UI's 300 ms click-through guard after closing sheets.
+      30 |   await page.waitForTimeout(350);
+    > 31 |   await button.click();
+         |                ^
+      32 | }
+      33 |
+      34 | test('standard start, profile, care, L01 to care closure, reflection, mark, reload', async ({ page }, testInfo) => {
+        at tap (/Users/patabrava/Documents/AI/github/Camilo/Ines/tests/e2e/smoke.spec.ts:31:16)
+        at /Users/patabrava/Documents/AI/github/Camilo/Ines/tests/e2e/smoke.spec.ts:71:3
+
+    Error Context: test-results/smoke-standard-start-profi-de5c8-sure-reflection-mark-reload-mobile-390/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/smoke-standard-start-profi-de5c8-sure-reflection-mark-reload-mobile-390/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/smoke-standard-start-profi-de5c8-sure-reflection-mark-reload-mobile-390/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [mobile-390] › tests/e2e/smoke.spec.ts:77:1 › challenge onboarding creates a separate run and standard stays untouched 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('button', { name: 'Spielmodus' }).first()
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('button', { name: 'Spielmodus' }).first() with timeout 10000ms
+      - waiting for getByRole('button', { name: 'Spielmodus' }).first()
+
+
+      25 | async function tap(page: Page, name: string): Promise<void> {
+      26 |   const button = page.getByRole('button', { name, exact: false }).first();
+    > 27 |   await expect(button).toBeVisible({ timeout: 10_000 });
+         |                        ^
+      28 |   await expect(button).not.toHaveAttribute('aria-disabled', 'true', { timeout: 15_000 });
+      29 |   // Preserve the UI's 300 ms click-through guard after closing sheets.
+      30 |   await page.waitForTimeout(350);
+        at tap (/Users/patabrava/Documents/AI/github/Camilo/Ines/tests/e2e/smoke.spec.ts:27:24)
+        at /Users/patabrava/Documents/AI/github/Camilo/Ines/tests/e2e/smoke.spec.ts:80:9
+
+    Error Context: test-results/smoke-challenge-onboarding-5724f-nd-standard-stays-untouched-mobile-390/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/smoke-challenge-onboarding-5724f-nd-standard-stays-untouched-mobile-390/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/smoke-challenge-onboarding-5724f-nd-standard-stays-untouched-mobile-390/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [mobile-390] › tests/e2e/smoke.spec.ts:111:1 › second tab is told the game is open elsewhere ──
+
+    Test timeout of 60000ms exceeded.
+
+    Error: ENOENT: no such file or directory, open '/Users/patabrava/Documents/AI/github/Camilo/Ines/test-results/.playwright-artifacts-6/0b0e6a545f1cdba1cba578c7cd3b88a3.zip'
+
+    Error Context: test-results/smoke-second-tab-is-told-the-game-is-open-elsewhere-mobile-390/error-context.md
+
+  4) [mobile-360] › tests/e2e/smoke.spec.ts:34:1 › standard start, profile, care, L01 to care closure, reflection, mark, reload 
+
+    Test timeout of 60000ms exceeded.
+
+    Error: locator.click: Test timeout of 60000ms exceeded.
+    Browser logs:
+
+    <launching> /Applications/Google Chrome.app/Contents/MacOS/Google Chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,NetworkTimeServiceQuerying,AimEnabled,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/var/folders/1w/_gqfxq7d30l24y3nqbb8fr5m0000gn/T/playwright_chromiumdev_profile-cKu5Wb --remote-debugging-pipe --no-startup-window
+    <launched> pid=70934
+    [pid=70934][err] Trying to load the allocator multiple times. This is *not* supported.
+    [pid=70934][err] [70948:9567362:1009/162855.884540:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=70934][err] [70948:9567526:1009/162855.884835:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=70934][err] [70948:9567362:1009/162855.892424:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=70934][err] [70948:9567526:1009/162855.892485:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=70934][err] [70948:9567362:1009/162855.894575:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=70934][err] [70948:9567526:1009/162855.894689:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=70934][err] [70948:9567362:1009/162855.895172:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=70934][err] [70948:9567526:1009/162855.895212:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=70934][err] [70948:9567362:1009/162855.896655:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=70934][err] [70948:9567526:1009/162855.896750:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=70934][err] [70999:9568344:1009/162858.694104:ERROR:sandbox/mac/system_services.cc:31] SetApplicationIsDaemon: Error Domain=NSOSStatusErrorDomain Code=-50 "paramErr: error in user parameter list" (-50)
+    [pid=70934][err] [70934:9567305:1009/162858.755272:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: PHONE_REGISTRATION_ERROR
+    [pid=70934][err] [70934:9567305:1009/162858.758562:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: PHONE_REGISTRATION_ERROR
+    [pid=70934][err] [70934:9567305:1009/162858.763015:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: PHONE_REGISTRATION_ERROR
+    [pid=70934][err] [70934:9567305:1009/162925.729832:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+    [pid=70934] <gracefully close start>
+    Call log:
+      - waiting for getByRole('button', { name: 'Schule' }).first()
+        - locator resolved to <button type="button" data-key="school" class="btn btn--secondary">…</button>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <p>Eine Ecke mit Gras, Holzstücken und wechselnden G…</p> from <div class="layer layer-modal">…</div> subtree intercepts pointer events
+        - retrying click action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <p>Eine Ecke mit Gras, Holzstücken und wechselnden G…</p> from <div class="layer layer-modal">…</div> subtree intercepts pointer events
+        - retrying click action
+          - waiting 100ms
+        82 × waiting for element to be visible, enabled and stable
+           - element is visible, enabled and stable
+           - scrolling into view if needed
+           - done scrolling
+           - <p>Eine Ecke mit Gras, Holzstücken und wechselnden G…</p> from <div class="layer layer-modal">…</div> subtree intercepts pointer events
+         - retrying click action
+           - waiting 500ms
+        - waiting for element to be visible, enabled and stable
+
+
+      29 |   // Preserve the UI's 300 ms click-through guard after closing sheets.
+      30 |   await page.waitForTimeout(350);
+    > 31 |   await button.click();
+         |                ^
+      32 | }
+      33 |
+      34 | test('standard start, profile, care, L01 to care closure, reflection, mark, reload', async ({ page }, testInfo) => {
+        at tap (/Users/patabrava/Documents/AI/github/Camilo/Ines/tests/e2e/smoke.spec.ts:31:16)
+        at /Users/patabrava/Documents/AI/github/Camilo/Ines/tests/e2e/smoke.spec.ts:71:3
+
+    Error Context: test-results/smoke-standard-start-profi-de5c8-sure-reflection-mark-reload-mobile-360/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/smoke-standard-start-profi-de5c8-sure-reflection-mark-reload-mobile-360/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/smoke-standard-start-profi-de5c8-sure-reflection-mark-reload-mobile-360/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [mobile-360] › tests/e2e/smoke.spec.ts:77:1 › challenge onboarding creates a separate run and standard stays untouched 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('button', { name: 'Spielmodus' }).first()
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('button', { name: 'Spielmodus' }).first() with timeout 10000ms
+      - waiting for getByRole('button', { name: 'Spielmodus' }).first()
+
+
+      25 | async function tap(page: Page, name: string): Promise<void> {
+      26 |   const button = page.getByRole('button', { name, exact: false }).first();
+    > 27 |   await expect(button).toBeVisible({ timeout: 10_000 });
+         |                        ^
+      28 |   await expect(button).not.toHaveAttribute('aria-disabled', 'true', { timeout: 15_000 });
+      29 |   // Preserve the UI's 300 ms click-through guard after closing sheets.
+      30 |   await page.waitForTimeout(350);
+        at tap (/Users/patabrava/Documents/AI/github/Camilo/Ines/tests/e2e/smoke.spec.ts:27:24)
+        at /Users/patabrava/Documents/AI/github/Camilo/Ines/tests/e2e/smoke.spec.ts:80:9
+
+    Error Context: test-results/smoke-challenge-onboarding-5724f-nd-standard-stays-untouched-mobile-360/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/smoke-challenge-onboarding-5724f-nd-standard-stays-untouched-mobile-360/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/smoke-challenge-onboarding-5724f-nd-standard-stays-untouched-mobile-360/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [mobile-360] › tests/e2e/smoke.spec.ts:111:1 › second tab is told the game is open elsewhere ──
+
+    Test timeout of 60000ms exceeded.
+
+    Error: ENOENT: no such file or directory, open '/Users/patabrava/Documents/AI/github/Camilo/Ines/test-results/.playwright-artifacts-7/99503f3b0b61bbcd28ba7fb100757f30.zip'
+
+    Error Context: test-results/smoke-second-tab-is-told-the-game-is-open-elsewhere-mobile-360/error-context.md
+
+  7) [desktop] › tests/e2e/smoke.spec.ts:34:1 › standard start, profile, care, L01 to care closure, reflection, mark, reload 
+
+    Test timeout of 60000ms exceeded.
+
+    Error: locator.click: Test timeout of 60000ms exceeded.
+    Browser logs:
+
+    <launching> /Applications/Google Chrome.app/Contents/MacOS/Google Chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,NetworkTimeServiceQuerying,AimEnabled,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/var/folders/1w/_gqfxq7d30l24y3nqbb8fr5m0000gn/T/playwright_chromiumdev_profile-P3jutz --remote-debugging-pipe --no-startup-window
+    <launched> pid=70932
+    [pid=70932][err] Trying to load the allocator multiple times. This is *not* supported.
+    [pid=70932][err] [70950:9567372:1009/162855.825060:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=70932][err] [70950:9567530:1009/162855.825562:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=70932][err] [70950:9567372:1009/162855.825787:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=70932][err] [70950:9567530:1009/162855.825831:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=70932][err] [70950:9567372:1009/162855.827920:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=70932][err] [70950:9567530:1009/162855.827959:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=70932][err] [70950:9567372:1009/162855.828422:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=70932][err] [70950:9567530:1009/162855.828500:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=70932][err] [70950:9567372:1009/162855.828629:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=70932][err] [70950:9567530:1009/162855.828656:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=70932][err] [70982:9567962:1009/162857.102234:ERROR:sandbox/mac/system_services.cc:31] SetApplicationIsDaemon: Error Domain=NSOSStatusErrorDomain Code=-50 "paramErr: error in user parameter list" (-50)
+    [pid=70932][err] [70932:9567320:1009/162858.582333:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+    [pid=70932][err] [70932:9567320:1009/162858.692245:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: PHONE_REGISTRATION_ERROR
+    [pid=70932][err] [70932:9567320:1009/162858.692292:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: PHONE_REGISTRATION_ERROR
+    [pid=70932][err] [70932:9567320:1009/162858.828323:ERROR:google_apis/gcm/engine/mcs_client.cc:702]   Error code: 401  Error message: Authentication Failed: wrong_secret
+    [pid=70932][err] [70932:9567320:1009/162858.828340:ERROR:google_apis/gcm/engine/mcs_client.cc:704] Failed to log in to GCM, resetting connection.
+    [pid=70932][err] [70932:9567320:1009/162920.800966:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+    [pid=70932] <gracefully close start>
+    Call log:
+      - waiting for getByRole('button', { name: 'Schule' }).first()
+        - locator resolved to <button type="button" data-key="school" class="btn btn--secondary">…</button>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <span class="btn-label">Ausbauen</span> from <div class="layer layer-modal">…</div> subtree intercepts pointer events
+        - retrying click action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <span class="btn-label">Ausbauen</span> from <div class="layer layer-modal">…</div> subtree intercepts pointer events
+        - retrying click action
+          - waiting 100ms
+        86 × waiting for element to be visible, enabled and stable
+           - element is visible, enabled and stable
+           - scrolling into view if needed
+           - done scrolling
+           - <span class="btn-label">Ausbauen</span> from <div class="layer layer-modal">…</div> subtree intercepts pointer events
+         - retrying click action
+           - waiting 500ms
+        - waiting for element to be visible, enabled and stable
+
+
+      29 |   // Preserve the UI's 300 ms click-through guard after closing sheets.
+      30 |   await page.waitForTimeout(350);
+    > 31 |   await button.click();
+         |                ^
+      32 | }
+      33 |
+      34 | test('standard start, profile, care, L01 to care closure, reflection, mark, reload', async ({ page }, testInfo) => {
+        at tap (/Users/patabrava/Documents/AI/github/Camilo/Ines/tests/e2e/smoke.spec.ts:31:16)
+        at /Users/patabrava/Documents/AI/github/Camilo/Ines/tests/e2e/smoke.spec.ts:71:3
+
+    Error Context: test-results/smoke-standard-start-profi-de5c8-sure-reflection-mark-reload-desktop/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/smoke-standard-start-profi-de5c8-sure-reflection-mark-reload-desktop/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/smoke-standard-start-profi-de5c8-sure-reflection-mark-reload-desktop/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8) [desktop] › tests/e2e/smoke.spec.ts:77:1 › challenge onboarding creates a separate run and standard stays untouched 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('button', { name: 'Spielmodus' }).first()
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('button', { name: 'Spielmodus' }).first() with timeout 10000ms
+      - waiting for getByRole('button', { name: 'Spielmodus' }).first()
+
+
+      25 | async function tap(page: Page, name: string): Promise<void> {
+      26 |   const button = page.getByRole('button', { name, exact: false }).first();
+    > 27 |   await expect(button).toBeVisible({ timeout: 10_000 });
+         |                        ^
+      28 |   await expect(button).not.toHaveAttribute('aria-disabled', 'true', { timeout: 15_000 });
+      29 |   // Preserve the UI's 300 ms click-through guard after closing sheets.
+      30 |   await page.waitForTimeout(350);
+        at tap (/Users/patabrava/Documents/AI/github/Camilo/Ines/tests/e2e/smoke.spec.ts:27:24)
+        at /Users/patabrava/Documents/AI/github/Camilo/Ines/tests/e2e/smoke.spec.ts:80:9
+
+    Error Context: test-results/smoke-challenge-onboarding-5724f-nd-standard-stays-untouched-desktop/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/smoke-challenge-onboarding-5724f-nd-standard-stays-untouched-desktop/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/smoke-challenge-onboarding-5724f-nd-standard-stays-untouched-desktop/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8 failed
+    [mobile-390] › tests/e2e/smoke.spec.ts:34:1 › standard start, profile, care, L01 to care closure, reflection, mark, reload 
+    [mobile-390] › tests/e2e/smoke.spec.ts:77:1 › challenge onboarding creates a separate run and standard stays untouched 
+    [mobile-390] › tests/e2e/smoke.spec.ts:111:1 › second tab is told the game is open elsewhere ───
+    [mobile-360] › tests/e2e/smoke.spec.ts:34:1 › standard start, profile, care, L01 to care closure, reflection, mark, reload 
+    [mobile-360] › tests/e2e/smoke.spec.ts:77:1 › challenge onboarding creates a separate run and standard stays untouched 
+    [mobile-360] › tests/e2e/smoke.spec.ts:111:1 › second tab is told the game is open elsewhere ───
+    [desktop] › tests/e2e/smoke.spec.ts:34:1 › standard start, profile, care, L01 to care closure, reflection, mark, reload 
+    [desktop] › tests/e2e/smoke.spec.ts:77:1 › challenge onboarding creates a separate run and standard stays untouched 
+  4 passed (2.3m)

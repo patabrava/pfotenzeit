@@ -1,0 +1,191 @@
+
+> pfotenzeit@0.1.0 test:e2e
+> playwright test
+
+
+Running 18 tests using 3 workers
+
+  ✓   1 [mobile-360] › tests/e2e/smoke.spec.ts:37:1 › standard start, profile, care, L01 to care closure, reflection, mark, reload (16.5s)
+  ✓   3 [desktop] › tests/e2e/smoke.spec.ts:37:1 › standard start, profile, care, L01 to care closure, reflection, mark, reload (16.5s)
+  ✓   2 [mobile-390] › tests/e2e/smoke.spec.ts:37:1 › standard start, profile, care, L01 to care closure, reflection, mark, reload (17.2s)
+  ✓   4 [mobile-360] › tests/e2e/smoke.spec.ts:112:1 › challenge onboarding creates a separate run and standard stays untouched (2.1s)
+  ✓   5 [desktop] › tests/e2e/smoke.spec.ts:112:1 › challenge onboarding creates a separate run and standard stays untouched (2.1s)
+  ✓   6 [mobile-390] › tests/e2e/smoke.spec.ts:112:1 › challenge onboarding creates a separate run and standard stays untouched (2.0s)
+  ✓   7 [mobile-360] › tests/e2e/smoke.spec.ts:130:1 › WebGL unavailable still leaves profile and lesson texts usable (1.6s)
+  ✓   8 [desktop] › tests/e2e/smoke.spec.ts:130:1 › WebGL unavailable still leaves profile and lesson texts usable (1.8s)
+  ✓  10 [mobile-360] › tests/e2e/smoke.spec.ts:155:1 › second tab is told the game is open elsewhere (887ms)
+  ✓   9 [mobile-390] › tests/e2e/smoke.spec.ts:130:1 › WebGL unavailable still leaves profile and lesson texts usable (1.9s)
+  ✓  11 [desktop] › tests/e2e/smoke.spec.ts:155:1 › second tab is told the game is open elsewhere (980ms)
+  ✓  13 [mobile-390] › tests/e2e/smoke.spec.ts:155:1 › second tab is told the game is open elsewhere (1.4s)
+  ✘  12 [mobile-360] › tests/e2e/smoke.spec.ts:167:1 › installed worker serves the integrated dog model and its CC BY puppy provenance (1.3s)
+  ✘  14 [desktop] › tests/e2e/smoke.spec.ts:167:1 › installed worker serves the integrated dog model and its CC BY puppy provenance (1.3s)
+  ✘  15 [mobile-390] › tests/e2e/smoke.spec.ts:167:1 › installed worker serves the integrated dog model and its CC BY puppy provenance (782ms)
+  ✘  16 [mobile-360] › tests/e2e/smoke.spec.ts:200:1 › installed worker serves both integrated CC0 human replacements (1.3s)
+  ✘  17 [desktop] › tests/e2e/smoke.spec.ts:200:1 › installed worker serves both integrated CC0 human replacements (1.7s)
+  ✘  18 [mobile-390] › tests/e2e/smoke.spec.ts:200:1 › installed worker serves both integrated CC0 human replacements (1.0s)
+
+
+  1) [mobile-390] › tests/e2e/smoke.spec.ts:167:1 › installed worker serves the integrated dog model and its CC BY puppy provenance 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "e1b142b5f6f25f164f99f074fa12919f8c34e2d807b9750222c27cdaab1bf87c"
+    Received: "fc8b5a898a3e03ac9a1d487e83641c8b36424785db7aaae68b1db4b202dad1bc"
+
+      186 |   expect(asset.sourceSha256).toBe('45bbe4ae0561c49f0dd1bc821305b577dd75b9c8cd8cc011dae6adc409990811');
+      187 |   expect(asset.clips).toBe(13);
+    > 188 |   expect(asset.sha256).toBe(expected);
+          |                        ^
+      189 |   await tap(page, de.app.settings);
+      190 |   const summary=page.locator('.model-credits > summary');
+      191 |   await summary.focus();
+        at /Users/patabrava/Documents/AI/github/Camilo/Ines/tests/e2e/smoke.spec.ts:188:24
+
+    Error Context: test-results/smoke-installed-worker-ser-5846b--its-CC-BY-puppy-provenance-mobile-390/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/smoke-installed-worker-ser-5846b--its-CC-BY-puppy-provenance-mobile-390/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/smoke-installed-worker-ser-5846b--its-CC-BY-puppy-provenance-mobile-390/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [mobile-390] › tests/e2e/smoke.spec.ts:200:1 › installed worker serves both integrated CC0 human replacements 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "vendor"
+    Received: "project"
+
+      211 |       return { rig: entry.rig, integrated: entry.productionIntegrated, license: entry.license, sourceUrl: entry.sourceUrl, clips: entry.clips, sha256: Array.from(new Uint8Array(hash), n => n.toString(16).padStart(2, '0')).join('') };
+      212 |     }, name);
+    > 213 |     expect(asset.rig).toBe('vendor');
+          |                       ^
+      214 |     expect(asset.integrated).toBe(true);
+      215 |     expect(asset.license).toBe('CC0 1.0; Grab3D; https://creativecommons.org/publicdomain/zero/1.0/');
+      216 |     expect(asset.sourceUrl).toBe(`https://grab3d.com/models/characters/${name === 'mira' ? 'woman' : 'man'}/`);
+        at /Users/patabrava/Documents/AI/github/Camilo/Ines/tests/e2e/smoke.spec.ts:213:23
+
+    Error Context: test-results/smoke-installed-worker-ser-c3c5a-ated-CC0-human-replacements-mobile-390/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/smoke-installed-worker-ser-c3c5a-ated-CC0-human-replacements-mobile-390/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/smoke-installed-worker-ser-c3c5a-ated-CC0-human-replacements-mobile-390/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [mobile-360] › tests/e2e/smoke.spec.ts:167:1 › installed worker serves the integrated dog model and its CC BY puppy provenance 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "e1b142b5f6f25f164f99f074fa12919f8c34e2d807b9750222c27cdaab1bf87c"
+    Received: "fc8b5a898a3e03ac9a1d487e83641c8b36424785db7aaae68b1db4b202dad1bc"
+
+      186 |   expect(asset.sourceSha256).toBe('45bbe4ae0561c49f0dd1bc821305b577dd75b9c8cd8cc011dae6adc409990811');
+      187 |   expect(asset.clips).toBe(13);
+    > 188 |   expect(asset.sha256).toBe(expected);
+          |                        ^
+      189 |   await tap(page, de.app.settings);
+      190 |   const summary=page.locator('.model-credits > summary');
+      191 |   await summary.focus();
+        at /Users/patabrava/Documents/AI/github/Camilo/Ines/tests/e2e/smoke.spec.ts:188:24
+
+    Error Context: test-results/smoke-installed-worker-ser-5846b--its-CC-BY-puppy-provenance-mobile-360/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/smoke-installed-worker-ser-5846b--its-CC-BY-puppy-provenance-mobile-360/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/smoke-installed-worker-ser-5846b--its-CC-BY-puppy-provenance-mobile-360/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [mobile-360] › tests/e2e/smoke.spec.ts:200:1 › installed worker serves both integrated CC0 human replacements 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "vendor"
+    Received: "project"
+
+      211 |       return { rig: entry.rig, integrated: entry.productionIntegrated, license: entry.license, sourceUrl: entry.sourceUrl, clips: entry.clips, sha256: Array.from(new Uint8Array(hash), n => n.toString(16).padStart(2, '0')).join('') };
+      212 |     }, name);
+    > 213 |     expect(asset.rig).toBe('vendor');
+          |                       ^
+      214 |     expect(asset.integrated).toBe(true);
+      215 |     expect(asset.license).toBe('CC0 1.0; Grab3D; https://creativecommons.org/publicdomain/zero/1.0/');
+      216 |     expect(asset.sourceUrl).toBe(`https://grab3d.com/models/characters/${name === 'mira' ? 'woman' : 'man'}/`);
+        at /Users/patabrava/Documents/AI/github/Camilo/Ines/tests/e2e/smoke.spec.ts:213:23
+
+    Error Context: test-results/smoke-installed-worker-ser-c3c5a-ated-CC0-human-replacements-mobile-360/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/smoke-installed-worker-ser-c3c5a-ated-CC0-human-replacements-mobile-360/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/smoke-installed-worker-ser-c3c5a-ated-CC0-human-replacements-mobile-360/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [desktop] › tests/e2e/smoke.spec.ts:167:1 › installed worker serves the integrated dog model and its CC BY puppy provenance 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "e1b142b5f6f25f164f99f074fa12919f8c34e2d807b9750222c27cdaab1bf87c"
+    Received: "fc8b5a898a3e03ac9a1d487e83641c8b36424785db7aaae68b1db4b202dad1bc"
+
+      186 |   expect(asset.sourceSha256).toBe('45bbe4ae0561c49f0dd1bc821305b577dd75b9c8cd8cc011dae6adc409990811');
+      187 |   expect(asset.clips).toBe(13);
+    > 188 |   expect(asset.sha256).toBe(expected);
+          |                        ^
+      189 |   await tap(page, de.app.settings);
+      190 |   const summary=page.locator('.model-credits > summary');
+      191 |   await summary.focus();
+        at /Users/patabrava/Documents/AI/github/Camilo/Ines/tests/e2e/smoke.spec.ts:188:24
+
+    Error Context: test-results/smoke-installed-worker-ser-5846b--its-CC-BY-puppy-provenance-desktop/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/smoke-installed-worker-ser-5846b--its-CC-BY-puppy-provenance-desktop/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/smoke-installed-worker-ser-5846b--its-CC-BY-puppy-provenance-desktop/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [desktop] › tests/e2e/smoke.spec.ts:200:1 › installed worker serves both integrated CC0 human replacements 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "vendor"
+    Received: "project"
+
+      211 |       return { rig: entry.rig, integrated: entry.productionIntegrated, license: entry.license, sourceUrl: entry.sourceUrl, clips: entry.clips, sha256: Array.from(new Uint8Array(hash), n => n.toString(16).padStart(2, '0')).join('') };
+      212 |     }, name);
+    > 213 |     expect(asset.rig).toBe('vendor');
+          |                       ^
+      214 |     expect(asset.integrated).toBe(true);
+      215 |     expect(asset.license).toBe('CC0 1.0; Grab3D; https://creativecommons.org/publicdomain/zero/1.0/');
+      216 |     expect(asset.sourceUrl).toBe(`https://grab3d.com/models/characters/${name === 'mira' ? 'woman' : 'man'}/`);
+        at /Users/patabrava/Documents/AI/github/Camilo/Ines/tests/e2e/smoke.spec.ts:213:23
+
+    Error Context: test-results/smoke-installed-worker-ser-c3c5a-ated-CC0-human-replacements-desktop/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/smoke-installed-worker-ser-c3c5a-ated-CC0-human-replacements-desktop/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/smoke-installed-worker-ser-c3c5a-ated-CC0-human-replacements-desktop/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6 failed
+    [mobile-390] › tests/e2e/smoke.spec.ts:167:1 › installed worker serves the integrated dog model and its CC BY puppy provenance 
+    [mobile-390] › tests/e2e/smoke.spec.ts:200:1 › installed worker serves both integrated CC0 human replacements 
+    [mobile-360] › tests/e2e/smoke.spec.ts:167:1 › installed worker serves the integrated dog model and its CC BY puppy provenance 
+    [mobile-360] › tests/e2e/smoke.spec.ts:200:1 › installed worker serves both integrated CC0 human replacements 
+    [desktop] › tests/e2e/smoke.spec.ts:167:1 › installed worker serves the integrated dog model and its CC BY puppy provenance 
+    [desktop] › tests/e2e/smoke.spec.ts:200:1 › installed worker serves both integrated CC0 human replacements 
+  12 passed (27.9s)

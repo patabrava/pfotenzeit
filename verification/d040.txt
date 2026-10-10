@@ -1,0 +1,1 @@
+PASS D-040: 12 MiB caps, temporary output outside public, object clipmap event override, five invalid event times, missing treat_received, public output rejection

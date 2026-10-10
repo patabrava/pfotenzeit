@@ -1,0 +1,15 @@
+PASS home: dock actions reachable at 360×640
+PASS keyboard: first Tab lands on a control — Profil von Nala öffnen
+PASS keyboard: focus trapped inside sheet
+PASS modal: world layer inert behind sheet
+PASS keyboard: Escape closes sheet
+PASS lesson: dock ≤ 28 % height
+PASS lesson: options reachable
+PASS lesson: react → feedback via presenter/ACK
+PASS profile: care presented inline
+PASS school: insufficient marks → aria-disabled but focusable
+PASS 200 %: home actions reachable
+PASS 200 %: lesson options reachable
+PASS no page errors
+
+13/13 checks passed. Screenshots: /var/folders/1w/_gqfxq7d30l24y3nqbb8fr5m0000gn/T/pz-smoke

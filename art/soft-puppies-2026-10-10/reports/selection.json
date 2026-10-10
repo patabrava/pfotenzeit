@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-10",
+  "userRequirement": "Free puppy models; rounded silhouettes and smooth textured surfaces; no angular low-poly style",
+  "selectedCandidate": {
+    "title": "Dog Puppy",
+    "author": "kenchoo",
+    "originalModelAuthor": "Tech developers",
+    "url": "https://sketchfab.com/3d-models/dog-puppy-72331763040e4314b154f84348fe0957",
+    "license": "CC BY 4.0",
+    "trianglesAdvertised": 14800,
+    "downloadRequiresSignIn": true,
+    "visuallyInspected": true,
+    "downloaded": false,
+    "integrated": false
+  },
+  "currentLiveModelsUnchanged": false,
+  "blockedOn": "Sketchfab account sign-in for the official free download",
+  "backups": "art/soft-puppies-2026-10-10/before/",
+  "downloaded": true,
+  "integrated": true,
+  "blocker": null,
+  "sourceSha256": "45bbe4ae0561c49f0dd1bc821305b577dd75b9c8cd8cc011dae6adc409990811",
+  "archiveSha256": "c73145a4dea7b442ff92108a4e18161e9a6d2271424992ec988ce3717ddada82"
+}

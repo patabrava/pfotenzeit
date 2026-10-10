@@ -1,0 +1,577 @@
+{
+  "version": 2,
+  "generatedUTC": "2026-10-10T13:06:50.350Z",
+  "assets": {
+    "dog.nala.puppy": {
+      "url": "assets/models/dog_nala_puppy.glb",
+      "status": "code-authored",
+      "productionIntegrated": true,
+      "material": "vertex",
+      "textures": [],
+      "textureSizes": [],
+      "bytes": 610996,
+      "triangles": 1950,
+      "boundsMeters": [
+        0.13562828302383423,
+        0.3920000063953921,
+        0.49999748170375824
+      ],
+      "drawCalls": 1,
+      "rig": "vendor",
+      "rigInfo": {
+        "joints": 46,
+        "maxInfluences": 4,
+        "root": ""
+      },
+      "clips": [
+        "idle_relaxed",
+        "look_at_handler",
+        "sniff",
+        "walk",
+        "sit",
+        "lie_down",
+        "rest_loop",
+        "eat",
+        "play_bow",
+        "turn_away",
+        "tense_idle",
+        "tired_idle",
+        "recover"
+      ],
+      "sourceClips": [
+        "eat",
+        "idle_relaxed",
+        "lie_down",
+        "look_at_handler",
+        "play_bow",
+        "recover",
+        "rest_loop",
+        "sit",
+        "sniff",
+        "tense_idle",
+        "tired_idle",
+        "turn_away",
+        "walk"
+      ],
+      "clipMap": {
+        "idle_relaxed": "idle_relaxed",
+        "look_at_handler": "look_at_handler",
+        "sniff": "sniff",
+        "walk": "walk",
+        "sit": "sit",
+        "lie_down": "lie_down",
+        "rest_loop": "rest_loop",
+        "eat": "eat",
+        "play_bow": "play_bow",
+        "turn_away": "turn_away",
+        "tense_idle": "tense_idle",
+        "tired_idle": "tired_idle",
+        "recover": "recover"
+      },
+      "clipMeta": {
+        "idle_relaxed": {
+          "durationS": 4,
+          "loop": true
+        },
+        "look_at_handler": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "sniff": {
+          "durationS": 2.5,
+          "loop": true
+        },
+        "walk": {
+          "durationS": 1,
+          "loop": true
+        },
+        "sit": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "lie_down": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "rest_loop": {
+          "durationS": 5,
+          "loop": true
+        },
+        "eat": {
+          "durationS": 4,
+          "loop": false,
+          "events": {
+            "treat_received": 2
+          }
+        },
+        "play_bow": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "turn_away": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "tense_idle": {
+          "durationS": 2.5,
+          "loop": true
+        },
+        "tired_idle": {
+          "durationS": 3.5,
+          "loop": true
+        },
+        "recover": {
+          "durationS": 2,
+          "loop": false
+        }
+      },
+      "source": "Quaternius Ultimate Animated Animal Pack (ShibaInu); adapted coat/scale; native idle/walk/eat and Blender IK-authored educational clips, scripts/build-free-dogs.mjs",
+      "license": "CC0 1.0 Universal; Quaternius; https://quaternius.com/packs/ultimateanimatedanimals.html",
+      "version": 2
+    },
+    "dog.nala.growing": {
+      "url": "assets/models/dog_nala_growing.glb",
+      "status": "code-authored",
+      "productionIntegrated": true,
+      "material": "vertex",
+      "textures": [],
+      "textureSizes": [],
+      "bytes": 612048,
+      "triangles": 1950,
+      "boundsMeters": [
+        0.17437921464443207,
+        0.4929224594379775,
+        0.6262856870889664
+      ],
+      "drawCalls": 1,
+      "rig": "vendor",
+      "rigInfo": {
+        "joints": 46,
+        "maxInfluences": 4,
+        "root": ""
+      },
+      "clips": [
+        "idle_relaxed",
+        "look_at_handler",
+        "sniff",
+        "walk",
+        "sit",
+        "lie_down",
+        "rest_loop",
+        "eat",
+        "play_bow",
+        "turn_away",
+        "tense_idle",
+        "tired_idle",
+        "recover"
+      ],
+      "sourceClips": [
+        "eat",
+        "idle_relaxed",
+        "lie_down",
+        "look_at_handler",
+        "play_bow",
+        "recover",
+        "rest_loop",
+        "sit",
+        "sniff",
+        "tense_idle",
+        "tired_idle",
+        "turn_away",
+        "walk"
+      ],
+      "clipMap": {
+        "idle_relaxed": "idle_relaxed",
+        "look_at_handler": "look_at_handler",
+        "sniff": "sniff",
+        "walk": "walk",
+        "sit": "sit",
+        "lie_down": "lie_down",
+        "rest_loop": "rest_loop",
+        "eat": "eat",
+        "play_bow": "play_bow",
+        "turn_away": "turn_away",
+        "tense_idle": "tense_idle",
+        "tired_idle": "tired_idle",
+        "recover": "recover"
+      },
+      "clipMeta": {
+        "idle_relaxed": {
+          "durationS": 4,
+          "loop": true
+        },
+        "look_at_handler": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "sniff": {
+          "durationS": 2.5,
+          "loop": true
+        },
+        "walk": {
+          "durationS": 1,
+          "loop": true
+        },
+        "sit": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "lie_down": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "rest_loop": {
+          "durationS": 5,
+          "loop": true
+        },
+        "eat": {
+          "durationS": 4,
+          "loop": false,
+          "events": {
+            "treat_received": 2
+          }
+        },
+        "play_bow": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "turn_away": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "tense_idle": {
+          "durationS": 2.5,
+          "loop": true
+        },
+        "tired_idle": {
+          "durationS": 3.5,
+          "loop": true
+        },
+        "recover": {
+          "durationS": 2,
+          "loop": false
+        }
+      },
+      "source": "Quaternius Ultimate Animated Animal Pack (ShibaInu); adapted coat/scale; native idle/walk/eat and Blender IK-authored educational clips, scripts/build-free-dogs.mjs",
+      "license": "CC0 1.0 Universal; Quaternius; https://quaternius.com/packs/ultimateanimatedanimals.html",
+      "version": 2
+    },
+    "dog.bruno.puppy": {
+      "url": "assets/models/dog_bruno_puppy.glb",
+      "status": "code-authored",
+      "productionIntegrated": true,
+      "material": "vertex",
+      "textures": [],
+      "textureSizes": [],
+      "bytes": 637432,
+      "triangles": 1920,
+      "boundsMeters": [
+        0.13463972508907318,
+        0.43399999834946357,
+        0.5289485603570938
+      ],
+      "drawCalls": 1,
+      "rig": "vendor",
+      "rigInfo": {
+        "joints": 49,
+        "maxInfluences": 4,
+        "root": ""
+      },
+      "clips": [
+        "idle_relaxed",
+        "look_at_handler",
+        "sniff",
+        "walk",
+        "sit",
+        "lie_down",
+        "rest_loop",
+        "eat",
+        "play_bow",
+        "turn_away",
+        "tense_idle",
+        "tired_idle",
+        "recover"
+      ],
+      "sourceClips": [
+        "eat",
+        "idle_relaxed",
+        "lie_down",
+        "look_at_handler",
+        "play_bow",
+        "recover",
+        "rest_loop",
+        "sit",
+        "sniff",
+        "tense_idle",
+        "tired_idle",
+        "turn_away",
+        "walk"
+      ],
+      "clipMap": {
+        "idle_relaxed": "idle_relaxed",
+        "look_at_handler": "look_at_handler",
+        "sniff": "sniff",
+        "walk": "walk",
+        "sit": "sit",
+        "lie_down": "lie_down",
+        "rest_loop": "rest_loop",
+        "eat": "eat",
+        "play_bow": "play_bow",
+        "turn_away": "turn_away",
+        "tense_idle": "tense_idle",
+        "tired_idle": "tired_idle",
+        "recover": "recover"
+      },
+      "clipMeta": {
+        "idle_relaxed": {
+          "durationS": 4,
+          "loop": true
+        },
+        "look_at_handler": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "sniff": {
+          "durationS": 2.5,
+          "loop": true
+        },
+        "walk": {
+          "durationS": 1,
+          "loop": true
+        },
+        "sit": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "lie_down": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "rest_loop": {
+          "durationS": 5,
+          "loop": true
+        },
+        "eat": {
+          "durationS": 4,
+          "loop": false,
+          "events": {
+            "treat_received": 2
+          }
+        },
+        "play_bow": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "turn_away": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "tense_idle": {
+          "durationS": 2.5,
+          "loop": true
+        },
+        "tired_idle": {
+          "durationS": 3.5,
+          "loop": true
+        },
+        "recover": {
+          "durationS": 2,
+          "loop": false
+        }
+      },
+      "source": "Quaternius Ultimate Animated Animal Pack (Husky); adapted coat/scale; native idle/walk/eat and Blender IK-authored educational clips, scripts/build-free-dogs.mjs",
+      "license": "CC0 1.0 Universal; Quaternius; https://quaternius.com/packs/ultimateanimatedanimals.html",
+      "version": 2
+    },
+    "human.mira": {
+      "url": "assets/models/human_mira.glb",
+      "status": "code-authored",
+      "bytes": 257236,
+      "triangles": 6704,
+      "clips": [
+        "idle",
+        "greet",
+        "gesture_explain",
+        "offer_reward",
+        "kneel"
+      ],
+      "textureSizes": [],
+      "material": "vertex",
+      "drawCalls": 1,
+      "boundsMeters": [
+        0.532,
+        1.716,
+        0.3003
+      ],
+      "source": "scripts/build-models.mjs (procedural, from 07/08 brief and reference sheets)",
+      "license": "project-internal, generated code; no third-party assets",
+      "version": 1,
+      "clipMeta": {
+        "idle": {
+          "durationS": 4,
+          "loop": true
+        },
+        "greet": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "gesture_explain": {
+          "durationS": 2,
+          "loop": false
+        },
+        "offer_reward": {
+          "durationS": 2,
+          "loop": false
+        },
+        "kneel": {
+          "durationS": 1.5,
+          "loop": false
+        }
+      },
+      "measuredHeightM": 1.716,
+      "rig": "project",
+      "rigInfo": {
+        "joints": 20,
+        "maxInfluences": 4,
+        "root": "root"
+      }
+    },
+    "human.alex": {
+      "url": "assets/models/human_alex.glb",
+      "status": "code-authored",
+      "bytes": 246536,
+      "triangles": 6352,
+      "clips": [
+        "idle",
+        "greet",
+        "gesture_explain",
+        "offer_reward",
+        "kneel"
+      ],
+      "textureSizes": [],
+      "material": "vertex",
+      "drawCalls": 1,
+      "boundsMeters": [
+        0.552,
+        1.776,
+        0.3003
+      ],
+      "source": "scripts/build-models.mjs (procedural, from 07/08 brief and reference sheets)",
+      "license": "project-internal, generated code; no third-party assets",
+      "version": 1,
+      "clipMeta": {
+        "idle": {
+          "durationS": 4,
+          "loop": true
+        },
+        "greet": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "gesture_explain": {
+          "durationS": 2,
+          "loop": false
+        },
+        "offer_reward": {
+          "durationS": 2,
+          "loop": false
+        },
+        "kneel": {
+          "durationS": 1.5,
+          "loop": false
+        }
+      },
+      "measuredHeightM": 1.776,
+      "rig": "project",
+      "rigInfo": {
+        "joints": 20,
+        "maxInfluences": 4,
+        "root": "root"
+      }
+    },
+    "environment.school": {
+      "url": "assets/models/school_courtyard.glb",
+      "status": "code-authored",
+      "bytes": 385444,
+      "triangles": 15416,
+      "clips": [],
+      "textureSizes": [],
+      "material": "vertex",
+      "drawCalls": 1,
+      "boundsMeters": [
+        7.0937,
+        3.4186,
+        7.3101
+      ],
+      "source": "scripts/build-models.mjs (procedural, from 07/08 brief and reference sheets)",
+      "license": "project-internal, generated code; no third-party assets",
+      "version": 1,
+      "meshes": [
+        "school_courtyard"
+      ],
+      "nodes": [
+        "school_courtyard"
+      ]
+    },
+    "props.care": {
+      "url": "assets/models/care_props.glb",
+      "status": "code-authored",
+      "bytes": 128412,
+      "triangles": 6096,
+      "clips": [],
+      "textureSizes": [],
+      "material": "vertex",
+      "drawCalls": 6,
+      "boundsMeters": [
+        0.64,
+        0.0921,
+        0.4788
+      ],
+      "source": "scripts/build-models.mjs (procedural, from 07/08 brief and reference sheets)",
+      "license": "project-internal, generated code; no third-party assets",
+      "version": 1,
+      "meshes": [
+        "prop_bowl",
+        "prop_water",
+        "prop_blanket",
+        "prop_ball",
+        "prop_toy_rolling",
+        "prop_leaf"
+      ],
+      "nodes": [
+        "bowl",
+        "water",
+        "blanket",
+        "ball",
+        "toy_rolling",
+        "leaf"
+      ]
+    },
+    "props.upgrades": {
+      "url": "assets/models/school_upgrades.glb",
+      "status": "code-authored",
+      "bytes": 194260,
+      "triangles": 9160,
+      "clips": [],
+      "textureSizes": [],
+      "material": "vertex",
+      "drawCalls": 2,
+      "boundsMeters": [
+        6.72,
+        1.57,
+        2.5891
+      ],
+      "source": "scripts/build-models.mjs (procedural, from 07/08 brief and reference sheets)",
+      "license": "project-internal, generated code; no third-party assets",
+      "version": 1,
+      "meshes": [
+        "upgrade_rest_place",
+        "upgrade_sniff_corner"
+      ],
+      "nodes": [
+        "rest_place",
+        "sniff_corner"
+      ]
+    }
+  }
+}

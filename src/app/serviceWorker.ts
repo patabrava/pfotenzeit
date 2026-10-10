@@ -33,6 +33,7 @@ export function registerServiceWorker(store: Store, swUrl: string = `${import.me
   let waiting: ServiceWorker | null = null;
   let announced = false;
   let reloading = false;
+  let hadController = navigator.serviceWorker.controller !== null;
   let unsubscribe: (() => void) | null = null;
 
   function maybeAnnounce(): void {
@@ -62,6 +63,12 @@ export function registerServiceWorker(store: Store, swUrl: string = `${import.me
   type ServerWorkerLike = Pick<ServiceWorker, 'state' | 'addEventListener'>;
 
   const onControllerChange = () => {
+    // The first install claims an already loaded page. Its code is current;
+    // reloading here would interrupt onboarding or a first care action.
+    if (!hadController) {
+      hadController = true;
+      return;
+    }
     if (reloading) return;
     reloading = true;
     window.location.reload();

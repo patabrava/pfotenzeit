@@ -57,6 +57,7 @@ export function expect(actual: unknown, message = ''): Matchers {
     toBeGreaterThan: (n) => void ((actual as number) > n || fail(`expected ${stringify(actual)} > ${n}`)),
     toBeLessThan: (n) => void ((actual as number) < n || fail(`expected ${stringify(actual)} < ${n}`)),
     toBeLessThanOrEqual: (n) => void ((actual as number) <= n || fail(`expected ${stringify(actual)} <= ${n}`)),
+    toBeGreaterThanOrEqual: (n) => void ((actual as number) >= n || fail(`expected ${stringify(actual)} >= ${n}`)),
     get not() {
       return {
         toBe: (expected: unknown) => void (!Object.is(actual, expected) || fail(`expected ${stringify(actual)} not to be ${stringify(expected)}`)),
@@ -74,6 +75,7 @@ export interface Matchers {
   toBeGreaterThan(n: number): void;
   toBeLessThan(n: number): void;
   toBeLessThanOrEqual(n: number): void;
+  toBeGreaterThanOrEqual(n: number): void;
   readonly not: { toBe(expected: unknown): void; toBeNull(): void };
 }
 

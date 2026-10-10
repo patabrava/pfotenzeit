@@ -1,0 +1,27 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Pfotenzeit Blender candidate verification</title><style>html,body{margin:0;background:#f4f0e8}canvas{display:block}</style>
+<script type="importmap">{"imports":{"three":"/vendor/three.module.js"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import {GLTFLoader} from '/vendor/GLTFLoader.js';
+const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});renderer.setSize(900,760);renderer.setPixelRatio(1);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.setClearColor(0xf4f0e8);document.body.append(renderer.domElement);
+const scene=new THREE.Scene();scene.add(new THREE.HemisphereLight(0xffffff,0xc8b9a7,2));const key=new THREE.DirectionalLight(0xfff1da,3);key.position.set(2,3,4);scene.add(key);
+const camera=new THREE.OrthographicCamera(-.5,.5,.422,-.422,.001,100);
+const loader=new GLTFLoader();let current,mixer,clips;
+window.verify=async(asset)=>{
+ if(current){scene.remove(current);current.traverse(o=>{if(o.geometry)o.geometry.dispose();if(o.material)o.material.dispose()});}
+ const gltf=await loader.loadAsync('/candidates/'+asset+'.glb');clips=gltf.animations;current=gltf.scene;scene.add(current);mixer=new THREE.AnimationMixer(current);
+ let mesh;current.traverse(o=>{if(o.isSkinnedMesh)mesh=o;});if(!mesh)throw Error('No skinned mesh');
+ const restBounds=new THREE.Box3().setFromObject(current);const height=restBounds.max.y-restBounds.min.y;const target=new THREE.Vector3(0,height*.52,-.01);const span=asset.startsWith('dog')?(asset.includes('growing')?.92:.82):2.20;camera.left=-span/2;camera.right=span/2;camera.top=span/2*760/900;camera.bottom=-camera.top;camera.position.copy(target).add(new THREE.Vector3(.85,.6,1.4).multiplyScalar(asset.startsWith('dog')?1:2.8));camera.lookAt(target);camera.updateProjectionMatrix();
+ renderer.render(scene,camera);const samples=[];
+ for(const clip of gltf.animations){
+  for(const fraction of [0,.25,.5,.75,1]){
+   mixer.stopAllAction();mixer.time=0;const action=mixer.clipAction(clip);action.reset();action.setLoop(THREE.LoopOnce,1);action.clampWhenFinished=true;action.play();mixer.setTime(clip.duration*fraction);current.updateMatrixWorld(true);mesh.skeleton.update();
+   const bbox=new THREE.Box3();const pos=mesh.geometry.attributes.position;let checked=0;
+   for(let i=0;i<pos.count;i++){const v=new THREE.Vector3().fromBufferAttribute(pos,i);mesh.applyBoneTransform(i,v);if(!v.toArray().every(Number.isFinite))throw Error('Non-finite deformed vertex');bbox.expandByPoint(v);checked++;}
+   const size=bbox.getSize(new THREE.Vector3());if(size.length()>height*12)throw Error('Exploded rig');renderer.render(scene,camera);samples.push({clip:clip.name,fraction,checked,bounds:size.toArray(),calls:renderer.info.render.calls,triangles:renderer.info.render.triangles});
+  }
+ }
+ mixer.stopAllAction();mixer.time=0;current.updateMatrixWorld(true);renderer.render(scene,camera);
+ return {asset,clips:gltf.animations.map(c=>({name:c.name,duration:c.duration})),bones:mesh.skeleton.bones.map(b=>b.name),samples,drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles,restBounds:{min:restBounds.min.toArray(),max:restBounds.max.toArray()}};
+};window.showPose=(name,fraction)=>{mixer.stopAllAction();mixer.time=0;const clip=clips.find(c=>c.name===name);const a=mixer.clipAction(clip);a.reset().setLoop(THREE.LoopOnce,1);a.clampWhenFinished=true;a.play();mixer.setTime(clip.duration*fraction);current.updateMatrixWorld(true);renderer.render(scene,camera);};window.ready=true;
+</script></html>

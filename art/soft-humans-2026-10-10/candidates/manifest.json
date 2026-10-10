@@ -1,0 +1,196 @@
+{
+  "version": 2,
+  "staging": true,
+  "assets": {
+    "human.mira": {
+      "url": "human_mira.glb",
+      "status": "code-authored",
+      "productionIntegrated": false,
+      "material": "textured",
+      "textures": [
+        {
+          "slot": "baseColor",
+          "width": 1024,
+          "height": 1024,
+          "bytes": 179187,
+          "mime": "image/jpeg"
+        },
+        {
+          "slot": "normal",
+          "width": 256,
+          "height": 256,
+          "bytes": 10947,
+          "mime": "image/jpeg"
+        }
+      ],
+      "textureSizes": [
+        [
+          1024,
+          1024
+        ],
+        [
+          256,
+          256
+        ]
+      ],
+      "bytes": 1081056,
+      "triangles": 10909,
+      "boundsMeters": [
+        0.9065287113189697,
+        1.7000000476837158,
+        0.36825162172317505
+      ],
+      "measuredHeightM": 1.7000000476837158,
+      "drawCalls": 1,
+      "rig": "vendor",
+      "rigInfo": {
+        "joints": 58,
+        "maxInfluences": 4,
+        "root": "Hips"
+      },
+      "clips": [
+        "idle",
+        "greet",
+        "gesture_explain",
+        "offer_reward",
+        "kneel"
+      ],
+      "sourceClips": [
+        "gesture_explain",
+        "greet",
+        "idle",
+        "kneel",
+        "offer_reward"
+      ],
+      "clipMap": {
+        "idle": "idle",
+        "greet": "greet",
+        "gesture_explain": "gesture_explain",
+        "offer_reward": "offer_reward",
+        "kneel": "kneel"
+      },
+      "clipMeta": {
+        "idle": {
+          "durationS": 4,
+          "loop": true
+        },
+        "greet": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "gesture_explain": {
+          "durationS": 2,
+          "loop": false
+        },
+        "offer_reward": {
+          "durationS": 2,
+          "loop": false
+        },
+        "kneel": {
+          "durationS": 1.5,
+          "loop": false
+        }
+      },
+      "source": "Grab3D Casual woman; AI-assisted Meshy source cleaned in Blender; mobile LOD, smooth normals, textures, unit scale and five native-rig IK gestures adapted by scripts/build-soft-humans.mjs",
+      "sourceUrl": "https://grab3d.com/models/characters/woman/",
+      "license": "CC0 1.0; Grab3D; https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceSha256": "a9f2bcf774e3e9d19416c99c68a6d73041b17808def97fddf72c50d71a8b2b8c",
+      "version": 2
+    },
+    "human.alex": {
+      "url": "human_alex.glb",
+      "status": "code-authored",
+      "productionIntegrated": false,
+      "material": "textured",
+      "textures": [
+        {
+          "slot": "baseColor",
+          "width": 1024,
+          "height": 1024,
+          "bytes": 196117,
+          "mime": "image/jpeg"
+        },
+        {
+          "slot": "normal",
+          "width": 256,
+          "height": 256,
+          "bytes": 7685,
+          "mime": "image/jpeg"
+        }
+      ],
+      "textureSizes": [
+        [
+          1024,
+          1024
+        ],
+        [
+          256,
+          256
+        ]
+      ],
+      "bytes": 1052080,
+      "triangles": 10987,
+      "boundsMeters": [
+        1.1276723146438599,
+        1.7599999904632568,
+        0.3484606146812439
+      ],
+      "measuredHeightM": 1.7599999904632568,
+      "drawCalls": 1,
+      "rig": "vendor",
+      "rigInfo": {
+        "joints": 58,
+        "maxInfluences": 4,
+        "root": "Hips"
+      },
+      "clips": [
+        "idle",
+        "greet",
+        "gesture_explain",
+        "offer_reward",
+        "kneel"
+      ],
+      "sourceClips": [
+        "gesture_explain",
+        "greet",
+        "idle",
+        "kneel",
+        "offer_reward"
+      ],
+      "clipMap": {
+        "idle": "idle",
+        "greet": "greet",
+        "gesture_explain": "gesture_explain",
+        "offer_reward": "offer_reward",
+        "kneel": "kneel"
+      },
+      "clipMeta": {
+        "idle": {
+          "durationS": 4,
+          "loop": true
+        },
+        "greet": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "gesture_explain": {
+          "durationS": 2,
+          "loop": false
+        },
+        "offer_reward": {
+          "durationS": 2,
+          "loop": false
+        },
+        "kneel": {
+          "durationS": 1.5,
+          "loop": false
+        }
+      },
+      "source": "Grab3D Casual man; AI-assisted Meshy source cleaned in Blender; mobile LOD, smooth normals, textures, unit scale and five native-rig IK gestures adapted by scripts/build-soft-humans.mjs",
+      "sourceUrl": "https://grab3d.com/models/characters/man/",
+      "license": "CC0 1.0; Grab3D; https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceSha256": "c41f2bfc62b03a8dd8fbae37d201d4c73bba3806678984c6895f59a7cbf22c4f",
+      "version": 2
+    }
+  }
+}

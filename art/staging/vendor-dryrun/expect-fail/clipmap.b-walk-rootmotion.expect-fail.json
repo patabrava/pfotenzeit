@@ -1,0 +1,15 @@
+{
+  "idle_relaxed": "Idle_Loop",
+  "look_at_handler": "LookLeft",
+  "sniff": "Sniff01",
+  "walk": "Walk_RootMotion",
+  "sit": "Sit_Down",
+  "lie_down": "LieDown",
+  "rest_loop": "Sleep_Loop",
+  "eat": "Eat01",
+  "play_bow": "PlayBow",
+  "turn_away": "TurnAway",
+  "tense_idle": "Alert_Idle",
+  "tired_idle": "Tired_Idle",
+  "recover": "GetUp"
+}

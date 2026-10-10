@@ -1,0 +1,377 @@
+{
+  "a": "/art/soft-humans-2026-10-10/before/human_alex.glb@human.alex",
+  "b": "human.alex",
+  "pose": "idle",
+  "sheets": [
+    {
+      "cam": "front",
+      "light": "neutral",
+      "file": "review_front_neutral.png",
+      "metrics": {
+        "a": {
+          "label": "human_alex.glb",
+          "key": "human.alex",
+          "tier": "glb",
+          "triangles": 6352,
+          "drawCalls": 2,
+          "actorDrawCalls": 1,
+          "textureBytes": 4210688,
+          "heightShare": null,
+          "minMargin": null,
+          "azimuthDeg": null
+        },
+        "b": {
+          "label": "human.alex",
+          "key": "human.alex",
+          "tier": "glb",
+          "triangles": 10987,
+          "drawCalls": 2,
+          "actorDrawCalls": 1,
+          "textureBytes": 10137764,
+          "heightShare": null,
+          "minMargin": null,
+          "azimuthDeg": null
+        },
+        "cam": "front",
+        "light": "neutral",
+        "pose": "idle"
+      },
+      "errors": [],
+      "frames": []
+    },
+    {
+      "cam": "front",
+      "light": "courtyard",
+      "file": "review_front_courtyard.png",
+      "metrics": {
+        "a": {
+          "label": "human_alex.glb",
+          "key": "human.alex",
+          "tier": "glb",
+          "triangles": 6352,
+          "drawCalls": 2,
+          "actorDrawCalls": 1,
+          "textureBytes": 4210688,
+          "heightShare": null,
+          "minMargin": null,
+          "azimuthDeg": null
+        },
+        "b": {
+          "label": "human.alex",
+          "key": "human.alex",
+          "tier": "glb",
+          "triangles": 10987,
+          "drawCalls": 2,
+          "actorDrawCalls": 1,
+          "textureBytes": 10137764,
+          "heightShare": null,
+          "minMargin": null,
+          "azimuthDeg": null
+        },
+        "cam": "front",
+        "light": "courtyard",
+        "pose": "idle"
+      },
+      "errors": [],
+      "frames": []
+    },
+    {
+      "cam": "side",
+      "light": "neutral",
+      "file": "review_side_neutral.png",
+      "metrics": {
+        "a": {
+          "label": "human_alex.glb",
+          "key": "human.alex",
+          "tier": "glb",
+          "triangles": 6352,
+          "drawCalls": 2,
+          "actorDrawCalls": 1,
+          "textureBytes": 4210688,
+          "heightShare": null,
+          "minMargin": null,
+          "azimuthDeg": null
+        },
+        "b": {
+          "label": "human.alex",
+          "key": "human.alex",
+          "tier": "glb",
+          "triangles": 10987,
+          "drawCalls": 2,
+          "actorDrawCalls": 1,
+          "textureBytes": 10137764,
+          "heightShare": null,
+          "minMargin": null,
+          "azimuthDeg": null
+        },
+        "cam": "side",
+        "light": "neutral",
+        "pose": "idle"
+      },
+      "errors": [],
+      "frames": []
+    },
+    {
+      "cam": "side",
+      "light": "courtyard",
+      "file": "review_side_courtyard.png",
+      "metrics": {
+        "a": {
+          "label": "human_alex.glb",
+          "key": "human.alex",
+          "tier": "glb",
+          "triangles": 6352,
+          "drawCalls": 2,
+          "actorDrawCalls": 1,
+          "textureBytes": 4210688,
+          "heightShare": null,
+          "minMargin": null,
+          "azimuthDeg": null
+        },
+        "b": {
+          "label": "human.alex",
+          "key": "human.alex",
+          "tier": "glb",
+          "triangles": 10987,
+          "drawCalls": 2,
+          "actorDrawCalls": 1,
+          "textureBytes": 10137764,
+          "heightShare": null,
+          "minMargin": null,
+          "azimuthDeg": null
+        },
+        "cam": "side",
+        "light": "courtyard",
+        "pose": "idle"
+      },
+      "errors": [],
+      "frames": []
+    },
+    {
+      "cam": "closeup_portrait",
+      "light": "neutral",
+      "file": "review_closeup_portrait_neutral.png",
+      "metrics": {
+        "a": {
+          "label": "human_alex.glb",
+          "key": "human.alex",
+          "tier": "glb",
+          "triangles": 6352,
+          "drawCalls": 2,
+          "actorDrawCalls": 1,
+          "textureBytes": 4210688,
+          "heightShare": null,
+          "minMargin": null,
+          "azimuthDeg": null
+        },
+        "b": {
+          "label": "human.alex",
+          "key": "human.alex",
+          "tier": "glb",
+          "triangles": 10987,
+          "drawCalls": 2,
+          "actorDrawCalls": 1,
+          "textureBytes": 10137764,
+          "heightShare": null,
+          "minMargin": null,
+          "azimuthDeg": null
+        },
+        "cam": "closeup_portrait",
+        "light": "neutral",
+        "pose": "idle"
+      },
+      "errors": [],
+      "frames": [
+        "review_closeup_portrait_neutral_turn0.png",
+        "review_closeup_portrait_neutral_turn90.png",
+        "review_closeup_portrait_neutral_turn180.png",
+        "review_closeup_portrait_neutral_turn270.png"
+      ]
+    },
+    {
+      "cam": "closeup_portrait",
+      "light": "courtyard",
+      "file": "review_closeup_portrait_courtyard.png",
+      "metrics": {
+        "a": {
+          "label": "human_alex.glb",
+          "key": "human.alex",
+          "tier": "glb",
+          "triangles": 6352,
+          "drawCalls": 3,
+          "actorDrawCalls": 1,
+          "textureBytes": 4210688,
+          "heightShare": null,
+          "minMargin": null,
+          "azimuthDeg": null
+        },
+        "b": {
+          "label": "human.alex",
+          "key": "human.alex",
+          "tier": "glb",
+          "triangles": 10987,
+          "drawCalls": 3,
+          "actorDrawCalls": 1,
+          "textureBytes": 10137764,
+          "heightShare": null,
+          "minMargin": null,
+          "azimuthDeg": null
+        },
+        "cam": "closeup_portrait",
+        "light": "courtyard",
+        "pose": "idle"
+      },
+      "errors": [],
+      "frames": [
+        "review_closeup_portrait_courtyard_turn0.png",
+        "review_closeup_portrait_courtyard_turn90.png",
+        "review_closeup_portrait_courtyard_turn180.png",
+        "review_closeup_portrait_courtyard_turn270.png"
+      ]
+    },
+    {
+      "cam": "lesson_strip",
+      "light": "neutral",
+      "file": "review_lesson_strip_neutral.png",
+      "metrics": {
+        "a": {
+          "label": "human_alex.glb",
+          "key": "human.alex",
+          "tier": "glb",
+          "triangles": 6352,
+          "drawCalls": 2,
+          "actorDrawCalls": 1,
+          "textureBytes": 4210688,
+          "heightShare": null,
+          "minMargin": null,
+          "azimuthDeg": null
+        },
+        "b": {
+          "label": "human.alex",
+          "key": "human.alex",
+          "tier": "glb",
+          "triangles": 10987,
+          "drawCalls": 2,
+          "actorDrawCalls": 1,
+          "textureBytes": 10137764,
+          "heightShare": null,
+          "minMargin": null,
+          "azimuthDeg": null
+        },
+        "cam": "lesson_strip",
+        "light": "neutral",
+        "pose": "idle"
+      },
+      "errors": [],
+      "frames": []
+    },
+    {
+      "cam": "lesson_strip",
+      "light": "courtyard",
+      "file": "review_lesson_strip_courtyard.png",
+      "metrics": {
+        "a": {
+          "label": "human_alex.glb",
+          "key": "human.alex",
+          "tier": "glb",
+          "triangles": 6352,
+          "drawCalls": 3,
+          "actorDrawCalls": 1,
+          "textureBytes": 4210688,
+          "heightShare": null,
+          "minMargin": null,
+          "azimuthDeg": null
+        },
+        "b": {
+          "label": "human.alex",
+          "key": "human.alex",
+          "tier": "glb",
+          "triangles": 10987,
+          "drawCalls": 3,
+          "actorDrawCalls": 1,
+          "textureBytes": 10137764,
+          "heightShare": null,
+          "minMargin": null,
+          "azimuthDeg": null
+        },
+        "cam": "lesson_strip",
+        "light": "courtyard",
+        "pose": "idle"
+      },
+      "errors": [],
+      "frames": []
+    },
+    {
+      "cam": "landscape",
+      "light": "neutral",
+      "file": "review_landscape_neutral.png",
+      "metrics": {
+        "a": {
+          "label": "human_alex.glb",
+          "key": "human.alex",
+          "tier": "glb",
+          "triangles": 6352,
+          "drawCalls": 2,
+          "actorDrawCalls": 1,
+          "textureBytes": 4210688,
+          "heightShare": null,
+          "minMargin": null,
+          "azimuthDeg": null
+        },
+        "b": {
+          "label": "human.alex",
+          "key": "human.alex",
+          "tier": "glb",
+          "triangles": 10987,
+          "drawCalls": 2,
+          "actorDrawCalls": 1,
+          "textureBytes": 10137764,
+          "heightShare": null,
+          "minMargin": null,
+          "azimuthDeg": null
+        },
+        "cam": "landscape",
+        "light": "neutral",
+        "pose": "idle"
+      },
+      "errors": [],
+      "frames": []
+    },
+    {
+      "cam": "landscape",
+      "light": "courtyard",
+      "file": "review_landscape_courtyard.png",
+      "metrics": {
+        "a": {
+          "label": "human_alex.glb",
+          "key": "human.alex",
+          "tier": "glb",
+          "triangles": 6352,
+          "drawCalls": 3,
+          "actorDrawCalls": 1,
+          "textureBytes": 4210688,
+          "heightShare": null,
+          "minMargin": null,
+          "azimuthDeg": null
+        },
+        "b": {
+          "label": "human.alex",
+          "key": "human.alex",
+          "tier": "glb",
+          "triangles": 10987,
+          "drawCalls": 3,
+          "actorDrawCalls": 1,
+          "textureBytes": 10137764,
+          "heightShare": null,
+          "minMargin": null,
+          "azimuthDeg": null
+        },
+        "cam": "landscape",
+        "light": "courtyard",
+        "pose": "idle"
+      },
+      "errors": [],
+      "frames": []
+    }
+  ]
+}

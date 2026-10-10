@@ -5,6 +5,9 @@
  */
 import { POSE_IDS, type CameraView, type DomainEffect, type EnvironmentId, type GestureId, type PoseId, type SceneDirective, type StagePosition, type UpgradeId } from '../simulation/types';
 import { createGameRenderer, type GameRendererHandle } from './app/GameRenderer';
+import type { FramingReport } from './app/CameraRig';
+import { createAssetManager, type AssetManager } from './loaders/AssetManager';
+import type { AssetManifest } from './types';
 import type { RendererMetrics } from './types';
 
 const GESTURES: readonly GestureId[] = ['idle', 'greet', 'gesture_explain', 'offer_reward', 'kneel'];
@@ -20,9 +23,35 @@ export interface DevSceneApi {
   gesture(gesture: GestureId): void;
   present(effect: DomainEffect, maxDurationMs?: number): Promise<void>;
   metrics(): RendererMetrics;
+  /** D-034 framing of the focus dog in the current camera. */
+  framing(): FramingReport | null;
   /** Frames actually rendered; must not increase while inactive. */
   frames(): number;
   dispose(): void;
+}
+
+export interface DevSceneOptions {
+  baseUrl?: string;
+  controls?: boolean;
+  /**
+   * Manifest override (dev only, public/assets/manifest.json untouched): a URL to a manifest JSON
+   * (relative asset urls resolve next to it, 'pending' entries are accepted), or 'candidates' for
+   * the staged textured candidates in art/staging/blender-reference.
+   */
+  manifest?: string | AssetManifest;
+}
+
+/** Staged textured candidates (D-036 test input; art/staging, nothing copied into public/). */
+export const STAGED_CANDIDATES_MANIFEST = 'art/staging/blender-reference/manifest.json';
+/** Vendor dry run staged by ines-bc (WP-M part 3). */
+export const VENDOR_DRYRUN_MANIFEST = 'art/staging/vendor-dryrun/staged/manifest.json';
+
+function assetManagerFor(baseUrl: string, manifest: DevSceneOptions['manifest']): AssetManager | undefined {
+  if (!manifest) return undefined;
+  if (manifest === 'candidates') return createAssetManager({ baseUrl, manifestUrl: `${baseUrl}${STAGED_CANDIDATES_MANIFEST}`, acceptPending: true });
+  if (manifest === 'vendor-dryrun') return createAssetManager({ baseUrl, manifestUrl: `${baseUrl}${VENDOR_DRYRUN_MANIFEST}`, acceptPending: true });
+  if (typeof manifest === 'string') return createAssetManager({ baseUrl, manifestUrl: manifest, acceptPending: true });
+  return createAssetManager({ baseUrl, fetchManifest: async () => manifest, acceptPending: true });
 }
 
 export function defaultDirective(): SceneDirective {
@@ -38,7 +67,7 @@ export function defaultDirective(): SceneDirective {
   };
 }
 
-export function mountDevScene(container: HTMLElement, options: { baseUrl?: string; controls?: boolean } = {}): DevSceneApi {
+export function mountDevScene(container: HTMLElement, options: DevSceneOptions = {}): DevSceneApi {
   const baseUrl = options.baseUrl ?? (import.meta.env.BASE_URL as string);
   const showControls = options.controls ?? true;
   container.classList.add('dev-scene');
@@ -64,7 +93,7 @@ export function mountDevScene(container: HTMLElement, options: { baseUrl?: strin
   } as CSSStyleDeclaration);
   container.appendChild(panel);
 
-  const renderer = createGameRenderer({ baseUrl, qualityTier: 'auto', reducedMotion: false });
+  const renderer = createGameRenderer({ baseUrl, qualityTier: 'auto', reducedMotion: false, assets: assetManagerFor(baseUrl, options.manifest) });
   let directive = defaultDirective();
 
   const metricsBox = document.createElement('pre');
@@ -83,7 +112,14 @@ export function mountDevScene(container: HTMLElement, options: { baseUrl?: strin
       `status=${renderer.getStatus()} view=${directive.view} env=${directive.environment} hold=${directive.hold} ` +
       `pose=${directive.dogs[0]?.pose ?? '-'} gesture=${directive.humans[0]?.gesture ?? '-'}\n` +
       `drawCalls=${m.drawCalls} triangles=${m.triangles} fps=${m.fpsEstimate} dpr=${m.dpr} tex=${(m.textureBytesEstimate / 1024).toFixed(0)}kB ` +
-      `tiers=${JSON.stringify(m.assetTiers)}`;
+      `tiers=${JSON.stringify(m.assetTiers)}\n` +
+      framingLine();
+  };
+  const framingLine = (): string => {
+    const f = renderer.debug.framingReport();
+    const req = renderer.debug.framingRequest();
+    if (!f) return 'framing=–';
+    return `framing ${f.view}: height=${(f.heightShare * 100).toFixed(1)}% width=${(f.widthShare * 100).toFixed(1)}% margin=${(f.minMargin * 100).toFixed(1)}% centreY=${f.centreY.toFixed(2)} azimuth=${f.azimuthDeg.toFixed(0)}° nose-offset=${f.noseOffsetDeg.toFixed(0)}° samples=${req?.points.length ?? 0}`;
   };
 
   const row = (label: string): HTMLDivElement => {
@@ -127,6 +163,7 @@ export function mountDevScene(container: HTMLElement, options: { baseUrl?: strin
       return renderer.present(effect, { maxDurationMs, reducedMotion: false }).then(refreshMetrics);
     },
     metrics: () => renderer.getMetrics(),
+    framing: () => renderer.debug.framingReport(),
     frames: () => renderer.debug.frameCount(),
     dispose() {
       renderer.dispose();

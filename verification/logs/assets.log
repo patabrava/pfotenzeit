@@ -1,0 +1,17 @@
+
+> pfotenzeit@0.1.0 assets:check
+> node scripts/validate-assets.mjs
+
+asset               status             bytes    tris clips  validator   result
+dog.nala.puppy      code-authored     487132    9684    13  0E/0W/0I    ok  (shoulder 0.281 m)
+dog.nala.growing    code-authored     486924    9684    13  0E/0W/0I    ok  (shoulder 0.361 m)
+dog.bruno.puppy     code-authored     487280    9684    13  0E/0W/0I    ok  (shoulder 0.311 m)
+human.mira          code-authored     257236    6704     5  0E/0W/0I    ok  (height 1.716 m)
+human.alex          code-authored     246536    6352     5  0E/0W/0I    ok  (height 1.776 m)
+environment.school  code-authored     129384    4116     0  0E/0W/0I    ok
+props.care          code-authored      81168    3752     0  0E/0W/0I    ok
+props.upgrades      code-authored     103928    4704     0  0E/0W/0I    ok
+
+total model bytes: 2,279,588 (budget 8,388,608)
+
+all asset checks passed

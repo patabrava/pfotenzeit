@@ -1,0 +1,519 @@
+{
+  "tool": "scripts/ingest-vendor.mjs",
+  "generatedUTC": "2026-10-09T19:28:46.419Z",
+  "input": {
+    "path": "art/blender-reference-pass-2026-10-09/candidates/human_alex.glb",
+    "bytes": 1509584,
+    "generator": "glTF-Transform v4.5.1",
+    "extensions": {
+      "allowed": [],
+      "unsupported": [],
+      "unknown": [],
+      "required": []
+    }
+  },
+  "options": {
+    "key": "human.alex",
+    "kind": "human",
+    "name": "human_alex",
+    "maxTexture": 1024,
+    "quantize": false,
+    "clipmap": null
+  },
+  "before": {
+    "bytes": 1509584,
+    "triangles": 15500,
+    "vertices": 17079,
+    "drawCalls": 1,
+    "bounds": {
+      "min": [
+        -0.2849999964237213,
+        0.003988868091255426,
+        -0.09065055102109909
+      ],
+      "max": [
+        0.2849999964237213,
+        1.7562510967254639,
+        0.1550000011920929
+      ],
+      "size": [
+        0.5699999928474426,
+        1.7522622286342084,
+        0.24565055221319199
+      ]
+    },
+    "meshes": [
+      {
+        "name": "human_alex_body",
+        "primitives": [
+          {
+            "semantics": [
+              "POSITION",
+              "NORMAL",
+              "COLOR_0",
+              "JOINTS_0",
+              "WEIGHTS_0",
+              "TANGENT",
+              "TEXCOORD_0"
+            ],
+            "mode": 4,
+            "vertices": 17079,
+            "triangles": 15500,
+            "material": "mat_alex_body",
+            "indexed": true,
+            "indexType": 5123
+          }
+        ]
+      }
+    ],
+    "materials": [
+      {
+        "name": "mat_alex_body",
+        "doubleSided": true,
+        "alphaMode": "OPAQUE",
+        "metallicFactor": 0,
+        "roughnessFactor": 0.7,
+        "textures": {
+          "normal": "human_alex_surface_normal"
+        }
+      }
+    ],
+    "textures": [
+      {
+        "slot": "normal",
+        "material": "mat_alex_body",
+        "name": "human_alex_surface_normal",
+        "mime": "image/png",
+        "width": 512,
+        "height": 512,
+        "bytes": 138260,
+        "decodedBytes": 1394606
+      }
+    ],
+    "decodedTextureBytes": 1394606,
+    "skins": [
+      {
+        "name": "rig_alex",
+        "joints": [
+          "root",
+          "hips",
+          "spine",
+          "chest",
+          "neck",
+          "head",
+          "shoulder_l",
+          "upper_arm_l",
+          "lower_arm_l",
+          "hand_l",
+          "shoulder_r",
+          "upper_arm_r",
+          "lower_arm_r",
+          "hand_r",
+          "upper_leg_l",
+          "lower_leg_l",
+          "foot_l",
+          "upper_leg_r",
+          "lower_leg_r",
+          "foot_r"
+        ],
+        "jointCount": 20,
+        "skeletonRoot": "root"
+      }
+    ],
+    "maxInfluences": 4,
+    "skinWeights": {
+      "vertices": 17079,
+      "unweighted": 0,
+      "maxDeviation": 3.725290298461914e-8
+    },
+    "skeletonRoot": "root",
+    "animations": [
+      {
+        "name": "idle",
+        "durationS": 4,
+        "channels": 11,
+        "closes": true,
+        "maxEndpointDiff": 0,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 11
+      },
+      {
+        "name": "greet",
+        "durationS": 1.5,
+        "channels": 10,
+        "closes": false,
+        "maxEndpointDiff": 0.8908890821039677,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 10
+      },
+      {
+        "name": "gesture_explain",
+        "durationS": 2,
+        "channels": 11,
+        "closes": false,
+        "maxEndpointDiff": 0.5051842704415321,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 11
+      },
+      {
+        "name": "offer_reward",
+        "durationS": 2,
+        "channels": 18,
+        "closes": false,
+        "maxEndpointDiff": 0.7547096014022827,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 17
+      },
+      {
+        "name": "kneel",
+        "durationS": 1.5,
+        "channels": 18,
+        "closes": false,
+        "maxEndpointDiff": 0.6946583986282349,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 17
+      }
+    ],
+    "nodes": 21,
+    "scaleProblems": []
+  },
+  "after": {
+    "bytes": 1509584,
+    "triangles": 15500,
+    "vertices": 17079,
+    "drawCalls": 1,
+    "bounds": {
+      "min": [
+        -0.2849999964237213,
+        0.003988868091255426,
+        -0.09065055102109909
+      ],
+      "max": [
+        0.2849999964237213,
+        1.7562510967254639,
+        0.1550000011920929
+      ],
+      "size": [
+        0.5699999928474426,
+        1.7522622286342084,
+        0.24565055221319199
+      ]
+    },
+    "meshes": [
+      {
+        "name": "human_alex_body",
+        "primitives": [
+          {
+            "semantics": [
+              "POSITION",
+              "NORMAL",
+              "COLOR_0",
+              "JOINTS_0",
+              "WEIGHTS_0",
+              "TANGENT",
+              "TEXCOORD_0"
+            ],
+            "mode": 4,
+            "vertices": 17079,
+            "triangles": 15500,
+            "material": "mat_alex_body",
+            "indexed": true,
+            "indexType": 5123
+          }
+        ]
+      }
+    ],
+    "materials": [
+      {
+        "name": "mat_alex_body",
+        "doubleSided": true,
+        "alphaMode": "OPAQUE",
+        "metallicFactor": 0,
+        "roughnessFactor": 0.7,
+        "textures": {
+          "normal": "human_alex_surface_normal"
+        }
+      }
+    ],
+    "textures": [
+      {
+        "slot": "normal",
+        "material": "mat_alex_body",
+        "name": "human_alex_surface_normal",
+        "mime": "image/png",
+        "width": 512,
+        "height": 512,
+        "bytes": 138260,
+        "decodedBytes": 1394606
+      }
+    ],
+    "decodedTextureBytes": 1394606,
+    "skins": [
+      {
+        "name": "rig_alex",
+        "joints": [
+          "root",
+          "hips",
+          "spine",
+          "chest",
+          "neck",
+          "head",
+          "shoulder_l",
+          "upper_arm_l",
+          "lower_arm_l",
+          "hand_l",
+          "shoulder_r",
+          "upper_arm_r",
+          "lower_arm_r",
+          "hand_r",
+          "upper_leg_l",
+          "lower_leg_l",
+          "foot_l",
+          "upper_leg_r",
+          "lower_leg_r",
+          "foot_r"
+        ],
+        "jointCount": 20,
+        "skeletonRoot": "root"
+      }
+    ],
+    "maxInfluences": 4,
+    "skinWeights": {
+      "vertices": 17079,
+      "unweighted": 0,
+      "maxDeviation": 3.725290298461914e-8
+    },
+    "skeletonRoot": "root",
+    "animations": [
+      {
+        "name": "idle",
+        "durationS": 4,
+        "channels": 11,
+        "closes": true,
+        "maxEndpointDiff": 0,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 11
+      },
+      {
+        "name": "greet",
+        "durationS": 1.5,
+        "channels": 10,
+        "closes": false,
+        "maxEndpointDiff": 0.8908890821039677,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 10
+      },
+      {
+        "name": "gesture_explain",
+        "durationS": 2,
+        "channels": 11,
+        "closes": false,
+        "maxEndpointDiff": 0.5051842704415321,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 11
+      },
+      {
+        "name": "offer_reward",
+        "durationS": 2,
+        "channels": 18,
+        "closes": false,
+        "maxEndpointDiff": 0.7547096014022827,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 17
+      },
+      {
+        "name": "kneel",
+        "durationS": 1.5,
+        "channels": 18,
+        "closes": false,
+        "maxEndpointDiff": 0.6946583986282349,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 17
+      }
+    ],
+    "nodes": 21,
+    "scaleProblems": []
+  },
+  "textureChanges": [
+    {
+      "name": "human_alex_surface_normal",
+      "mime": "image/png",
+      "changed": false,
+      "from": [
+        512,
+        512
+      ],
+      "to": [
+        512,
+        512
+      ],
+      "bytesBefore": 138260,
+      "bytesAfter": 138260,
+      "note": ""
+    }
+  ],
+  "validator": {
+    "errors": 0,
+    "warnings": 0,
+    "infos": 0,
+    "messages": []
+  },
+  "clipMapping": {
+    "clipMap": {
+      "idle": "idle",
+      "greet": "greet",
+      "gesture_explain": "gesture_explain",
+      "offer_reward": "offer_reward",
+      "kneel": "kneel"
+    },
+    "autoMatched": [],
+    "missing": [],
+    "loopDoesNotClose": []
+  },
+  "rig": {
+    "kind": "project",
+    "joints": [
+      "root",
+      "hips",
+      "spine",
+      "chest",
+      "neck",
+      "head",
+      "shoulder_l",
+      "upper_arm_l",
+      "lower_arm_l",
+      "hand_l",
+      "shoulder_r",
+      "upper_arm_r",
+      "lower_arm_r",
+      "hand_r",
+      "upper_leg_l",
+      "lower_leg_l",
+      "foot_l",
+      "upper_leg_r",
+      "lower_leg_r",
+      "foot_r"
+    ],
+    "maxInfluences": 4,
+    "skeletonRoot": "root",
+    "unweightedVertices": 0
+  },
+  "measured": {
+    "shoulderHeightM": null,
+    "heightM": 1.7563,
+    "minY": 0.004
+  },
+  "manifestEntry": {
+    "url": "human_alex.glb",
+    "status": "pending",
+    "productionIntegrated": false,
+    "material": "textured",
+    "textures": [
+      {
+        "slot": "normal",
+        "width": 512,
+        "height": 512,
+        "bytes": 138260,
+        "mime": "image/png"
+      }
+    ],
+    "textureSizes": [
+      512
+    ],
+    "drawCalls": 1,
+    "rig": "project",
+    "rigInfo": {
+      "joints": 20,
+      "maxInfluences": 4,
+      "root": "root"
+    },
+    "clipMap": {
+      "idle": "idle",
+      "greet": "greet",
+      "gesture_explain": "gesture_explain",
+      "offer_reward": "offer_reward",
+      "kneel": "kneel"
+    },
+    "clips": [
+      "idle",
+      "greet",
+      "gesture_explain",
+      "offer_reward",
+      "kneel"
+    ],
+    "sourceClips": [
+      "idle",
+      "greet",
+      "gesture_explain",
+      "offer_reward",
+      "kneel"
+    ],
+    "bytes": 1509584,
+    "triangles": 15500,
+    "boundsMeters": [
+      0.57,
+      1.7523,
+      0.2457
+    ],
+    "measuredHeightM": 1.7563,
+    "source": "art/blender-reference-pass-2026-10-09/candidates/human_alex.glb (Blender reference pass, code-authored candidate)",
+    "license": "project-internal, generated code; no third-party assets",
+    "version": 2,
+    "clipMeta": {
+      "idle": {
+        "durationS": 4,
+        "loop": true
+      },
+      "greet": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "gesture_explain": {
+        "durationS": 2,
+        "loop": false
+      },
+      "offer_reward": {
+        "durationS": 2,
+        "loop": false
+      },
+      "kneel": {
+        "durationS": 1.5,
+        "loop": false
+      }
+    }
+  },
+  "nextSteps": [
+    "run: node scripts/validate-assets.mjs --staging art/staging/blender-reference",
+    "shipping into public/ is a reviewed step of the owning work package (never automatic)"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "dog_nala_puppy": {
+    "triangles": 14696,
+    "vertices": 7548,
+    "bones": 26,
+    "parts_merged": 18,
+    "materials": 1
+  },
+  "dog_nala_growing": {
+    "triangles": 14696,
+    "vertices": 7548,
+    "bones": 26,
+    "parts_merged": 18,
+    "materials": 1
+  },
+  "dog_bruno_puppy": {
+    "triangles": 14696,
+    "vertices": 7548,
+    "bones": 26,
+    "parts_merged": 18,
+    "materials": 1
+  },
+  "human_mira": {
+    "triangles": 15480,
+    "vertices": 7930,
+    "bones": 20,
+    "parts_merged": 68,
+    "materials": 1
+  },
+  "human_alex": {
+    "triangles": 13580,
+    "vertices": 6900,
+    "bones": 20,
+    "parts_merged": 34,
+    "materials": 1
+  }
+}

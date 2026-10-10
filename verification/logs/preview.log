@@ -1,0 +1,7 @@
+
+> pfotenzeit@0.1.0 preview
+> vite preview --host --port 4173 --strictPort
+
+  ➜  Local:   http://localhost:4173/
+  ➜  Network: http://192.168.0.239:4173/   en0
+  ➜  Network: http://192.168.112.63:4173/  utun4

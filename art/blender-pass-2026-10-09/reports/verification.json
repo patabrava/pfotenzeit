@@ -1,0 +1,3413 @@
+{
+  "contracts": {
+    "dog_nala_puppy": {
+      "animationTracksComparedExactly": 239,
+      "inverseBindMatricesIdentical": true,
+      "jointNamesOrderAndRestTransformsIdentical": true,
+      "normalizedSkinWeights": true,
+      "unitNormals": true
+    },
+    "dog_nala_growing": {
+      "animationTracksComparedExactly": 239,
+      "inverseBindMatricesIdentical": true,
+      "jointNamesOrderAndRestTransformsIdentical": true,
+      "normalizedSkinWeights": true,
+      "unitNormals": true
+    },
+    "dog_bruno_puppy": {
+      "animationTracksComparedExactly": 239,
+      "inverseBindMatricesIdentical": true,
+      "jointNamesOrderAndRestTransformsIdentical": true,
+      "normalizedSkinWeights": true,
+      "unitNormals": true
+    },
+    "human_mira": {
+      "animationTracksComparedExactly": 68,
+      "inverseBindMatricesIdentical": true,
+      "jointNamesOrderAndRestTransformsIdentical": true,
+      "normalizedSkinWeights": true,
+      "unitNormals": true
+    },
+    "human_alex": {
+      "animationTracksComparedExactly": 68,
+      "inverseBindMatricesIdentical": true,
+      "jointNamesOrderAndRestTransformsIdentical": true,
+      "normalizedSkinWeights": true,
+      "unitNormals": true
+    }
+  },
+  "browser": {
+    "dog_nala_puppy": {
+      "asset": "dog_nala_puppy",
+      "clips": [
+        {
+          "name": "idle_relaxed",
+          "duration": 4
+        },
+        {
+          "name": "look_at_handler",
+          "duration": 1.5
+        },
+        {
+          "name": "sniff",
+          "duration": 2.5
+        },
+        {
+          "name": "walk",
+          "duration": 1
+        },
+        {
+          "name": "sit",
+          "duration": 1.5
+        },
+        {
+          "name": "lie_down",
+          "duration": 1.5
+        },
+        {
+          "name": "rest_loop",
+          "duration": 5
+        },
+        {
+          "name": "eat",
+          "duration": 4
+        },
+        {
+          "name": "play_bow",
+          "duration": 1.5
+        },
+        {
+          "name": "turn_away",
+          "duration": 1.5
+        },
+        {
+          "name": "tense_idle",
+          "duration": 2.5
+        },
+        {
+          "name": "tired_idle",
+          "duration": 3.5
+        },
+        {
+          "name": "recover",
+          "duration": 2
+        }
+      ],
+      "bones": [
+        "root",
+        "pelvis",
+        "spine_01",
+        "spine_02",
+        "neck",
+        "head",
+        "jaw",
+        "ear_l_01",
+        "ear_l_02",
+        "ear_r_01",
+        "ear_r_02",
+        "tail_01",
+        "tail_02",
+        "tail_03",
+        "leg_fl_upper",
+        "leg_fl_lower",
+        "paw_fl",
+        "leg_fr_upper",
+        "leg_fr_lower",
+        "paw_fr",
+        "leg_bl_upper",
+        "leg_bl_lower",
+        "paw_bl",
+        "leg_br_upper",
+        "leg_br_lower",
+        "paw_br"
+      ],
+      "samples": [
+        {
+          "clip": "idle_relaxed",
+          "fraction": 0,
+          "checked": 1079,
+          "bounds": [
+            0.19083418542791034,
+            0.39636176297099773,
+            0.7166985537926187
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "idle_relaxed",
+          "fraction": 0.25,
+          "checked": 1079,
+          "bounds": [
+            0.19083418542791034,
+            0.39623007599191945,
+            0.717269884114802
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "idle_relaxed",
+          "fraction": 0.5,
+          "checked": 1079,
+          "bounds": [
+            0.19083418542791034,
+            0.396363242850319,
+            0.717478444549305
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "idle_relaxed",
+          "fraction": 0.75,
+          "checked": 1079,
+          "bounds": [
+            0.19083418542791034,
+            0.39676884410684465,
+            0.7183490092232067
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "idle_relaxed",
+          "fraction": 1,
+          "checked": 1079,
+          "bounds": [
+            0.19083418542791034,
+            0.39636176297099773,
+            0.716698553801532
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "look_at_handler",
+          "fraction": 0,
+          "checked": 1079,
+          "bounds": [
+            0.19083418542791034,
+            0.39636176297099773,
+            0.7200107552409201
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "look_at_handler",
+          "fraction": 0.25,
+          "checked": 1079,
+          "bounds": [
+            0.21649849123008114,
+            0.4047608784641506,
+            0.6632493190737244
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "look_at_handler",
+          "fraction": 0.5,
+          "checked": 1079,
+          "bounds": [
+            0.23061782863920355,
+            0.4064294429091227,
+            0.6427372393537916
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "look_at_handler",
+          "fraction": 0.75,
+          "checked": 1079,
+          "bounds": [
+            0.2307921212152959,
+            0.40598403645840203,
+            0.6447597727253485
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "look_at_handler",
+          "fraction": 1,
+          "checked": 1079,
+          "bounds": [
+            0.2308892884994882,
+            0.4061536922119595,
+            0.6446326536049787
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "sniff",
+          "fraction": 0,
+          "checked": 1079,
+          "bounds": [
+            0.19083418542791034,
+            0.2796983663131888,
+            0.7357977733623805
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "sniff",
+          "fraction": 0.25,
+          "checked": 1079,
+          "bounds": [
+            0.21699323556126449,
+            0.2796983663131888,
+            0.7352856457377788
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "sniff",
+          "fraction": 0.5,
+          "checked": 1079,
+          "bounds": [
+            0.19083418542791034,
+            0.2796983663131888,
+            0.7352742741972116
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "sniff",
+          "fraction": 0.75,
+          "checked": 1079,
+          "bounds": [
+            0.2166274700845927,
+            0.2796983663131888,
+            0.7382795295079636
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "sniff",
+          "fraction": 1,
+          "checked": 1079,
+          "bounds": [
+            0.19083418542791034,
+            0.2796983663131888,
+            0.7357977719430484
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "walk",
+          "fraction": 0,
+          "checked": 1079,
+          "bounds": [
+            0.1921870160394793,
+            0.40542835557908585,
+            0.6971605030115589
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "walk",
+          "fraction": 0.25,
+          "checked": 1079,
+          "bounds": [
+            0.19183481519842221,
+            0.4002677388444572,
+            0.6828314568844622
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "walk",
+          "fraction": 0.5,
+          "checked": 1079,
+          "bounds": [
+            0.19258942584237343,
+            0.40443768541267633,
+            0.6986934452484501
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "walk",
+          "fraction": 0.75,
+          "checked": 1079,
+          "bounds": [
+            0.1908928417018467,
+            0.40094852220645105,
+            0.6818903964531933
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "walk",
+          "fraction": 1,
+          "checked": 1079,
+          "bounds": [
+            0.19218701559976792,
+            0.40542835587518034,
+            0.6971605025884003
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "sit",
+          "fraction": 0,
+          "checked": 1079,
+          "bounds": [
+            0.19083418542791034,
+            0.39636176297099773,
+            0.7194045542566552
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "sit",
+          "fraction": 0.25,
+          "checked": 1079,
+          "bounds": [
+            0.1922447046156771,
+            0.4207364576868283,
+            0.6809419912405572
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "sit",
+          "fraction": 0.5,
+          "checked": 1079,
+          "bounds": [
+            0.1931964416134313,
+            0.4311649859961781,
+            0.6324280329104638
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "sit",
+          "fraction": 0.75,
+          "checked": 1079,
+          "bounds": [
+            0.19452187099689056,
+            0.4252389718391541,
+            0.5621295765014166
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "sit",
+          "fraction": 1,
+          "checked": 1079,
+          "bounds": [
+            0.19499898386770712,
+            0.42563119591922005,
+            0.5609816366260549
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "lie_down",
+          "fraction": 0,
+          "checked": 1079,
+          "bounds": [
+            0.19083418542791034,
+            0.39636176297099773,
+            0.7200107552409201
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "lie_down",
+          "fraction": 0.25,
+          "checked": 1079,
+          "bounds": [
+            0.19288315317497523,
+            0.4266599244572438,
+            0.6633993594312042
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "lie_down",
+          "fraction": 0.5,
+          "checked": 1079,
+          "bounds": [
+            0.19352551708990398,
+            0.41894193580433675,
+            0.6350444479491812
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "lie_down",
+          "fraction": 0.75,
+          "checked": 1079,
+          "bounds": [
+            0.2233754270136202,
+            0.2868845728643284,
+            0.6831711844845099
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "lie_down",
+          "fraction": 1,
+          "checked": 1079,
+          "bounds": [
+            0.22574126797572752,
+            0.2774893018256948,
+            0.6830227984247257
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "rest_loop",
+          "fraction": 0,
+          "checked": 1079,
+          "bounds": [
+            0.22574126801721867,
+            0.20383274919213507,
+            0.6707787342965587
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "rest_loop",
+          "fraction": 0.25,
+          "checked": 1079,
+          "bounds": [
+            0.2270389469925051,
+            0.20381344855455805,
+            0.6679156871565941
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "rest_loop",
+          "fraction": 0.5,
+          "checked": 1079,
+          "bounds": [
+            0.22574126767085045,
+            0.20383154067522097,
+            0.6707761277672407
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "rest_loop",
+          "fraction": 0.75,
+          "checked": 1079,
+          "bounds": [
+            0.22417096757687177,
+            0.20378606132699523,
+            0.6735615879393253
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "rest_loop",
+          "fraction": 1,
+          "checked": 1079,
+          "bounds": [
+            0.22574126797572752,
+            0.20383274514414465,
+            0.6707787385427493
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "eat",
+          "fraction": 0,
+          "checked": 1079,
+          "bounds": [
+            0.19083418542791034,
+            0.39636176297099773,
+            0.7188112494259675
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "eat",
+          "fraction": 0.25,
+          "checked": 1079,
+          "bounds": [
+            0.19083418542791034,
+            0.2895631809279019,
+            0.740827511785594
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "eat",
+          "fraction": 0.5,
+          "checked": 1079,
+          "bounds": [
+            0.19083418542791034,
+            0.2876819671099536,
+            0.7400861210490564
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "eat",
+          "fraction": 0.75,
+          "checked": 1079,
+          "bounds": [
+            0.19083418542791034,
+            0.2895579324054151,
+            0.7408274837817722
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "eat",
+          "fraction": 1,
+          "checked": 1079,
+          "bounds": [
+            0.19083418542791034,
+            0.39008964870913626,
+            0.7275889318997
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "play_bow",
+          "fraction": 0,
+          "checked": 1079,
+          "bounds": [
+            0.19083418542791034,
+            0.39636176297099773,
+            0.7178355064050072
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "play_bow",
+          "fraction": 0.25,
+          "checked": 1079,
+          "bounds": [
+            0.19083418542791034,
+            0.41168022487723577,
+            0.4883421777609905
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "play_bow",
+          "fraction": 0.5,
+          "checked": 1079,
+          "bounds": [
+            0.19083418542791034,
+            0.42431427303873864,
+            0.4943248635522117
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "play_bow",
+          "fraction": 0.75,
+          "checked": 1079,
+          "bounds": [
+            0.19083418542791034,
+            0.41008206005444553,
+            0.49344173658741264
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "play_bow",
+          "fraction": 1,
+          "checked": 1079,
+          "bounds": [
+            0.19083418542791034,
+            0.4228897878092805,
+            0.49446425829300156
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "turn_away",
+          "fraction": 0,
+          "checked": 1079,
+          "bounds": [
+            0.19083418542791034,
+            0.39636176297099773,
+            0.7200107552409201
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "turn_away",
+          "fraction": 0.25,
+          "checked": 1079,
+          "bounds": [
+            0.2743511433758252,
+            0.39034305958203364,
+            0.700355682360644
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "turn_away",
+          "fraction": 0.5,
+          "checked": 1079,
+          "bounds": [
+            0.6471884396235454,
+            0.3704910484253449,
+            0.3626219182426386
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "turn_away",
+          "fraction": 0.75,
+          "checked": 1079,
+          "bounds": [
+            0.6839262461535378,
+            0.3584373627709646,
+            0.23764886554816345
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "turn_away",
+          "fraction": 1,
+          "checked": 1079,
+          "bounds": [
+            0.6840992398419599,
+            0.35798395029763436,
+            0.23777977643381773
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "tense_idle",
+          "fraction": 0,
+          "checked": 1079,
+          "bounds": [
+            0.21325999802652396,
+            0.37673548750246816,
+            0.6687781117940669
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "tense_idle",
+          "fraction": 0.25,
+          "checked": 1079,
+          "bounds": [
+            0.213364483106259,
+            0.3767583493421352,
+            0.6683858899662689
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "tense_idle",
+          "fraction": 0.5,
+          "checked": 1079,
+          "bounds": [
+            0.21326027485893867,
+            0.3767610216488849,
+            0.6687525542634971
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "tense_idle",
+          "fraction": 0.75,
+          "checked": 1079,
+          "bounds": [
+            0.21300935555050138,
+            0.3766620859171267,
+            0.6691318159838083
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "tense_idle",
+          "fraction": 1,
+          "checked": 1079,
+          "bounds": [
+            0.21325999829117748,
+            0.37673548767976045,
+            0.6687781110557567
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "tired_idle",
+          "fraction": 0,
+          "checked": 1079,
+          "bounds": [
+            0.19083418542791034,
+            0.3308756337706768,
+            0.7326034627026734
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "tired_idle",
+          "fraction": 0.25,
+          "checked": 1079,
+          "bounds": [
+            0.19083418542791034,
+            0.31318469334283755,
+            0.7212447058585136
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "tired_idle",
+          "fraction": 0.5,
+          "checked": 1079,
+          "bounds": [
+            0.19083418542791034,
+            0.3304720679039608,
+            0.7326974483212896
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "tired_idle",
+          "fraction": 0.75,
+          "checked": 1079,
+          "bounds": [
+            0.19083418542791034,
+            0.3312194119410946,
+            0.7322492006546458
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "tired_idle",
+          "fraction": 1,
+          "checked": 1079,
+          "bounds": [
+            0.19083418542791034,
+            0.3308756334115012,
+            0.7326034628021492
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "recover",
+          "fraction": 0,
+          "checked": 1079,
+          "bounds": [
+            0.21325999706078605,
+            0.37673548723893663,
+            0.6687781075447952
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "recover",
+          "fraction": 0.25,
+          "checked": 1079,
+          "bounds": [
+            0.20218356834982606,
+            0.3847539945747675,
+            0.7089030910146451
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "recover",
+          "fraction": 0.5,
+          "checked": 1079,
+          "bounds": [
+            0.1936163655207652,
+            0.3898131543301007,
+            0.724370772256757
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "recover",
+          "fraction": 0.75,
+          "checked": 1079,
+          "bounds": [
+            0.19083418542791034,
+            0.402758579801857,
+            0.6910866146575445
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "recover",
+          "fraction": 1,
+          "checked": 1079,
+          "bounds": [
+            0.19083418542791034,
+            0.39636176297099773,
+            0.7200107552409201
+          ],
+          "calls": 1,
+          "triangles": 14696
+        }
+      ],
+      "drawCalls": 1,
+      "triangles": 14696,
+      "restBounds": {
+        "min": [
+          -0.09607479646205903,
+          0.00024852151088416985,
+          -0.39656793373823457
+        ],
+        "max": [
+          0.09607307823266371,
+          0.3977332061871279,
+          0.3311740803718567
+        ]
+      }
+    },
+    "dog_nala_growing": {
+      "asset": "dog_nala_growing",
+      "clips": [
+        {
+          "name": "idle_relaxed",
+          "duration": 4
+        },
+        {
+          "name": "look_at_handler",
+          "duration": 1.5
+        },
+        {
+          "name": "sniff",
+          "duration": 2.5
+        },
+        {
+          "name": "walk",
+          "duration": 1
+        },
+        {
+          "name": "sit",
+          "duration": 1.5
+        },
+        {
+          "name": "lie_down",
+          "duration": 1.5
+        },
+        {
+          "name": "rest_loop",
+          "duration": 5
+        },
+        {
+          "name": "eat",
+          "duration": 4
+        },
+        {
+          "name": "play_bow",
+          "duration": 1.5
+        },
+        {
+          "name": "turn_away",
+          "duration": 1.5
+        },
+        {
+          "name": "tense_idle",
+          "duration": 2.5
+        },
+        {
+          "name": "tired_idle",
+          "duration": 3.5
+        },
+        {
+          "name": "recover",
+          "duration": 2
+        }
+      ],
+      "bones": [
+        "root",
+        "pelvis",
+        "spine_01",
+        "spine_02",
+        "neck",
+        "head",
+        "jaw",
+        "ear_l_01",
+        "ear_l_02",
+        "ear_r_01",
+        "ear_r_02",
+        "tail_01",
+        "tail_02",
+        "tail_03",
+        "leg_fl_upper",
+        "leg_fl_lower",
+        "paw_fl",
+        "leg_fr_upper",
+        "leg_fr_lower",
+        "paw_fr",
+        "leg_bl_upper",
+        "leg_bl_lower",
+        "paw_bl",
+        "leg_br_upper",
+        "leg_br_lower",
+        "paw_br"
+      ],
+      "samples": [
+        {
+          "clip": "idle_relaxed",
+          "fraction": 0,
+          "checked": 1079,
+          "bounds": [
+            0.19591350657343867,
+            0.4833374918273005,
+            0.8351318994626309
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "idle_relaxed",
+          "fraction": 0.25,
+          "checked": 1079,
+          "bounds": [
+            0.19591350657343867,
+            0.48400718667815046,
+            0.8341207286920728
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "idle_relaxed",
+          "fraction": 0.5,
+          "checked": 1079,
+          "bounds": [
+            0.19591350657343867,
+            0.4833403650424222,
+            0.8358486545073631
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "idle_relaxed",
+          "fraction": 0.75,
+          "checked": 1079,
+          "bounds": [
+            0.19591350657343867,
+            0.48318739097801916,
+            0.8351135816194515
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "idle_relaxed",
+          "fraction": 1,
+          "checked": 1079,
+          "bounds": [
+            0.19591350657343867,
+            0.4833374918273005,
+            0.8351318994521857
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "look_at_handler",
+          "fraction": 0,
+          "checked": 1079,
+          "bounds": [
+            0.19591350657343867,
+            0.4833374918273005,
+            0.8384819763153828
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "look_at_handler",
+          "fraction": 0.25,
+          "checked": 1079,
+          "bounds": [
+            0.22108637805777986,
+            0.4940984870629356,
+            0.7709173611791706
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "look_at_handler",
+          "fraction": 0.5,
+          "checked": 1079,
+          "bounds": [
+            0.24176636793601858,
+            0.4948273090062654,
+            0.7484508201925079
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "look_at_handler",
+          "fraction": 0.75,
+          "checked": 1079,
+          "bounds": [
+            0.24198820633617807,
+            0.4943099488044781,
+            0.7490955186535726
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "look_at_handler",
+          "fraction": 1,
+          "checked": 1079,
+          "bounds": [
+            0.24211312698824894,
+            0.49400220031200887,
+            0.7508669042383048
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "sniff",
+          "fraction": 0,
+          "checked": 1079,
+          "bounds": [
+            0.19591350657343867,
+            0.37034322966109146,
+            0.8592163956073819
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "sniff",
+          "fraction": 0.25,
+          "checked": 1079,
+          "bounds": [
+            0.21814425793636755,
+            0.37034322966109146,
+            0.8601486979486579
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "sniff",
+          "fraction": 0.5,
+          "checked": 1079,
+          "bounds": [
+            0.19591350657343867,
+            0.37034322966109146,
+            0.859035405501366
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "sniff",
+          "fraction": 0.75,
+          "checked": 1079,
+          "bounds": [
+            0.2164049299390036,
+            0.37034322966109146,
+            0.8611837775115234
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "sniff",
+          "fraction": 1,
+          "checked": 1079,
+          "bounds": [
+            0.19591350657343867,
+            0.37034322966109146,
+            0.8592163943972231
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "walk",
+          "fraction": 0,
+          "checked": 1079,
+          "bounds": [
+            0.1958464070187077,
+            0.49412547371031074,
+            0.8112506763552028
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "walk",
+          "fraction": 0.25,
+          "checked": 1079,
+          "bounds": [
+            0.19536569741237214,
+            0.48418073906971276,
+            0.79004946085271
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "walk",
+          "fraction": 0.5,
+          "checked": 1079,
+          "bounds": [
+            0.1958463368200723,
+            0.492643517060577,
+            0.8105049961409214
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "walk",
+          "fraction": 0.75,
+          "checked": 1079,
+          "bounds": [
+            0.19522098324061787,
+            0.4842638698706501,
+            0.7930087841428487
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "walk",
+          "fraction": 1,
+          "checked": 1079,
+          "bounds": [
+            0.19584640701595032,
+            0.4941254741065037,
+            0.8112506759212299
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "sit",
+          "fraction": 0,
+          "checked": 1079,
+          "bounds": [
+            0.19591350657343867,
+            0.4833374918273005,
+            0.8382405808230985
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "sit",
+          "fraction": 0.25,
+          "checked": 1079,
+          "bounds": [
+            0.19907659155392973,
+            0.5166277390200132,
+            0.7906594317730355
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "sit",
+          "fraction": 0.5,
+          "checked": 1079,
+          "bounds": [
+            0.20264430345914183,
+            0.5253362637496083,
+            0.7336758821062757
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "sit",
+          "fraction": 0.75,
+          "checked": 1079,
+          "bounds": [
+            0.22492589684187653,
+            0.512133644056958,
+            0.6498585439186164
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "sit",
+          "fraction": 1,
+          "checked": 1079,
+          "bounds": [
+            0.22802840668030777,
+            0.5123328743309987,
+            0.6483036763458546
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "lie_down",
+          "fraction": 0,
+          "checked": 1079,
+          "bounds": [
+            0.19591350657343867,
+            0.4833374918273005,
+            0.8384819763153828
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "lie_down",
+          "fraction": 0.25,
+          "checked": 1079,
+          "bounds": [
+            0.20079282141372257,
+            0.5227907062831482,
+            0.7701870671608786
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "lie_down",
+          "fraction": 0.5,
+          "checked": 1079,
+          "bounds": [
+            0.20493945795329935,
+            0.508111356687799,
+            0.7370793305613947
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "lie_down",
+          "fraction": 0.75,
+          "checked": 1079,
+          "bounds": [
+            0.2625769109947433,
+            0.3134315964903619,
+            0.7929096743960407
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "lie_down",
+          "fraction": 1,
+          "checked": 1079,
+          "bounds": [
+            0.26600735457139846,
+            0.2995107218134358,
+            0.7927458682237098
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "rest_loop",
+          "fraction": 0,
+          "checked": 1079,
+          "bounds": [
+            0.26600735461763225,
+            0.2231713286892698,
+            0.7765421930565801
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "rest_loop",
+          "fraction": 0.25,
+          "checked": 1079,
+          "bounds": [
+            0.26729746992484094,
+            0.22317908524985397,
+            0.7728705576435186
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "rest_loop",
+          "fraction": 0.5,
+          "checked": 1079,
+          "bounds": [
+            0.2660073542643918,
+            0.22316357003274273,
+            0.7765386870538106
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "rest_loop",
+          "fraction": 0.75,
+          "checked": 1079,
+          "bounds": [
+            0.26437258765893723,
+            0.22317908524985397,
+            0.7801328568872231
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "rest_loop",
+          "fraction": 1,
+          "checked": 1079,
+          "bounds": [
+            0.26600735457139846,
+            0.2231713286892698,
+            0.7765421982700924
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "eat",
+          "fraction": 0,
+          "checked": 1079,
+          "bounds": [
+            0.19591350657343867,
+            0.4833374918273005,
+            0.8377584004637815
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "eat",
+          "fraction": 0.25,
+          "checked": 1079,
+          "bounds": [
+            0.19591350657343867,
+            0.3649406403234096,
+            0.8492385171760961
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "eat",
+          "fraction": 0.5,
+          "checked": 1079,
+          "bounds": [
+            0.19591350657343867,
+            0.3649144534282742,
+            0.8482674890712893
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "eat",
+          "fraction": 0.75,
+          "checked": 1079,
+          "bounds": [
+            0.19591350657343867,
+            0.3649373869934386,
+            0.8492259034625892
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "eat",
+          "fraction": 1,
+          "checked": 1079,
+          "bounds": [
+            0.19591350657343867,
+            0.471933338100137,
+            0.8521621234969814
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "play_bow",
+          "fraction": 0,
+          "checked": 1079,
+          "bounds": [
+            0.19591350657343867,
+            0.4833374918273005,
+            0.8364196966222335
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "play_bow",
+          "fraction": 0.25,
+          "checked": 1079,
+          "bounds": [
+            0.19591350657343867,
+            0.5249917157958851,
+            0.5672167148505979
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "play_bow",
+          "fraction": 0.5,
+          "checked": 1079,
+          "bounds": [
+            0.19591350657343867,
+            0.53879266785408,
+            0.5708057398762356
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "play_bow",
+          "fraction": 0.75,
+          "checked": 1079,
+          "bounds": [
+            0.19657430159591893,
+            0.5211513150199505,
+            0.5689787717964169
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "play_bow",
+          "fraction": 1,
+          "checked": 1079,
+          "bounds": [
+            0.19591350657343867,
+            0.5405292560858703,
+            0.5708668141097704
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "turn_away",
+          "fraction": 0,
+          "checked": 1079,
+          "bounds": [
+            0.19591350657343867,
+            0.4833374918273005,
+            0.8384819763153828
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "turn_away",
+          "fraction": 0.25,
+          "checked": 1079,
+          "bounds": [
+            0.28926701145494405,
+            0.4757495928901873,
+            0.8172611680104515
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "turn_away",
+          "fraction": 0.5,
+          "checked": 1079,
+          "bounds": [
+            0.7533389833971538,
+            0.4530550920219261,
+            0.415973560461961
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "turn_away",
+          "fraction": 0.75,
+          "checked": 1079,
+          "bounds": [
+            0.7973462207632046,
+            0.4407143066297968,
+            0.25524865901955696
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "turn_away",
+          "fraction": 1,
+          "checked": 1079,
+          "bounds": [
+            0.7975760834983817,
+            0.4384717470179493,
+            0.2551495359356444
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "tense_idle",
+          "fraction": 0,
+          "checked": 1079,
+          "bounds": [
+            0.20481184394825094,
+            0.4581634475168764,
+            0.7775435366838046
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "tense_idle",
+          "fraction": 0.25,
+          "checked": 1079,
+          "bounds": [
+            0.2049216836415257,
+            0.458064871551687,
+            0.7771856588554484
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "tense_idle",
+          "fraction": 0.5,
+          "checked": 1079,
+          "bounds": [
+            0.20481212688435094,
+            0.4581991034063975,
+            0.7775130325443236
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "tense_idle",
+          "fraction": 0.75,
+          "checked": 1079,
+          "bounds": [
+            0.2045616368207361,
+            0.4581912729299604,
+            0.7778719107831178
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "tense_idle",
+          "fraction": 1,
+          "checked": 1079,
+          "bounds": [
+            0.20481184422704188,
+            0.45816344769684125,
+            0.7775435357929237
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "tired_idle",
+          "fraction": 0,
+          "checked": 1079,
+          "bounds": [
+            0.19591350657343867,
+            0.40599051291394816,
+            0.8598794852488396
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "tired_idle",
+          "fraction": 0.25,
+          "checked": 1079,
+          "bounds": [
+            0.19591350657343867,
+            0.3879382752969224,
+            0.8412330586918004
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "tired_idle",
+          "fraction": 0.5,
+          "checked": 1079,
+          "bounds": [
+            0.19591350657343867,
+            0.4081965423726653,
+            0.8599641924898103
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "tired_idle",
+          "fraction": 0.75,
+          "checked": 1079,
+          "bounds": [
+            0.19591350657343867,
+            0.40716887320163003,
+            0.8597442849644398
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "tired_idle",
+          "fraction": 1,
+          "checked": 1079,
+          "bounds": [
+            0.19591350657343867,
+            0.40599051245842216,
+            0.859879485362863
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "recover",
+          "fraction": 0,
+          "checked": 1079,
+          "bounds": [
+            0.20481184293718827,
+            0.45816344736662473,
+            0.7775435314489441
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "recover",
+          "fraction": 0.25,
+          "checked": 1079,
+          "bounds": [
+            0.19591350657343867,
+            0.4683853029828796,
+            0.8277503684105809
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "recover",
+          "fraction": 0.5,
+          "checked": 1079,
+          "bounds": [
+            0.19591350657343867,
+            0.47472912911384346,
+            0.8469307919562492
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "recover",
+          "fraction": 0.75,
+          "checked": 1079,
+          "bounds": [
+            0.19591350657343867,
+            0.49283820414607166,
+            0.8015506223888988
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "recover",
+          "fraction": 1,
+          "checked": 1079,
+          "bounds": [
+            0.19591350657343867,
+            0.4833374918273005,
+            0.8384819763153828
+          ],
+          "calls": 1,
+          "triangles": 14696
+        }
+      ],
+      "drawCalls": 1,
+      "triangles": 14696,
+      "restBounds": {
+        "min": [
+          -0.09795676073729993,
+          0.00037149589112960013,
+          -0.47834279172122846
+        ],
+        "max": [
+          0.09795674583613874,
+          0.48500565696319636,
+          0.3674001330137253
+        ]
+      }
+    },
+    "dog_bruno_puppy": {
+      "asset": "dog_bruno_puppy",
+      "clips": [
+        {
+          "name": "idle_relaxed",
+          "duration": 4
+        },
+        {
+          "name": "look_at_handler",
+          "duration": 1.5
+        },
+        {
+          "name": "sniff",
+          "duration": 2.5
+        },
+        {
+          "name": "walk",
+          "duration": 1
+        },
+        {
+          "name": "sit",
+          "duration": 1.5
+        },
+        {
+          "name": "lie_down",
+          "duration": 1.5
+        },
+        {
+          "name": "rest_loop",
+          "duration": 5
+        },
+        {
+          "name": "eat",
+          "duration": 4
+        },
+        {
+          "name": "play_bow",
+          "duration": 1.5
+        },
+        {
+          "name": "turn_away",
+          "duration": 1.5
+        },
+        {
+          "name": "tense_idle",
+          "duration": 2.5
+        },
+        {
+          "name": "tired_idle",
+          "duration": 3.5
+        },
+        {
+          "name": "recover",
+          "duration": 2
+        }
+      ],
+      "bones": [
+        "root",
+        "pelvis",
+        "spine_01",
+        "spine_02",
+        "neck",
+        "head",
+        "jaw",
+        "ear_l_01",
+        "ear_l_02",
+        "ear_r_01",
+        "ear_r_02",
+        "tail_01",
+        "tail_02",
+        "tail_03",
+        "leg_fl_upper",
+        "leg_fl_lower",
+        "paw_fl",
+        "leg_fr_upper",
+        "leg_fr_lower",
+        "paw_fr",
+        "leg_bl_upper",
+        "leg_bl_lower",
+        "paw_bl",
+        "leg_br_upper",
+        "leg_br_lower",
+        "paw_br"
+      ],
+      "samples": [
+        {
+          "clip": "idle_relaxed",
+          "fraction": 0,
+          "checked": 1079,
+          "bounds": [
+            0.2403958863306286,
+            0.4230520153010367,
+            0.7437937171262654
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "idle_relaxed",
+          "fraction": 0.25,
+          "checked": 1079,
+          "bounds": [
+            0.23775915870226078,
+            0.4243497352585037,
+            0.7436257230192387
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "idle_relaxed",
+          "fraction": 0.5,
+          "checked": 1079,
+          "bounds": [
+            0.2326822792569625,
+            0.4232472686625606,
+            0.7446171364731382
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "idle_relaxed",
+          "fraction": 0.75,
+          "checked": 1079,
+          "bounds": [
+            0.23524794702177054,
+            0.42464137877531377,
+            0.7447647193288844
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "idle_relaxed",
+          "fraction": 1,
+          "checked": 1079,
+          "bounds": [
+            0.24039588647943338,
+            0.42305201529570885,
+            0.7437937171084519
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "look_at_handler",
+          "fraction": 0,
+          "checked": 1079,
+          "bounds": [
+            0.23660798746668088,
+            0.42315168045659046,
+            0.7467400510563964
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "look_at_handler",
+          "fraction": 0.25,
+          "checked": 1079,
+          "bounds": [
+            0.25395979183158846,
+            0.4362960970227514,
+            0.6941818287436681
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "look_at_handler",
+          "fraction": 0.5,
+          "checked": 1079,
+          "bounds": [
+            0.2567898288640391,
+            0.4382071221884666,
+            0.6758728459376977
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "look_at_handler",
+          "fraction": 0.75,
+          "checked": 1079,
+          "bounds": [
+            0.2569219992709004,
+            0.43782429968783754,
+            0.675971710876315
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "look_at_handler",
+          "fraction": 1,
+          "checked": 1079,
+          "bounds": [
+            0.25699861200241203,
+            0.43759110230421266,
+            0.6777211935203222
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "sniff",
+          "fraction": 0,
+          "checked": 1079,
+          "bounds": [
+            0.21792557421969388,
+            0.31390280267903714,
+            0.7747875570319427
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "sniff",
+          "fraction": 0.25,
+          "checked": 1079,
+          "bounds": [
+            0.2527205655011787,
+            0.31390280267903714,
+            0.7795834678250118
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "sniff",
+          "fraction": 0.5,
+          "checked": 1079,
+          "bounds": [
+            0.21867851454463344,
+            0.31390280267903714,
+            0.7744386987283491
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "sniff",
+          "fraction": 0.75,
+          "checked": 1079,
+          "bounds": [
+            0.24994831015437868,
+            0.31390280267903714,
+            0.7801152741191484
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "sniff",
+          "fraction": 1,
+          "checked": 1079,
+          "bounds": [
+            0.2179255740416039,
+            0.31390280267903714,
+            0.7747875556520414
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "walk",
+          "fraction": 0,
+          "checked": 1079,
+          "bounds": [
+            0.2456826376979183,
+            0.4293752897022868,
+            0.7244449175192783
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "walk",
+          "fraction": 0.25,
+          "checked": 1079,
+          "bounds": [
+            0.23423106867065846,
+            0.42311931956217386,
+            0.7089026719992566
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "walk",
+          "fraction": 0.5,
+          "checked": 1079,
+          "bounds": [
+            0.24529725423185328,
+            0.4299749935696599,
+            0.724952537899973
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "walk",
+          "fraction": 0.75,
+          "checked": 1079,
+          "bounds": [
+            0.2345323102269804,
+            0.42633642885857725,
+            0.7101073967877234
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "walk",
+          "fraction": 1,
+          "checked": 1079,
+          "bounds": [
+            0.2456826374008557,
+            0.429375289939351,
+            0.7244449171815179
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "sit",
+          "fraction": 0,
+          "checked": 1079,
+          "bounds": [
+            0.23660798746668088,
+            0.4231516804565906,
+            0.7465505941779946
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "sit",
+          "fraction": 0.25,
+          "checked": 1079,
+          "bounds": [
+            0.23660798746668088,
+            0.4496426556115727,
+            0.7086195071820084
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "sit",
+          "fraction": 0.5,
+          "checked": 1079,
+          "bounds": [
+            0.23660798746668088,
+            0.45866003878043154,
+            0.6609066151092802
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "sit",
+          "fraction": 0.75,
+          "checked": 1079,
+          "bounds": [
+            0.23660798746668088,
+            0.44777073181306964,
+            0.5887706848453185
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "sit",
+          "fraction": 1,
+          "checked": 1079,
+          "bounds": [
+            0.23660798746668088,
+            0.448207249921845,
+            0.5873992838660748
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "lie_down",
+          "fraction": 0,
+          "checked": 1079,
+          "bounds": [
+            0.23660798746668088,
+            0.4231516804565906,
+            0.7467400510563965
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "lie_down",
+          "fraction": 0.25,
+          "checked": 1079,
+          "bounds": [
+            0.23660714392832954,
+            0.4557386017700788,
+            0.6913869907457233
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "lie_down",
+          "fraction": 0.5,
+          "checked": 1079,
+          "bounds": [
+            0.23638714563337443,
+            0.44527319253241004,
+            0.6629685500280746
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "lie_down",
+          "fraction": 0.75,
+          "checked": 1079,
+          "bounds": [
+            0.2462330199106023,
+            0.30426289323886097,
+            0.7054892494934297
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "lie_down",
+          "fraction": 1,
+          "checked": 1079,
+          "bounds": [
+            0.2482867573504705,
+            0.29479825420523714,
+            0.7049547234111043
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "rest_loop",
+          "fraction": 0,
+          "checked": 1079,
+          "bounds": [
+            0.2468326599838183,
+            0.21493206459798914,
+            0.7032640300793345
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "rest_loop",
+          "fraction": 0.25,
+          "checked": 1079,
+          "bounds": [
+            0.24788366334419318,
+            0.21493744272821394,
+            0.7000050080943401
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "rest_loop",
+          "fraction": 0.5,
+          "checked": 1079,
+          "bounds": [
+            0.2468326596948683,
+            0.2149266844492015,
+            0.7032611133647535
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "rest_loop",
+          "fraction": 0.75,
+          "checked": 1079,
+          "bounds": [
+            0.24549111557949918,
+            0.21493744272821394,
+            0.7064397164410083
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "rest_loop",
+          "fraction": 1,
+          "checked": 1079,
+          "bounds": [
+            0.24683265994549217,
+            0.21493206459798914,
+            0.703264034198547
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "eat",
+          "fraction": 0,
+          "checked": 1079,
+          "bounds": [
+            0.23660798746668088,
+            0.4231516804565906,
+            0.7461721846330831
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "eat",
+          "fraction": 0.25,
+          "checked": 1079,
+          "bounds": [
+            0.22208500308378143,
+            0.31462185774213924,
+            0.775592877938075
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "eat",
+          "fraction": 0.5,
+          "checked": 1079,
+          "bounds": [
+            0.223634851115318,
+            0.31468283223051413,
+            0.7742906613058843
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "eat",
+          "fraction": 0.75,
+          "checked": 1079,
+          "bounds": [
+            0.22208495432531816,
+            0.31462138880153656,
+            0.7755924551750231
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "eat",
+          "fraction": 1,
+          "checked": 1079,
+          "bounds": [
+            0.23535427348216525,
+            0.41697983768260055,
+            0.7560672430117392
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "play_bow",
+          "fraction": 0,
+          "checked": 1079,
+          "bounds": [
+            0.23713735582026924,
+            0.4231516804565906,
+            0.744518286393361
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "play_bow",
+          "fraction": 0.25,
+          "checked": 1079,
+          "bounds": [
+            0.2157322904503342,
+            0.4529658142755716,
+            0.5086621920225006
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "play_bow",
+          "fraction": 0.5,
+          "checked": 1079,
+          "bounds": [
+            0.21736831945126445,
+            0.46392911380371826,
+            0.5149178148215912
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "play_bow",
+          "fraction": 0.75,
+          "checked": 1079,
+          "bounds": [
+            0.2157322904503342,
+            0.4491901778185706,
+            0.5136082431073339
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "play_bow",
+          "fraction": 1,
+          "checked": 1079,
+          "bounds": [
+            0.21833902477033554,
+            0.4639805311934433,
+            0.5148751628047575
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "turn_away",
+          "fraction": 0,
+          "checked": 1079,
+          "bounds": [
+            0.23660798746668088,
+            0.42315168045659046,
+            0.7467400510563964
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "turn_away",
+          "fraction": 0.25,
+          "checked": 1079,
+          "bounds": [
+            0.32525941230476396,
+            0.41806646053817986,
+            0.7286875504309964
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "turn_away",
+          "fraction": 0.5,
+          "checked": 1079,
+          "bounds": [
+            0.6693128700742396,
+            0.40132316513633953,
+            0.4184367250187894
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "turn_away",
+          "fraction": 0.75,
+          "checked": 1079,
+          "bounds": [
+            0.7085223976619693,
+            0.3881663572315817,
+            0.2787658312653871
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "turn_away",
+          "fraction": 1,
+          "checked": 1079,
+          "bounds": [
+            0.7086778733064587,
+            0.3896558498801139,
+            0.27906514116229486
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "tense_idle",
+          "fraction": 0,
+          "checked": 1079,
+          "bounds": [
+            0.26124931759915687,
+            0.40524573234592254,
+            0.6915817230833949
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "tense_idle",
+          "fraction": 0.25,
+          "checked": 1079,
+          "bounds": [
+            0.26157731899036296,
+            0.4051907380564906,
+            0.691171037212073
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "tense_idle",
+          "fraction": 0.5,
+          "checked": 1079,
+          "bounds": [
+            0.26124972257649653,
+            0.40527229194743797,
+            0.6915562590339768
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "tense_idle",
+          "fraction": 0.75,
+          "checked": 1079,
+          "bounds": [
+            0.2607422693291828,
+            0.40548134606454606,
+            0.6919584035566495
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "tense_idle",
+          "fraction": 1,
+          "checked": 1079,
+          "bounds": [
+            0.26124931785879774,
+            0.4052457325255586,
+            0.6915817223128982
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "tired_idle",
+          "fraction": 0,
+          "checked": 1079,
+          "bounds": [
+            0.24217067166305933,
+            0.35424913661129576,
+            0.7613415836761872
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "tired_idle",
+          "fraction": 0.25,
+          "checked": 1079,
+          "bounds": [
+            0.23860468727876105,
+            0.33433521978282127,
+            0.7596642509382949
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "tired_idle",
+          "fraction": 0.5,
+          "checked": 1079,
+          "bounds": [
+            0.23282677563129917,
+            0.3542515881252773,
+            0.7614408989506161
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "tired_idle",
+          "fraction": 0.75,
+          "checked": 1079,
+          "bounds": [
+            0.237145249918635,
+            0.3549358467543776,
+            0.7611754469705372
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "tired_idle",
+          "fraction": 1,
+          "checked": 1079,
+          "bounds": [
+            0.24217067142720905,
+            0.35424913625359866,
+            0.7613415837151449
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "recover",
+          "fraction": 0,
+          "checked": 1079,
+          "bounds": [
+            0.26124931691009823,
+            0.4052457319680048,
+            0.6915817185078672
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "recover",
+          "fraction": 0.25,
+          "checked": 1079,
+          "bounds": [
+            0.2529850146051332,
+            0.413572062969101,
+            0.7356195603090376
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "recover",
+          "fraction": 0.5,
+          "checked": 1079,
+          "bounds": [
+            0.24652259004340743,
+            0.4175984389034863,
+            0.7530334754356671
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "recover",
+          "fraction": 0.75,
+          "checked": 1079,
+          "bounds": [
+            0.23663717372174997,
+            0.42851363957082717,
+            0.716156657405665
+          ],
+          "calls": 1,
+          "triangles": 14696
+        },
+        {
+          "clip": "recover",
+          "fraction": 1,
+          "checked": 1079,
+          "bounds": [
+            0.23660798746668088,
+            0.4231516804565906,
+            0.7467400510563965
+          ],
+          "calls": 1,
+          "triangles": 14696
+        }
+      ],
+      "drawCalls": 1,
+      "triangles": 14696,
+      "restBounds": {
+        "min": [
+          -0.11942237907466023,
+          0.00019872350455261978,
+          -0.4212867978900702
+        ],
+        "max": [
+          0.11942237907466023,
+          0.424342292330531,
+          0.33407092251027465
+        ]
+      }
+    },
+    "human_mira": {
+      "asset": "human_mira",
+      "clips": [
+        {
+          "name": "idle",
+          "duration": 4
+        },
+        {
+          "name": "greet",
+          "duration": 1.5
+        },
+        {
+          "name": "gesture_explain",
+          "duration": 2
+        },
+        {
+          "name": "offer_reward",
+          "duration": 2
+        },
+        {
+          "name": "kneel",
+          "duration": 1.5
+        }
+      ],
+      "bones": [
+        "root",
+        "hips",
+        "spine",
+        "chest",
+        "neck",
+        "head",
+        "shoulder_l",
+        "upper_arm_l",
+        "lower_arm_l",
+        "hand_l",
+        "shoulder_r",
+        "upper_arm_r",
+        "lower_arm_r",
+        "hand_r",
+        "upper_leg_l",
+        "lower_leg_l",
+        "foot_l",
+        "upper_leg_r",
+        "lower_leg_r",
+        "foot_r"
+      ],
+      "samples": [
+        {
+          "clip": "idle",
+          "fraction": 0,
+          "checked": 1133,
+          "bounds": [
+            0.6235353313994018,
+            1.7126964657230566,
+            0.28015544527999103
+          ],
+          "calls": 1,
+          "triangles": 15480
+        },
+        {
+          "clip": "idle",
+          "fraction": 0.25,
+          "checked": 1133,
+          "bounds": [
+            0.6464060344283644,
+            1.7152255431759742,
+            0.2863989044941403
+          ],
+          "calls": 1,
+          "triangles": 15480
+        },
+        {
+          "clip": "idle",
+          "fraction": 0.5,
+          "checked": 1133,
+          "bounds": [
+            0.6235349755052538,
+            1.71307730219931,
+            0.2904701584645957
+          ],
+          "calls": 1,
+          "triangles": 15480
+        },
+        {
+          "clip": "idle",
+          "fraction": 0.75,
+          "checked": 1133,
+          "bounds": [
+            0.6024142424458114,
+            1.7152882594220011,
+            0.2845340667870152
+          ],
+          "calls": 1,
+          "triangles": 15480
+        },
+        {
+          "clip": "idle",
+          "fraction": 1,
+          "checked": 1133,
+          "bounds": [
+            0.623535325340401,
+            1.7126964657184909,
+            0.2801554454508365
+          ],
+          "calls": 1,
+          "triangles": 15480
+        },
+        {
+          "clip": "greet",
+          "fraction": 0,
+          "checked": 1133,
+          "bounds": [
+            0.6235353322023021,
+            1.712553888021037,
+            0.2854904157668352
+          ],
+          "calls": 1,
+          "triangles": 15480
+        },
+        {
+          "clip": "greet",
+          "fraction": 0.25,
+          "checked": 1133,
+          "bounds": [
+            0.5744920103145703,
+            1.8393376628027152,
+            0.2959738841116219
+          ],
+          "calls": 1,
+          "triangles": 15480
+        },
+        {
+          "clip": "greet",
+          "fraction": 0.5,
+          "checked": 1133,
+          "bounds": [
+            0.5762620191915541,
+            1.8216991382737369,
+            0.2954649614855962
+          ],
+          "calls": 1,
+          "triangles": 15480
+        },
+        {
+          "clip": "greet",
+          "fraction": 0.75,
+          "checked": 1133,
+          "bounds": [
+            0.5765944443432877,
+            1.8293280934114808,
+            0.310327949654735
+          ],
+          "calls": 1,
+          "triangles": 15480
+        },
+        {
+          "clip": "greet",
+          "fraction": 1,
+          "checked": 1133,
+          "bounds": [
+            0.5753508860856901,
+            1.8238131241514501,
+            0.2951552468830248
+          ],
+          "calls": 1,
+          "triangles": 15480
+        },
+        {
+          "clip": "gesture_explain",
+          "fraction": 0,
+          "checked": 1133,
+          "bounds": [
+            0.623535329434932,
+            1.712553888021037,
+            0.2854904157668352
+          ],
+          "calls": 1,
+          "triangles": 15480
+        },
+        {
+          "clip": "gesture_explain",
+          "fraction": 0.25,
+          "checked": 1133,
+          "bounds": [
+            0.7604017946699374,
+            1.7127085394072903,
+            0.38484384654996706
+          ],
+          "calls": 1,
+          "triangles": 15480
+        },
+        {
+          "clip": "gesture_explain",
+          "fraction": 0.5,
+          "checked": 1133,
+          "bounds": [
+            0.7307546092936189,
+            1.7127154815673977,
+            0.38980560431059663
+          ],
+          "calls": 1,
+          "triangles": 15480
+        },
+        {
+          "clip": "gesture_explain",
+          "fraction": 0.75,
+          "checked": 1133,
+          "bounds": [
+            0.7600595910586356,
+            1.713092121070181,
+            0.3894422300242083
+          ],
+          "calls": 1,
+          "triangles": 15480
+        },
+        {
+          "clip": "gesture_explain",
+          "fraction": 1,
+          "checked": 1133,
+          "bounds": [
+            0.7583310779892651,
+            1.7127153225397886,
+            0.3893988325427877
+          ],
+          "calls": 1,
+          "triangles": 15480
+        },
+        {
+          "clip": "offer_reward",
+          "fraction": 0,
+          "checked": 1133,
+          "bounds": [
+            0.6235353294346174,
+            1.712553888021037,
+            0.2854904157668352
+          ],
+          "calls": 1,
+          "triangles": 15480
+        },
+        {
+          "clip": "offer_reward",
+          "fraction": 0.25,
+          "checked": 1133,
+          "bounds": [
+            0.5886171675264971,
+            1.612382968208015,
+            0.5267152997351827
+          ],
+          "calls": 1,
+          "triangles": 15480
+        },
+        {
+          "clip": "offer_reward",
+          "fraction": 0.5,
+          "checked": 1133,
+          "bounds": [
+            0.5943741472071963,
+            1.4262612981619953,
+            0.6824129666251223
+          ],
+          "calls": 1,
+          "triangles": 15480
+        },
+        {
+          "clip": "offer_reward",
+          "fraction": 0.75,
+          "checked": 1133,
+          "bounds": [
+            0.5928710192142834,
+            1.42621527216533,
+            0.6796489940609691
+          ],
+          "calls": 1,
+          "triangles": 15480
+        },
+        {
+          "clip": "offer_reward",
+          "fraction": 1,
+          "checked": 1133,
+          "bounds": [
+            0.5899099371442067,
+            1.4260378904014241,
+            0.6783529582339799
+          ],
+          "calls": 1,
+          "triangles": 15480
+        },
+        {
+          "clip": "kneel",
+          "fraction": 0,
+          "checked": 1133,
+          "bounds": [
+            0.6235353294346174,
+            1.712553888021037,
+            0.2854904157668352
+          ],
+          "calls": 1,
+          "triangles": 15480
+        },
+        {
+          "clip": "kneel",
+          "fraction": 0.25,
+          "checked": 1133,
+          "bounds": [
+            0.586579154651344,
+            1.6424259239664627,
+            0.48141554833450534
+          ],
+          "calls": 1,
+          "triangles": 15480
+        },
+        {
+          "clip": "kneel",
+          "fraction": 0.5,
+          "checked": 1133,
+          "bounds": [
+            0.584850618716947,
+            1.5929344969630745,
+            0.6144411896940656
+          ],
+          "calls": 1,
+          "triangles": 15480
+        },
+        {
+          "clip": "kneel",
+          "fraction": 0.75,
+          "checked": 1133,
+          "bounds": [
+            0.5681114034035548,
+            1.374376004799638,
+            1.089233463432563
+          ],
+          "calls": 1,
+          "triangles": 15480
+        },
+        {
+          "clip": "kneel",
+          "fraction": 1,
+          "checked": 1133,
+          "bounds": [
+            0.5667767255929166,
+            1.3724194600000679,
+            1.0926022204776311
+          ],
+          "calls": 1,
+          "triangles": 15480
+        }
+      ],
+      "drawCalls": 1,
+      "triangles": 15480,
+      "restBounds": {
+        "min": [
+          -0.26360855102987096,
+          2.175569557838486e-9,
+          -0.12200000137090683
+        ],
+        "max": [
+          0.26334569444721456,
+          1.715999988555908,
+          0.17829689361155032
+        ]
+      }
+    },
+    "human_alex": {
+      "asset": "human_alex",
+      "clips": [
+        {
+          "name": "idle",
+          "duration": 4
+        },
+        {
+          "name": "greet",
+          "duration": 1.5
+        },
+        {
+          "name": "gesture_explain",
+          "duration": 2
+        },
+        {
+          "name": "offer_reward",
+          "duration": 2
+        },
+        {
+          "name": "kneel",
+          "duration": 1.5
+        }
+      ],
+      "bones": [
+        "root",
+        "hips",
+        "spine",
+        "chest",
+        "neck",
+        "head",
+        "shoulder_l",
+        "upper_arm_l",
+        "lower_arm_l",
+        "hand_l",
+        "shoulder_r",
+        "upper_arm_r",
+        "lower_arm_r",
+        "hand_r",
+        "upper_leg_l",
+        "lower_leg_l",
+        "foot_l",
+        "upper_leg_r",
+        "lower_leg_r",
+        "foot_r"
+      ],
+      "samples": [
+        {
+          "clip": "idle",
+          "fraction": 0,
+          "checked": 986,
+          "bounds": [
+            0.648250009285839,
+            1.775651511438937,
+            0.275854705710068
+          ],
+          "calls": 1,
+          "triangles": 13580
+        },
+        {
+          "clip": "idle",
+          "fraction": 0.25,
+          "checked": 986,
+          "bounds": [
+            0.6730832800941489,
+            1.7782577487127622,
+            0.27599020208244096
+          ],
+          "calls": 1,
+          "triangles": 13580
+        },
+        {
+          "clip": "idle",
+          "fraction": 0.5,
+          "checked": 986,
+          "bounds": [
+            0.648250561901774,
+            1.7761114618138631,
+            0.2758561365679879
+          ],
+          "calls": 1,
+          "triangles": 13580
+        },
+        {
+          "clip": "idle",
+          "fraction": 0.75,
+          "checked": 986,
+          "bounds": [
+            0.6248358042207087,
+            1.7779988682634633,
+            0.27571914595048913
+          ],
+          "calls": 1,
+          "triangles": 13580
+        },
+        {
+          "clip": "idle",
+          "fraction": 1,
+          "checked": 986,
+          "bounds": [
+            0.6482500021321862,
+            1.775651511432677,
+            0.275854705710068
+          ],
+          "calls": 1,
+          "triangles": 13580
+        },
+        {
+          "clip": "greet",
+          "fraction": 0,
+          "checked": 986,
+          "bounds": [
+            0.6482500102339719,
+            1.7754560218673199,
+            0.275854705710068
+          ],
+          "calls": 1,
+          "triangles": 13580
+        },
+        {
+          "clip": "greet",
+          "fraction": 0.25,
+          "checked": 986,
+          "bounds": [
+            0.5969683897083269,
+            1.9013317229836124,
+            0.2775112678679079
+          ],
+          "calls": 1,
+          "triangles": 13580
+        },
+        {
+          "clip": "greet",
+          "fraction": 0.5,
+          "checked": 986,
+          "bounds": [
+            0.5996136353917115,
+            1.8826126015607225,
+            0.2759078395171195
+          ],
+          "calls": 1,
+          "triangles": 13580
+        },
+        {
+          "clip": "greet",
+          "fraction": 0.75,
+          "checked": 986,
+          "bounds": [
+            0.5999716966081031,
+            1.8905620878803868,
+            0.3169293154862706
+          ],
+          "calls": 1,
+          "triangles": 13580
+        },
+        {
+          "clip": "greet",
+          "fraction": 1,
+          "checked": 986,
+          "bounds": [
+            0.5986304730954595,
+            1.8858011602745282,
+            0.2759028232958727
+          ],
+          "calls": 1,
+          "triangles": 13580
+        },
+        {
+          "clip": "gesture_explain",
+          "fraction": 0,
+          "checked": 986,
+          "bounds": [
+            0.6482500070141832,
+            1.7754560218673199,
+            0.275854705710068
+          ],
+          "calls": 1,
+          "triangles": 13580
+        },
+        {
+          "clip": "gesture_explain",
+          "fraction": 0.25,
+          "checked": 986,
+          "bounds": [
+            0.7874284966329543,
+            1.7750513313481777,
+            0.3903881218918043
+          ],
+          "calls": 1,
+          "triangles": 13580
+        },
+        {
+          "clip": "gesture_explain",
+          "fraction": 0.5,
+          "checked": 986,
+          "bounds": [
+            0.7580078321648294,
+            1.7749990452412934,
+            0.3957366706895143
+          ],
+          "calls": 1,
+          "triangles": 13580
+        },
+        {
+          "clip": "gesture_explain",
+          "fraction": 0.75,
+          "checked": 986,
+          "bounds": [
+            0.788098599465516,
+            1.7726345187474903,
+            0.3953814364748971
+          ],
+          "calls": 1,
+          "triangles": 13580
+        },
+        {
+          "clip": "gesture_explain",
+          "fraction": 1,
+          "checked": 986,
+          "bounds": [
+            0.7861996868177191,
+            1.7750278141295013,
+            0.39533053562882653
+          ],
+          "calls": 1,
+          "triangles": 13580
+        },
+        {
+          "clip": "offer_reward",
+          "fraction": 0,
+          "checked": 986,
+          "bounds": [
+            0.6482500070169878,
+            1.7754560218673199,
+            0.275854705710068
+          ],
+          "calls": 1,
+          "triangles": 13580
+        },
+        {
+          "clip": "offer_reward",
+          "fraction": 0.25,
+          "checked": 986,
+          "bounds": [
+            0.6153313167308833,
+            1.6492281715111077,
+            0.5330198085159695
+          ],
+          "calls": 1,
+          "triangles": 13580
+        },
+        {
+          "clip": "offer_reward",
+          "fraction": 0.5,
+          "checked": 986,
+          "bounds": [
+            0.6215790180791103,
+            1.4419209305556204,
+            0.6986471418477573
+          ],
+          "calls": 1,
+          "triangles": 13580
+        },
+        {
+          "clip": "offer_reward",
+          "fraction": 0.75,
+          "checked": 986,
+          "bounds": [
+            0.6199912777452199,
+            1.4418706101508545,
+            0.6956656007047876
+          ],
+          "calls": 1,
+          "triangles": 13580
+        },
+        {
+          "clip": "offer_reward",
+          "fraction": 1,
+          "checked": 986,
+          "bounds": [
+            0.6168631778842335,
+            1.4417003165933955,
+            0.6942779025354094
+          ],
+          "calls": 1,
+          "triangles": 13580
+        },
+        {
+          "clip": "kneel",
+          "fraction": 0,
+          "checked": 986,
+          "bounds": [
+            0.6482500070169878,
+            1.7754560218673199,
+            0.275854705710068
+          ],
+          "calls": 1,
+          "triangles": 13580
+        },
+        {
+          "clip": "kneel",
+          "fraction": 0.25,
+          "checked": 986,
+          "bounds": [
+            0.6130584725047216,
+            1.6837109734921456,
+            0.48502319478233263
+          ],
+          "calls": 1,
+          "triangles": 13580
+        },
+        {
+          "clip": "kneel",
+          "fraction": 0.5,
+          "checked": 986,
+          "bounds": [
+            0.611628392814907,
+            1.6275228716043135,
+            0.6332555810364326
+          ],
+          "calls": 1,
+          "triangles": 13580
+        },
+        {
+          "clip": "kneel",
+          "fraction": 0.75,
+          "checked": 986,
+          "bounds": [
+            0.5943030953717393,
+            1.3882952635276744,
+            1.1205452452459026
+          ],
+          "calls": 1,
+          "triangles": 13580
+        },
+        {
+          "clip": "kneel",
+          "fraction": 1,
+          "checked": 986,
+          "bounds": [
+            0.5928891923489776,
+            1.3859991461617185,
+            1.1240297665315349
+          ],
+          "calls": 1,
+          "triangles": 13580
+        }
+      ],
+      "drawCalls": 1,
+      "triangles": 13580,
+      "restBounds": {
+        "min": [
+          -0.27543009518331596,
+          1.5079975601572926e-9,
+          -0.12200000137090683
+        ],
+        "max": [
+          0.2753449715560259,
+          1.7787498914718627,
+          0.17829689361155032
+        ]
+      }
+    }
+  },
+  "pageErrors": [],
+  "softwareWebGL": true,
+  "phonePerformanceMeasured": false
+}

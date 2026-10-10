@@ -33,11 +33,15 @@ const brunoPalette = {
   pawPad: hexToLinear('#C9B8A8'),
 };
 
+/** Eye placement as fractions of headR (front of the skull, visible from the front three-quarter camera). */
+const EYES = { eyeRatio: 0.20, eyeX: 0.44, eyeY: 0.26, eyeZ: 0.78 };
+
 export const NALA_PUPPY = {
   id: 'nala_puppy',
   character: 'nala',
   shoulderHeight: 0.28,
   width: 1.0,
+  ...EYES,
   chestRx: 0.078,
   chestRy: 0.088,
   chestRz: 0.19,
@@ -82,7 +86,7 @@ export const NALA_GROWING = {
   bellyRz: 0.20,
   bodyLen: 0.275,
   spineSlope: 0.01,
-  headR: 0.072 * 0.92,
+  headR: 0.072 * 0.90,
   muzzleLen: 0.066,
   muzzleRx: 0.029,
   muzzleRy: 0.026,
@@ -106,6 +110,8 @@ export const BRUNO_PUPPY = {
   character: 'bruno',
   shoulderHeight: 0.31,
   width: 1.14,
+  ...EYES,
+  eyeX: 0.46,
   chestRx: 0.082,
   chestRy: 0.096,
   chestRz: 0.20,

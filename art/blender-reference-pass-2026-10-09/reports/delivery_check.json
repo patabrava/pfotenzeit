@@ -1,0 +1,39 @@
+{
+  "assets": 5,
+  "animationSamples": 245,
+  "allVerticesChecked": true,
+  "validatorErrors": 0,
+  "validatorWarnings": 0,
+  "liveIntegration": false,
+  "renderFiles": 43,
+  "totalCandidateBytes": 9253748,
+  "eyeRegionCounts": {
+    "dog_nala_puppy": {
+      "0": 8354,
+      "2": 394,
+      "4": 114,
+      "6": 114,
+      "1": 384,
+      "3": 114,
+      "5": 114
+    },
+    "dog_nala_growing": {
+      "0": 8458,
+      "2": 333,
+      "4": 114,
+      "6": 114,
+      "1": 341,
+      "3": 114,
+      "5": 114
+    },
+    "dog_bruno_puppy": {
+      "0": 8375,
+      "2": 370,
+      "4": 114,
+      "6": 114,
+      "1": 361,
+      "3": 114,
+      "5": 114
+    }
+  }
+}

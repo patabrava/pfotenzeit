@@ -1,0 +1,9 @@
+
+ RUN  v5.0.3 /Users/patabrava/Documents/AI/github/Camilo/Ines
+
+
+ Test Files  1 passed (1)
+      Tests  23 passed (23)
+   Start at  17:29:49
+   Duration  18.56s (tests 95%, transform 5%, import 1%)
+

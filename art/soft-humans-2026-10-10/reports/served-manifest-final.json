@@ -1,0 +1,802 @@
+{
+  "version": 2,
+  "generatedUTC": "2026-10-10T14:09:23.565Z",
+  "assets": {
+    "dog.nala.puppy": {
+      "url": "assets/models/dog_nala_puppy.glb",
+      "status": "code-authored",
+      "productionIntegrated": true,
+      "material": "textured",
+      "textures": [
+        {
+          "slot": "baseColor",
+          "width": 1024,
+          "height": 1024,
+          "bytes": 392301,
+          "mime": "image/jpeg"
+        },
+        {
+          "slot": "normal",
+          "width": 256,
+          "height": 256,
+          "bytes": 97509,
+          "mime": "image/png"
+        }
+      ],
+      "textureSizes": [
+        [
+          1024,
+          1024
+        ],
+        [
+          256,
+          256
+        ]
+      ],
+      "bytes": 1749268,
+      "triangles": 14844,
+      "boundsMeters": [
+        0.14734849333763123,
+        0.3919999897480011,
+        0.5919557213783264
+      ],
+      "drawCalls": 1,
+      "rig": "vendor",
+      "rigInfo": {
+        "joints": 49,
+        "maxInfluences": 4,
+        "root": ""
+      },
+      "clips": [
+        "alert_focus",
+        "rest_side",
+        "stand_up",
+        "idle_relaxed",
+        "look_at_handler",
+        "sniff",
+        "walk",
+        "sit",
+        "lie_down",
+        "rest_loop",
+        "eat",
+        "play_bow",
+        "turn_away",
+        "tense_idle",
+        "tired_idle",
+        "recover"
+      ],
+      "sourceClips": [
+        "alert_focus",
+        "eat",
+        "idle_relaxed",
+        "lie_down",
+        "look_at_handler",
+        "play_bow",
+        "recover",
+        "rest_loop",
+        "rest_side",
+        "sit",
+        "sniff",
+        "stand_up",
+        "tense_idle",
+        "tired_idle",
+        "turn_away",
+        "walk"
+      ],
+      "clipMap": {
+        "alert_focus": "alert_focus",
+        "rest_side": "rest_side",
+        "stand_up": "stand_up",
+        "idle_relaxed": "idle_relaxed",
+        "look_at_handler": "look_at_handler",
+        "sniff": "sniff",
+        "walk": "walk",
+        "sit": "sit",
+        "lie_down": "lie_down",
+        "rest_loop": "rest_loop",
+        "eat": "eat",
+        "play_bow": "play_bow",
+        "turn_away": "turn_away",
+        "tense_idle": "tense_idle",
+        "tired_idle": "tired_idle",
+        "recover": "recover"
+      },
+      "clipMeta": {
+        "alert_focus": {
+          "durationS": 2,
+          "loop": true
+        },
+        "rest_side": {
+          "durationS": 5,
+          "loop": true
+        },
+        "stand_up": {
+          "durationS": 1.8,
+          "loop": false
+        },
+        "idle_relaxed": {
+          "durationS": 4,
+          "loop": true
+        },
+        "look_at_handler": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "sniff": {
+          "durationS": 2.5,
+          "loop": true
+        },
+        "walk": {
+          "durationS": 1,
+          "loop": true
+        },
+        "sit": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "lie_down": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "rest_loop": {
+          "durationS": 5,
+          "loop": true
+        },
+        "eat": {
+          "durationS": 4,
+          "loop": false,
+          "events": {
+            "treat_received": 2
+          }
+        },
+        "play_bow": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "turn_away": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "tense_idle": {
+          "durationS": 2.5,
+          "loop": true
+        },
+        "tired_idle": {
+          "durationS": 3.5,
+          "loop": true
+        },
+        "recover": {
+          "durationS": 2,
+          "loop": false
+        }
+      },
+      "source": "Dog Puppy by kenchoo; original 3d dog cute by Tech developers; adapted coat, scale, growing head proportions and 12 Blender IK-authored educational clips; scripts/build-soft-puppies.mjs",
+      "sourceUrl": "https://sketchfab.com/3d-models/dog-puppy-72331763040e4314b154f84348fe0957",
+      "license": "CC BY 4.0; kenchoo / Tech developers; https://creativecommons.org/licenses/by/4.0/",
+      "sourceSha256": "45bbe4ae0561c49f0dd1bc821305b577dd75b9c8cd8cc011dae6adc409990811",
+      "version": 2
+    },
+    "dog.nala.growing": {
+      "url": "assets/models/dog_nala_growing.glb",
+      "status": "code-authored",
+      "productionIntegrated": true,
+      "material": "textured",
+      "textures": [
+        {
+          "slot": "baseColor",
+          "width": 1024,
+          "height": 1024,
+          "bytes": 392301,
+          "mime": "image/jpeg"
+        },
+        {
+          "slot": "normal",
+          "width": 256,
+          "height": 256,
+          "bytes": 97509,
+          "mime": "image/png"
+        }
+      ],
+      "textureSizes": [
+        [
+          1024,
+          1024
+        ],
+        [
+          256,
+          256
+        ]
+      ],
+      "bytes": 1750404,
+      "triangles": 14844,
+      "boundsMeters": [
+        0.17597594112157822,
+        0.49621012806892395,
+        0.7539407908916473
+      ],
+      "drawCalls": 1,
+      "rig": "vendor",
+      "rigInfo": {
+        "joints": 49,
+        "maxInfluences": 4,
+        "root": ""
+      },
+      "clips": [
+        "alert_focus",
+        "rest_side",
+        "stand_up",
+        "idle_relaxed",
+        "look_at_handler",
+        "sniff",
+        "walk",
+        "sit",
+        "lie_down",
+        "rest_loop",
+        "eat",
+        "play_bow",
+        "turn_away",
+        "tense_idle",
+        "tired_idle",
+        "recover"
+      ],
+      "sourceClips": [
+        "alert_focus",
+        "eat",
+        "idle_relaxed",
+        "lie_down",
+        "look_at_handler",
+        "play_bow",
+        "recover",
+        "rest_loop",
+        "rest_side",
+        "sit",
+        "sniff",
+        "stand_up",
+        "tense_idle",
+        "tired_idle",
+        "turn_away",
+        "walk"
+      ],
+      "clipMap": {
+        "alert_focus": "alert_focus",
+        "rest_side": "rest_side",
+        "stand_up": "stand_up",
+        "idle_relaxed": "idle_relaxed",
+        "look_at_handler": "look_at_handler",
+        "sniff": "sniff",
+        "walk": "walk",
+        "sit": "sit",
+        "lie_down": "lie_down",
+        "rest_loop": "rest_loop",
+        "eat": "eat",
+        "play_bow": "play_bow",
+        "turn_away": "turn_away",
+        "tense_idle": "tense_idle",
+        "tired_idle": "tired_idle",
+        "recover": "recover"
+      },
+      "clipMeta": {
+        "alert_focus": {
+          "durationS": 2,
+          "loop": true
+        },
+        "rest_side": {
+          "durationS": 5,
+          "loop": true
+        },
+        "stand_up": {
+          "durationS": 1.8,
+          "loop": false
+        },
+        "idle_relaxed": {
+          "durationS": 4,
+          "loop": true
+        },
+        "look_at_handler": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "sniff": {
+          "durationS": 2.5,
+          "loop": true
+        },
+        "walk": {
+          "durationS": 1,
+          "loop": true
+        },
+        "sit": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "lie_down": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "rest_loop": {
+          "durationS": 5,
+          "loop": true
+        },
+        "eat": {
+          "durationS": 4,
+          "loop": false,
+          "events": {
+            "treat_received": 2
+          }
+        },
+        "play_bow": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "turn_away": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "tense_idle": {
+          "durationS": 2.5,
+          "loop": true
+        },
+        "tired_idle": {
+          "durationS": 3.5,
+          "loop": true
+        },
+        "recover": {
+          "durationS": 2,
+          "loop": false
+        }
+      },
+      "source": "Dog Puppy by kenchoo; original 3d dog cute by Tech developers; adapted coat, scale, growing head proportions and 12 Blender IK-authored educational clips; scripts/build-soft-puppies.mjs",
+      "sourceUrl": "https://sketchfab.com/3d-models/dog-puppy-72331763040e4314b154f84348fe0957",
+      "license": "CC BY 4.0; kenchoo / Tech developers; https://creativecommons.org/licenses/by/4.0/",
+      "sourceSha256": "45bbe4ae0561c49f0dd1bc821305b577dd75b9c8cd8cc011dae6adc409990811",
+      "version": 2
+    },
+    "dog.bruno.puppy": {
+      "url": "assets/models/dog_bruno_puppy.glb",
+      "status": "code-authored",
+      "productionIntegrated": true,
+      "material": "textured",
+      "textures": [
+        {
+          "slot": "baseColor",
+          "width": 1024,
+          "height": 1024,
+          "bytes": 392301,
+          "mime": "image/jpeg"
+        },
+        {
+          "slot": "normal",
+          "width": 256,
+          "height": 256,
+          "bytes": 97509,
+          "mime": "image/png"
+        }
+      ],
+      "textureSizes": [
+        [
+          1024,
+          1024
+        ],
+        [
+          256,
+          256
+        ]
+      ],
+      "bytes": 1749768,
+      "triangles": 14844,
+      "boundsMeters": [
+        0.163135826587677,
+        0.4339999854564667,
+        0.6553795337677002
+      ],
+      "drawCalls": 1,
+      "rig": "vendor",
+      "rigInfo": {
+        "joints": 49,
+        "maxInfluences": 4,
+        "root": ""
+      },
+      "clips": [
+        "alert_focus",
+        "rest_side",
+        "stand_up",
+        "idle_relaxed",
+        "look_at_handler",
+        "sniff",
+        "walk",
+        "sit",
+        "lie_down",
+        "rest_loop",
+        "eat",
+        "play_bow",
+        "turn_away",
+        "tense_idle",
+        "tired_idle",
+        "recover"
+      ],
+      "sourceClips": [
+        "alert_focus",
+        "eat",
+        "idle_relaxed",
+        "lie_down",
+        "look_at_handler",
+        "play_bow",
+        "recover",
+        "rest_loop",
+        "rest_side",
+        "sit",
+        "sniff",
+        "stand_up",
+        "tense_idle",
+        "tired_idle",
+        "turn_away",
+        "walk"
+      ],
+      "clipMap": {
+        "alert_focus": "alert_focus",
+        "rest_side": "rest_side",
+        "stand_up": "stand_up",
+        "idle_relaxed": "idle_relaxed",
+        "look_at_handler": "look_at_handler",
+        "sniff": "sniff",
+        "walk": "walk",
+        "sit": "sit",
+        "lie_down": "lie_down",
+        "rest_loop": "rest_loop",
+        "eat": "eat",
+        "play_bow": "play_bow",
+        "turn_away": "turn_away",
+        "tense_idle": "tense_idle",
+        "tired_idle": "tired_idle",
+        "recover": "recover"
+      },
+      "clipMeta": {
+        "alert_focus": {
+          "durationS": 2,
+          "loop": true
+        },
+        "rest_side": {
+          "durationS": 5,
+          "loop": true
+        },
+        "stand_up": {
+          "durationS": 1.8,
+          "loop": false
+        },
+        "idle_relaxed": {
+          "durationS": 4,
+          "loop": true
+        },
+        "look_at_handler": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "sniff": {
+          "durationS": 2.5,
+          "loop": true
+        },
+        "walk": {
+          "durationS": 1,
+          "loop": true
+        },
+        "sit": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "lie_down": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "rest_loop": {
+          "durationS": 5,
+          "loop": true
+        },
+        "eat": {
+          "durationS": 4,
+          "loop": false,
+          "events": {
+            "treat_received": 2
+          }
+        },
+        "play_bow": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "turn_away": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "tense_idle": {
+          "durationS": 2.5,
+          "loop": true
+        },
+        "tired_idle": {
+          "durationS": 3.5,
+          "loop": true
+        },
+        "recover": {
+          "durationS": 2,
+          "loop": false
+        }
+      },
+      "source": "Dog Puppy by kenchoo; original 3d dog cute by Tech developers; adapted coat, scale, growing head proportions and 12 Blender IK-authored educational clips; scripts/build-soft-puppies.mjs",
+      "sourceUrl": "https://sketchfab.com/3d-models/dog-puppy-72331763040e4314b154f84348fe0957",
+      "license": "CC BY 4.0; kenchoo / Tech developers; https://creativecommons.org/licenses/by/4.0/",
+      "sourceSha256": "45bbe4ae0561c49f0dd1bc821305b577dd75b9c8cd8cc011dae6adc409990811",
+      "version": 2
+    },
+    "human.mira": {
+      "url": "assets/models/human_mira.glb",
+      "status": "code-authored",
+      "productionIntegrated": true,
+      "material": "textured",
+      "textures": [
+        {
+          "slot": "baseColor",
+          "width": 1024,
+          "height": 1024,
+          "bytes": 179187,
+          "mime": "image/jpeg"
+        },
+        {
+          "slot": "normal",
+          "width": 256,
+          "height": 256,
+          "bytes": 10947,
+          "mime": "image/jpeg"
+        }
+      ],
+      "textureSizes": [
+        [
+          1024,
+          1024
+        ],
+        [
+          256,
+          256
+        ]
+      ],
+      "bytes": 1081056,
+      "triangles": 10909,
+      "boundsMeters": [
+        0.9065287113189697,
+        1.7000000476837158,
+        0.36825162172317505
+      ],
+      "measuredHeightM": 1.7000000476837158,
+      "drawCalls": 1,
+      "rig": "vendor",
+      "rigInfo": {
+        "joints": 58,
+        "maxInfluences": 4,
+        "root": "Hips"
+      },
+      "clips": [
+        "idle",
+        "greet",
+        "gesture_explain",
+        "offer_reward",
+        "kneel"
+      ],
+      "sourceClips": [
+        "gesture_explain",
+        "greet",
+        "idle",
+        "kneel",
+        "offer_reward"
+      ],
+      "clipMap": {
+        "idle": "idle",
+        "greet": "greet",
+        "gesture_explain": "gesture_explain",
+        "offer_reward": "offer_reward",
+        "kneel": "kneel"
+      },
+      "clipMeta": {
+        "idle": {
+          "durationS": 4,
+          "loop": true
+        },
+        "greet": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "gesture_explain": {
+          "durationS": 2,
+          "loop": false
+        },
+        "offer_reward": {
+          "durationS": 2,
+          "loop": false
+        },
+        "kneel": {
+          "durationS": 1.5,
+          "loop": false
+        }
+      },
+      "source": "Grab3D Casual woman; AI-assisted Meshy source cleaned in Blender; mobile LOD, smooth normals, textures, unit scale and five native-rig IK gestures adapted by scripts/build-soft-humans.mjs",
+      "sourceUrl": "https://grab3d.com/models/characters/woman/",
+      "license": "CC0 1.0; Grab3D; https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceSha256": "a9f2bcf774e3e9d19416c99c68a6d73041b17808def97fddf72c50d71a8b2b8c",
+      "version": 2
+    },
+    "human.alex": {
+      "url": "assets/models/human_alex.glb",
+      "status": "code-authored",
+      "productionIntegrated": true,
+      "material": "textured",
+      "textures": [
+        {
+          "slot": "baseColor",
+          "width": 1024,
+          "height": 1024,
+          "bytes": 196117,
+          "mime": "image/jpeg"
+        },
+        {
+          "slot": "normal",
+          "width": 256,
+          "height": 256,
+          "bytes": 7685,
+          "mime": "image/jpeg"
+        }
+      ],
+      "textureSizes": [
+        [
+          1024,
+          1024
+        ],
+        [
+          256,
+          256
+        ]
+      ],
+      "bytes": 1052080,
+      "triangles": 10987,
+      "boundsMeters": [
+        1.1276723146438599,
+        1.7599999904632568,
+        0.3484606146812439
+      ],
+      "measuredHeightM": 1.7599999904632568,
+      "drawCalls": 1,
+      "rig": "vendor",
+      "rigInfo": {
+        "joints": 58,
+        "maxInfluences": 4,
+        "root": "Hips"
+      },
+      "clips": [
+        "idle",
+        "greet",
+        "gesture_explain",
+        "offer_reward",
+        "kneel"
+      ],
+      "sourceClips": [
+        "gesture_explain",
+        "greet",
+        "idle",
+        "kneel",
+        "offer_reward"
+      ],
+      "clipMap": {
+        "idle": "idle",
+        "greet": "greet",
+        "gesture_explain": "gesture_explain",
+        "offer_reward": "offer_reward",
+        "kneel": "kneel"
+      },
+      "clipMeta": {
+        "idle": {
+          "durationS": 4,
+          "loop": true
+        },
+        "greet": {
+          "durationS": 1.5,
+          "loop": false
+        },
+        "gesture_explain": {
+          "durationS": 2,
+          "loop": false
+        },
+        "offer_reward": {
+          "durationS": 2,
+          "loop": false
+        },
+        "kneel": {
+          "durationS": 1.5,
+          "loop": false
+        }
+      },
+      "source": "Grab3D Casual man; AI-assisted Meshy source cleaned in Blender; mobile LOD, smooth normals, textures, unit scale and five native-rig IK gestures adapted by scripts/build-soft-humans.mjs",
+      "sourceUrl": "https://grab3d.com/models/characters/man/",
+      "license": "CC0 1.0; Grab3D; https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceSha256": "c41f2bfc62b03a8dd8fbae37d201d4c73bba3806678984c6895f59a7cbf22c4f",
+      "version": 2
+    },
+    "environment.school": {
+      "url": "assets/models/school_courtyard.glb",
+      "status": "code-authored",
+      "bytes": 385444,
+      "triangles": 15416,
+      "clips": [],
+      "textureSizes": [],
+      "material": "vertex",
+      "drawCalls": 1,
+      "boundsMeters": [
+        7.0937,
+        3.4186,
+        7.3101
+      ],
+      "source": "scripts/build-models.mjs (procedural, from 07/08 brief and reference sheets)",
+      "license": "project-internal, generated code; no third-party assets",
+      "version": 1,
+      "meshes": [
+        "school_courtyard"
+      ],
+      "nodes": [
+        "school_courtyard"
+      ]
+    },
+    "props.care": {
+      "url": "assets/models/care_props.glb",
+      "status": "code-authored",
+      "bytes": 128412,
+      "triangles": 6096,
+      "clips": [],
+      "textureSizes": [],
+      "material": "vertex",
+      "drawCalls": 6,
+      "boundsMeters": [
+        0.64,
+        0.0921,
+        0.4788
+      ],
+      "source": "scripts/build-models.mjs (procedural, from 07/08 brief and reference sheets)",
+      "license": "project-internal, generated code; no third-party assets",
+      "version": 1,
+      "meshes": [
+        "prop_bowl",
+        "prop_water",
+        "prop_blanket",
+        "prop_ball",
+        "prop_toy_rolling",
+        "prop_leaf"
+      ],
+      "nodes": [
+        "bowl",
+        "water",
+        "blanket",
+        "ball",
+        "toy_rolling",
+        "leaf"
+      ]
+    },
+    "props.upgrades": {
+      "url": "assets/models/school_upgrades.glb",
+      "status": "code-authored",
+      "bytes": 194260,
+      "triangles": 9160,
+      "clips": [],
+      "textureSizes": [],
+      "material": "vertex",
+      "drawCalls": 2,
+      "boundsMeters": [
+        6.72,
+        1.57,
+        2.5891
+      ],
+      "source": "scripts/build-models.mjs (procedural, from 07/08 brief and reference sheets)",
+      "license": "project-internal, generated code; no third-party assets",
+      "version": 1,
+      "meshes": [
+        "upgrade_rest_place",
+        "upgrade_sniff_corner"
+      ],
+      "nodes": [
+        "rest_place",
+        "sniff_corner"
+      ]
+    }
+  }
+}

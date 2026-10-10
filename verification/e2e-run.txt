@@ -1,0 +1,33 @@
+
+> pfotenzeit@0.1.0 test:e2e
+> playwright test
+
+
+Running 18 tests using 3 workers
+
+(node:29985) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:29986) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:29988) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   3 [mobile-360] › tests/e2e/smoke.spec.ts:38:1 › standard start, profile, care, L01 to care closure, reflection, mark, reload (30.9s)
+  ✓   1 [desktop] › tests/e2e/smoke.spec.ts:38:1 › standard start, profile, care, L01 to care closure, reflection, mark, reload (33.4s)
+  ✓   4 [mobile-360] › tests/e2e/smoke.spec.ts:135:1 › challenge onboarding creates a separate run and standard stays untouched (8.1s)
+  ✓   2 [mobile-390] › tests/e2e/smoke.spec.ts:38:1 › standard start, profile, care, L01 to care closure, reflection, mark, reload (39.4s)
+  ✓   5 [desktop] › tests/e2e/smoke.spec.ts:135:1 › challenge onboarding creates a separate run and standard stays untouched (10.5s)
+  ✓   7 [mobile-390] › tests/e2e/smoke.spec.ts:135:1 › challenge onboarding creates a separate run and standard stays untouched (8.0s)
+  ✓   6 [mobile-360] › tests/e2e/smoke.spec.ts:153:1 › WebGL unavailable still leaves profile and lesson texts usable (12.5s)
+  ✓  10 [mobile-360] › tests/e2e/smoke.spec.ts:185:1 › second tab is told the game is open elsewhere (3.2s)
+  ✓   8 [desktop] › tests/e2e/smoke.spec.ts:153:1 › WebGL unavailable still leaves profile and lesson texts usable (11.1s)
+  ✓  11 [mobile-360] › tests/e2e/smoke.spec.ts:197:1 › installed worker serves the integrated dog model and its CC BY puppy provenance (2.5s)
+  ✓  12 [desktop] › tests/e2e/smoke.spec.ts:185:1 › second tab is told the game is open elsewhere (3.9s)
+  ✓   9 [mobile-390] › tests/e2e/smoke.spec.ts:153:1 › WebGL unavailable still leaves profile and lesson texts usable (11.8s)
+  ✓  13 [mobile-360] › tests/e2e/smoke.spec.ts:230:1 › installed worker serves both integrated CC0 human replacements (2.7s)
+  ✓  14 [desktop] › tests/e2e/smoke.spec.ts:197:1 › installed worker serves the integrated dog model and its CC BY puppy provenance (3.3s)
+  ✓  15 [mobile-390] › tests/e2e/smoke.spec.ts:185:1 › second tab is told the game is open elsewhere (3.7s)
+  ✓  16 [desktop] › tests/e2e/smoke.spec.ts:230:1 › installed worker serves both integrated CC0 human replacements (2.4s)
+  ✓  17 [mobile-390] › tests/e2e/smoke.spec.ts:197:1 › installed worker serves the integrated dog model and its CC BY puppy provenance (2.6s)
+  ✓  18 [mobile-390] › tests/e2e/smoke.spec.ts:230:1 › installed worker serves both integrated CC0 human replacements (1.5s)
+
+  18 passed (1.2m)

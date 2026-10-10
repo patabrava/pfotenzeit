@@ -1,0 +1,16 @@
+360x640: lesson drawCalls=8 triangles=83338 fps=11 dpr=2 tex=15.32MB tiers={"human_mira":"glb","dog_nala":"glb","environment.school":"glb","props.care":"glb","props.upgrades":"glb"} demand=ok {"heldObservationFrames":8,"idleFramesPerHalfSecond":5,"inactiveFrames":0,"resumedFrames":6,"heldFrames":0}
+  D-034 closeup 60.0% (margin 5.2%, az 45°) | lesson 45.0% (margin 19.5%, az 45°) | school 12.0% (margin 24.0%, az 32°) | strip 360x176 lesson 45.7% (margin 17.7%, az 45°)
+  D-035 timings ms {"decision":2069,"decisionReduced":1,"visitRewarded":627,"upgradeBought":1189,"careMeal":3041,"careMealReduced":0}
+390x844: lesson drawCalls=8 triangles=83338 fps=6 dpr=2 tex=15.32MB tiers={"human_mira":"glb","dog_nala":"glb","environment.school":"glb","props.care":"glb","props.upgrades":"glb"} demand=ok {"heldObservationFrames":7,"idleFramesPerHalfSecond":5,"inactiveFrames":0,"resumedFrames":7,"heldFrames":0}
+  D-034 closeup 55.7% (margin 6.9%, az 45°) | lesson 45.0% (margin 15.2%, az 45°) | school 11.6% (margin 24.2%, az 32°) | strip 390x232 lesson 45.8% (margin 17.8%, az 45°)
+  D-035 timings ms {"decision":4730,"decisionReduced":1,"visitRewarded":2231,"upgradeBought":1093,"careMeal":3110,"careMealReduced":0}
+430x932: lesson drawCalls=8 triangles=83338 fps=4 dpr=2 tex=15.32MB tiers={"human_mira":"glb","dog_nala":"glb","environment.school":"glb","props.care":"glb","props.upgrades":"glb"} demand=ok {"heldObservationFrames":3,"idleFramesPerHalfSecond":1,"inactiveFrames":0,"resumedFrames":3,"heldFrames":0}
+  D-034 closeup 55.2% (margin 5.5%, az 45°) | lesson 45.0% (margin 15.8%, az 45°) | school 11.7% (margin 24.2%, az 32°) | strip 430x256 lesson 45.6% (margin 17.8%, az 45°)
+  D-035 timings ms {"decision":4753,"decisionReduced":1,"visitRewarded":1788,"upgradeBought":1064,"careMeal":4622,"careMealReduced":0}
+844x390: lesson drawCalls=9 triangles=83362 fps=15 dpr=2 tex=15.32MB tiers={"human_mira":"glb","dog_nala":"glb","environment.school":"glb","props.care":"glb","props.upgrades":"glb"} demand=ok {"heldObservationFrames":11,"idleFramesPerHalfSecond":7,"inactiveFrames":0,"resumedFrames":11,"heldFrames":0}
+  D-034 closeup 60.0% (margin 20.0%, az 45°) | lesson 45.0% (margin 19.5%, az 45°) | school 16.0% (margin 22.0%, az 32°) | strip 844x140 lesson 45.7% (margin 17.8%, az 45°)
+  D-035 timings ms {"decision":1831,"decisionReduced":1,"visitRewarded":656,"upgradeBought":710,"careMeal":2979,"careMealReduced":0}
+1440x900: lesson drawCalls=9 triangles=83362 fps=5 dpr=2 tex=15.32MB tiers={"human_mira":"glb","dog_nala":"glb","environment.school":"glb","props.care":"glb","props.upgrades":"glb"} demand=ok {"heldObservationFrames":4,"idleFramesPerHalfSecond":2,"inactiveFrames":0,"resumedFrames":4,"heldFrames":0}
+  D-034 closeup 60.0% (margin 20.0%, az 45°) | lesson 45.1% (margin 19.5%, az 45°) | school 16.0% (margin 22.0%, az 32°) | strip 1440x248 lesson 45.6% (margin 17.8%, az 45°)
+  D-035 timings ms {"decision":4794,"decisionReduced":1,"visitRewarded":2219,"upgradeBought":2065,"careMeal":6002,"careMealReduced":0}
+screenshots and results.json in /Users/patabrava/Documents/AI/github/Camilo/Ines/art/soft-humans-2026-10-10/reports/renderer-isolated

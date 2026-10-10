@@ -1,0 +1,123 @@
+
+Running 3 tests using 3 workers
+
+(node:84844) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:84842) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:84843) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [mobile-360] › tests/e2e/smoke.spec.ts:96:1 › challenge onboarding creates a separate run and standard stays untouched (6.9s)
+  ✘  3 [mobile-390] › tests/e2e/smoke.spec.ts:96:1 › challenge onboarding creates a separate run and standard stays untouched (6.9s)
+  ✘  2 [desktop] › tests/e2e/smoke.spec.ts:96:1 › challenge onboarding creates a separate run and standard stays untouched (7.0s)
+
+
+  1) [mobile-390] › tests/e2e/smoke.spec.ts:96:1 › challenge onboarding creates a separate run and standard stays untouched 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('[data-view="home"]')
+    Expected pattern: /Challenge/
+    Received string:  "Nala ist bereit für eine Übung.Zur ÜbungVersorgenSchuleEinstellungen● Verfassung: stabil"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toContainText" locator('[data-view="home"]') with timeout 5000ms
+      - waiting for locator('[data-view="home"]')
+        14 × locator resolved to <div class="hud" data-view="home">…</div>
+           - unexpected value "Nala ist bereit für eine Übung.Zur ÜbungVersorgenSchuleEinstellungen● Verfassung: stabil"
+
+
+      103 |   // switch and navigation before testing its reload persistence.
+      104 |   await expect(page.locator('[data-view="mode"]')).toHaveCount(0);
+    > 105 |   await expect(page.locator('[data-view="home"]')).toContainText(/Challenge/);
+          |                                                    ^
+      106 |   await page.reload();
+      107 |   await expect(page.locator('#app')).toHaveAttribute('aria-busy', 'false', { timeout: 20_000 });
+      108 |   await expect(page.locator('#app')).toContainText(/Challenge/);
+        at /Users/patabrava/Documents/AI/github/Camilo/Ines/tests/e2e/smoke.spec.ts:105:52
+
+    Error Context: test-results/smoke-challenge-onboarding-5724f-nd-standard-stays-untouched-mobile-390/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/smoke-challenge-onboarding-5724f-nd-standard-stays-untouched-mobile-390/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/smoke-challenge-onboarding-5724f-nd-standard-stays-untouched-mobile-390/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [mobile-360] › tests/e2e/smoke.spec.ts:96:1 › challenge onboarding creates a separate run and standard stays untouched 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('[data-view="home"]')
+    Expected pattern: /Challenge/
+    Received string:  "Nala ist bereit für eine Übung.Zur ÜbungVersorgenSchuleEinstellungen● Verfassung: stabil"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toContainText" locator('[data-view="home"]') with timeout 5000ms
+      - waiting for locator('[data-view="home"]')
+        14 × locator resolved to <div class="hud" data-view="home">…</div>
+           - unexpected value "Nala ist bereit für eine Übung.Zur ÜbungVersorgenSchuleEinstellungen● Verfassung: stabil"
+
+
+      103 |   // switch and navigation before testing its reload persistence.
+      104 |   await expect(page.locator('[data-view="mode"]')).toHaveCount(0);
+    > 105 |   await expect(page.locator('[data-view="home"]')).toContainText(/Challenge/);
+          |                                                    ^
+      106 |   await page.reload();
+      107 |   await expect(page.locator('#app')).toHaveAttribute('aria-busy', 'false', { timeout: 20_000 });
+      108 |   await expect(page.locator('#app')).toContainText(/Challenge/);
+        at /Users/patabrava/Documents/AI/github/Camilo/Ines/tests/e2e/smoke.spec.ts:105:52
+
+    Error Context: test-results/smoke-challenge-onboarding-5724f-nd-standard-stays-untouched-mobile-360/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/smoke-challenge-onboarding-5724f-nd-standard-stays-untouched-mobile-360/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/smoke-challenge-onboarding-5724f-nd-standard-stays-untouched-mobile-360/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [desktop] › tests/e2e/smoke.spec.ts:96:1 › challenge onboarding creates a separate run and standard stays untouched 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('[data-view="home"]')
+    Expected pattern: /Challenge/
+    Received string:  "Nala ist bereit für eine Übung.Zur ÜbungVersorgenSchuleEinstellungen● Verfassung: stabil"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toContainText" locator('[data-view="home"]') with timeout 5000ms
+      - waiting for locator('[data-view="home"]')
+        14 × locator resolved to <div class="hud" data-view="home">…</div>
+           - unexpected value "Nala ist bereit für eine Übung.Zur ÜbungVersorgenSchuleEinstellungen● Verfassung: stabil"
+
+
+      103 |   // switch and navigation before testing its reload persistence.
+      104 |   await expect(page.locator('[data-view="mode"]')).toHaveCount(0);
+    > 105 |   await expect(page.locator('[data-view="home"]')).toContainText(/Challenge/);
+          |                                                    ^
+      106 |   await page.reload();
+      107 |   await expect(page.locator('#app')).toHaveAttribute('aria-busy', 'false', { timeout: 20_000 });
+      108 |   await expect(page.locator('#app')).toContainText(/Challenge/);
+        at /Users/patabrava/Documents/AI/github/Camilo/Ines/tests/e2e/smoke.spec.ts:105:52
+
+    Error Context: test-results/smoke-challenge-onboarding-5724f-nd-standard-stays-untouched-desktop/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/smoke-challenge-onboarding-5724f-nd-standard-stays-untouched-desktop/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/smoke-challenge-onboarding-5724f-nd-standard-stays-untouched-desktop/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3 failed
+    [mobile-390] › tests/e2e/smoke.spec.ts:96:1 › challenge onboarding creates a separate run and standard stays untouched 
+    [mobile-360] › tests/e2e/smoke.spec.ts:96:1 › challenge onboarding creates a separate run and standard stays untouched 
+    [desktop] › tests/e2e/smoke.spec.ts:96:1 › challenge onboarding creates a separate run and standard stays untouched 

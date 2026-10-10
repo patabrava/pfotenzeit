@@ -5,11 +5,14 @@
  */
 import type { ContentCatalog, LessonDefinition, LessonOption, LessonRound } from '../content/types';
 import { applyCareKind, clamp100, declineWithFloor, modeFloor } from './careClock';
-import { CONTEXT_BASELINE, ROUND_ENERGY_COST } from './defaults';
+import { CONTEXT_BASELINE, EXERCISE_MAX_ATTEMPTS, ROUND_ENERGY_COST } from './defaults';
+import { evaluateExercise, isExerciseContext, responsePose } from './exercise';
 import { getReadiness, isCareClosureOffered, isLearned } from './selectors';
 import { fail, ok, type StepResult } from './transactions';
 import type {
   DomainEffect,
+  ExerciseAttempt,
+  ExerciseContext,
   LessonContext,
   LessonId,
   Save,
@@ -65,7 +68,58 @@ export function createVisit(
     context: first ? contextOnEnter(CONTEXT_BASELINE, first) : { ...CONTEXT_BASELINE },
     lastOptionId: null,
     insertedRetryUsed: false,
+    attempts: [],
   };
+}
+
+/** Attempts recorded for a round id (D-041). */
+export function attemptsForRound(visit: VisitState, roundId: string): ExerciseAttempt[] {
+  return visit.attempts.filter((attempt) => attempt.roundId === roundId);
+}
+
+/** Last attempt of the current round, or null. */
+export function lastAttempt(visit: VisitState): ExerciseAttempt | null {
+  const ref = visit.queue[visit.index];
+  if (!ref) return null;
+  const list = attemptsForRound(visit, ref.roundId);
+  return list[list.length - 1] ?? null;
+}
+
+/** Options offered now: exercise rounds filter by `forResponses` against the last attempt's response. */
+export function offeredOptions(round: LessonRound, visit: VisitState): LessonOption[] {
+  if (!round.exercise) return round.options;
+  const last = lastAttempt(visit);
+  return round.options.filter((option) => !option.forResponses || (last !== null && option.forResponses.includes(last.response)));
+}
+
+/**
+ * EXERCISE_ATTEMPT (D-041): in observe of an exercise round, below the attempt limit. The response is computed from the
+ * recorded context and the real dog; phase → 'exercise' while the dog's response is presented; ACK → 'decide'.
+ */
+export function attemptExercise(save: Save, attemptId: string, context: ExerciseContext, content: ContentCatalog): StepResult {
+  const visit = save.currentVisit;
+  if (!visit) return fail('no_visit');
+  if (visit.phase !== 'observe') return fail('wrong_phase');
+  if (typeof attemptId !== 'string' || attemptId.length === 0 || !isExerciseContext(context)) return fail('invalid');
+  const ref = visit.queue[visit.index];
+  const lesson = content.lessons[visit.lessonId];
+  const round = ref ? findRound(lesson, ref.roundId) : null;
+  if (!ref || !round) return fail('invalid');
+  if (!round.exercise) return fail('exercise_not_ready');
+  if (attemptsForRound(visit, round.id).length >= EXERCISE_MAX_ATTEMPTS) return fail('attempt_limit');
+  if (visit.attempts.some((attempt) => attempt.attemptId === attemptId)) return fail('invalid');
+  const response = evaluateExercise(round.exercise.kind, context, save.dog);
+  const attempt: ExerciseAttempt = { roundId: round.id, attemptId, kind: round.exercise.kind, response, context };
+  const effect: DomainEffect = {
+    type: 'exercise',
+    roundId: round.id,
+    attemptId,
+    kind: round.exercise.kind,
+    response,
+    pose: responsePose(response),
+    dogId: 'dog_nala',
+  };
+  return ok({ ...save, currentVisit: { ...visit, phase: 'exercise', attempts: [...visit.attempts, attempt] } }, [effect]);
 }
 
 /** Enters the round at `visit.index`: phase observe, contextBefore applied, option display cleared. */
@@ -90,8 +144,13 @@ export function advanceRound(save: Save, content: ContentCatalog): StepResult {
   switch (visit.phase) {
     case 'prepare':
       return enterRound(save, visit, lesson);
-    case 'observe':
+    case 'observe': {
+      const ref = visit.queue[visit.index];
+      const round = ref ? findRound(lesson, ref.roundId) : null;
+      // Exercise rounds reach 'decide' only through EXERCISE_ATTEMPT (D-041).
+      if (round?.exercise) return fail('exercise_not_ready');
       return ok({ ...save, currentVisit: { ...visit, phase: 'decide' } });
+    }
     case 'feedback':
       return completeRound(save, visit, lesson);
     default:
@@ -103,6 +162,13 @@ export function advanceRound(save: Save, content: ContentCatalog): StepResult {
 function completeRound(save: Save, visit: VisitState, lesson: LessonDefinition): StepResult {
   const ref = visit.queue[visit.index];
   if (!ref) return fail('invalid');
+
+  // D-041 'retry': the chosen option sends the player back to the exercise (same round, no charge) while attempts remain.
+  const round = findRound(lesson, ref.roundId);
+  const chosen = round && visit.lastOptionId ? findOption(round, visit.lastOptionId) : null;
+  if (round?.exercise && chosen?.next === 'retry' && attemptsForRound(visit, round.id).length < EXERCISE_MAX_ATTEMPTS) {
+    return ok({ ...save, currentVisit: { ...visit, phase: 'observe', lastOptionId: null } });
+  }
 
   let dog = save.dog;
   let completedRoundIds = visit.completedRoundIds;
@@ -143,6 +209,7 @@ export function selectOption(save: Save, optionId: string, content: ContentCatal
   if (!ref || !round) return fail('invalid');
   const option = findOption(round, optionId);
   if (!option) return fail('unknown_option');
+  if (!offeredOptions(round, visit).includes(option)) return fail('unknown_option');
 
   const countsForLearning = option.helpful && option.countsForLearning && !ref.supported;
   const decision: VisitDecision = {

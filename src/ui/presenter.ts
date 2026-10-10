@@ -10,11 +10,14 @@ import type { RendererHandle } from '../render/types';
 import { CARE_PRESENTATION_MS } from '../simulation/defaults';
 import type { DomainEffect, NeedValues, PixelState, Save } from '../simulation/types';
 import type { Store, StoreSnapshot } from '../state/store';
+import type { WorldController } from './context';
 
 export interface PresenterDeps {
   store: Store;
   audio: AudioManager;
   getRenderer(): RendererHandle | null;
+  /** D-041: the yard controller; exercise/moment presentations also wait for its 'responseShown' event. */
+  getWorld?(): WorldController | null;
 }
 
 export type EffectListener = (effect: DomainEffect, snapshot: StoreSnapshot) => void;
@@ -49,6 +52,8 @@ const DECISION_MS = 1400;
 const REWARD_MS = 1000;
 const UPGRADE_MS = 500;
 const GROWTH_MS = 1600;
+const EXERCISE_MS = 1800;
+const MOMENT_MS = 1200;
 
 function fallbackDuration(effect: DomainEffect): number {
   switch (effect.type) {
@@ -62,13 +67,17 @@ function fallbackDuration(effect: DomainEffect): number {
       return UPGRADE_MS;
     case 'growth':
       return GROWTH_MS;
+    case 'exercise':
+      return EXERCISE_MS;
+    case 'moment':
+      return MOMENT_MS;
     default:
       return 0;
   }
 }
 
 function maxDuration(effect: DomainEffect): number {
-  return fallbackDuration(effect) + 700;
+  return effect.type === 'decision' ? 6000 : fallbackDuration(effect) + 700;
 }
 
 function wait(ms: number): Promise<void> {
@@ -103,7 +112,22 @@ export function createPresenter(deps: PresenterDeps): Presenter {
     if (!renderer) return false;
     if (renderer.getStatus() !== 'ready') return false;
     const route = snapshot.app.route;
-    return route === 'home' || route === 'lesson';
+    return route === 'home' || route === 'lesson' || route === 'practice';
+  }
+
+  /** D-041: resolves when the world reports the dog's response as shown (or never; callers race with a timer). */
+  function worldShown(effect: DomainEffect): Promise<void> | null {
+    if (effect.type !== 'exercise') return null;
+    const world = deps.getWorld?.() ?? null;
+    if (!world) return null;
+    return new Promise<void>((resolve) => {
+      const off = world.onEvent((event) => {
+        if (event.type === 'responseShown') {
+          off();
+          resolve();
+        }
+      });
+    });
   }
 
   function playCue(effect: DomainEffect): void {
@@ -119,6 +143,12 @@ export function createPresenter(deps: PresenterDeps): Presenter {
       case 'upgradeBought':
       case 'growth':
         audio.play('chime');
+        break;
+      case 'exercise':
+        audio.play(effect.response === 'comes' || effect.response === 'settled' || effect.response === 'glance' ? 'confirm' : 'soft');
+        break;
+      case 'moment':
+        audio.play('soft');
         break;
       default:
         break;
@@ -142,7 +172,8 @@ export function createPresenter(deps: PresenterDeps): Presenter {
     if (renderer && rendererVisible(snapshot)) {
       const max = maxDuration(effect);
       try {
-        await Promise.race([renderer.present(effect, { maxDurationMs: max, reducedMotion: false }), wait(max + 300)]);
+        const shown = worldShown(effect);
+        await Promise.race([renderer.present(effect, { maxDurationMs: max, reducedMotion: false }), ...(shown ? [shown] : []), wait(max + 300)]);
       } catch (error) {
         console.warn('[presenter] present failed, falling back to timer', error);
         await wait(Math.min(fallbackDuration(effect), 1500));

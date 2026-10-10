@@ -1,0 +1,518 @@
+{
+  "dog_nala_puppy": {
+    "url": "dog_nala_puppy.glb",
+    "status": "code-authored",
+    "productionIntegrated": false,
+    "material": "vertex",
+    "textures": [],
+    "textureSizes": [],
+    "bytes": 610996,
+    "triangles": 1950,
+    "boundsMeters": [
+      0.13562828302383423,
+      0.3920000063953921,
+      0.49999748170375824
+    ],
+    "drawCalls": 1,
+    "rig": "vendor",
+    "rigInfo": {
+      "joints": 46,
+      "maxInfluences": 4,
+      "root": ""
+    },
+    "clips": [
+      "idle_relaxed",
+      "look_at_handler",
+      "sniff",
+      "walk",
+      "sit",
+      "lie_down",
+      "rest_loop",
+      "eat",
+      "play_bow",
+      "turn_away",
+      "tense_idle",
+      "tired_idle",
+      "recover"
+    ],
+    "sourceClips": [
+      "eat",
+      "idle_relaxed",
+      "lie_down",
+      "look_at_handler",
+      "play_bow",
+      "recover",
+      "rest_loop",
+      "sit",
+      "sniff",
+      "tense_idle",
+      "tired_idle",
+      "turn_away",
+      "walk"
+    ],
+    "clipMap": {
+      "idle_relaxed": "idle_relaxed",
+      "look_at_handler": "look_at_handler",
+      "sniff": "sniff",
+      "walk": "walk",
+      "sit": "sit",
+      "lie_down": "lie_down",
+      "rest_loop": "rest_loop",
+      "eat": "eat",
+      "play_bow": "play_bow",
+      "turn_away": "turn_away",
+      "tense_idle": "tense_idle",
+      "tired_idle": "tired_idle",
+      "recover": "recover"
+    },
+    "clipMeta": {
+      "idle_relaxed": {
+        "durationS": 4,
+        "loop": true
+      },
+      "look_at_handler": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "sniff": {
+        "durationS": 2.5,
+        "loop": true
+      },
+      "walk": {
+        "durationS": 1,
+        "loop": true
+      },
+      "sit": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "lie_down": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "rest_loop": {
+        "durationS": 5,
+        "loop": true
+      },
+      "eat": {
+        "durationS": 4,
+        "loop": false,
+        "events": {
+          "treat_received": 2
+        }
+      },
+      "play_bow": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "turn_away": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "tense_idle": {
+        "durationS": 2.5,
+        "loop": true
+      },
+      "tired_idle": {
+        "durationS": 3.5,
+        "loop": true
+      },
+      "recover": {
+        "durationS": 2,
+        "loop": false
+      }
+    },
+    "source": "Quaternius Ultimate Animated Animal Pack (ShibaInu); adapted coat/scale; native idle/walk/eat and Blender IK-authored educational clips, scripts/build-free-dogs.mjs",
+    "license": "CC0 1.0 Universal; Quaternius; https://quaternius.com/packs/ultimateanimatedanimals.html",
+    "version": 2,
+    "validator": {
+      "numErrors": 0,
+      "numWarnings": 0,
+      "numInfos": 0,
+      "numHints": 0,
+      "messages": [],
+      "report": {
+        "uri": "dog_nala_puppy",
+        "mimeType": "model/gltf-binary",
+        "validatorVersion": "2.0.0-dev.3.10",
+        "validatedAt": "2026-10-10T13:06:49.675Z",
+        "issues": {
+          "numErrors": 0,
+          "numWarnings": 0,
+          "numInfos": 0,
+          "numHints": 0,
+          "messages": [],
+          "truncated": false
+        },
+        "info": {
+          "version": "2.0",
+          "generator": "glTF-Transform v4.5.1",
+          "resources": [
+            {
+              "pointer": "/buffers/0",
+              "mimeType": "application/gltf-buffer",
+              "storage": "glb",
+              "byteLength": 332560
+            }
+          ],
+          "animationCount": 13,
+          "materialCount": 1,
+          "hasMorphTargets": false,
+          "hasSkins": true,
+          "hasTextures": false,
+          "hasDefaultScene": true,
+          "drawCallCount": 1,
+          "totalVertexCount": 3962,
+          "totalTriangleCount": 1950,
+          "maxUVs": 0,
+          "maxInfluences": 4,
+          "maxAttributes": 5
+        }
+      }
+    }
+  },
+  "dog_nala_growing": {
+    "url": "dog_nala_growing.glb",
+    "status": "code-authored",
+    "productionIntegrated": false,
+    "material": "vertex",
+    "textures": [],
+    "textureSizes": [],
+    "bytes": 612048,
+    "triangles": 1950,
+    "boundsMeters": [
+      0.17437921464443207,
+      0.4929224594379775,
+      0.6262856870889664
+    ],
+    "drawCalls": 1,
+    "rig": "vendor",
+    "rigInfo": {
+      "joints": 46,
+      "maxInfluences": 4,
+      "root": ""
+    },
+    "clips": [
+      "idle_relaxed",
+      "look_at_handler",
+      "sniff",
+      "walk",
+      "sit",
+      "lie_down",
+      "rest_loop",
+      "eat",
+      "play_bow",
+      "turn_away",
+      "tense_idle",
+      "tired_idle",
+      "recover"
+    ],
+    "sourceClips": [
+      "eat",
+      "idle_relaxed",
+      "lie_down",
+      "look_at_handler",
+      "play_bow",
+      "recover",
+      "rest_loop",
+      "sit",
+      "sniff",
+      "tense_idle",
+      "tired_idle",
+      "turn_away",
+      "walk"
+    ],
+    "clipMap": {
+      "idle_relaxed": "idle_relaxed",
+      "look_at_handler": "look_at_handler",
+      "sniff": "sniff",
+      "walk": "walk",
+      "sit": "sit",
+      "lie_down": "lie_down",
+      "rest_loop": "rest_loop",
+      "eat": "eat",
+      "play_bow": "play_bow",
+      "turn_away": "turn_away",
+      "tense_idle": "tense_idle",
+      "tired_idle": "tired_idle",
+      "recover": "recover"
+    },
+    "clipMeta": {
+      "idle_relaxed": {
+        "durationS": 4,
+        "loop": true
+      },
+      "look_at_handler": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "sniff": {
+        "durationS": 2.5,
+        "loop": true
+      },
+      "walk": {
+        "durationS": 1,
+        "loop": true
+      },
+      "sit": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "lie_down": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "rest_loop": {
+        "durationS": 5,
+        "loop": true
+      },
+      "eat": {
+        "durationS": 4,
+        "loop": false,
+        "events": {
+          "treat_received": 2
+        }
+      },
+      "play_bow": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "turn_away": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "tense_idle": {
+        "durationS": 2.5,
+        "loop": true
+      },
+      "tired_idle": {
+        "durationS": 3.5,
+        "loop": true
+      },
+      "recover": {
+        "durationS": 2,
+        "loop": false
+      }
+    },
+    "source": "Quaternius Ultimate Animated Animal Pack (ShibaInu); adapted coat/scale; native idle/walk/eat and Blender IK-authored educational clips, scripts/build-free-dogs.mjs",
+    "license": "CC0 1.0 Universal; Quaternius; https://quaternius.com/packs/ultimateanimatedanimals.html",
+    "version": 2,
+    "validator": {
+      "numErrors": 0,
+      "numWarnings": 0,
+      "numInfos": 0,
+      "numHints": 0,
+      "messages": [],
+      "report": {
+        "uri": "dog_nala_growing",
+        "mimeType": "model/gltf-binary",
+        "validatorVersion": "2.0.0-dev.3.10",
+        "validatedAt": "2026-10-10T13:06:49.817Z",
+        "issues": {
+          "numErrors": 0,
+          "numWarnings": 0,
+          "numInfos": 0,
+          "numHints": 0,
+          "messages": [],
+          "truncated": false
+        },
+        "info": {
+          "version": "2.0",
+          "generator": "glTF-Transform v4.5.1",
+          "resources": [
+            {
+              "pointer": "/buffers/0",
+              "mimeType": "application/gltf-buffer",
+              "storage": "glb",
+              "byteLength": 333468
+            }
+          ],
+          "animationCount": 13,
+          "materialCount": 1,
+          "hasMorphTargets": false,
+          "hasSkins": true,
+          "hasTextures": false,
+          "hasDefaultScene": true,
+          "drawCallCount": 1,
+          "totalVertexCount": 3962,
+          "totalTriangleCount": 1950,
+          "maxUVs": 0,
+          "maxInfluences": 4,
+          "maxAttributes": 5
+        }
+      }
+    }
+  },
+  "dog_bruno_puppy": {
+    "url": "dog_bruno_puppy.glb",
+    "status": "code-authored",
+    "productionIntegrated": false,
+    "material": "vertex",
+    "textures": [],
+    "textureSizes": [],
+    "bytes": 637432,
+    "triangles": 1920,
+    "boundsMeters": [
+      0.13463972508907318,
+      0.43399999834946357,
+      0.5289485603570938
+    ],
+    "drawCalls": 1,
+    "rig": "vendor",
+    "rigInfo": {
+      "joints": 49,
+      "maxInfluences": 4,
+      "root": ""
+    },
+    "clips": [
+      "idle_relaxed",
+      "look_at_handler",
+      "sniff",
+      "walk",
+      "sit",
+      "lie_down",
+      "rest_loop",
+      "eat",
+      "play_bow",
+      "turn_away",
+      "tense_idle",
+      "tired_idle",
+      "recover"
+    ],
+    "sourceClips": [
+      "eat",
+      "idle_relaxed",
+      "lie_down",
+      "look_at_handler",
+      "play_bow",
+      "recover",
+      "rest_loop",
+      "sit",
+      "sniff",
+      "tense_idle",
+      "tired_idle",
+      "turn_away",
+      "walk"
+    ],
+    "clipMap": {
+      "idle_relaxed": "idle_relaxed",
+      "look_at_handler": "look_at_handler",
+      "sniff": "sniff",
+      "walk": "walk",
+      "sit": "sit",
+      "lie_down": "lie_down",
+      "rest_loop": "rest_loop",
+      "eat": "eat",
+      "play_bow": "play_bow",
+      "turn_away": "turn_away",
+      "tense_idle": "tense_idle",
+      "tired_idle": "tired_idle",
+      "recover": "recover"
+    },
+    "clipMeta": {
+      "idle_relaxed": {
+        "durationS": 4,
+        "loop": true
+      },
+      "look_at_handler": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "sniff": {
+        "durationS": 2.5,
+        "loop": true
+      },
+      "walk": {
+        "durationS": 1,
+        "loop": true
+      },
+      "sit": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "lie_down": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "rest_loop": {
+        "durationS": 5,
+        "loop": true
+      },
+      "eat": {
+        "durationS": 4,
+        "loop": false,
+        "events": {
+          "treat_received": 2
+        }
+      },
+      "play_bow": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "turn_away": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "tense_idle": {
+        "durationS": 2.5,
+        "loop": true
+      },
+      "tired_idle": {
+        "durationS": 3.5,
+        "loop": true
+      },
+      "recover": {
+        "durationS": 2,
+        "loop": false
+      }
+    },
+    "source": "Quaternius Ultimate Animated Animal Pack (Husky); adapted coat/scale; native idle/walk/eat and Blender IK-authored educational clips, scripts/build-free-dogs.mjs",
+    "license": "CC0 1.0 Universal; Quaternius; https://quaternius.com/packs/ultimateanimatedanimals.html",
+    "version": 2,
+    "validator": {
+      "numErrors": 0,
+      "numWarnings": 0,
+      "numInfos": 0,
+      "numHints": 0,
+      "messages": [],
+      "report": {
+        "uri": "dog_bruno_puppy",
+        "mimeType": "model/gltf-binary",
+        "validatorVersion": "2.0.0-dev.3.10",
+        "validatedAt": "2026-10-10T13:06:49.924Z",
+        "issues": {
+          "numErrors": 0,
+          "numWarnings": 0,
+          "numInfos": 0,
+          "numHints": 0,
+          "messages": [],
+          "truncated": false
+        },
+        "info": {
+          "version": "2.0",
+          "generator": "glTF-Transform v4.5.1",
+          "resources": [
+            {
+              "pointer": "/buffers/0",
+              "mimeType": "application/gltf-buffer",
+              "storage": "glb",
+              "byteLength": 340672
+            }
+          ],
+          "animationCount": 13,
+          "materialCount": 1,
+          "hasMorphTargets": false,
+          "hasSkins": true,
+          "hasTextures": false,
+          "hasDefaultScene": true,
+          "drawCallCount": 1,
+          "totalVertexCount": 3896,
+          "totalTriangleCount": 1920,
+          "maxUVs": 0,
+          "maxInfluences": 4,
+          "maxAttributes": 5
+        }
+      }
+    }
+  }
+}

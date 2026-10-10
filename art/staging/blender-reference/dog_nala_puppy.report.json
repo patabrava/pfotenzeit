@@ -1,0 +1,796 @@
+{
+  "tool": "scripts/ingest-vendor.mjs",
+  "generatedUTC": "2026-10-09T19:26:57.020Z",
+  "input": {
+    "path": "art/blender-reference-pass-2026-10-09/candidates/dog_nala_puppy.glb",
+    "bytes": 2032320,
+    "generator": "glTF-Transform v4.5.1",
+    "extensions": {
+      "allowed": [],
+      "unsupported": [],
+      "unknown": [],
+      "required": []
+    }
+  },
+  "options": {
+    "key": "dog.nala.puppy",
+    "kind": "dog",
+    "name": "dog_nala_puppy",
+    "maxTexture": 1024,
+    "quantize": false,
+    "clipmap": null
+  },
+  "before": {
+    "bytes": 2032320,
+    "triangles": 17680,
+    "vertices": 18141,
+    "drawCalls": 1,
+    "bounds": {
+      "min": [
+        -0.09172540158033371,
+        0.00024852226488292217,
+        -0.3965679407119751
+      ],
+      "max": [
+        0.09172540158033371,
+        0.3912332057952881,
+        0.3330000042915344
+      ],
+      "size": [
+        0.18345080316066742,
+        0.39098468353040516,
+        0.7295679450035095
+      ]
+    },
+    "meshes": [
+      {
+        "name": "dog_nala_body",
+        "primitives": [
+          {
+            "semantics": [
+              "POSITION",
+              "NORMAL",
+              "COLOR_0",
+              "JOINTS_0",
+              "WEIGHTS_0",
+              "TANGENT",
+              "TEXCOORD_0"
+            ],
+            "mode": 4,
+            "vertices": 18141,
+            "triangles": 17680,
+            "material": "mat_nala_fur",
+            "indexed": true,
+            "indexType": 5123
+          }
+        ]
+      }
+    ],
+    "materials": [
+      {
+        "name": "mat_nala_fur",
+        "doubleSided": true,
+        "alphaMode": "OPAQUE",
+        "metallicFactor": 0,
+        "roughnessFactor": 0.7,
+        "textures": {
+          "normal": "dog_nala_puppy_surface_normal"
+        }
+      }
+    ],
+    "textures": [
+      {
+        "slot": "normal",
+        "material": "mat_nala_fur",
+        "name": "dog_nala_puppy_surface_normal",
+        "mime": "image/png",
+        "width": 1024,
+        "height": 1024,
+        "bytes": 440031,
+        "decodedBytes": 5578424
+      }
+    ],
+    "decodedTextureBytes": 5578424,
+    "skins": [
+      {
+        "name": "rig_nala",
+        "joints": [
+          "root",
+          "pelvis",
+          "spine_01",
+          "spine_02",
+          "neck",
+          "head",
+          "jaw",
+          "ear_l_01",
+          "ear_l_02",
+          "ear_r_01",
+          "ear_r_02",
+          "tail_01",
+          "tail_02",
+          "tail_03",
+          "leg_fl_upper",
+          "leg_fl_lower",
+          "paw_fl",
+          "leg_fr_upper",
+          "leg_fr_lower",
+          "paw_fr",
+          "leg_bl_upper",
+          "leg_bl_lower",
+          "paw_bl",
+          "leg_br_upper",
+          "leg_br_lower",
+          "paw_br"
+        ],
+        "jointCount": 26,
+        "skeletonRoot": "root"
+      }
+    ],
+    "maxInfluences": 4,
+    "skinWeights": {
+      "vertices": 18141,
+      "unweighted": 0,
+      "maxDeviation": 4.470348358154297e-8
+    },
+    "skeletonRoot": "root",
+    "animations": [
+      {
+        "name": "idle_relaxed",
+        "durationS": 4,
+        "channels": 11,
+        "closes": true,
+        "maxEndpointDiff": 0,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 11
+      },
+      {
+        "name": "look_at_handler",
+        "durationS": 1.5,
+        "channels": 11,
+        "closes": false,
+        "maxEndpointDiff": 0.17132249474525452,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 11
+      },
+      {
+        "name": "sniff",
+        "durationS": 2.5,
+        "channels": 13,
+        "closes": true,
+        "maxEndpointDiff": 0,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 13
+      },
+      {
+        "name": "walk",
+        "durationS": 1,
+        "channels": 25,
+        "closes": true,
+        "maxEndpointDiff": 0,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 24
+      },
+      {
+        "name": "sit",
+        "durationS": 1.5,
+        "channels": 17,
+        "closes": false,
+        "maxEndpointDiff": 0.8479572534561157,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 16
+      },
+      {
+        "name": "lie_down",
+        "durationS": 1.5,
+        "channels": 25,
+        "closes": false,
+        "maxEndpointDiff": 0.7369638681411743,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 24
+      },
+      {
+        "name": "rest_loop",
+        "durationS": 5,
+        "channels": 25,
+        "closes": true,
+        "maxEndpointDiff": 0,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 24
+      },
+      {
+        "name": "eat",
+        "durationS": 4,
+        "channels": 15,
+        "closes": false,
+        "maxEndpointDiff": 0.028268197551369667,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 15
+      },
+      {
+        "name": "play_bow",
+        "durationS": 1.5,
+        "channels": 23,
+        "closes": false,
+        "maxEndpointDiff": 0.6192720532417297,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 22
+      },
+      {
+        "name": "turn_away",
+        "durationS": 1.5,
+        "channels": 20,
+        "closes": false,
+        "maxEndpointDiff": 0.5735764503479004,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 20
+      },
+      {
+        "name": "tense_idle",
+        "durationS": 2.5,
+        "channels": 21,
+        "closes": true,
+        "maxEndpointDiff": 0,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 20
+      },
+      {
+        "name": "tired_idle",
+        "durationS": 3.5,
+        "channels": 12,
+        "closes": true,
+        "maxEndpointDiff": 0,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 12
+      },
+      {
+        "name": "recover",
+        "durationS": 2,
+        "channels": 21,
+        "closes": false,
+        "maxEndpointDiff": 0.4067366421222687,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 20
+      }
+    ],
+    "nodes": 27,
+    "scaleProblems": []
+  },
+  "after": {
+    "bytes": 2032320,
+    "triangles": 17680,
+    "vertices": 18141,
+    "drawCalls": 1,
+    "bounds": {
+      "min": [
+        -0.09172540158033371,
+        0.00024852226488292217,
+        -0.3965679407119751
+      ],
+      "max": [
+        0.09172540158033371,
+        0.3912332057952881,
+        0.3330000042915344
+      ],
+      "size": [
+        0.18345080316066742,
+        0.39098468353040516,
+        0.7295679450035095
+      ]
+    },
+    "meshes": [
+      {
+        "name": "dog_nala_body",
+        "primitives": [
+          {
+            "semantics": [
+              "POSITION",
+              "NORMAL",
+              "COLOR_0",
+              "JOINTS_0",
+              "WEIGHTS_0",
+              "TANGENT",
+              "TEXCOORD_0"
+            ],
+            "mode": 4,
+            "vertices": 18141,
+            "triangles": 17680,
+            "material": "mat_nala_fur",
+            "indexed": true,
+            "indexType": 5123
+          }
+        ]
+      }
+    ],
+    "materials": [
+      {
+        "name": "mat_nala_fur",
+        "doubleSided": true,
+        "alphaMode": "OPAQUE",
+        "metallicFactor": 0,
+        "roughnessFactor": 0.7,
+        "textures": {
+          "normal": "dog_nala_puppy_surface_normal"
+        }
+      }
+    ],
+    "textures": [
+      {
+        "slot": "normal",
+        "material": "mat_nala_fur",
+        "name": "dog_nala_puppy_surface_normal",
+        "mime": "image/png",
+        "width": 1024,
+        "height": 1024,
+        "bytes": 440031,
+        "decodedBytes": 5578424
+      }
+    ],
+    "decodedTextureBytes": 5578424,
+    "skins": [
+      {
+        "name": "rig_nala",
+        "joints": [
+          "root",
+          "pelvis",
+          "spine_01",
+          "spine_02",
+          "neck",
+          "head",
+          "jaw",
+          "ear_l_01",
+          "ear_l_02",
+          "ear_r_01",
+          "ear_r_02",
+          "tail_01",
+          "tail_02",
+          "tail_03",
+          "leg_fl_upper",
+          "leg_fl_lower",
+          "paw_fl",
+          "leg_fr_upper",
+          "leg_fr_lower",
+          "paw_fr",
+          "leg_bl_upper",
+          "leg_bl_lower",
+          "paw_bl",
+          "leg_br_upper",
+          "leg_br_lower",
+          "paw_br"
+        ],
+        "jointCount": 26,
+        "skeletonRoot": "root"
+      }
+    ],
+    "maxInfluences": 4,
+    "skinWeights": {
+      "vertices": 18141,
+      "unweighted": 0,
+      "maxDeviation": 4.470348358154297e-8
+    },
+    "skeletonRoot": "root",
+    "animations": [
+      {
+        "name": "idle_relaxed",
+        "durationS": 4,
+        "channels": 11,
+        "closes": true,
+        "maxEndpointDiff": 0,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 11
+      },
+      {
+        "name": "look_at_handler",
+        "durationS": 1.5,
+        "channels": 11,
+        "closes": false,
+        "maxEndpointDiff": 0.17132249474525452,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 11
+      },
+      {
+        "name": "sniff",
+        "durationS": 2.5,
+        "channels": 13,
+        "closes": true,
+        "maxEndpointDiff": 0,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 13
+      },
+      {
+        "name": "walk",
+        "durationS": 1,
+        "channels": 25,
+        "closes": true,
+        "maxEndpointDiff": 0,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 24
+      },
+      {
+        "name": "sit",
+        "durationS": 1.5,
+        "channels": 17,
+        "closes": false,
+        "maxEndpointDiff": 0.8479572534561157,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 16
+      },
+      {
+        "name": "lie_down",
+        "durationS": 1.5,
+        "channels": 25,
+        "closes": false,
+        "maxEndpointDiff": 0.7369638681411743,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 24
+      },
+      {
+        "name": "rest_loop",
+        "durationS": 5,
+        "channels": 25,
+        "closes": true,
+        "maxEndpointDiff": 0,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 24
+      },
+      {
+        "name": "eat",
+        "durationS": 4,
+        "channels": 15,
+        "closes": false,
+        "maxEndpointDiff": 0.028268197551369667,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 15
+      },
+      {
+        "name": "play_bow",
+        "durationS": 1.5,
+        "channels": 23,
+        "closes": false,
+        "maxEndpointDiff": 0.6192720532417297,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 22
+      },
+      {
+        "name": "turn_away",
+        "durationS": 1.5,
+        "channels": 20,
+        "closes": false,
+        "maxEndpointDiff": 0.5735764503479004,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 20
+      },
+      {
+        "name": "tense_idle",
+        "durationS": 2.5,
+        "channels": 21,
+        "closes": true,
+        "maxEndpointDiff": 0,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 20
+      },
+      {
+        "name": "tired_idle",
+        "durationS": 3.5,
+        "channels": 12,
+        "closes": true,
+        "maxEndpointDiff": 0,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 12
+      },
+      {
+        "name": "recover",
+        "durationS": 2,
+        "channels": 21,
+        "closes": false,
+        "maxEndpointDiff": 0.4067366421222687,
+        "rootTranslationRangeM": 0,
+        "interpolations": [
+          "LINEAR"
+        ],
+        "targets": 20
+      }
+    ],
+    "nodes": 27,
+    "scaleProblems": []
+  },
+  "textureChanges": [
+    {
+      "name": "dog_nala_puppy_surface_normal",
+      "mime": "image/png",
+      "changed": false,
+      "from": [
+        1024,
+        1024
+      ],
+      "to": [
+        1024,
+        1024
+      ],
+      "bytesBefore": 440031,
+      "bytesAfter": 440031,
+      "note": ""
+    }
+  ],
+  "validator": {
+    "errors": 0,
+    "warnings": 0,
+    "infos": 0,
+    "messages": []
+  },
+  "clipMapping": {
+    "clipMap": {
+      "idle_relaxed": "idle_relaxed",
+      "look_at_handler": "look_at_handler",
+      "sniff": "sniff",
+      "walk": "walk",
+      "sit": "sit",
+      "lie_down": "lie_down",
+      "rest_loop": "rest_loop",
+      "eat": "eat",
+      "play_bow": "play_bow",
+      "turn_away": "turn_away",
+      "tense_idle": "tense_idle",
+      "tired_idle": "tired_idle",
+      "recover": "recover"
+    },
+    "autoMatched": [],
+    "missing": [],
+    "loopDoesNotClose": []
+  },
+  "rig": {
+    "kind": "project",
+    "joints": [
+      "root",
+      "pelvis",
+      "spine_01",
+      "spine_02",
+      "neck",
+      "head",
+      "jaw",
+      "ear_l_01",
+      "ear_l_02",
+      "ear_r_01",
+      "ear_r_02",
+      "tail_01",
+      "tail_02",
+      "tail_03",
+      "leg_fl_upper",
+      "leg_fl_lower",
+      "paw_fl",
+      "leg_fr_upper",
+      "leg_fr_lower",
+      "paw_fr",
+      "leg_bl_upper",
+      "leg_bl_lower",
+      "paw_bl",
+      "leg_br_upper",
+      "leg_br_lower",
+      "paw_br"
+    ],
+    "maxInfluences": 4,
+    "skeletonRoot": "root",
+    "unweightedVertices": 0
+  },
+  "measured": {
+    "shoulderHeightM": 0.2897,
+    "heightM": 0.3912,
+    "minY": 0.0002
+  },
+  "manifestEntry": {
+    "url": "dog_nala_puppy.glb",
+    "status": "pending",
+    "productionIntegrated": false,
+    "material": "textured",
+    "textures": [
+      {
+        "slot": "normal",
+        "width": 1024,
+        "height": 1024,
+        "bytes": 440031,
+        "mime": "image/png"
+      }
+    ],
+    "textureSizes": [
+      1024
+    ],
+    "drawCalls": 1,
+    "rig": "project",
+    "rigInfo": {
+      "joints": 26,
+      "maxInfluences": 4,
+      "root": "root"
+    },
+    "clipMap": {
+      "idle_relaxed": "idle_relaxed",
+      "look_at_handler": "look_at_handler",
+      "sniff": "sniff",
+      "walk": "walk",
+      "sit": "sit",
+      "lie_down": "lie_down",
+      "rest_loop": "rest_loop",
+      "eat": "eat",
+      "play_bow": "play_bow",
+      "turn_away": "turn_away",
+      "tense_idle": "tense_idle",
+      "tired_idle": "tired_idle",
+      "recover": "recover"
+    },
+    "clips": [
+      "idle_relaxed",
+      "look_at_handler",
+      "sniff",
+      "walk",
+      "sit",
+      "lie_down",
+      "rest_loop",
+      "eat",
+      "play_bow",
+      "turn_away",
+      "tense_idle",
+      "tired_idle",
+      "recover"
+    ],
+    "sourceClips": [
+      "idle_relaxed",
+      "look_at_handler",
+      "sniff",
+      "walk",
+      "sit",
+      "lie_down",
+      "rest_loop",
+      "eat",
+      "play_bow",
+      "turn_away",
+      "tense_idle",
+      "tired_idle",
+      "recover"
+    ],
+    "bytes": 2032320,
+    "triangles": 17680,
+    "boundsMeters": [
+      0.1835,
+      0.391,
+      0.7296
+    ],
+    "measuredShoulderHeightM": 0.2897,
+    "source": "art/blender-reference-pass-2026-10-09/candidates/dog_nala_puppy.glb (Blender reference pass, code-authored candidate)",
+    "license": "project-internal, generated code; no third-party assets",
+    "version": 2,
+    "clipMeta": {
+      "idle_relaxed": {
+        "durationS": 4,
+        "loop": true
+      },
+      "look_at_handler": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "sniff": {
+        "durationS": 2.5,
+        "loop": true
+      },
+      "walk": {
+        "durationS": 1,
+        "loop": true
+      },
+      "sit": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "lie_down": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "rest_loop": {
+        "durationS": 5,
+        "loop": true
+      },
+      "eat": {
+        "durationS": 4,
+        "loop": false,
+        "events": {
+          "treat_received": 2
+        }
+      },
+      "play_bow": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "turn_away": {
+        "durationS": 1.5,
+        "loop": false
+      },
+      "tense_idle": {
+        "durationS": 2.5,
+        "loop": true
+      },
+      "tired_idle": {
+        "durationS": 3.5,
+        "loop": true
+      },
+      "recover": {
+        "durationS": 2,
+        "loop": false
+      }
+    }
+  },
+  "nextSteps": [
+    "run: node scripts/validate-assets.mjs --staging art/staging/blender-reference",
+    "shipping into public/ is a reviewed step of the owning work package (never automatic)"
+  ]
+}

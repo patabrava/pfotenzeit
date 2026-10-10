@@ -35,7 +35,7 @@ describe('lesson structure', () => {
     const ids = new Set<string>();
     for (const round of lesson.rounds) {
       expect(round.options.length).toBeGreaterThanOrEqual(2);
-      expect(round.options.length).toBeLessThanOrEqual(3);
+      expect(round.options.length).toBeLessThanOrEqual(round.exercise ? 4 : 3);
       expect(round.options.some((o) => o.helpful)).toBe(true);
       for (const o of round.options) {
         expect(ids.has(o.id)).toBe(false);
@@ -130,9 +130,13 @@ describe('lesson scripts from 03', () => {
     expect(observe.feedback).toContain('Du gibst Nala Zeit, die Situation selbst zu erkunden.');
     expect(option(L01, 0, 'Sofort näher herangehen').next).toBe('supportedRetry');
 
-    const distance = option(L01, 1, 'Mehr Abstand');
+    // D-041: L01_B is a playable find_spot exercise; the counting option is offered after 'settled'.
+    expect(L01.rounds[1]?.exercise?.kind).toBe('find_spot');
+    const distance = option(L01, 1, 'Hier bleiben und ruhig abwarten');
     expect(distance.countsForLearning).toBe(true);
-    expect(distance.feedback).toContain('Mehrere Hinweise sprechen dafür, die Situation leichter zu machen.');
+    expect(distance.forResponses).toEqual(['settled']);
+    expect(distance.feedback).toContain('Mehrere Hinweise sprechen dafür, die Situation leichter zu machen');
+    expect(option(L01, 1, 'Noch mehr Abstand').next).toBe('retry');
     expect(L01.rounds[1]?.dogId).toBe('dog_bruno');
     expect(L01.rounds[1]?.environment).toBe('courtyard_loud');
 
@@ -178,9 +182,12 @@ describe('lesson scripts from 03', () => {
 
     expect(L03.rounds[1]?.contextBefore.stress).toBe(65);
     expect(L03.rounds[1]?.environment).toBe('courtyard_loud');
-    const relieve = option(L03, 1, 'Reiz entfernen und Abstand geben');
+    // D-041: L03_B is a playable find_spot exercise in the loud yard.
+    expect(L03.rounds[1]?.exercise?.kind).toBe('find_spot');
+    const relieve = option(L03, 1, 'Hier bleiben und Ruhe geben');
     expect(relieve.contextAfter).toEqual({ stress: 30 });
-    expect(relieve.poseAfter).toBe('recover');
+    expect(relieve.poseAfter).toBe('rest_loop');
+    expect(option(L03, 1, 'Noch weiter weg vom Geräusch').next).toBe('retry');
     expect(option(L03, 1, 'Zum Reiz locken').feedback).toContain('Heute ist der Schritt zu groß. Mehr Abstand hilft.');
 
     const close = option(L03, 2, 'Heute abschließen');
@@ -189,7 +196,7 @@ describe('lesson scripts from 03', () => {
     const wake = option(L03, 2, 'Für noch eine Übung aufwecken');
     expect(wake.helpful).toBe(false);
     expect(wake.next).toBe('supportedRetry');
-    expect(wake.poseAfter).toBe('rest_loop');
+    expect(wake.poseAfter).toBe('tired_idle');
     expect(L03.transferText).toBe('Ruhe und eine passende Schwierigkeit gehören zum Lernen.');
   });
 

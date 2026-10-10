@@ -1,0 +1,21 @@
+# WP-R — UI and input for yard life (session: ines-24)
+
+Read first: `docs/WORLD_PLAN.md` (§1, §4–§7, §9), `src/world/types.ts` (WorldInput, WorldContext, WorldEvent), `src/app/appState.ts` (`practice` route, `yardMode`, `dogSheetOpen`), `src/content/types.ts` (`ExerciseSpec`, `PracticeExercise`, `MomentText`, `forResponses`), `src/simulation/types.ts` (LessonPhase `'exercise'`, `EXERCISE_ATTEMPT`, `RESPOND_MOMENT`, effects), D-032, D-035. German strings: `src/content/de.ts` gets `de.world`, `de.exercise`, `de.practice`, `de.moments` from ines-c3 (keys listed below); until they land, keep `t` as the facade with the listed keys mapped to placeholders marked `TODO-de` so nothing ships un-German.
+
+## You own
+`src/ui/**` (not `pixel/`), `src/input/**`, `src/audio/**`. Preserve D-032 (strip measurement, banner tap-through, 300 ms guard, 48 px targets, 200 % text) and WP-J.
+
+## Deliver
+1. **Yard input** (`src/input/yard.ts`): pointer tap on the scene strip → `renderer.pick()` → `moveTo` (ground/zone) or dog sheet (actor dog) or walk to Mira/Alex (actor); drag over the strip is not a move (slop); WASD/arrow keys on desktop → `moveDir` while held (key repeat ignored), Escape → `stop`, Enter/Space → activate the prompt button. Touch: no joystick in v1; tap only. Keyboard focus never trapped by the canvas.
+2. **Home yard HUD**: one prompt button at the bottom (≥ 56 px, label from `de.world.prompts[zone]`, hidden when `prompt === null`), the mark counter stays in the header; the care sheet remains reachable from the menu (free care always available without walking). "Zur klassischen Ansicht" in settings toggles `yardMode` (static = current staged school).
+3. **Dog sheet**: name, attention line (`de.poses[pose]` via the existing pose line helper), actions from plan §4, moment block when a moment is active (observation + response buttons, "Ignorieren" always), closes on action; moment responses dispatch `RESPOND_MOMENT`; care actions dispatch `CARE`.
+4. **Exercise round HUD** (lesson route, round with `exercise`): observe card shows `instruction`, a status line (`notReadyHint` or "Bereit"), the attempt button (`readyLabel`, disabled until `exerciseReady`, never a timer), fallback band buttons when the renderer is not ready or `yardMode === 'static'` (dispatch `setBand` through the world controller, then the attempt button); phase `exercise`: inputs locked, "Schau, was passiert …" + `responseText[response]`; `decide`: options filtered by `forResponses` for the last attempt's response (`getCurrentOptions` does the filtering, use it); `retry` returns to observe with "Versuch 2 von 3" in the header tag.
+5. **Practice route**: sheet to pick exercise + distraction, HUD with instruction/ready/attempt/response, "Noch einmal", "Fertig" (→ home), Mira hint line after two non-success attempts, menu with care and leave. Entry points: Mira prompt (choice sheet lesson/practice) and circle prompt.
+6. **Reduced motion / fallback**: all of the above usable without the 3D yard: zones as a list of buttons in a "Hof" sheet (walk = teleport), attention line text, moments as text + buttons.
+7. `src/ui/dev/smoke.mjs`: home yard prompt appears after a scripted `moveTo` (use `window.__pzWorld` from WP-P), dog sheet opens, exercise round reaches `decide` via the fallback band + attempt path, practice sheet opens, keyboard path (WASD moves, Enter activates).
+
+## `de` keys you can code against now (ines-c3 adds the German text)
+`de.world.prompts: Record<ZoneId, string>`, `de.world.sheetTitle`, `de.world.zonesTitle`, `de.world.toStatic`, `de.world.toYard`, `de.world.dog.pet/play/sit/close`, `de.world.alexBruno(brunoState: string)`, `de.world.walkHint` (first-run hint "Tippe auf den Boden …"), `de.exercise.ready`, `de.exercise.attemptOf(n, max)`, `de.exercise.watching`, `de.exercise.endExercise`, `de.exercise.bandTitle`, `de.practice.title/choose/distraction/start/again/done/hintTitle/success/notYet`, `de.practice.distractions: Record<DistractionLevel, string>`, `de.moments[kind]` comes from `content.moments`.
+
+## Report to ines-c3
+`npm run typecheck`, `npm run build`, smoke `node --check`, what you need from WP-P (controller API) or WP-Q (`pick`, anchors): message them directly and copy me.

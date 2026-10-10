@@ -1,0 +1,72 @@
+{
+  "Body": [],
+  "Back": [],
+  "Torso": [],
+  "Torso2": [],
+  "Torso3": [],
+  "Neck1": [],
+  "Neck2": [],
+  "Neck3": [],
+  "Head": [],
+  "Ear1.L": [],
+  "Ear2.L": [],
+  "Ear3.L": [],
+  "Ear4.L": [],
+  "Ear1.R": [],
+  "Ear2.R": [],
+  "Ear3.R": [],
+  "Ear4.R": [],
+  "FrontShoulder.L": [],
+  "FrontUpperLeg.L": [],
+  "FrontLowerLeg.L": [
+    {
+      "type": "IK",
+      "target": "IKFrontLeg.L",
+      "chain": 2
+    }
+  ],
+  "FrontShoulder.R": [],
+  "FrontUpperLeg.R": [],
+  "FrontLowerLeg.R": [
+    {
+      "type": "IK",
+      "target": "IKFrontLeg.R",
+      "chain": 2
+    }
+  ],
+  "BackShoulder.L": [],
+  "BackLeg.L": [],
+  "BackUpperLeg.L": [],
+  "BackLowerLeg.L": [
+    {
+      "type": "IK",
+      "target": "IKBackLeg.L",
+      "chain": 4
+    }
+  ],
+  "BackShoulder.R": [],
+  "BackLeg.R": [],
+  "BackUpperLeg.R": [],
+  "BackLowerLeg.R": [
+    {
+      "type": "IK",
+      "target": "IKBackLeg.R",
+      "chain": 4
+    }
+  ],
+  "Tail1": [],
+  "Tail2": [],
+  "Tail3": [],
+  "PoleTargetBack.L": [],
+  "PoleTarget.L": [],
+  "PoleTargetBack.R": [],
+  "PoleTarget.R": [],
+  "IKBackLeg.L": [],
+  "FFB.L": [],
+  "IKFrontLeg.L": [],
+  "FF.L": [],
+  "IKBackLeg.R": [],
+  "FFB.R": [],
+  "IKFrontLeg.R": [],
+  "FF.R": []
+}

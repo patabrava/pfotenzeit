@@ -1,0 +1,13 @@
+
+> pfotenzeit@0.1.0 test
+> vitest run
+
+
+ RUN  v5.0.3 /Users/patabrava/Documents/AI/github/Camilo/Ines
+
+
+ Test Files  17 passed (17)
+      Tests  201 passed (201)
+   Start at  16:30:27
+   Duration  2.69s (tests 62%, transform 25%, import 7%, environment 6%, worker 1%)
+

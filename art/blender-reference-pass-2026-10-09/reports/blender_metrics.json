@@ -1,0 +1,27 @@
+{
+  "human_mira": {
+    "triangles": 15499,
+    "vertices": 8343,
+    "bones": 20
+  },
+  "human_alex": {
+    "triangles": 15500,
+    "vertices": 8468,
+    "bones": 20
+  },
+  "dog_nala_puppy": {
+    "triangles": 17680,
+    "vertices": 9588,
+    "bones": 26
+  },
+  "dog_nala_growing": {
+    "triangles": 17680,
+    "vertices": 9588,
+    "bones": 26
+  },
+  "dog_bruno_puppy": {
+    "triangles": 17680,
+    "vertices": 9562,
+    "bones": 26
+  }
+}
