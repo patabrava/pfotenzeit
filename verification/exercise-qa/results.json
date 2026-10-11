@@ -18,34 +18,10 @@
     "repeated": "comes"
   },
   {
-    "name": "390-recall-toy",
-    "pass": true,
-    "response": "comes",
-    "repeated": "turns_away"
-  },
-  {
     "name": "390-recall-other_dog",
     "pass": true,
     "response": "comes",
     "repeated": "turns_away"
-  },
-  {
-    "name": "390-find_spot-none",
-    "pass": true,
-    "response": "settled",
-    "repeated": "settled"
-  },
-  {
-    "name": "390-find_spot-toy",
-    "pass": true,
-    "response": "settled",
-    "repeated": "still_tense"
-  },
-  {
-    "name": "390-find_spot-other_dog",
-    "pass": true,
-    "response": "settled",
-    "repeated": "still_tense"
   },
   {
     "name": "390-look_at-none",
@@ -70,12 +46,6 @@
     "pass": true,
     "response": "comes",
     "repeated": "comes"
-  },
-  {
-    "name": "360-recall-toy",
-    "pass": true,
-    "response": "comes",
-    "repeated": "turns_away"
   },
   {
     "name": "360-recall-other_dog",
@@ -126,12 +96,6 @@
     "repeated": "comes"
   },
   {
-    "name": "1440-recall-toy",
-    "pass": true,
-    "response": "comes",
-    "repeated": "turns_away"
-  },
-  {
     "name": "1440-recall-other_dog",
     "pass": true,
     "response": "comes",
@@ -172,5 +136,41 @@
     "pass": true,
     "response": "glance",
     "repeated": "glance"
+  },
+  {
+    "name": "390-recall-toy",
+    "pass": true,
+    "response": "comes",
+    "repeated": "distracted"
+  },
+  {
+    "name": "360-recall-toy",
+    "pass": true,
+    "response": "comes",
+    "repeated": "distracted"
+  },
+  {
+    "name": "1440-recall-toy",
+    "pass": true,
+    "response": "comes",
+    "repeated": "distracted"
+  },
+  {
+    "name": "390-find_spot-none",
+    "pass": true,
+    "response": "settled",
+    "repeated": "settled"
+  },
+  {
+    "name": "390-find_spot-toy",
+    "pass": true,
+    "response": "settled",
+    "repeated": "still_tense"
+  },
+  {
+    "name": "390-find_spot-other_dog",
+    "pass": true,
+    "response": "settled",
+    "repeated": "still_tense"
   }
 ]
