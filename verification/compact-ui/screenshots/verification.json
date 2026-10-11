@@ -1,0 +1,32 @@
+{
+  "unitAndIntegrationTestsPassed": 308,
+  "finalBrowserCasesPassed": 11,
+  "viewportSizes": [
+    [
+      360,
+      640
+    ],
+    [
+      390,
+      844
+    ],
+    [
+      430,
+      932
+    ],
+    [
+      844,
+      390
+    ],
+    [
+      1440,
+      900
+    ]
+  ],
+  "productionBuild": "passed",
+  "typecheck": "passed",
+  "touchHoldReleaseCancelAndMenuStop": "passed",
+  "movementHelpDismissalAndReload": "passed",
+  "menuHelpAndNavigation": "passed",
+  "completeLessonRewardAndReload": "passed"
+}

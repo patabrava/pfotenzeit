@@ -193,6 +193,7 @@ describe('full standard session through the DOM', () => {
     expect(reloaded.school.marks).toBe(2);
     expect(reloaded.completedLessonIds).toEqual(['L01']);
     expect(reloaded.dog.satiety).toBe(after.dog.satiety); // standard: no offline loss
+    await click(root, de.world.menu);
     await waitForText(root, de.home.toLesson);
   }, 15000);
 

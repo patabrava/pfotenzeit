@@ -26,7 +26,13 @@ async function freshApp(page: Page): Promise<string[]> {
 }
 
 async function tap(page: Page, name: string): Promise<void> {
-  const button = page.getByRole('button', { name, exact: false }).first();
+  let button = page.getByRole('button', { name, exact: false }).first();
+  const menuActions: string[] = [de.home.school, de.app.settings, de.home.toLesson];
+  if (!(await button.isVisible()) && menuActions.includes(name) && await page.locator('[data-key="menu"]').isVisible()) {
+    await page.waitForTimeout(350);
+    await page.locator('[data-key="menu"]').click();
+    button = page.getByRole('dialog').getByRole('button', { name, exact: false }).first();
+  }
   await expect(button).toBeVisible({ timeout: 10_000 });
   await expect(button).not.toHaveAttribute('aria-disabled', 'true', { timeout: 15_000 });
   // Preserve the UI's 300 ms click-through guard after closing sheets.
@@ -103,7 +109,8 @@ test('standard start, profile, care, L01 to care closure, reflection, mark, relo
   await page.screenshot({ path: testInfo.outputPath('04-reflection.png') });
   await tap(page, de.reflection.doneToday);
   await tap(page, de.app.continue); // reward summary (WP-J) → home
-  await expect(page.getByRole('button', { name: de.home.toLesson })).toBeVisible({ timeout: 10_000 });
+  await tap(page, de.world.menu);
+  await expect(page.getByRole('dialog').getByRole('button', { name: de.home.toLesson })).toBeVisible({ timeout: 10_000 });
 
   // School sheet shows the marks.
   await tap(page, de.home.school);
@@ -135,6 +142,7 @@ async function persistedMode(page: Page): Promise<string> {
 test('challenge onboarding creates a separate run and standard stays untouched', async ({ page }) => {
   const errors = await freshApp(page);
   await tap(page, de.app.settings);
+  await page.waitForTimeout(350);
   await page.locator('[data-key="mode"]').click();
   await expect(page.getByText(/Allein durch deine Abwesenheit/)).toBeVisible();
   await tap(page, de.challenge.start);

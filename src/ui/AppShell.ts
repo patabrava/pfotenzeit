@@ -8,7 +8,7 @@ import { hasActiveTrap } from '../input/actions';
 import { bindYardInput, type YardInputHandle } from '../input/yard';
 import { getCurrentRound } from '../simulation/selectors';
 import type { StoreSnapshot } from '../state/store';
-import { button, createDialog, createLiveRegion, el, type ModalHandle } from './components';
+import { button, createDialog, createLiveRegion, el, icon, type ModalHandle } from './components';
 import type { UiContext, View } from './context';
 import { createHomeView } from './HomeView';
 import { createInterruptionBanner } from './InterruptionBanner';
@@ -23,6 +23,7 @@ import { openSchoolSheet } from './SchoolView';
 import { createSettingsView } from './SettingsView';
 import { t, tWorld } from './strings';
 import { createWebglFallbackView } from './WebglFallbackView';
+import { dismissMovementHelp } from './movementHelp';
 import { isYardActive, runPrompt, zoneHasAction } from './yard';
 import type { DomainEffect } from '../simulation/types';
 import type { RendererHandle } from '../render/types';
@@ -52,9 +53,9 @@ type ScreenKind = 'profile' | 'settings' | 'reflection' | 'memorial' | 'mode' | 
 export function createAppShell(getContext: () => UiContext): AppShell {
   const sceneContainer = el('div', { class: 'scene' });
   const movementControls = el('div', { class: 'yard-controls', attrs: { role: 'group', 'aria-label': tWorld.controls.label, hidden: true } },
-    (['arrowup', 'arrowleft', 'arrowdown', 'arrowright'] as const).map((direction, index) =>
+    (['arrowup', 'arrowleft', 'arrowdown', 'arrowright'] as const).map((direction) =>
       el('button', { class: 'yard-direction', attrs: { type: 'button', 'aria-label': tWorld.controls[direction] },
-        dataset: { direction }, text: ['↑', '←', '↓', '→'][index] }),
+        dataset: { direction } }, [icon('back')]),
     ),
   );
   sceneContainer.append(movementControls);
@@ -113,9 +114,7 @@ export function createAppShell(getContext: () => UiContext): AppShell {
     const enabled = canWalk(ensureCtx().store.get());
     movementControls.hidden = !enabled;
     if (!enabled) yardInput?.reset();
-    const dock = layerWorld.querySelector('.dock');
-    const scene = sceneContainer.getBoundingClientRect();
-    const bottom = worldKind === 'home' && dock ? Math.max(12, scene.bottom - dock.getBoundingClientRect().top + 12) : 12;
+    const bottom = 12;
     movementControls.style.bottom = `${bottom}px`;
   }
   // D-035: tell the renderer where the header mark counter sits so the glint lands on it, not on the dog.
@@ -220,12 +219,17 @@ export function createAppShell(getContext: () => UiContext): AppShell {
           // Plan §4: tapping a zone walks to its centre; the prompt appears on arrival.
           const zone = world.getState()?.layout.zones.find((entry) => entry.id === result.zoneId) ?? null;
           world.send({ type: 'moveTo', target: zone ? zone.center : result.point });
+          dismissMovementHelp();
           return;
         }
         // Ground or another actor: walk to the point (the world stops short of actors and obstacles).
         world.send({ type: 'moveTo', target: result.point });
+        dismissMovementHelp();
       },
-      onMoveDir: (dx, dz) => c.world?.send({ type: 'moveDir', dx, dz }),
+      onMoveDir: (dx, dz) => {
+        c.world?.send({ type: 'moveDir', dx, dz });
+        dismissMovementHelp();
+      },
       onStop: () => c.world?.send({ type: 'stop' }),
       onActivate() {
         const snapshot = c.store.get();

@@ -19,13 +19,14 @@ for (const viewport of [{ width: 360, height: 640 }, { width: 390, height: 844 }
     await expect.poll(() => controls.evaluate(node => {
       const box = node.getBoundingClientRect();
       const dock = document.querySelector('.dock')!.getBoundingClientRect();
-      return box.left >= 0 && box.right <= innerWidth && box.top >= 0 && box.bottom <= dock.top && box.top >= document.querySelector('.hud-top')!.getBoundingClientRect().bottom;
+      return box.left >= 0 && box.right <= innerWidth && box.top >= 0 && (box.right <= dock.left || box.left >= dock.right) && box.top >= document.querySelector('.hud-top')!.getBoundingClientRect().bottom;
     })).toBe(true);
     for (const button of await controls.getByRole('button').all()) {
       const box = await button.boundingBox();
       expect(box!.width).toBeGreaterThanOrEqual(48);
       expect(box!.height).toBeGreaterThanOrEqual(48);
     }
+    await page.screenshot({ path: testInfo.outputPath('first-visit.png') });
     const cdp = await context.newCDPSession(page);
     const sendTouch = async (direction: string, id = 1) => {
       const box = await controls.locator(`[data-direction="${direction}"]`).boundingBox();
@@ -50,16 +51,44 @@ for (const viewport of [{ width: 360, height: 640 }, { width: 390, height: 844 }
     await cdp.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [await sendTouch('arrowright')] });
     await cdp.send('Input.dispatchTouchEvent', { type: 'touchCancel', touchPoints: [] });
     await expect(controls.locator('.is-pressed')).toHaveCount(0);
+    await expect(page.locator('.home-hint')).toHaveCount(0);
+    await expect(page.locator('[data-view="home"] button')).toHaveCount(3);
     await page.screenshot({ path: testInfo.outputPath('mobile-arrows.png') });
     // Opening a modal while a direction is held must stop movement and hide the pad.
     await cdp.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [await sendTouch('arrowright')] });
-    await page.locator('[data-key="dog"]').evaluate((button: HTMLButtonElement) => button.click());
+    await page.locator('[data-key="menu"]').evaluate((button: HTMLButtonElement) => button.click());
     await expect(controls).toBeHidden();
     await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
     await page.waitForTimeout(100);
     const modalPosition = await position(page);
     await page.waitForTimeout(200);
     expect(await position(page)).toEqual(modalPosition);
+    await expect(page.getByRole('heading', { name: 'Menü', exact: true })).toBeVisible();
+    await page.screenshot({ path: testInfo.outputPath('menu.png') });
+    await page.waitForTimeout(350);
+    await page.locator('[data-key="help"]').click();
+    await expect(page.getByRole('heading', { name: 'Steuerung & Hilfe' })).toBeVisible();
+    await page.screenshot({ path: testInfo.outputPath('help.png') });
+    await page.waitForTimeout(350);
+    await page.locator('[data-key="help-ok"]').click();
+    await page.reload();
+    await expect(controls).toBeVisible();
+    await expect(page.locator('.home-hint')).toHaveCount(0);
     expect(errors).toEqual([]);
   });
 }
+
+test('compact desktop home and menu', async ({ page }, testInfo) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto('/');
+  await expect(page.locator('[data-key="menu"]')).toBeVisible();
+  await expect(page.getByRole('group', { name: 'Ines bewegen' })).toBeVisible({ timeout: 20_000 });
+  await page.keyboard.down('ArrowRight');
+  await page.waitForTimeout(150);
+  await page.keyboard.up('ArrowRight');
+  await expect(page.locator('.home-hint')).toHaveCount(0);
+  await page.waitForTimeout(400);
+  await page.screenshot({ path: testInfo.outputPath('desktop-home.png') });
+  await page.locator('[data-key="menu"]').click();
+  await page.screenshot({ path: testInfo.outputPath('desktop-menu.png') });
+});

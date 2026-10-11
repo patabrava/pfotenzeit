@@ -303,9 +303,11 @@ function yardFraming(request: FramingRequest, points: readonly Vector3[], aspect
   const set: Vector3[] = [...points, ...(request.companions ?? [])];
   const u = extentsOf(set, up, right);
   const needed = Math.max((u.maxUp - u.minUp) / (2 * (1 - 2 * m)), (u.maxRight - u.minRight) / (2 * (1 - 2 * m) * aspect));
-  const halfHeight = Math.max(dogUp / (2 * t.share), needed);
+  const halfHeight = Math.max(dogUp / (2 * t.share), needed) * 1.16;
   const halfWidth = halfHeight * aspect;
   const target = new Vector3().addScaledVector(up, (u.minUp + u.maxUp) / 2).addScaledVector(right, (u.minRight + u.maxRight) / 2);
+  // Lift the pair above the bottom thumb controls, with breathing room around both bodies.
+  target.addScaledVector(up, -0.12 * halfHeight);
   target.addScaledVector(dir, request.ground.dot(dir) - target.dot(dir));
   return { target, halfWidth, halfHeight, elevation, azimuth };
 }

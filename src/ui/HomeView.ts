@@ -1,6 +1,6 @@
 /**
- * HOME (05): scene full-bleed behind; top-left visit hint, top-right profile button with the pixel face,
- * bottom contextual primary action + Schule / Einstellungen. Challenge band banner with icon + text.
+ * HOME: scene behind compact corner controls, a combined profile/mark button,
+ * first-use movement help, one contextual action, and a menu for secondary actions.
  */
 import {
   getPixelState,
@@ -11,22 +11,61 @@ import {
 } from '../simulation/selectors';
 import type { StoreSnapshot } from '../state/store';
 import { bindAction } from '../input/actions';
-import { banner, button, confirmDialog, el, markCounter, secondary, setMarkCounter } from './components';
+import { banner, button, confirmDialog, createSheet, el, markCounter, secondary, setMarkCounter, text, type ModalHandle } from './components';
 import type { UiContext, View } from './context';
 import type { PixelDogHandle } from './pixelBridge';
 import { t, tWorld } from './strings';
 import { createView } from './view';
+import { dismissMovementHelp, movementHelpDismissed, MOVEMENT_HELP_CHANGED } from './movementHelp';
 import { isYardActive, isYardFallback, openYardSheet, runPrompt, zoneHasAction } from './yard';
 
 export function createHomeView(ctx: UiContext): View {
-  const root = el('div', { class: 'hud', dataset: { view: 'home' } });
+  const root = el('div', { class: 'hud hud--home', dataset: { view: 'home' } });
   const faceCanvas = el('canvas', { class: 'pixel-canvas', attrs: { width: 64, height: 64, 'aria-hidden': 'true' } });
   let face: PixelDogHandle | null = null;
+  let menu: ModalHandle | null = null;
   const marks = markCounter(ctx.presenter.getDisplayMarks(ctx.store.get().save), t.school.marksLabel);
 
   function ensureFace(): PixelDogHandle {
     if (!face) face = ctx.getPixelFactory()(faceCanvas);
     return face;
+  }
+
+  function openHelp(): void {
+    menu = createSheet(ctx.modalHost, { title: tWorld.helpTitle }, [
+      text(tWorld.walkHint, 'text-lead'),
+      secondary(tWorld.keysHint),
+      button({ label: t.app.ok, variant: 'primary', block: true, key: 'help-ok' }, () => menu?.close()),
+    ]);
+  }
+
+  function openMenu(): void {
+    const snapshot = ctx.store.get();
+    const { save } = snapshot;
+    const openedAt = performance.now();
+    const select = (action: () => void): ((event: Event) => void) => event => {
+      // A held movement pointer may land on the sheet when its capture is released.
+      if (event instanceof MouseEvent && event.detail > 0 && performance.now() - openedAt < 300) return;
+      menu?.close();
+      action();
+    };
+    const actions = [
+      button({ label: t.home.care, variant: 'option', icon: 'bowl', key: 'care' }, select(() => ctx.openCareSheet())),
+      ctx.world ? button({ label: save.dog.name, variant: 'option', icon: 'paw', key: 'dog' }, select(() => ctx.openDogSheet())) : null,
+      button({ label: t.home.school, variant: 'option', icon: 'school', key: 'school' }, select(() => ctx.navigate('school'))),
+      button({ label: t.home.toLesson, variant: 'option', icon: 'paw', key: 'lesson' }, select(() => ctx.openLessonPicker())),
+      isYardFallback(snapshot, ctx) ? button({ label: tWorld.sheetTitle, variant: 'option', icon: 'leaf', key: 'yard' }, select(() => openYardSheet(ctx))) : null,
+      button({ label: t.home.settings, variant: 'option', icon: 'gear', key: 'settings' }, select(() => ctx.navigate('settings'))),
+      button({ label: tWorld.helpTitle, variant: 'option', icon: 'info', key: 'help' }, select(openHelp)),
+    ];
+    if (save.mode === 'challenge') {
+      actions.push(button({ label: save.challengePaused ? t.home.resume : t.home.pause, variant: 'option', icon: save.challengePaused ? 'play' : 'pause', key: 'pause' }, select(() => {
+        void ctx.store.act(save.challengePaused ? 'RESUME_CHALLENGE' : 'PAUSE_CHALLENGE', {}).then(result => {
+          if (result.outcome === 'applied') ctx.toast(save.challengePaused ? t.toasts.resumed : t.toasts.paused);
+        });
+      })));
+    }
+    menu = createSheet(ctx.modalHost, { title: tWorld.menu }, [el('div', { class: 'stack stack--tight home-menu' }, actions)]);
   }
 
   const view = createView({
@@ -36,6 +75,7 @@ export function createHomeView(ctx: UiContext): View {
       const readiness = getReadiness(save);
       const effect = ctx.presenter.getActiveEffect();
       return {
+        helpDismissed: movementHelpDismissed(),
         name: save.dog.name,
         readiness,
         band: getVitalityBand(save.dog, save.mode),
@@ -69,14 +109,13 @@ export function createHomeView(ctx: UiContext): View {
       const visit = save.currentVisit;
       const effect = ctx.presenter.getActiveEffect();
       const yardActive = isYardActive(snapshot, ctx);
-      const yardFallback = isYardFallback(snapshot, ctx);
       const worldState = ctx.world?.getState() ?? null;
       const moment = worldState?.moment && worldState.moment.response === null ? worldState.moment : null;
       const promptZone = ctx.world?.getContext()?.prompt ?? null;
       const prompt = promptZone && zoneHasAction(promptZone, snapshot) ? promptZone : null;
 
       // --- top row
-      let hintText = t.home.waiting(name);
+      let hintText: string | null = yardActive ? null : t.home.waiting(name);
       let hintSecondary: string | null = null;
       if (effect && effect.type === 'care') {
         hintText = t.care.presenting(name, effect.kind);
@@ -94,23 +133,23 @@ export function createHomeView(ctx: UiContext): View {
       } else if (moment) {
         // D-041 §5: the dog's initiative as text; the dog button opens the responses.
         hintText = ctx.content.moments[moment.kind].observation;
-      } else if (yardActive && !prompt) {
-        hintText = tWorld.walkHint;
-        if (typeof window.matchMedia === 'function' && window.matchMedia('(pointer: fine)').matches) hintSecondary = tWorld.keysHint;
+      } else if (yardActive && !movementHelpDismissed()) {
+        hintText = tWorld.firstWalkHint;
       }
-      const hint = el('div', { class: 'hint', attrs: { role: 'status' } }, [
+      const hint = hintText ? el('div', { class: 'hint home-hint', attrs: { role: 'status' } }, [
         el('span', { text: hintText }),
         hintSecondary ? el('span', { class: 'hint-secondary', text: hintSecondary }) : null,
-      ]);
+        hintText === tWorld.firstWalkHint ? button({ label: tWorld.dismissHelp, icon: 'close', iconOnly: true, variant: 'ghost', key: 'dismiss-help', class: 'home-hint-close' }, dismissMovementHelp) : null,
+      ]) : null;
 
       const profileBtn = el('button', {
-        class: 'profile-btn',
-        attrs: { type: 'button', 'aria-label': t.home.profile(name) },
+        class: 'profile-btn profile-btn--compact',
+        attrs: { type: 'button', 'aria-label': `${t.home.profile(name)}, ${t.school.marksLabel}: ${ctx.presenter.getDisplayMarks(save)}` },
         dataset: { key: 'profile' },
       });
-      profileBtn.append(faceCanvas);
+      profileBtn.append(faceCanvas, marks);
       bindAction(profileBtn, () => ctx.navigate('profile'));
-      const topRight = el('div', { class: 'hud-top-right' }, [marks, profileBtn]);
+      const topRight = el('div', { class: 'hud-top-right' }, [profileBtn]);
 
       // --- middle: band banner
       const middle: HTMLElement[] = [];
@@ -120,96 +159,32 @@ export function createHomeView(ctx: UiContext): View {
         middle.push(banner('crit', `${t.band.symbol(band)} ${t.band.label(band)}`, `${t.band.text(band)} ${t.band.criticalFree}`));
       }
 
-      // --- dock
-      const dock = el('div', { class: 'dock', dataset: { scrollKey: 'home-dock' } });
-      const primaryActions: HTMLElement[] = [];
-
-      // D-041: one contextual prompt from the world (≥ 56 px); hidden when there is nothing to do here.
-      if (prompt && band !== 'critical' && !visit) {
-        primaryActions.push(
-          button({ label: tWorld.prompt(prompt), variant: 'primary', large: true, block: true, icon: prompt === 'mira' ? 'paw' : prompt === 'bowl' ? 'bowl' : prompt === 'rest_deck' ? 'rest' : 'leaf', key: 'prompt', class: 'btn--prompt' }, () =>
-            runPrompt(ctx, prompt),
-          ),
-        );
-      }
-
-      if (band === 'critical') {
-        primaryActions.push(
-          button({ label: t.home.care, variant: 'primary', large: true, block: true, icon: 'bowl', key: 'care' }, () => ctx.openCareSheet()),
-          button(
-            { label: save.challengePaused ? t.home.resume : t.home.pause, variant: 'secondary', large: true, block: true, icon: save.challengePaused ? 'play' : 'pause', key: 'pause' },
-            async () => {
-              const result = await ctx.store.act(save.challengePaused ? 'RESUME_CHALLENGE' : 'PAUSE_CHALLENGE', {});
-              if (result.outcome === 'applied') ctx.toast(save.challengePaused ? t.toasts.resumed : t.toasts.paused);
-            },
-          ),
-        );
+      // Keep one action in the world; everything else is available through the menu.
+      const dock = el('div', { class: 'dock home-dock' });
+      let primary: HTMLElement;
+      if (band === 'critical' || (!visit && readiness === 'needs_care')) {
+        primary = button({ label: t.home.care, variant: 'primary', icon: 'bowl', key: 'primary' }, () => ctx.openCareSheet());
       } else if (visit) {
-        primaryActions.push(
-          button({ label: t.home.continueLesson, variant: 'primary', large: true, block: true, key: 'primary' }, () =>
-            ctx.navigate(visit.phase === 'reflect' ? 'reflection' : 'lesson'),
-          ),
-        );
-      } else if (readiness === 'needs_care') {
-        primaryActions.push(
-          button({ label: t.home.care, variant: 'primary', large: true, block: true, icon: 'bowl', key: 'primary' }, () => ctx.openCareSheet()),
-        );
+        primary = button({ label: t.home.continueLesson, variant: 'primary', key: 'primary' }, () => ctx.navigate(visit.phase === 'reflect' ? 'reflection' : 'lesson'));
       } else if (growth) {
-        primaryActions.push(
-          button({ label: t.home.grow, variant: 'primary', large: true, block: true, icon: 'leaf', key: 'primary' }, async () => {
-            const confirmed = await confirmDialog(ctx.modalHost, {
-              title: t.home.growthTitle,
-              text: t.home.growthText(name),
-              confirmLabel: t.home.growthConfirm,
-              cancelLabel: t.home.growthLater,
-            });
-            if (!confirmed) return;
-            const result = await ctx.store.act('CONFIRM_GROWTH', {});
-            if (result.outcome === 'rejected') ctx.toast(t.toasts.actionRejected);
-          }),
-        );
-        primaryActions.push(
-          button({ label: t.home.toLesson, variant: 'secondary', block: true, key: 'lesson' }, () => ctx.openLessonPicker()),
-        );
-      } else if (!(yardActive && prompt)) {
-        primaryActions.push(
-          button(
-            {
-              label: t.home.toLesson,
-              variant: 'primary',
-              large: true,
-              block: true,
-              icon: 'paw',
-              key: 'primary',
-              ariaDisabled: save.challengePaused,
-              options: { onBlocked: () => ctx.toast(t.toasts.challengePaused) },
-            },
-            () => ctx.openLessonPicker(),
-          ),
-        );
+        primary = button({ label: t.home.grow, variant: 'primary', icon: 'leaf', key: 'primary' }, async () => {
+          const confirmed = await confirmDialog(ctx.modalHost, {
+            title: t.home.growthTitle, text: t.home.growthText(name), confirmLabel: t.home.growthConfirm, cancelLabel: t.home.growthLater,
+          });
+          if (!confirmed) return;
+          const result = await ctx.store.act('CONFIRM_GROWTH', {});
+          if (result.outcome === 'rejected') ctx.toast(t.toasts.actionRejected);
+        });
+      } else if (prompt) {
+        primary = button({ label: tWorld.prompt(prompt), variant: 'primary', icon: prompt === 'mira' ? 'paw' : prompt === 'bowl' ? 'bowl' : 'leaf', key: 'prompt' }, () => runPrompt(ctx, prompt));
+      } else {
+        primary = button({ label: t.home.toLesson, variant: 'primary', icon: 'paw', key: 'primary', ariaDisabled: save.challengePaused,
+          options: { onBlocked: () => ctx.toast(t.toasts.challengePaused) } }, () => ctx.openLessonPicker());
       }
-
-      const secondaryRow = el('div', { class: 'dock-row' }, [
-        button({ label: t.home.school, variant: 'secondary', icon: 'school', key: 'school' }, () => ctx.navigate('school')),
-        button({ label: t.home.settings, variant: 'secondary', icon: 'gear', key: 'settings' }, () => ctx.navigate('settings')),
-      ]);
-      if (ctx.world) {
-        // D-041: the dog sheet (attention line, moment responses) and, without the walkable yard, the zone list.
-        secondaryRow.prepend(
-          button({ label: name, variant: 'secondary', icon: 'paw', key: 'dog', class: moment ? 'is-suggested' : undefined }, () => ctx.openDogSheet()),
-        );
-        if (yardFallback) secondaryRow.append(button({ label: tWorld.sheetTitle, variant: 'secondary', icon: 'leaf', key: 'yard' }, () => openYardSheet(ctx)));
-      }
-      if (band !== 'critical' && readiness === 'needs_care' && !visit) {
-        // keep care reachable even when the primary is something else; here primary already is care.
-      } else if (band !== 'critical' && !visit) {
-        secondaryRow.prepend(button({ label: t.home.care, variant: 'secondary', icon: 'bowl', key: 'care' }, () => ctx.openCareSheet()));
-      }
-      dock.append(...primaryActions, secondaryRow);
+      dock.append(primary, button({ label: tWorld.menu, variant: 'secondary', icon: 'more', key: 'menu', attrs: { 'aria-haspopup': 'dialog' } }, openMenu));
       if (save.mode === 'challenge' && band !== 'critical') {
-        dock.append(secondary(`${t.band.symbol(band)} ${t.band.vitalityLine(band)}`));
+        middle.push(secondary(`${t.band.symbol(band)} ${t.band.vitalityLine(band)}`));
       }
-
       return [el('div', { class: 'hud-top' }, [hint, topRight]), el('div', { class: 'hud-middle' }, middle), dock];
     },
     afterRender(snapshot) {
@@ -223,10 +198,14 @@ export function createHomeView(ctx: UiContext): View {
     },
     destroy() {
       unsubscribeWorld?.();
+      window.removeEventListener(MOVEMENT_HELP_CHANGED, onHelpChanged);
+      menu?.close();
       face?.dispose();
       face = null;
     },
   });
+  const onHelpChanged = (): void => view.update(ctx.store.get());
+  window.addEventListener(MOVEMENT_HELP_CHANGED, onHelpChanged);
   const unsubscribeWorld = ctx.world?.onChange(() => view.update(ctx.store.get()));
   return view;
 }

@@ -1640,7 +1640,7 @@ ul {
 .model-credits > summary, .model-credits > a { min-height: 48px; display: flex; align-items: center; overflow-wrap: anywhere; }
 .model-credits > summary { cursor: pointer; font-weight: 600; }
 
-/* Hold-to-walk pad, kept inside the scene and above the home action dock. */
+/* The courtyard stays visible; thumb controls sit in its bottom corners. */
 .yard-controls {
   position: absolute;
   z-index: 1;
@@ -1648,28 +1648,91 @@ ul {
   display: grid;
   grid-template-columns: repeat(3, 48px);
   grid-template-rows: repeat(2, 48px);
-  gap: 4px;
+  gap: 2px;
   touch-action: none;
   user-select: none;
   -webkit-user-select: none;
 }
 .yard-direction {
-  border: 1px solid var(--color-sage);
-  border-radius: 14px;
-  background: rgba(255, 253, 249, 0.94);
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 12px;
+  background: rgba(255, 253, 249, 0.82);
   color: var(--color-forest);
-  box-shadow: var(--shadow-card);
-  font-size: 28px;
-  line-height: 1;
   touch-action: none;
   -webkit-touch-callout: none;
 }
+.yard-direction .btn-icon { width: 22px; height: 22px; }
 .yard-direction[data-direction="arrowup"] { grid-column: 2; }
+.yard-direction[data-direction="arrowup"] .btn-icon { transform: rotate(90deg); }
 .yard-direction[data-direction="arrowleft"] { grid-column: 1; grid-row: 2; }
 .yard-direction[data-direction="arrowdown"] { grid-column: 2; grid-row: 2; }
+.yard-direction[data-direction="arrowdown"] .btn-icon { transform: rotate(-90deg); }
 .yard-direction[data-direction="arrowright"] { grid-column: 3; grid-row: 2; }
+.yard-direction[data-direction="arrowright"] .btn-icon { transform: rotate(180deg); }
 .yard-direction.is-pressed, .yard-direction:active {
   background: var(--color-forest);
   color: var(--color-chalk);
+}
+
+.hud--home .hud-top { pointer-events: none; }
+.hud--home .hud-top > * { pointer-events: auto; }
+.hud--home .hud-top-right { margin-left: auto; }
+.home-hint {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  max-width: calc(100% - 104px);
+  padding: 8px 4px 8px 12px;
+  border-radius: 12px;
+  font-size: var(--text-secondary);
   box-shadow: none;
 }
+.home-hint .home-hint-close { flex: 0 0 44px; width: 44px; min-width: 44px; min-height: 44px; }
+.profile-btn--compact {
+  display: flex;
+  align-items: center;
+  width: auto;
+  height: 48px;
+  min-width: 92px;
+  gap: 4px;
+  padding: 4px 8px;
+  border: 0;
+  border-radius: 12px;
+  box-shadow: none;
+}
+.profile-btn--compact canvas { width: 36px; height: 36px; }
+.profile-btn--compact .mark-counter {
+  padding: 0;
+  background: none;
+  font-size: 14px;
+  gap: 3px;
+}
+.profile-btn--compact .mark-icon { width: 16px; height: 16px; }
+.hud--home .home-dock {
+  justify-self: end;
+  align-self: end;
+  width: min(172px, calc(100vw - 184px));
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  gap: 6px;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  backdrop-filter: none;
+  overflow: visible;
+}
+.home-dock > .btn {
+  min-height: 48px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+.home-dock > .btn--primary { min-height: 52px; }
+.home-dock > .btn--secondary { border: 0; background: rgba(255, 253, 249, 0.92); }
+.hud--home .hud-middle { align-items: flex-start; }
+.home-menu .btn { min-height: 48px; }
